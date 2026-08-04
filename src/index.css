@@ -1,0 +1,50 @@
+:root {
+  --bg-dark: #1a1a2e;
+  --bg-card: #222240;
+  --bg-card-hover: #2a2a4a;
+  --bg-input: #2a2a4a;
+  --cream: #FFF8F0;
+  --cream-dim: #E8E0D4;
+  --cream-muted: #B8B0A4;
+  --crimson: #DC2626;
+  --crimson-light: #EF4444;
+  --crimson-dark: #991B1B;
+  --green: #22C55E;
+  --blue: #3B82F6;
+  --amber: #F59E0B;
+  --red: #EF4444;
+  --border: #333355;
+  --border-light: #444466;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--cream);
+  background-color: var(--bg-dark);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-light);
+  border-radius: 3px;
+}
