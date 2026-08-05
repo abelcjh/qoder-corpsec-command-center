@@ -31,6 +31,17 @@ Credence is deliberately narrower than full Malaysian CoSec suites such as Offic
 
 Pitch line: **workflow complete is not proof; Credence packages who reminded whom, when, under which rule, with what evidence, and what remains at risk.**
 
+### Evidence freshness / reviewer-safe export
+
+For the final video and judge review, each proof row should be read as a small reviewer-safe export:
+
+| Status | Meaning | Judge-visible fields |
+|---|---|---|
+| Current | The latest reminder/proof row is inside the expected follow-up cadence. | rule/deadline, owner, recipient, timestamp, source type, message snapshot |
+| Expiring | Evidence exists, but the next chase is close enough that a staff owner should act before risk becomes stale. | next run date, staff owner, unresolved risk, reminder cadence |
+| Stale | No recent proof exists or unresolved risk remains after the expected follow-up window. | missing evidence, last contact, escalation owner, retained history |
+| Reviewer-safe export | A judge/reviewer can inspect proof without secrets or contacting real clients. | provider/message ID field, Gmail print-document status, evidence type, snapshot/export note |
+
 This system provides **operational workflow assistance only** — it does not constitute legal advice. A qualified company secretary or professional must review and approve all compliance actions.
 
 ## Quick Start

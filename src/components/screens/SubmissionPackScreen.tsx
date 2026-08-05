@@ -45,6 +45,13 @@ const marketFindings = [
   },
 ];
 
+const evidenceFreshness = [
+  ['Current', 'Reminder proof exists for this rule/deadline and the latest evidence snapshot is still inside the expected cadence.'],
+  ['Expiring', 'A proof row exists, but the next statutory/customer follow-up is close enough that a staff owner should chase before the risk becomes stale.'],
+  ['Stale', 'The deadline/rule has no recent proof row or unresolved risk remains after the expected follow-up window.'],
+  ['Reviewer-safe export', 'Judges and reviewers can inspect owner, recipient, timestamp, source type, message snapshot, and unresolved risk without exposing secrets or contacting real clients.'],
+];
+
 const demoScenes = [
   'Open polished staff login; call out Supabase-seeded credentials and CLPC database connection.',
   'Login as admin; show dashboard stats, active clients, scheduled jobs, and proof logs.',
@@ -122,6 +129,21 @@ export function SubmissionPackScreen() {
               <a href={finding.url} className="text-sm font-semibold text-crimson-300 underline-offset-4 hover:underline" target="_blank" rel="noreferrer">{finding.source}</a>
               <p className="mt-2 text-sm text-brand-muted">{finding.signal}</p>
               <p className="mt-3 text-sm text-brand-text"><span className="font-medium">Credence angle:</span> {finding.credenceAngle}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2"><CheckCircle2 size={18} className="text-emerald-500" /> Evidence freshness / reviewer-safe export</CardTitle>
+          <CardDescription>Judge-visible proof surface for “reminders that become defensible evidence”</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+          {evidenceFreshness.map(([label, detail]) => (
+            <div key={label} className="rounded-xl border border-brand-border bg-brand-surface/40 p-4">
+              <div className="font-semibold text-brand-text">{label}</div>
+              <p className="mt-2 text-sm text-brand-muted">{detail}</p>
             </div>
           ))}
         </CardContent>

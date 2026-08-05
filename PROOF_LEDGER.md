@@ -97,3 +97,12 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 - Required command before shipping: `npm run build && npm run verify`
 - Expected verify scope: working-day recurrence, run generation, cron simulation, department scoping, company deactivation, schema/docs checks.
 - Safe-send boundary: the hackathon build records fixture-safe send/proof rows and does not contact real clients from the frontend.
+
+## Evidence freshness receipt
+
+| Proof status | What it proves | Where to show it |
+|---|---|---|
+| Current | Latest proof row is still inside the expected reminder cadence. | Send Logs / Evidence table; Proof screen; Submission Pack evidence section |
+| Expiring | Reminder proof exists, but a staff owner should chase soon before unresolved risk becomes stale. | Scheduled Queue next-run date plus proof row owner/recipient |
+| Stale | Missing or outdated proof is visible instead of hidden, preserving escalation accountability. | Proof screen risk note and retained send-log history |
+| Reviewer-safe export | Judges can inspect owner, recipient, timestamp, evidence type, snapshot, and Gmail/provider fields without secrets or live sends. | Submission Pack screen and README reviewer-safe export table |
