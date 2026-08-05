@@ -217,6 +217,7 @@ const authorityProvenanceReceipt = [
 
 const offlineVerifierReceipt = [
   ['Hashable packet ID', 'Each proof packet gets a deterministic `proof-...` ID, so the same retained send-log evidence can be re-derived instead of trusted as a screenshot.'],
+  ['Tamper-evident chain head', 'The Proof screen now links sorted reviewer-safe packets into a deterministic chain head; missing, reordered, or edited retained rows change the receipt without exposing secrets.'],
   ['Reviewer-safe fields', 'Exportable fields are limited to entity/rule, owner, recipient, cadence state, provider field, snapshot, and unresolved risk — not secrets or full mailboxes.'],
   ['Freshness recheck', 'Current / Expiring / Stale status can be recalculated from the evidence timestamp, giving judges a quick rerun path for the proof claim.'],
   ['Blocked-action receipt', 'The packet makes non-actions visible too: no external send, no legal-status mutation, no form/social posting, and staff review remains the approval boundary.'],

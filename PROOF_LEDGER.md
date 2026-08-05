@@ -218,3 +218,8 @@ A compact winner scan found that recent enterprise-agent winners are rewarded fo
 ## Research signal — Singapore AI-human handoff bar
 
 A Singapore CorpSec scan found incumbents already advertising AI-guided submissions, expert team handoffs, automated alerts, and background audit trails. Credence's response is to make the AI-to-staff handoff a judge-visible receipt: Agnes drafts only, a human owner approves the rule/job path, deterministic working-day logic schedules the chase, and reviewer-safe proof survives for later inspection.
+
+
+## Latest Ralph-loop research signal — enterprise proof bar
+
+A compact Aug 5 scan of recent enterprise-agent hackathon winners found repeated emphasis on audit-grade receipts, policy/verdict logs, and hashable evidence trails (Ledger AI, AgentAudit, Forensa, AuditShield-style projects). Credence now answers that bar inside its narrower CorpSec workflow: proof rows keep reviewer-safe fields and the Proof screen exposes a deterministic receipt-chain head so judges can see missing or altered retained evidence would change the export receipt.

@@ -24,7 +24,7 @@ import {
   seedSendLogs,
   seedStaffUsers,
 } from '../src/data/seed';
-import { buildProofPacket, summarizeProofPackets } from '../src/lib/proofPacket';
+import { buildProofPacket, buildProofPacketChain, summarizeProofPackets } from '../src/lib/proofPacket';
 import type { AppState, Department, ScheduledSendJob, StaffUser } from '../src/types';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -146,6 +146,12 @@ assert(packet.freshness === 'current', 'Fresh proof is classified current');
 assert(packet.evidenceFields.includes('provider_message_id'), 'Proof packet lists provider message ID as reviewer-safe field');
 const packetSummary = summarizeProofPackets(seedSendLogs, new Date('2026-04-15T09:00:00+08:00'));
 assert(packetSummary.current === 1, 'Proof packet summary counts current evidence');
+assert(packetSummary.chainHead.startsWith('chain-'), 'Proof packet summary exposes tamper-evident chain head');
+const orderedChain = buildProofPacketChain(seedSendLogs, new Date('2026-04-15T09:00:00+08:00'));
+const reversedChain = buildProofPacketChain([...seedSendLogs].reverse(), new Date('2026-04-15T09:00:00+08:00'));
+assert(orderedChain.at(-1)?.chainHead === reversedChain.at(-1)?.chainHead, 'Proof chain is stable regardless of incoming log order');
+const missingOneChain = buildProofPacketChain(seedSendLogs.slice(1), new Date('2026-04-15T09:00:00+08:00'));
+assert(missingOneChain.at(-1)?.chainHead !== orderedChain.at(-1)?.chainHead, 'Proof chain head changes when a retained proof row is missing');
 
 // 6. Build output
 console.log('\n[Build Output]');
@@ -206,6 +212,8 @@ assert(submissionPack.includes('AI drafts only'), 'Submission Pack states AI dra
 assert(submissionPack.includes('ClientBase / VOPlus Singapore scan'), 'Submission Pack includes Singapore practice-suite competitor calibration');
 assert(submissionPack.includes('owner-specific chase becomes a reviewer-safe proof receipt'), 'Submission Pack states the narrow proof-receipt wedge');
 assert(readFileSync(resolve(root, 'src/lib/proofPacket.ts'), 'utf-8').includes('Reviewer-safe packet'), 'Proof packet utility documents non-secret reviewer export boundary');
+assert(readFileSync(resolve(root, 'src/lib/proofPacket.ts'), 'utf-8').includes('buildProofPacketChain'), 'Proof packet utility includes deterministic receipt-chain verifier');
+assert(submissionPack.toLowerCase().includes('tamper-evident'), 'Submission Pack mentions tamper-evident proof integrity');
 assert(submissionPack.includes('Deterministic authority'), 'Submission Pack states deterministic records remain authoritative over AI output');
 const packageJson = readFileSync(resolve(root, 'package.json'), 'utf-8');
 assert(packageJson.includes('smoke:live'), 'Package exposes npm run smoke:live for deployed demo reliability');

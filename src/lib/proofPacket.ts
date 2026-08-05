@@ -9,6 +9,9 @@ export interface ReviewerProofPacket {
   ageDays: number;
   evidenceFields: string[];
   exportNote: string;
+  chainIndex?: number;
+  previousPacketId?: string;
+  chainHead?: string;
 }
 
 function fnv1a32(input: string): string {
@@ -63,12 +66,42 @@ export function buildProofPacket(log: SendLog, now = new Date()): ReviewerProofP
   };
 }
 
+function getProofTime(log: SendLog): string {
+  return log.sentAt ?? log.scheduledRunAt;
+}
+
+export function buildProofPacketChain(logs: SendLog[], now = new Date()): ReviewerProofPacket[] {
+  const sortedLogs = [...logs].sort((a, b) => {
+    const byTime = getProofTime(a).localeCompare(getProofTime(b));
+    return byTime === 0 ? a.id.localeCompare(b.id) : byTime;
+  });
+
+  let previousPacketId = 'GENESIS';
+  let chainHead = 'proof-chain-genesis';
+
+  return sortedLogs.map((log, index) => {
+    const packet = buildProofPacket(log, now);
+    chainHead = `chain-${fnv1a32([chainHead, previousPacketId, packet.packetId, index].join('|'))}`;
+    const chainedPacket: ReviewerProofPacket = {
+      ...packet,
+      chainIndex: index + 1,
+      previousPacketId,
+      chainHead,
+      exportNote:
+        `${packet.exportNote} Packet chain links are deterministic reviewer checks over sorted proof rows, so missing or reordered rows produce a different chain head without exposing secrets.`,
+    };
+    previousPacketId = packet.packetId;
+    return chainedPacket;
+  });
+}
+
 export function summarizeProofPackets(logs: SendLog[], now = new Date()) {
-  const packets = logs.map((log) => buildProofPacket(log, now));
+  const packets = buildProofPacketChain(logs, now);
   return {
     current: packets.filter((p) => p.freshness === 'current').length,
     expiring: packets.filter((p) => p.freshness === 'expiring').length,
     stale: packets.filter((p) => p.freshness === 'stale').length,
+    chainHead: packets.length > 0 ? packets[packets.length - 1].chainHead : 'proof-chain-empty',
     packets,
   };
 }

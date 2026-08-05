@@ -12,7 +12,7 @@ export function ProofScreen({ logs }: ProofScreenProps) {
   const providerProof = logs.filter((l) => l.providerMessageId).length;
   const failed = logs.filter((l) => l.status === 'failed').length;
   const proofSummary = summarizeProofPackets(logs);
-  const latestPacket = proofSummary.packets[0];
+  const latestPacket = proofSummary.packets[proofSummary.packets.length - 1];
 
   return (
     <div className="space-y-5 animate-fade-in">
@@ -40,11 +40,25 @@ export function ProofScreen({ logs }: ProofScreenProps) {
             <StatusTile label="Expiring" value={proofSummary.expiring} tone="amber" />
             <StatusTile label="Stale" value={proofSummary.stale} tone="crimson" />
           </div>
+          <div className="rounded-xl border border-sky-800/50 bg-sky-950/25 p-4">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <div className="text-xs font-medium uppercase tracking-wider text-sky-200/70">Tamper-evident chain head</div>
+                <div className="mt-1 font-mono text-base text-sky-100">{proofSummary.chainHead}</div>
+              </div>
+              <div className="rounded-full border border-sky-700/60 bg-sky-900/40 px-3 py-1 text-xs font-medium text-sky-100">
+                {proofSummary.packets.length} ordered packets
+              </div>
+            </div>
+            <p className="mt-3 text-brand-muted">
+              Demo-safe receipt chain: reorder, delete, or alter a retained proof row and the reviewer-visible chain head changes. This is an integrity signal over non-secret export fields, not a replacement for legal e-signature or regulator filing systems.
+            </p>
+          </div>
           {latestPacket && (
             <div className="rounded-xl border border-brand-border bg-brand-surface/50 p-4">
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <div>
-                  <div className="text-xs font-medium uppercase tracking-wider text-brand-muted">Latest packet ID</div>
+                  <div className="text-xs font-medium uppercase tracking-wider text-brand-muted">Latest packet ID · #{latestPacket.chainIndex}</div>
                   <div className="mt-1 font-mono text-base text-brand-text">{latestPacket.packetId}</div>
                 </div>
                 <div className="rounded-full border border-emerald-800/50 bg-emerald-950/40 px-3 py-1 text-xs font-medium text-emerald-200">

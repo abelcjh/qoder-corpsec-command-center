@@ -32,7 +32,7 @@ Credence is deliberately narrower than full Malaysian CoSec suites such as Offic
 
 1. **Rule and owner selected** — a staff member chooses the company, department, recipient, rule, cadence, and stop date.
 2. **Reminder safely scheduled** — the working-day engine previews exactly when follow-ups will be queued.
-3. **Proof row retained** — each send/proof record preserves actor, recipient, timestamp, provider/message ID fields, Gmail print-document status, evidence type, and message snapshot.
+3. **Proof row retained** — each send/proof record preserves actor, recipient, timestamp, provider/message ID fields, Gmail print-document status, evidence type, message snapshot, and a reviewer-safe receipt-chain head that changes if retained rows are missing or altered.
 
 Pitch line: **workflow complete is not proof; Credence packages who reminded whom, when, under which rule, with what evidence, and what remains at risk.**
 
