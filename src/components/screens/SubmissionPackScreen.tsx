@@ -52,6 +52,14 @@ const evidenceFreshness = [
   ['Reviewer-safe export', 'Judges and reviewers can inspect owner, recipient, timestamp, source type, message snapshot, and unresolved risk without exposing secrets or contacting real clients.'],
 ];
 
+const qoderWorkflowReceipts = [
+  ['Spec first', 'Spec.md is the source-of-truth build brief Qoder used before implementation.'],
+  ['Quest / agentic execution', 'QODER_FULLSTACK_PROMPT.md and QODER_TASK_PROMPT.md preserve delegated tasks instead of hiding them in narration.'],
+  ['Human review', 'Abel reviewed scope, credentials, safety boundaries, and post-build Ralph-loop changes without overclaiming Qoder.'],
+  ['Verified output', 'npm run build && npm run verify is the repeatable judge receipt for the Qoder-built engine, scoping, schema, and docs.'],
+  ['Security checkpoint', 'QODER_BUILD_LEDGER.md names the Qoder L1/L2/L3 scan path and the honest access/credit fallback.'],
+];
+
 const demoScenes = [
   'Open polished staff login; call out Supabase-seeded credentials and CLPC database connection.',
   'Login as admin; show dashboard stats, active clients, scheduled jobs, and proof logs.',
@@ -103,6 +111,21 @@ export function SubmissionPackScreen() {
           </CardContent>
         </Card>
       </div>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2"><CheckCircle2 size={18} className="text-emerald-500" /> Qoder workflow receipt</CardTitle>
+          <CardDescription>Judge-visible evidence for the highest-weighted 30% criterion</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
+          {qoderWorkflowReceipts.map(([label, detail]) => (
+            <div key={label} className="rounded-xl border border-brand-border bg-brand-surface/40 p-4">
+              <div className="font-semibold text-brand-text">{label}</div>
+              <p className="mt-2 text-sm text-brand-muted">{detail}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
 
       <Card>
         <CardHeader>
