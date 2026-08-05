@@ -26,6 +26,12 @@ const marketFindings = [
     credenceAngle: 'Lead with proof retention and department-scoped reminder operations, not another generic calendar.',
   },
   {
+    source: 'ezcosec Malaysia',
+    url: 'https://ezcosec.com/',
+    signal: 'A current Malaysian CoSec platform frames the buyer pain as missed deadlines, Excel chaos, scattered documents, manual reminders, and knowledge silos.',
+    credenceAngle: 'Use the 10-second demo to prove the narrow wedge competitors describe: one client record becomes an owner-scoped reminder, then a reviewer-safe evidence row that survives deactivation.',
+  },
+  {
     source: 'CA-Kompas',
     url: 'https://ca-kompas.com/',
     signal: 'Local accounting/company-secretary buyers expect client databases, 80+ fields, compliance tracking, and email/SMS notifications.',

@@ -28,7 +28,7 @@ Core capabilities:
 
 ## Defensible reminder evidence
 
-Credence is deliberately narrower than full Malaysian CoSec suites such as Officio, CA-Kompas, iCorpSec, ezcosec, or ACE. Those platforms manage broad statutory operations, portals, registers, and filing workflows. Credence focuses on the accountability gap that still exists when teams chase clients through Gmail and spreadsheets:
+Credence is deliberately narrower than full Malaysian CoSec suites such as Officio, CA-Kompas, iCorpSec, ezcosec, BizAid, or ACE. Those platforms manage broad statutory operations, portals, registers, filings, AI drafting, and document workflows. A fresh competitor scan shows the same buyer pain repeatedly: missed deadlines, Excel chaos, scattered documents, manual reminders, and knowledge silos. Credence focuses on the accountability gap that still exists when teams chase clients through Gmail and spreadsheets:
 
 1. **Rule and owner selected** — a staff member chooses the company, department, recipient, rule, cadence, and stop date.
 2. **Reminder safely scheduled** — the working-day engine previews exactly when follow-ups will be queued.

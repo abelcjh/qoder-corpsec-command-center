@@ -100,6 +100,13 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | Technical execution | 15% | `supabase/schema.sql`, `src/lib/store.ts`, `src/lib/reducers.ts`, `npm run build`, `npm run verify` | Show Supabase-backed staff login, scoped clients/jobs/logs, deactivation preserving evidence, and passing verification. |
 | Presentation / UGC | 10% | `DEMO_SCRIPT.md`, `src/components/screens/SubmissionPackScreen.tsx`, `SUBMISSION_CHECKLIST.md` | End with Submission Pack screen: social post/video requirements, tags `@QoderOfficial` + `@AlibabaCloud`, hashtags `#QoderHackathon` + `#BuildWithQoder`. |
 
+## Competitor calibration update — 2026-08-05 Ralph loop
+
+| Source | Actionable signal | Credence response |
+|---|---|---|
+| ezcosec Malaysia (`https://ezcosec.com/`) | Current Malaysian CoSec positioning names missed deadlines, Excel chaos, scattered documents, manual reminders, and knowledge silos as buyer pains. | Keep the demo wedge narrow and judge-visible: client DB → owner/rule scoped reminder → retained reviewer-safe evidence row, including after company deactivation. |
+
+
 ## Current verification receipt
 
 - Required command before shipping: `npm run build && npm run verify`
