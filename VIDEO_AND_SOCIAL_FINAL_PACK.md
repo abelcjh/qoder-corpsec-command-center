@@ -27,7 +27,8 @@ Target length: 2:55.
 | 2:35–2:45 | Submission Pack / MBRS loop | "For a real MBRS lodger, the workflow is T-60 chase, T-30 preparation, T-7 validation, then acceptance receipt. Credence makes those chases reviewer-safe evidence around the lodger's signature risk." |
 | 2:45–2:52 | Submission Pack / MBRS readiness packet | "Downstream MBRS tools validate and export XBRL; Credence owns the upstream question: is the client evidence ready, who chased it, and what late-risk defense exists?" |
 | 2:52–2:58 | Submission Pack / AI Workbench recording packet | "CoSec competitors already market AI assistants. Credence's Agnes loop is governed: one selected client, role-scoped evidence, human-reviewed wording, no-secret Worker bridge, and deterministic proof records as authority." |
-| 2:58–3:00 | Submission Pack / competitor calibration | "Singapore practice suites already sell full dashboards, portals, audit trails, and bounded AI, so Credence stays narrow: one owner-specific chase becomes a reviewer-safe proof receipt." |
+| 2:58–3:03 | Submission Pack / AI-to-staff handoff receipt | "AI-guided filing handoffs are now expected. Credence makes the approval receipt visible: Agnes drafts only, staff approves, deterministic schedules run, and proof is retained." |
+| 3:03–3:05 | Submission Pack / competitor calibration | "Singapore practice suites already sell full dashboards, portals, audit trails, and bounded AI, so Credence stays narrow: one owner-specific chase becomes a reviewer-safe proof receipt." |
 
 ## Demo reliability checklist
 
@@ -38,7 +39,7 @@ npm run build && npm run verify
 npm run dev
 ```
 
-Live smoke receipt to mention if judges ask about deployment reliability: on the Aug 5 20:28 GMT+8 Ralph smoke check, the Cloudflare Worker home route returned HTTP 200 app HTML and `POST /api/ai-brief` returned HTTP 200 fixture JSON through the server-side Agnes bridge, with no secret-name or API-key-shaped leakage.
+Live smoke receipt to mention if judges ask about deployment reliability: on the Aug 5 20:40 GMT+8 Ralph smoke check, the Cloudflare Worker home route returned HTTP 200 app HTML and `POST /api/ai-brief` returned HTTP 200 fixture JSON through the server-side Agnes bridge, with no secret-name or API-key-shaped leakage.
 
 Golden path:
 
@@ -49,8 +50,9 @@ Golden path:
 5. On the Submission Pack screen, pause on the Official Brief Compliance Receipt: Qoder as primary build canvas, spec/Quest/Expert workflow shown as method evidence, post-event refinement kept rule-clean, and deadline stated as Aug 5 11:30 PM GMT+8.
 6. Pause on the MBRS readiness packet if judges ask about real CoSec workflow depth: Credence complements downstream MBRS/XBRL tools by proving upstream client evidence, validation handoff, export receipt, and late-risk defense.
 7. Pause on the AI Workbench recording packet before or after clicking Agnes: say the AI gets one bounded client context, visible role-scoped jobs/logs/rules, and no authority to auto-send, change compliance state, or provide legal advice.
-8. Pause on the Live Worker smoke receipt if the browser or Agnes call feels slow: it proves the public URL and server-side AI bridge were checked close to submission time, while the terminal fallback remains deterministic.
-9. End on the Submission Pack screen so the organizer requirements are visually obvious.
+8. Pause on the AI-to-staff handoff receipt if there is time: this answers Counto/Bossi-style AI-guided handoff claims by showing AI drafts only, staff approval gate, deterministic schedule, and retained proof.
+9. Pause on the Live Worker smoke receipt if the browser or Agnes call feels slow: it proves the public URL and server-side AI bridge were checked close to submission time, while the terminal fallback remains deterministic.
+10. End on the Submission Pack screen so the organizer requirements are visually obvious.
 
 Role-switch ladder if the recording has extra time:
 

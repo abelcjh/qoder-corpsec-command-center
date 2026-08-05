@@ -69,7 +69,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | Evidence | Location |
 |----------|----------|
 | `npm run build` output | `dist/` |
-| Verification script with 62 assertions | `scripts/verify.mts` |
+| Verification script with 64 assertions | `scripts/verify.mts` |
 | Package scripts | `package.json` |
 
 ## Claim 9: Qoder usage is visible, rule-clean, and reviewable
@@ -112,6 +112,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | Officio / iCorpSec / BizAid / BPOSA360 2026 scan (`https://getofficio.today/`, `https://icorpsec.com/`, `https://www.bizaid.my/our-solutions/`, `https://bposa360.com/saas-govern-ai-business-solution-for-corporate-services/`) | Competitors already advertise automatic reminders, weekly email summaries, audit trails, AI assistants, OCR/document management, AML/CTOS/SSM reports, e-signing, and broad client portals. | Make Credence's narrower evidence packet judge-visible: entity/rule, owner/recipient, cadence status, message/provider snapshot, safety boundary, and retained proof after deactivation. |
 | IRIS INSTANT 2.0 MBRS scan (`https://irisregtech.com/blog/suptech/company-secretaries/iris-instant-20-ai-powered-mbrs-20-filing-software-for-malaysian-company-secretaries/`) | MBRS tooling now emphasizes validation engines, previous-year XML checks, reviewer PDFs, JSON exports, traceable audit trails, and manual handoff to SSM mPortal. | Position Credence as the upstream readiness packet: client evidence ready, validation handoff, export/acceptance receipt, and late-risk defense before the lodger enters downstream MBRS tooling. |
 | iCorpSec / BizAid / BPOSA360 AI scan (`https://icorpsec.com/`, `https://www.bizaid.my/our-solutions/`, `https://bposa360.com/saas-govern-ai-business-solution-for-corporate-services/`) | Broad CoSec suites now market AI assistants, drafting, compliance scanners, due-date queries, OCR/document modules, and 24/7 client support as expected features. | Record the AI Workbench as a governed recording packet: one selected client, role-scoped evidence, human-reviewed output, no-secret Worker bridge, deterministic records as authority, and no chatbot overclaim. |
+| Counto / Bossi Singapore AI-human handoff scan (`https://counto.sg/company-secretary/`, `https://ebos-sg.com/bossi-secretary/`) | Singapore providers now advertise AI-guided submissions, expert-team handoff, automated deadline alerts, and background audit trails. | Make Credence's handoff visible in the Submission Pack: AI drafts only, staff approval gate, deterministic schedule, and reviewer-safe proof retained after the reminder workflow. |
 
 
 ## Current verification receipt
@@ -119,7 +120,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 - Required command before shipping: `npm run build && npm run verify`
 - Expected verify scope: working-day recurrence, run generation, cron simulation, department scoping, company deactivation, schema/docs checks.
 - Safe-send boundary: the hackathon build records fixture-safe send/proof rows and does not contact real clients from the frontend.
-- Live Worker smoke receipt from Aug 5 20:28 GMT+8 Ralph loop: `/` returned HTTP 200 app HTML and `POST /api/ai-brief` returned HTTP 200 fixture JSON using a browser-like smoke request; no secret-name or API-key-shaped values were exposed. Use this as the demo reliability proof before recording; if the network stalls, fall back to the build+verify terminal receipt.
+- Live Worker smoke receipt from Aug 5 20:40 GMT+8 Ralph loop: `/` returned HTTP 200 app HTML and `POST /api/ai-brief` returned HTTP 200 fixture JSON using a browser-like smoke request; no secret-name or API-key-shaped values were exposed. Use this as the demo reliability proof before recording; if the network stalls, fall back to the build+verify terminal receipt.
 
 ## Evidence freshness receipt
 
@@ -134,6 +135,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | MBRS Maker/Lodger cadence | T-60 chase → T-30 prepare → T-7 validate → acceptance receipt turns one MBRS deadline into a reviewer-safe operational control loop. | Submission Pack screen MBRS control-loop panel; final video voiceover after evidence freshness |
 | MBRS readiness packet | Client evidence ready → validation handoff → export receipt → late-risk defense explains how Credence complements downstream MBRS/XBRL tools instead of pretending to replace them. | Submission Pack screen MBRS readiness packet panel; final video line before AI Workbench |
 | AI Workbench recording packet | Selected client only, role-scoped evidence, human-reviewed wording, no-secret bridge, deterministic authority, and competitor-trap avoidance turn Agnes into governed product AI instead of a generic assistant. | Submission Pack screen AI Workbench recording packet; AI Workbench screen; live smoke secret-shape checks |
+| AI-to-staff handoff receipt | AI drafts only → staff approval gate → deterministic schedule → retained proof shows why Credence is safer than an opaque AI-guided filing assistant. | Submission Pack screen handoff receipt; final video line before the organizer checklist |
 | Singapore practice-suite calibration | ClientBase / VOPlus-style platforms already sell whole-practice visibility, ACRA/AGM deadline tracking, compliance dashboards, document portals, audit trails, and system-bounded AI. | Submission Pack competitor calibration now tells Abel to avoid a broad-suite claim and prove the narrow owner-specific chase → reviewer-safe proof receipt instead |
 
 ---
@@ -156,7 +158,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 
 | Evidence | Location |
 |----------|----------|
-| Aug 5 20:28 GMT+8 remote smoke check returned HTTP 200 app HTML for `/` on the Cloudflare Worker | terminal smoke receipt from Ralph loop; `src/components/screens/SubmissionPackScreen.tsx` |
+| Aug 5 20:40 GMT+8 remote smoke check returned HTTP 200 app HTML for `/` on the Cloudflare Worker | terminal smoke receipt from Ralph loop; `src/components/screens/SubmissionPackScreen.tsx` |
 | Same smoke check returned HTTP 200 JSON from `POST /api/ai-brief` with fixture-only request data and browser-like headers, while no secret-name or API-key-shaped values were exposed | terminal smoke receipt from Ralph loop; `src/components/screens/SubmissionPackScreen.tsx` |
 | If live network/AI stalls during recording, the documented fallback remains `npm run build && npm run verify` instead of unsafe external sends | `VIDEO_AND_SOCIAL_FINAL_PACK.md`, `SUBMISSION_CHECKLIST.md` |
 
@@ -187,3 +189,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 ## Research signal — 2026 enterprise-agent winner bar
 
 A compact winner scan found that recent enterprise-agent winners are rewarded for acting inside real workflows and leaving inspectable evidence, not for generic chat UX. Examples include AWS/GitLab-style winners with transparent coverage decisions, MR/compliance evidence, tests, and audit trails. Credence's practical response is the reviewer-safe proof packet: the demo now shows a deterministic packet ID, freshness state, retained fields, and the no-secret export boundary for each reminder proof row.
+
+## Research signal — Singapore AI-human handoff bar
+
+A Singapore CorpSec scan found incumbents already advertising AI-guided submissions, expert team handoffs, automated alerts, and background audit trails. Credence's response is to make the AI-to-staff handoff a judge-visible receipt: Agnes drafts only, a human owner approves the rule/job path, deterministic working-day logic schedules the chase, and reviewer-safe proof survives for later inspection.

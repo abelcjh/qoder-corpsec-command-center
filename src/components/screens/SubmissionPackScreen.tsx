@@ -51,6 +51,12 @@ const marketFindings = [
     credenceAngle: 'Differentiate as a human-approved command center where AI assists messy intake while deterministic rules create the deadline/job/proof trail.',
   },
   {
+    source: 'Counto / Bossi AI-human handoff scan',
+    url: 'https://counto.sg/company-secretary/',
+    signal: 'Singapore CorpSec products already market AI-guided submissions, expert-team handoff, automated deadline alerts, and background audit trails.',
+    credenceAngle: 'Make the handoff inspectable: Agnes drafts the brief, staff approves the reminder, deterministic rules schedule it, and the proof row records what was retained for review.',
+  },
+  {
     source: 'ClientBase / VOPlus Singapore scan',
     url: 'https://clientbase.pro/',
     signal: 'Singapore practice platforms already sell whole-practice visibility, ACRA/AGM deadline tracking, compliance dashboards, audit trails, document portals, and AI that stays inside the system.',
@@ -145,11 +151,11 @@ const judgeLiveCheck = [
   ['Golden loop', 'Client Database → Scheduled Queue → Send Logs / Evidence → Proof → AI Workbench → Qoder Build Ledger → Submission Pack.'],
   ['AI endpoint expectation', 'Click Generate Agnes briefing once; if Agnes/Cloudflare is unavailable, show the visible deterministic fallback banner as resilience proof rather than hiding it.'],
   ['No side effects', 'Do not send email, WhatsApp, social posts, or forms from the app; the demo uses fixture-safe proof rows and human-reviewed copy only.'],
-  ['Final proof command', 'Keep terminal receipt ready: npm run build && npm run verify, currently covering 62 deterministic assertions plus build output.'],
+  ['Final proof command', 'Keep terminal receipt ready: npm run build && npm run verify, currently covering 64 deterministic assertions plus build output.'],
 ];
 
 const liveSmokeReceipt = [
-  ['Current live smoke check', 'Aug 5 20:28 GMT+8: live Worker home route returned HTTP 200 app HTML and the Agnes bridge returned HTTP 200 JSON with a browser-like fixture request, plus no-secret/API-key-shape checks passed.'],
+  ['Current live smoke check', 'Aug 5 20:40 GMT+8: live Worker home route returned HTTP 200 app HTML and the Agnes bridge returned HTTP 200 JSON with a browser-like fixture request, plus no-secret/API-key-shape checks passed.'],
   ['Home page', 'Open the deployed Worker first; the latest smoke confirms the staff-login app shell loads from the public URL, not only from local dev.'],
   ['Agnes API route', 'POST /api/ai-brief returned HTTP 200 JSON for a safe fixture company, proving the server-side AI bridge is reachable without exposing the key.'],
   ['Recording fallback', 'If the live network stalls, narrate the saved smoke receipt plus npm run build && npm run verify instead of improvising.'],
@@ -162,6 +168,13 @@ const aiWorkbenchRecordingPacket = [
   ['No-secret bridge', 'The live smoke checks `/api/ai-brief` through the Worker and verifies the response does not expose Agnes secret names or API-key-shaped values.'],
   ['Deterministic authority', 'Client records, rules, scheduled jobs, and proof rows remain the source of truth; AI cannot change legal/compliance status by itself.'],
   ['Competitor trap avoided', 'Market scans show CoSec suites already advertise AI assistants, so the winning angle is governed AI over reviewer-safe proof, not another chatbot.'],
+];
+
+const humanHandoffReceipt = [
+  ['AI drafts only', 'Agnes can summarize the selected client, risks, and suggested wording, but cannot mark compliance complete or send client messages.'],
+  ['Staff approval gate', 'The recording should show a human owner choosing the rule/job path before any reminder becomes scheduled work.'],
+  ['Deterministic schedule', 'Working-day recurrence and department scoping decide the queue; AI text is advisory context around that audited workflow.'],
+  ['Proof retained', 'The handoff ends in reviewer-safe evidence fields — owner, recipient, cadence, snapshot, provider/message ID field, and unresolved risk.'],
 ];
 
 const demoScenes = [
@@ -283,6 +296,21 @@ export function SubmissionPackScreen() {
         </CardHeader>
         <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
           {aiWorkbenchRecordingPacket.map(([label, detail]) => (
+            <div key={label} className="rounded-xl border border-emerald-500/20 bg-emerald-950/10 p-4">
+              <div className="font-semibold text-emerald-100">{label}</div>
+              <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2"><ClipboardList size={18} className="text-emerald-500" /> AI-to-staff handoff receipt</CardTitle>
+          <CardDescription>Competitor response: AI-guided CorpSec products are common, so Credence makes the approval handoff and retained proof visible</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+          {humanHandoffReceipt.map(([label, detail]) => (
             <div key={label} className="rounded-xl border border-emerald-500/20 bg-emerald-950/10 p-4">
               <div className="font-semibold text-emerald-100">{label}</div>
               <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
