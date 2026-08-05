@@ -80,6 +80,14 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | Qoder Security checkpoint documents optional L1/L2/L3 scan path and credit/access limitation | `QODER_BUILD_LEDGER.md` |
 | Submission Pack screen tells judges where to look during the recording | `src/components/screens/SubmissionPackScreen.tsx`, `src/components/screens/BuildLedgerScreen.tsx` |
 
+## Claim 10: Agnes AI assists at the edge while deterministic records stay authoritative
+
+| Evidence | Location |
+|----------|----------|
+| Cloudflare Worker keeps Agnes API key server-side and exposes `/api/ai-brief` only | `cloudflare-worker.ts`, `wrangler.jsonc` |
+| AI Workbench displays bounded client/job/log/rule context, advisory risks/actions/client wording, and deterministic fallback | `src/components/screens/AIWorkbenchScreen.tsx` |
+| Human-review and non-legal-advice boundary documented | `README.md`, `VIDEO_AND_SOCIAL_FINAL_PACK.md` |
+
 ---
 
 ## Rubric proof map for final submission

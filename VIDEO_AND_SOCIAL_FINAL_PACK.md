@@ -23,8 +23,9 @@ Target length: 2:35.
 | 1:15–1:40 | Rules Library | "Rules encode reusable compliance reminders: Annual Return, CP204/Form C, audited financial statements, AGM notice, and management accounts." |
 | 1:40–2:05 | Scheduled Queue + New Send Job preview | "The working-day engine previews follow-ups and skips weekends, so staff know exactly what will happen before approving a reminder workflow." |
 | 2:05–2:25 | Send Logs / Evidence | "Every reminder produces a reviewer-safe proof row: owner, recipient, timestamp, evidence type, provider/message ID field, Gmail print status, and message snapshot." |
-| 2:25–2:45 | Qoder Build Ledger + Submission Pack | "Qoder produced the full-stack upgrade: Supabase schema, React/Tailwind UI, reminder engine, scoping, verification harness, and documentation. Build plus verify passes." |
-| 2:45–2:55 | Closing | "Credence turns compliance chasing into defensible reminder evidence — built with Qoder, verified, and ready for real corporate-secretarial teams." |
+| 2:25–2:40 | AI Workbench | "Agnes AI drafts the messy brief and client wording, but Credence keeps the deterministic client, rule, schedule, and proof records authoritative and human-reviewed." |
+| 2:40–2:55 | Qoder Build Ledger + Submission Pack | "Qoder produced the full-stack upgrade: Supabase schema, React/Tailwind UI, reminder engine, scoping, verification harness, and documentation. Build plus verify passes." |
+| 2:55–3:00 | Closing | "Credence turns compliance chasing into defensible reminder evidence — built with Qoder, verified, and ready for real corporate-secretarial teams." |
 
 ## Demo reliability checklist
 

@@ -22,6 +22,7 @@ Core capabilities:
 - **New Send Job** — Choose company, apply a rule or write a custom body, preview working-day recurrence, and schedule.
 - **Scheduled Queue** — Recurring reminder jobs with working-day recurrence until a stop date.
 - **Send Logs / Evidence** — Timestamped database proof records with provider/message IDs, Gmail print-document fields, sender/recipient metadata, and message snapshots.
+- **Agnes AI Workbench** — Server-side Agnes briefing for executive summary, risks, reviewed client wording, and proof notes while deterministic Credence records remain the source of truth.
 - **Qoder Build Ledger** — Live view of the artifacts and capabilities Qoder delivered.
 - **Supabase Cloud Wired** — Staff credentials, client profiles, scheduled jobs, and proof logs load from the CLPC Supabase project via `.env.local`.
 

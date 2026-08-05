@@ -14,6 +14,13 @@ type AIBrief = {
   mode?: string;
 };
 
+const governanceReceipts = [
+  ['Deterministic record', 'Client, rule, schedule, owner, and proof-log state remain the source of truth in Credence, not in the model output.'],
+  ['AI at the edge', 'Agnes drafts the executive brief, risks, next actions, and client wording from a bounded context packet only.'],
+  ['Human approval', 'Every compliance action and external client message stays review-before-send; AI copy is advisory, editable, and non-legal advice.'],
+  ['Fallback visible', 'If the Cloudflare/Agnes route is unavailable, the screen switches to a local deterministic fallback instead of blocking the demo.'],
+];
+
 export interface AIWorkbenchScreenProps {
   user: StaffUser;
   companies: Company[];
@@ -109,6 +116,21 @@ export function AIWorkbenchScreen({ user, companies, rules, jobs, logs }: AIWork
           Agnes fallback active: {error}
         </div>
       )}
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2"><ShieldAlert size={18} className="text-emerald-400" /> AI governance receipt</CardTitle>
+          <CardDescription>Enterprise-ready winner pattern: generative briefing at the edge, deterministic audit system in the middle</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+          {governanceReceipts.map(([label, detail]) => (
+            <div key={label} className="rounded-xl border border-brand-border bg-brand-surface/40 p-4">
+              <div className="font-semibold text-brand-text">{label}</div>
+              <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
 
       <div className="grid gap-5 lg:grid-cols-3">
         <Card className="lg:col-span-2">
