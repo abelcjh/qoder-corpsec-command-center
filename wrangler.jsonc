@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "credence-qoder-corpsec",
+  "main": "cloudflare-worker.ts",
+  "compatibility_date": "2026-08-05",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application"
+  },
+  "vars": {
+    "AGNES_BASE_URL": "https://apihub.agnes-ai.com/v1",
+    "AGNES_MODEL": "agnes-2.5-flash"
+  }
+}
