@@ -69,7 +69,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | Evidence | Location |
 |----------|----------|
 | `npm run build` output | `dist/` |
-| Verification script with 113 assertions | `scripts/verify.mts` |
+| Verification script with 120 assertions | `scripts/verify.mts` |
 | Package scripts | `package.json` |
 
 ## Claim 9: Qoder usage is visible, rule-clean, and reviewable
@@ -125,7 +125,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 - Required command before shipping: `npm run build && npm run verify`
 - Expected verify scope: working-day recurrence, run generation, cron simulation, department scoping, company deactivation, schema/docs checks.
 - Safe-send boundary: the hackathon build records fixture-safe send/proof rows and does not contact real clients from the frontend.
-- Live Worker smoke receipt from Aug 5 23:55 GMT+8 Ralph loop: `/` returned HTTP 200 app HTML in 207ms and `POST /api/ai-brief` returned HTTP 200 fixture JSON in 3.9s using a browser-like smoke request; no secret-name or API-key-shaped values were exposed. Use this as the demo reliability proof before recording; if the network stalls, fall back to the build+verify terminal receipt.
+- Live Worker smoke receipt from Aug 6 00:23 GMT+8 Ralph loop: `/` returned HTTP 200 app HTML in 225ms and `POST /api/ai-brief` returned HTTP 200 fixture JSON in 10.8s using a browser-like smoke request; no secret-name or API-key-shaped values were exposed. Use this as the demo reliability proof before recording; if the network stalls, fall back to the build+verify terminal receipt.
 
 ## Evidence freshness receipt
 
@@ -173,8 +173,8 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 
 | Evidence | Location |
 |----------|----------|
-| Aug 5 23:55 GMT+8 remote smoke check returned HTTP 200 app HTML for `/` on the Cloudflare Worker | terminal smoke receipt from Ralph loop; `src/components/screens/SubmissionPackScreen.tsx` |
-| Same smoke check returned HTTP 200 JSON from `POST /api/ai-brief` with fixture-only request data and browser-like headers in 3.9s, while no secret-name or API-key-shaped values were exposed | terminal smoke receipt from Ralph loop; `src/components/screens/SubmissionPackScreen.tsx` |
+| Aug 6 00:23 GMT+8 remote smoke check returned HTTP 200 app HTML for `/` on the Cloudflare Worker | terminal smoke receipt from Ralph loop; `src/components/screens/SubmissionPackScreen.tsx` |
+| Same smoke check returned HTTP 200 JSON from `POST /api/ai-brief` with fixture-only request data and browser-like headers in 10.8s, while no secret-name or API-key-shaped values were exposed | terminal smoke receipt from Ralph loop; `src/components/screens/SubmissionPackScreen.tsx` |
 | If live network/AI stalls during recording, the documented fallback remains `npm run build && npm run verify` instead of unsafe external sends | `VIDEO_AND_SOCIAL_FINAL_PACK.md`, `SUBMISSION_CHECKLIST.md` |
 
 ## Claim 14: Expert Mode workflow is replayable without overclaiming hidden traces
@@ -270,6 +270,10 @@ A compact Aug 5 scan of recent enterprise-agent hackathon winners found repeated
 |----------|----------|
 | Qoder Quest docs state Agent/Experts mode is selected at task start and cannot be switched later; Credence now turns that into a judge-visible mode-choice receipt instead of vague Qoder mentions | `src/components/screens/SubmissionPackScreen.tsx`, `scripts/verify.mts` |
 | Experts Mode docs position plan-before-execution, expert coordination, and intervention notifications as the workflow shape; Credence maps those to Spec.md, preserved prompts, human checkpoints, manual side-effect boundaries, and rerunnable verifier output | `Spec.md`, `QODER_FULLSTACK_PROMPT.md`, `QODER_TASK_PROMPT.md`, `QODER_BUILD_LEDGER.md` |
+
+## Latest Ralph-loop research signal — HITL audit workflow bar
+
+A compact Aug 6 scan of current agentic workflow automation winners found repeated enterprise patterns: intake from real work channels, deterministic policy/rule checks, human-in-the-loop review for borderline or risky actions, JSON/audit trails beside the artifact, and fallback/guardrail handling when AI confidence or upstream services fail. Credence's response remains deliberately narrow: the demo should not pitch a broad CoSec suite, but one owner-specific statutory chase that produces reviewer-safe proof, a deterministic authority chain, and a governed Agnes brief before any human-controlled external action.
 
 ## Claim 26: Proof packets expose authority controls, not only hashes
 

@@ -194,7 +194,7 @@ for (const doc of docs) {
 }
 const submissionPack = readFileSync(resolve(root, 'src/components/screens/SubmissionPackScreen.tsx'), 'utf-8');
 assert(submissionPack.includes('Final readiness receipt'), 'Submission Pack includes final readiness receipt');
-assert(submissionPack.includes('Aug 5 23:55 GMT+8'), 'Submission Pack includes latest Aug 5 23:55 live smoke receipt');
+assert(submissionPack.includes('Aug 6 00:23 GMT+8'), 'Submission Pack includes latest Aug 6 00:23 live smoke receipt');
 assert(submissionPack.includes('Manual boundaries'), 'Submission Pack keeps manual boundary receipt visible');
 assert(submissionPack.includes('60-second judge live check'), 'Submission Pack includes 60-second judge live check');
 assert(submissionPack.includes('Client Database → Scheduled Queue → Send Logs / Evidence → Proof → AI Workbench'), 'Submission Pack documents the golden demo loop');
