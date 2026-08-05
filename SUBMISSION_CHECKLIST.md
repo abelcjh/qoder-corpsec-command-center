@@ -33,6 +33,7 @@
 - [x] PROOF_LEDGER.md — Claims-to-artifacts mapping
 - [x] DEMO_SCRIPT.md — Demo walkthrough for judges
 - [x] SUBMISSION_CHECKLIST.md — This checklist
+- [x] VIDEO_AND_SOCIAL_FINAL_PACK.md — Ready-to-record 2–3 minute video run of show, social drafts, submission form values, and fallback recording path
 
 ### Scripts
 
@@ -108,6 +109,7 @@ QODER_BUILD_LEDGER.md     Build process documentation
 PROOF_LEDGER.md           Claims-to-artifacts mapping
 DEMO_SCRIPT.md            Demo walkthrough
 SUBMISSION_CHECKLIST.md   This file
+VIDEO_AND_SOCIAL_FINAL_PACK.md  Final video run of show, social drafts, and paste-ready submission values
 ```
 
 
