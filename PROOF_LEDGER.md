@@ -124,7 +124,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 - Required command before shipping: `npm run build && npm run verify`
 - Expected verify scope: working-day recurrence, run generation, cron simulation, department scoping, company deactivation, schema/docs checks.
 - Safe-send boundary: the hackathon build records fixture-safe send/proof rows and does not contact real clients from the frontend.
-- Live Worker smoke receipt from Aug 5 22:21 GMT+8 Ralph loop: `/` returned HTTP 200 app HTML in 197ms and `POST /api/ai-brief` returned HTTP 200 fixture JSON in 10.0s using a browser-like smoke request; no secret-name or API-key-shaped values were exposed. Use this as the demo reliability proof before recording; if the network stalls, fall back to the build+verify terminal receipt.
+- Live Worker smoke receipt from Aug 5 22:28 GMT+8 Ralph loop: `/` returned HTTP 200 app HTML in 176ms and `POST /api/ai-brief` returned HTTP 200 fixture JSON in 9.7s using a browser-like smoke request; no secret-name or API-key-shaped values were exposed. Use this as the demo reliability proof before recording; if the network stalls, fall back to the build+verify terminal receipt.
 
 ## Evidence freshness receipt
 

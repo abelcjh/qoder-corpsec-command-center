@@ -255,9 +255,9 @@ npm run build && npm run verify && npm run smoke:live
 `smoke:live` checks the public Cloudflare Worker home route and posts fixture-safe data to `/api/ai-brief`. It verifies HTTP 200 responses, JSON shape, and that no Agnes secret-shaped values are exposed. This improves demo reliability without sending email, WhatsApp, forms, or client messages.
 
 
-## Final readiness receipt — Aug 5 22:21 GMT+8
+## Final readiness receipt — Aug 5 22:28 GMT+8
 
-- `npm run smoke:live` passed against the public Cloudflare Worker: home HTTP 200 app shell in 197ms; `/api/ai-brief` HTTP 200 JSON in 10.0s.
+- `npm run smoke:live` passed against the public Cloudflare Worker: home HTTP 200 app shell in 176ms; `/api/ai-brief` HTTP 200 JSON in 9.7s.
 - Secret-name and API-key-shaped leakage checks passed.
 - Keep `npm run build && npm run verify` visible as the local fallback receipt.
 - Manual boundary: do not send social posts, forms, email, WhatsApp, or legal-status changes from the app.
