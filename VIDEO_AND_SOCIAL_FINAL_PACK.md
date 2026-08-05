@@ -32,7 +32,7 @@ npm run build && npm run verify
 npm run dev
 ```
 
-Live smoke receipt to mention if judges ask about deployment reliability: on the Aug 5 23:36 GMT+8 Ralph smoke check, the Cloudflare Worker home route returned HTTP 200 app HTML in 191ms and `POST /api/ai-brief` returned HTTP 200 fixture JSON in 13.0s through the server-side Agnes bridge, with no secret-name or API-key-shaped leakage.
+Live smoke receipt to mention if judges ask about deployment reliability: on the Aug 5 23:55 GMT+8 Ralph smoke check, the Cloudflare Worker home route returned HTTP 200 app HTML in 207ms and `POST /api/ai-brief` returned HTTP 200 fixture JSON in 3.9s through the server-side Agnes bridge, with no secret-name or API-key-shaped leakage.
 
 Golden path:
 
