@@ -118,6 +118,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | Qoder Experts Mode docs (`https://docs.qoder.com/user-guide/quest/experts-mode`) | Experts Mode emphasizes goal-first prompting, generated plans before execution, expert coordination, visible task progress, and human intervention/confirmation points. | Add a Submission Pack Qoder Experts Mode replay receipt so judges can see Qoder centrality through durable artifacts — Spec, Qoder prompts, build ledger, proof ledger, and `npm run build && npm run verify` — without overclaiming private canvas traces. |
 | Trust Receipt / enterprise agent proof-layer winner scan (`https://ashah007.medium.com/we-won-at-agi-house-by-building-the-proof-layer-for-ai-agents-ebdd0f27eced`) | A recent agent-infrastructure winner frames the prize-winning trust layer as receipts for identity, authority, intent alignment, policy compliance, and provenance rather than screenshots alone. | Add the Submission Pack authority/provenance receipt: staff identity, delegated rule authority, approved intent, no-send policy boundary, and reviewer-safe provenance retained after deactivation. |
 | Trust Receipt / AgentAudit verifier scan (`https://github.com/ankitshah009/TrustReceipt`, `https://lablab.ai/ai-hackathons/techex-intelligent-enterprise-solutions-hackathon/diego-ia-enterprise/agentaudit-immutable-ai-audit-trail`) | Current agent-proof winners emphasize receipts that can be independently verified from hashes, policy outcomes, and bounded evidence fields, not merely screenshot-trusted logs. | Add the Submission Pack offline verifier receipt: deterministic proof packet ID, reviewer-safe fields, freshness recheck, and blocked-action/no-send receipt so the judge can rerun the proof story from retained evidence. |
+| Aug 6 Qoder/market refresh (`https://luma.com/92h6pyl1`, `https://docs.qoder.com/user-guide/quest/overview`, `https://getofficio.today/`, `https://ezcosec.com/`) | The organizer still frames Qoder as the primary build canvas for real functional apps, while Malaysian CoSec competitors sell broad portals, reminders, statutory records, and AI drafting/support. | Keep the final recording anchored on the narrow proof loop: Qoder-built client DB → deterministic rule/job → reviewer-safe retained receipt → Agnes advisory with manual submission/send boundaries. |
 
 
 ## Current verification receipt
@@ -125,7 +126,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 - Required command before shipping: `npm run build && npm run verify`
 - Expected verify scope: working-day recurrence, run generation, cron simulation, department scoping, company deactivation, schema/docs checks.
 - Safe-send boundary: the hackathon build records fixture-safe send/proof rows and does not contact real clients from the frontend.
-- Live Worker smoke receipt from Aug 6 00:30 GMT+8 Ralph loop: `/` returned HTTP 200 app HTML in 208ms and `POST /api/ai-brief` returned HTTP 200 fixture JSON in 17.0s using a browser-like smoke request; no secret-name or API-key-shaped values were exposed. Use this as the demo reliability proof before recording; if the network stalls, fall back to the build+verify terminal receipt.
+- Live Worker smoke receipt from Aug 6 00:38 GMT+8 Ralph loop: `/` returned HTTP 200 app HTML in 180ms and `POST /api/ai-brief` returned HTTP 200 fixture JSON in 10.5s using a browser-like smoke request; no secret-name or API-key-shaped values were exposed. Use this as the demo reliability proof before recording; if the network stalls, fall back to the build+verify terminal receipt.
 
 ## Evidence freshness receipt
 
@@ -173,8 +174,8 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 
 | Evidence | Location |
 |----------|----------|
-| Aug 6 00:30 GMT+8 remote smoke check returned HTTP 200 app HTML for `/` on the Cloudflare Worker | terminal smoke receipt from Ralph loop; `src/components/screens/SubmissionPackScreen.tsx` |
-| Same smoke check returned HTTP 200 JSON from `POST /api/ai-brief` with fixture-only request data and browser-like headers in 17.0s, while no secret-name or API-key-shaped values were exposed | terminal smoke receipt from Ralph loop; `src/components/screens/SubmissionPackScreen.tsx` |
+| Aug 6 00:38 GMT+8 remote smoke check returned HTTP 200 app HTML for `/` on the Cloudflare Worker | terminal smoke receipt from Ralph loop; `src/components/screens/SubmissionPackScreen.tsx` |
+| Same smoke check returned HTTP 200 JSON from `POST /api/ai-brief` with fixture-only request data and browser-like headers in 10.5s, while no secret-name or API-key-shaped values were exposed | terminal smoke receipt from Ralph loop; `src/components/screens/SubmissionPackScreen.tsx` |
 | If live network/AI stalls during recording, the documented fallback remains `npm run build && npm run verify` instead of unsafe external sends | `VIDEO_AND_SOCIAL_FINAL_PACK.md`, `SUBMISSION_CHECKLIST.md` |
 
 ## Claim 14: Expert Mode workflow is replayable without overclaiming hidden traces
