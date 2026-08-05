@@ -56,7 +56,7 @@
 ```bash
 npm install          # Installs all dependencies
 npm run build        # TypeScript check + Vite build
-npm test             # Verification script passes (90 assertions)
+npm test             # Verification script passes (97 assertions)
 ```
 
 ### Live Worker Smoke Receipt
@@ -180,6 +180,7 @@ From the organizer master deck and UGC screenshot:
 | [Trust Receipt AGI House winner](https://ashah007.medium.com/we-won-at-agi-house-by-building-the-proof-layer-for-ai-agents-ebdd0f27eced) | A current agent-infrastructure winner says every agent action should leave a receipt across identity, authority, intent alignment, policy compliance, and provenance. | Pause on the Authority and provenance receipt: staff identity, delegated rule authority, approved intent snapshot, no-send policy boundary, and reviewer-safe proof provenance after deactivation. |
 | [Trust Receipt repo](https://github.com/ankitshah009/TrustReceipt) / [AgentAudit scan](https://lablab.ai/ai-hackathons/techex-intelligent-enterprise-solutions-hackathon/diego-ia-enterprise/agentaudit-immutable-ai-audit-trail) | Agent-proof winners increasingly frame trust as independently checkable receipts: hashes, policy outcomes, public/private evidence boundaries, and offline verification paths. | Use the new Offline verifier receipt if challenged: Credence's proof packet has a deterministic packet ID, reviewer-safe fields, freshness recheck, and a blocked-action/no-send receipt instead of relying on screenshots. |
 | [Forensa evidence layer](https://lablab.ai/ai-hackathons/techex-intelligent-enterprise-solutions-hackathon/forensa/forensa-evidence-layer-for-ai-agents) / [raucle capability receipts](https://github.laiyagushi.com/craigamcw/raucle) | The enterprise proof bar is moving from “show logs” to auditor challenge paths: receipt hash, authority boundary, policy verdict, safe evidence opening, and offline verification. | If judges ask “how do I know this row is real?”, use the Auditor challenge drill: open one proof row, re-derive packet ID/chain head, show reviewer-safe fields, state the blocked no-send boundary, then point to `npm run build && npm run verify`. |
+| [Microsoft AI agent receipt guidance](https://microsoft.github.io/ai-agents-for-beginners/18-securing-ai-agents/) | Agent receipts prove attribution, integrity, and ordering; they do not by themselves prove correctness, legal sufficiency, or policy soundness. | Pause on the Receipt truth boundary if judges press on audit claims: Credence is honest that receipts make the trail inspectable, while deterministic rules, staff approval, freshness checks, and `npm run verify` provide the workflow control layer. |
 
 ### Aug 5 evidence freshness sweep — Ralph loop
 
@@ -231,7 +232,8 @@ Before recording or live judging, run this exact reliability pass:
 4. Click Agnes briefing once; if the endpoint is unavailable, show the deterministic fallback banner as resilience proof.
 5. Do not send email/WhatsApp/social/form actions from the app; all proof rows are fixture-safe and human-reviewed.
 6. Keep `npm run build && npm run verify` output visible as the deterministic receipt.
-7. Latest remote smoke receipt to say on camera if asked: Aug 5 22:37 GMT+8, `/` returned HTTP 200 app HTML and `/api/ai-brief` returned HTTP 200 fixture JSON in 4.2s through the server-side Agnes bridge, with no secret-name or API-key-shaped leakage.
+7. Latest remote smoke receipt to say on camera if asked: Aug 5 22:57 GMT+8, `/` returned HTTP 200 app HTML and `/api/ai-brief` returned HTTP 200 fixture JSON in 4.8s through the server-side Agnes bridge, with no secret-name or API-key-shaped leakage.
+8. If a judge challenges the proof packet claim, use the Receipt truth boundary: the receipt proves attribution/order/integrity of retained fields, not legal correctness by itself; the verified rule engine and staff approval make the workflow defensible.
 
 ### AI Workbench recording packet — Aug 5 Ralph loop
 

@@ -69,7 +69,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | Evidence | Location |
 |----------|----------|
 | `npm run build` output | `dist/` |
-| Verification script with 90 assertions | `scripts/verify.mts` |
+| Verification script with 97 assertions | `scripts/verify.mts` |
 | Package scripts | `package.json` |
 
 ## Claim 9: Qoder usage is visible, rule-clean, and reviewable
@@ -169,8 +169,8 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 
 | Evidence | Location |
 |----------|----------|
-| Aug 5 22:37 GMT+8 remote smoke check returned HTTP 200 app HTML for `/` on the Cloudflare Worker | terminal smoke receipt from Ralph loop; `src/components/screens/SubmissionPackScreen.tsx` |
-| Same smoke check returned HTTP 200 JSON from `POST /api/ai-brief` with fixture-only request data and browser-like headers in 4.2s, while no secret-name or API-key-shaped values were exposed | terminal smoke receipt from Ralph loop; `src/components/screens/SubmissionPackScreen.tsx` |
+| Aug 5 22:57 GMT+8 remote smoke check returned HTTP 200 app HTML for `/` on the Cloudflare Worker | terminal smoke receipt from Ralph loop; `src/components/screens/SubmissionPackScreen.tsx` |
+| Same smoke check returned HTTP 200 JSON from `POST /api/ai-brief` with fixture-only request data and browser-like headers in 4.8s, while no secret-name or API-key-shaped values were exposed | terminal smoke receipt from Ralph loop; `src/components/screens/SubmissionPackScreen.tsx` |
 | If live network/AI stalls during recording, the documented fallback remains `npm run build && npm run verify` instead of unsafe external sends | `VIDEO_AND_SOCIAL_FINAL_PACK.md`, `SUBMISSION_CHECKLIST.md` |
 
 ## Claim 14: Expert Mode workflow is replayable without overclaiming hidden traces
@@ -243,3 +243,11 @@ A compact Aug 5 scan of recent enterprise-agent hackathon winners found repeated
 | Aug 5 enterprise proof-layer scan found winners like Trust Receipt, AgentAudit, Forensa, and raucle emphasize independently checkable receipts, authority/policy boundaries, tamper-evident chains, and offline verification rather than screenshot trust | Public winner/repo scans captured in the Ralph-loop report |
 | Submission Pack now gives a five-step auditor challenge: open one proof row, re-derive packet ID/chain head, inspect only reviewer-safe fields, show blocked/no-send boundary, and rerun `npm run build && npm run verify` if challenged | `src/components/screens/SubmissionPackScreen.tsx` |
 | Verification harness asserts the auditor challenge drill, re-derive wording, and missing-row detection fallback so this judge-defense surface cannot disappear before recording | `scripts/verify.mts` |
+
+## Claim 21: Receipt proof is honest about its correctness boundary
+
+| Evidence | Location |
+|----------|----------|
+| Aug 5 proof-layer research found a recurring warning in agent receipt guidance: receipts prove attribution, integrity, and ordering, but they do not prove the action was correct or the policy was sound by themselves | Microsoft AI agent receipt guidance; Trust Receipt winner scan |
+| Submission Pack now includes a Receipt truth boundary panel that says exactly what Credence packets prove, what they do not prove, and which deterministic controls sit beside the receipt | `src/components/screens/SubmissionPackScreen.tsx` |
+| Recording line: “the receipt makes the audit trail honest; the verified rule engine and human approval make the workflow defensible” | `VIDEO_AND_SOCIAL_FINAL_PACK.md`, `SUBMISSION_CHECKLIST.md` |
