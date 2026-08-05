@@ -261,3 +261,11 @@ A compact Aug 5 scan of recent enterprise-agent hackathon winners found repeated
 | Aug 5 agent-receipt protocol scan found the enterprise proof bar moving toward public tamper evidence with operator-gated payload disclosure, so verification should not require exposing private business data | Agent Receipts protocol scan; Trust Receipt / AgentAudit winner scans |
 | Submission Pack now includes a Public/private disclosure boundary panel: public receipt ID/chain/freshness/blocked status first, reviewer-gated detail only when needed, and never-exported secrets/raw mailboxes/real send controls | `src/components/screens/SubmissionPackScreen.tsx` |
 | Final video pack tells Abel how to narrate the disclosure boundary without overclaiming cryptography or leaking private client evidence | `VIDEO_AND_SOCIAL_FINAL_PACK.md`, `SUBMISSION_CHECKLIST.md` |
+
+## Claim 25: Qoder mode choice is intentional, docs-backed, and replayable
+
+| Evidence | Location |
+|----------|----------|
+| Qoder Quest docs state Agent/Experts mode is selected at task start and cannot be switched later; Credence now turns that into a judge-visible mode-choice receipt instead of vague Qoder mentions | `src/components/screens/SubmissionPackScreen.tsx`, `scripts/verify.mts` |
+| Experts Mode docs position plan-before-execution, expert coordination, and intervention notifications as the workflow shape; Credence maps those to Spec.md, preserved prompts, human checkpoints, manual side-effect boundaries, and rerunnable verifier output | `Spec.md`, `QODER_FULLSTACK_PROMPT.md`, `QODER_TASK_PROMPT.md`, `QODER_BUILD_LEDGER.md` |
+

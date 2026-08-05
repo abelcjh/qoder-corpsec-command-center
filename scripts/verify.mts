@@ -205,6 +205,9 @@ assert(submissionPack.includes('Qoder Experts Mode replay receipt'), 'Submission
 assert(submissionPack.includes('private canvas traces'), 'Submission Pack avoids overclaiming hidden Qoder canvas traces');
 assert(submissionPack.includes('Plan before execution'), 'Submission Pack states Qoder plan-before-execution workflow proof');
 assert(submissionPack.includes('Replayable proof'), 'Submission Pack ties Qoder workflow to durable rerunnable artifacts');
+assert(submissionPack.includes('Qoder mode-choice receipt'), 'Submission Pack includes Qoder mode-choice receipt');
+assert(submissionPack.includes('cannot be switched later'), 'Submission Pack captures Qoder mode-lock pitfall');
+assert(submissionPack.includes('Notification boundary'), 'Submission Pack maps Qoder intervention notifications to Credence safety boundaries');
 assert(submissionPack.includes('Enterprise trust scorecard'), 'Submission Pack includes enterprise trust winner-calibration scorecard');
 assert(submissionPack.includes('Authority and provenance receipt'), 'Submission Pack includes authority/provenance trust receipt');
 assert(submissionPack.includes('Staff identity'), 'Submission Pack states staff identity as the action owner');

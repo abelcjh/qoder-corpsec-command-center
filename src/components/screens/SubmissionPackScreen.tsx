@@ -176,6 +176,14 @@ const qoderExpertsReplayReceipt = [
   ['Replayable proof', 'Because judges may not see the original Qoder canvas, the repo substitutes durable proof: build ledger, proof ledger, prompts, and npm run build && npm run verify.'],
 ];
 
+const qoderModeChoiceReceipt = [
+  ['Mode locked early', 'Qoder Quest docs warn that Agent/Experts mode is chosen at task start and cannot be switched later, so the build ledger should show intentional delegation rather than ad-hoc prompting.'],
+  ['Experts for complexity', 'Experts Mode is documented for medium-to-large engineering work; Credence uses it as the credible fit for schema, engine, role scoping, AI bridge, UI, QA, and packaging.'],
+  ['Plan review moment', 'The docs emphasize reviewing and adjusting the generated plan before execution; Abel should narrate Spec.md + preserved prompts as the human-approved plan surface.'],
+  ['Notification boundary', 'Qoder surfaces confirmations/interventions when needed; Credence mirrors that safety pattern with manual sends, manual form/social submission, and no legal-status mutation.'],
+  ['Replay substitute', 'If judges cannot inspect the private Qoder canvas, the public substitute is exact prompts, build/proof ledgers, verifier output, and this mode-choice receipt.'],
+];
+
 const tenSecondDemoSpine = [
   ['1. Client database', 'Open Nusantara/Ace from the seeded staff login and show department owners + contacts as the source of truth.'],
   ['2. Rule authority', 'Show the statutory rule and working-day cadence that deterministically creates the scheduled chase.'],
@@ -398,6 +406,21 @@ export function SubmissionPackScreen() {
         </CardHeader>
         <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
           {qoderExpertsReplayReceipt.map(([label, detail]) => (
+            <div key={label} className="rounded-xl border border-emerald-500/20 bg-emerald-950/10 p-4">
+              <div className="font-semibold text-emerald-100">{label}</div>
+              <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2"><ClipboardList size={18} className="text-emerald-500" /> Qoder mode-choice receipt</CardTitle>
+          <CardDescription>Fresh Qoder docs calibration: prove why Expert/Quest delegation was intentional, human-reviewed, and replayable</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
+          {qoderModeChoiceReceipt.map(([label, detail]) => (
             <div key={label} className="rounded-xl border border-emerald-500/20 bg-emerald-950/10 p-4">
               <div className="font-semibold text-emerald-100">{label}</div>
               <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
