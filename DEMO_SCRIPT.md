@@ -1,4 +1,4 @@
-# Demo Script — CorpSec Command Center
+# Demo Script — Credence / CorpSec Command Center
 
 Step-by-step walkthrough for the hackathon demo presentation.
 
@@ -18,102 +18,129 @@ Open `http://localhost:5173` in a browser.
 
 ## Scene 1: The Problem (30 seconds)
 
-> "Malaysian SMEs face 12+ annual compliance obligations under the Companies Act 2016 — SSM filings, AGMs, tax returns, statutory register updates. Missing a deadline means compound penalties. Company secretaries manage this across dozens of clients using spreadsheets and email."
+> "Corporate secretarial firms like CLPC manage hundreds of client deadlines — annual returns, tax filings, audited financial statements, AGMs. Work often starts before an invoice is raised, so the client database, not the invoice, must be the source of truth. Different departments need different views."
 
-**Show**: The app header and company profile panel.
-
----
-
-## Scene 2: Company Profile (30 seconds)
-
-> "CorpSec Command Center starts with a real Sdn Bhd entity — Nusantara Digital Sdn Bhd, registered with SSM, two directors, a qualified company secretary. All data is deterministic and sourced from Malaysian statutory requirements."
-
-**Show**: Point to registration number, directors, secretary, FY end date.
+**Show**: Login screen with 5 demo staff accounts.
 
 ---
 
-## Scene 3: Compliance Progress (30 seconds)
+## Scene 2: Login & Department Scoping (30 seconds)
 
-> "At a glance, the secretary sees compliance progress — 33% complete with 4 tasks done, 3 in progress, 5 pending, zero overdue. The progress bar and status counts update in real time."
+> "Staff log in with department-scoped access. Let's log in as Corp Sec Staff."
 
-**Show**: Stats bar with progress percentage and status counts.
+**Do**: Select "Corp Sec Staff" and click "Enter Command Center".
 
----
+> "The dashboard shows only the clients, rules, jobs, and logs relevant to corporate secretarial. Tax or Audit staff would see a different slice."
 
-## Scene 4: Task Timeline (30 seconds)
-
-> "The timeline shows all 12 annual compliance tasks sorted by due date. Each task has a status icon, category badge, due date, and evidence count. Click any task to see details."
-
-**Show**: Scroll through the task timeline. Click on "Annual Return (Section 68)".
+**Show**: Dashboard stats and department badge.
 
 ---
 
-## Scene 5: Task Detail — Completed Task (45 seconds)
+## Scene 3: Client Database (30 seconds)
 
-> "This task is completed. It has the SSM statutory reference (Section 68, Companies Act 2016), the owner (Lee Wei Ming), and the due date. Below, there's evidence — an annual return was submitted via MyCoID with acknowledgement reference."
+> "The client database is the source of truth. Each company is tagged with the departments that serve it. Let's look at Nusantara Digital Sdn Bhd."
 
-**Show**: Task detail with status pill, meta grid, and evidence entry.
+**Do**: Navigate to "Client Database", click the eye icon on Nusantara Digital.
 
-> "Notice the AI Draft Summary section — it's clearly marked 'AI-Generated, Review Required' with a distinct amber border. It provides contextual information about the return preparation."
-
-**Show**: AI draft section with badge and content.
+**Show**: Company profile drawer with registration number, directors, secretary, FY end, and contacts.
 
 ---
 
-## Scene 6: Interactive Status Update (45 seconds)
+## Scene 4: Rules Library (30 seconds)
 
-> "Let me show the interactive part. I'll select a pending task — Corporate Tax Filing — and change its status to 'In Progress'."
+> "Compliance rules are reusable reminder templates by department — Annual Return under Section 68, Tax CP204/Form C, Audit FS, AGM, and more."
 
-**Show**: Click on "Corporate Tax Filing (Form C)" in the timeline. Click the "In Progress" status button.
+**Do**: Navigate to "Rules Library".
 
-> "The status pill updates immediately. And if we check the Audit Ledger at the bottom..."
-
-**Show**: Scroll to audit ledger. Point to the new "STATUS_CHANGED" entry at the top.
-
-> "A new ledger entry was created automatically with timestamp, actor, action type, and detail. This creates an immutable audit trail."
+**Show**: List of predefined rules with department badges, recurrence, and template variables.
 
 ---
 
-## Scene 7: Evidence Entry (45 seconds)
+## Scene 5: Create a New Send Job (60 seconds)
 
-> "Now let's add evidence. I'll write a note about the tax computation and reference the artifact."
+> "Now let's schedule a reminder. I'll create a new send job for Nusantara Digital's Annual Return."
 
-**Show**: In the task detail, type in the evidence textarea: "Tax computation finalized. Chargeable income RM 365K verified against audited FS." Type artifact reference: "tax_computation_fy2025.xlsx". Click "Attach".
+**Do**: Navigate to "Scheduled Queue", click "New Send Job".
 
-> "The evidence appears immediately in the list, and the audit ledger shows a new EVIDENCE_ADDED entry. Every action is traceable."
+**Show**:
+1. Select company: Nusantara Digital Sdn Bhd.
+2. Select rule: Annual Return Reminder (Section 68).
+3. Subject and body auto-populate from the rule template.
+4. Set first send date/time and stop date.
+5. Click "Refresh Preview" to see the first 10 working-day runs.
 
-**Show**: New evidence item in list and new ledger entry.
+> "Notice the recurrence skips weekends — every run lands on a working day."
 
----
-
-## Scene 8: Audit Ledger (30 seconds)
-
-> "The audit ledger is the backbone of compliance proof. It shows every status change, evidence addition, and system event with timestamps. Color-coded action tags make it scannable. This is what auditors and regulators need to see."
-
-**Show**: Scroll through the full audit ledger, pointing out different action types.
-
----
-
-## Scene 9: Human Secretary Review (30 seconds)
-
-> "Finally, the Human Secretary Review panel. The company secretary reviews all compliance work and documents findings. Here we see 6 findings, a pending approval status, and notes prioritizing the FS sign-off and tax filing."
-
-**Show**: Review panel with findings and notes.
-
-> "The disclaimer at the bottom is important — this system provides operational workflow assistance only. It does not give legal advice. The qualified professional always has final approval."
+**Do**: Click "Schedule Job".
 
 ---
 
-## Scene 10: Architecture & Qoder (30 seconds)
+## Scene 6: Scheduled Queue (30 seconds)
 
-> "The entire app was built with Qoder in a single session. React + TypeScript + Vite, no external APIs, all data deterministic. Qoder generated the full project structure, 6 React components, 4 data fixtures, 500+ lines of CSS, and a verification script."
+> "The job now appears in the scheduled queue. From here we can simulate a single send or let the cron simulator run."
 
-**Show**: Point to QODER_BUILD_LEDGER.md or mention the build process.
+**Do**: Click "Simulate" on the newly created job.
 
-> "The verification script confirms all 12 tasks have required fields, all components exist, and all documentation is present."
+**Show**: The send count increases and the job is still active for future runs.
+
+---
+
+## Scene 7: Send Logs / Evidence (45 seconds)
+
+> "Every simulated send creates an immutable log entry: timestamp, recipient, sender, status, message snapshot, and a provider message ID placeholder."
+
+**Do**: Navigate to "Send Logs", click on the latest log row.
+
+**Show**: Detail modal with snapshot and DEMO badge.
+
+> "In production, authoritative proof is a Gmail print-to-PDF or provider receipt. Here we simulate sends and mark them clearly as demo evidence."
+
+---
+
+## Scene 8: Simulate Cron Run (30 seconds)
+
+> "The cron simulator processes all due runs at once."
+
+**Do**: Click "Simulate Cron Run".
+
+**Show**: New log entries appear for every run whose scheduled time has passed.
+
+---
+
+## Scene 9: Deactivate a Company (45 seconds)
+
+> "What happens when a client engagement pauses? Deactivating the company stops future jobs but keeps the history."
+
+**Do**: Navigate to "Client Database", click "Deactivate" on Ace Logistics Sdn Bhd.
+
+**Show**: Company status changes to Inactive.
+
+**Do**: Navigate to "Scheduled Queue" and "Send Logs".
+
+> "Future jobs for Ace Logistics are now deactivated, but the existing send logs remain. This is exactly what CLPC needs: the client database is the source of truth, and evidence is retained."
+
+---
+
+## Scene 10: Switch Departments (30 seconds)
+
+> "Let's prove department scoping. Log out and log in as Tax Staff."
+
+**Do**: Log out, select "Tax Staff", enter.
+
+**Show**: Tax staff sees only tax-tagged clients and tax rules. The dashboard stats update.
+
+---
+
+## Scene 11: Qoder Build Ledger (30 seconds)
+
+> "Finally, the Qoder Build Ledger shows the artifacts Qoder delivered in this session: Supabase schema, reminder engine, UI library, auth scoping, verification harness, and documentation."
+
+**Do**: Navigate to "Qoder Build".
+
+**Show**: Build ledger cards and metrics.
 
 ---
 
 ## Closing (15 seconds)
 
-> "CorpSec Command Center: deterministic compliance workflows for Malaysian SMEs, with AI assistance clearly marked, human review always required, and a full audit trail. Thank you."
+> "Credence / CorpSec Command Center: a Malaysia-first compliance OS prototype with department-scoped client data, working-day reminder jobs, simulated send proof, and full audit retention — built with Qoder. Thank you."

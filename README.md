@@ -1,4 +1,4 @@
-# CorpSec Command Center
+# Credence — CorpSec Command Center
 
 **AI-assisted compliance workflow cockpit for Malaysia-first SMEs and corporate-secretarial providers.**
 
@@ -8,14 +8,18 @@ Built for the **Alibaba Cloud x Qoder Hackathon Singapore 2026**.
 
 ## Overview
 
-CorpSec Command Center is a deterministic compliance workflow tool that helps Malaysian Sdn Bhd companies and their company secretaries manage annual compliance obligations under the Companies Act 2016. It provides:
+Credence / CorpSec Command Center is a compliance reminder and workflow platform for corporate secretarial practices such as CLPC. It puts the **client database at the center** (not invoices), gives each department its own scoped view, and turns statutory deadlines into scheduled reminder jobs with auditable proof.
 
-- **Company Profile** — SSM-registered entity details, directors, secretary
-- **Task Timeline** — 12 annual compliance tasks with due dates and statutory references
-- **Evidence Binder** — Attach notes and artifact references to each task
-- **Audit Ledger** — Immutable log of all status changes and evidence additions
-- **AI Draft Summaries** — Clearly-marked AI-generated context (review required)
-- **Human Review Panel** — Company secretary findings and approval workflow
+Core capabilities:
+
+- **Staff Login & Department Scoping** — Admin, Tax, Audit, Corp Sec, Accounting roles; each sees only relevant clients, rules, jobs, and logs.
+- **Client Database** — Company master records with department tags, contacts, and company-secretary details.
+- **Rules Library** — Predefined reminder templates by department (Annual Return, Tax CP204/Form C, Audit FS, etc.).
+- **New Send Job** — Choose company, apply a rule or write a custom body, preview working-day recurrence, and schedule.
+- **Scheduled Queue** — Recurring reminder jobs with working-day recurrence until a stop date.
+- **Send Logs / Evidence** — Timestamped send snapshots with provider/message IDs and explicit DEMO marking for simulated sends.
+- **Qoder Build Ledger** — Live view of the artifacts and capabilities Qoder delivered.
+- **Supabase-Ready** — Full schema with RLS notes; app falls back to seeded demo mode when credentials are absent.
 
 This system provides **operational workflow assistance only** — it does not constitute legal advice. A qualified company secretary or professional must review and approve all compliance actions.
 
@@ -26,7 +30,7 @@ npm install
 npm run dev
 ```
 
-The app runs at `http://localhost:5173`. No external APIs or credentials required.
+The app runs at `http://localhost:5173`. No external APIs or credentials are required.
 
 ## Scripts
 
@@ -35,54 +39,71 @@ The app runs at `http://localhost:5173`. No external APIs or credentials require
 | `npm run dev` | Start dev server (Vite) |
 | `npm run build` | TypeScript check + production build |
 | `npm run preview` | Preview production build |
-| `npm test` | Run verification script |
-| `npm run verify` | Same as test — checks fixtures and docs |
+| `npm test` | Run verification script (reminder engine, scoping, deactivation, fixtures) |
+| `npm run verify` | Same as test |
 
 ## Tech Stack
 
 - **Vite** — Build tooling
 - **React 18** — UI framework
-- **TypeScript** — Type safety
+- **TypeScript** — Type safety (strict mode)
+- **Tailwind CSS** — Utility-first styling
+- **Supabase** — `@supabase/supabase-js` client adapter + SQL schema
 - **Lucide React** — Icon library
 
 ## Project Structure
 
 ```
 src/
-  components/       UI components (CompanyProfile, TaskTimeline, TaskDetail, etc.)
-  data/             Deterministic fixtures (company, compliance events, audit ledger)
+  components/
+    ui/             shadcn-inspired reusable components
+    screens/        Login, Dashboard, Clients, Rules, Queue, Logs, Proof, Build Ledger
+  data/             Demo fixtures and seed data
+  lib/
+    supabase.ts     Supabase client with demo fallback
+    store.ts        Local/demo app state and actions
+    reminderEngine.ts  Working-day recurrence + simulated sends
+    scoping.ts      Department-scoped filtering
+    reducers.ts     Pure state reducers (e.g. deactivation)
+    utils.ts        cn(), ID/date helpers
   types.ts          Shared TypeScript types
-  App.tsx           Main application with state management
-  App.css           Application styles (dark/cream/crimson theme)
-  main.tsx          Entry point
-  index.css         Global styles and CSS custom properties
+  App.tsx           Root application with navigation
+  index.css         Tailwind directives + design tokens
+supabase/
+  schema.sql        Full PostgreSQL schema with RLS notes
 scripts/
-  verify.mjs        Fixture and documentation verification script
+  verify.mts        Automated verification harness
 docs/
-  README.md         This file
-  Spec.md           Technical specification
-  PROOF_LEDGER.md   Claims-to-artifacts mapping
-  QODER_BUILD_LEDGER.md  Build process documentation
-  DEMO_SCRIPT.md    Demo walkthrough
-  SUBMISSION_CHECKLIST.md  Hackathon submission checklist
+  README.md
+  Spec.md
+  PROOF_LEDGER.md
+  QODER_BUILD_LEDGER.md
+  DEMO_SCRIPT.md
+  SUBMISSION_CHECKLIST.md
 ```
+
+## Supabase Configuration (Optional)
+
+To connect to a real Supabase project instead of demo mode:
+
+```bash
+cp .env.example .env
+# Add your project credentials:
+VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_ANON_KEY=your-anon-key
+```
+
+Then run `supabase/schema.sql` in the Supabase SQL Editor.
 
 ## Compliance Coverage
 
-The fixture covers 12 annual compliance tasks for a Malaysian Sdn Bhd:
+Predefined reminder rules cover:
 
-1. Annual Return (Section 68)
-2. Audited Financial Statements (Section 258)
-3. Annual General Meeting (Section 340)
-4. Corporate Tax Filing (Form C)
-5. Directors' Report (Section 251)
-6. Register of Directors Update (Section 48)
-7. Register of Members Update (Section 50)
-8. Beneficial Ownership Declaration (Section 56)
-9. SST Compliance Review
-10. EPF & SOCSO Compliance Audit
-11. PCB (MTD) Monthly Submission Review
-12. Company Secretary Appointment Verification (Section 235)
+1. Annual Return (Section 68, CA2016)
+2. Corporate Tax Filing (CP204 / Form C, ITA1967)
+3. Audited Financial Statements (Section 258, CA2016)
+4. AGM Notice (Section 340, CA2016)
+5. Monthly Management Accounts (Accounting)
 
 ## License
 

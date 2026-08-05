@@ -1,6 +1,6 @@
-# Qoder Build Ledger — CorpSec Command Center
+# Qoder Build Ledger — Credence / CorpSec Command Center
 
-Documents how Qoder was used throughout the build process for hackathon judging (Qoder usage = 30% of score).
+Documents how Qoder was used to build the upgraded full-stack prototype for hackathon judging (Qoder usage = 30% of score).
 
 ---
 
@@ -9,121 +9,151 @@ Documents how Qoder was used throughout the build process for hackathon judging 
 **Date**: 2026-08-05
 **Agent**: Qoder (autonomous coding assistant)
 **Repository**: qoder-corpsec-command-center
+**Product**: Credence — Malaysia-first corporate-secretarial compliance reminder/workflow platform
 
 ---
 
-## Phase 1: Project Scaffolding
+## Phase 1: Dependency & Configuration Upgrade
 
-**Qoder Action**: Created the full Vite + React + TypeScript project structure from scratch.
+**Qoder Action**: Added Tailwind CSS, PostCSS, Supabase client, and tsx; updated Vite environment types.
 
-Files generated:
-- `package.json` — Dependencies and scripts (react, react-dom, lucide-react, vite, typescript)
-- `vite.config.ts` — Vite configuration with React plugin
-- `tsconfig.json` — Strict TypeScript configuration
-- `index.html` — Entry HTML
-- `src/vite-env.d.ts` — Vite type declarations
-- `.gitignore` — Standard Node/Vite ignores
+Files generated/updated:
+- `package.json` — Added `@supabase/supabase-js`, `tailwindcss`, `autoprefixer`, `postcss`, `clsx`, `tailwind-merge`, `tsx`
+- `tailwind.config.js` — Custom ink/cream/crimson design tokens and animations
+- `postcss.config.js` — Tailwind + autoprefixer pipeline
+- `src/index.css` — Tailwind directives + component utility classes
+- `src/vite-env.d.ts` — `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` declarations
 
 ---
 
-## Phase 2: Data Layer Design
+## Phase 2: Supabase Schema & Client Adapter
 
-**Qoder Action**: Designed the TypeScript data model and created all fixture files.
+**Qoder Action**: Designed the production PostgreSQL schema and a Supabase client that falls back to demo mode.
 
 Files generated:
-- `src/types.ts` — 6 TypeScript interfaces (ComplianceTask, EvidenceEntry, Company, ComplianceEvent, AuditLedgerEntry, ReviewSummary)
-- `src/data/company.ts` — Nusantara Digital Sdn Bhd fixture with full SSM details
-- `src/data/complianceEvents.ts` — 12 compliance tasks with statutory references (CA2016 sections, ITA1967, STA2018, EPFA1991, etc.)
-- `src/data/auditLedger.ts` — Pre-populated audit ledger with 6 historical entries
-- `src/data/reviewSummary.ts` — Company secretary review with 6 findings
+- `supabase/schema.sql` — 8 tables (`staff_users`, `companies`, `company_contacts`, `compliance_rules`, `scheduled_send_jobs`, `send_logs`, `proof_documents`, `audit_events`), indexes, triggers, RLS notes
+- `src/lib/supabase.ts` — Reads env vars; creates client only when configured
+- `src/lib/database.types.ts` — Minimal typed Supabase database wrapper
+
+---
+
+## Phase 3: Domain Model & Seed Data
+
+**Qoder Action**: Expanded the TypeScript data model to cover staff auth, companies, contacts, rules, jobs, logs, proofs, and audit events. Seeded 5 demo staff users, 3 companies, 4 contacts, 5 rules, 2 jobs, and sample send logs.
+
+Files generated/updated:
+- `src/types.ts` — Full domain types
+- `src/data/seed.ts` — Demo fixtures + helper functions
+- `src/data/company.ts` — Updated to new `Company` shape
 
 Key decisions:
-- 12 tasks chosen to cover statutory, governance, tax, and audit categories
-- Each task includes SSM section references for authenticity
-- AI drafts included for 5 tasks, clearly marked with "AI-Generated — Review Required" badge
-- Financial data (RM 2.4M revenue, RM 380K net profit) reflects realistic SME scale
+- Companies carry `departments[]` so each department sees only its clients.
+- Send logs carry `demoMarked` and `evidenceType` to distinguish simulated vs. live proof.
+- Audit events are immutable and actor-tagged.
 
 ---
 
-## Phase 3: UI Component Development
+## Phase 4: Reminder Engine
 
-**Qoder Action**: Built 6 React components with full TypeScript typing and interactive state management.
+**Qoder Action**: Implemented a pure TypeScript reminder engine with working-day recurrence, cron simulation, and proof recording.
 
 Files generated:
-- `src/components/CompanyProfile.tsx` — Grid layout with company details and Lucide icons
-- `src/components/StatsBar.tsx` — Compliance progress bar with category counts
-- `src/components/TaskTimeline.tsx` — Scrollable task list sorted by due date with status icons
-- `src/components/TaskDetail.tsx` — Full task view with status buttons, AI draft panel, evidence list, and evidence form
-- `src/components/AuditLedger.tsx` — Tabular audit log with color-coded action tags
-- `src/components/ReviewPanel.tsx` — Secretary review with findings, approval status, and disclaimer
+- `src/lib/reminderEngine.ts` — `createScheduledSendJob`, `buildScheduledSendJobRuns`, `simulateDueSends`, `simulateCronSend`, `recordSendProof`
 
-Interactive features implemented:
-- Task status updates via button clicks (pending/in_progress/completed/overdue)
-- Evidence note entry with artifact reference input
-- Automatic audit ledger entry generation on every state change
-- Real-time UI updates via React useState
+Key decisions:
+- Recurrence skips weekends (Mon–Fri only).
+- Run generation respects `stopDate` and caps at 500 runs for safety.
+- Cron simulator deduplicates against existing logs.
+- All simulated sends are marked with `demoMarked: true`.
 
 ---
 
-## Phase 4: Theme and Styling
+## Phase 5: UI Component Library
 
-**Qoder Action**: Created a 500+ line CSS theme with dark/cream/crimson professional palette.
+**Qoder Action**: Built a custom shadcn-inspired component library without installing the CLI.
 
 Files generated:
-- `src/index.css` — CSS custom properties, global reset, scrollbar styling
-- `src/App.css` — Complete component styles including responsive breakpoints
-
-Theme decisions:
-- Dark navy background (#1A1A2E) for professional compliance-tech aesthetic
-- Cream text (#FFF8F0) for readability
-- Crimson (#DC2626) for primary actions and brand accent
-- Color-coded status indicators (green/blue/amber/red)
-- Category badges with distinct color schemes per compliance domain
-
----
-
-## Phase 5: Application Integration
-
-**Qoder Action**: Built the main App component with centralized state management.
-
-File generated:
-- `src/App.tsx` — Root component with useState for tasks, ledger, and selected task
-
-State management pattern:
-- Tasks stored as React state, initialized from fixture
-- Ledger entries appended immutably on each mutation
-- Callback props (`updateTaskStatus`, `addEvidence`) passed to child components
-- Each mutation generates a timestamped audit ledger entry
+- `src/components/ui/Button.tsx`
+- `src/components/ui/Card.tsx`
+- `src/components/ui/Input.tsx`
+- `src/components/ui/Textarea.tsx`
+- `src/components/ui/Badge.tsx`
+- `src/components/ui/Dialog.tsx`
+- `src/components/ui/Tabs.tsx`
+- `src/components/ui/Select.tsx`
+- `src/components/ui/Table.tsx`
+- `src/components/ui/Label.tsx`
 
 ---
 
-## Phase 6: Verification and Documentation
+## Phase 6: App Screens & Auth Flow
 
-**Qoder Action**: Created verification script and all required documentation.
+**Qoder Action**: Replaced the single-page MVP with a multi-screen authenticated application.
 
 Files generated:
-- `scripts/verify.mjs` — Node.js script checking fixture counts, required fields, component existence, and doc files
-- `README.md` — Project overview, quick start, scripts, structure
-- `Spec.md` — Technical specification with scope, architecture, data model, user flow
-- `PROOF_LEDGER.md` — Claims-to-artifacts mapping table
-- `QODER_BUILD_LEDGER.md` — This document
-- `DEMO_SCRIPT.md` — Step-by-step demo walkthrough for judges
-- `SUBMISSION_CHECKLIST.md` — Hackathon checklist
+- `src/components/screens/LoginScreen.tsx`
+- `src/components/screens/Layout.tsx`
+- `src/components/screens/DashboardScreen.tsx`
+- `src/components/screens/ClientDatabaseScreen.tsx`
+- `src/components/screens/RulesLibraryScreen.tsx`
+- `src/components/screens/ScheduledQueueScreen.tsx`
+- `src/components/screens/SendLogsScreen.tsx`
+- `src/components/screens/ProofScreen.tsx`
+- `src/components/screens/BuildLedgerScreen.tsx`
+- `src/App.tsx` — Navigation, login gate, screen routing
+
+Features implemented:
+- Login changes department scope.
+- Create company, rule, and job locally.
+- Job preview shows first 10 working-day runs.
+- Simulate single job or full cron run.
+- Deactivate company stops future jobs while retaining logs.
 
 ---
 
-## Phase 7: Build Verification
+## Phase 7: State Management, Scoping & Reducers
 
-**Qoder Action**: Ran `npm install`, `npm run build`, and `npm test` to verify the project compiles and passes verification.
+**Qoder Action**: Built a local demo store with department scoping and pure reducers.
+
+Files generated:
+- `src/lib/store.ts` — `useAppStore` hook with actions and audit logging
+- `src/lib/scoping.ts` — Pure department-scoped filtering helpers
+- `src/lib/reducers.ts` — `deactivateCompanyReducer`, `reactivateCompanyReducer`
+
+Key decisions:
+- Pure reducer functions keep business logic testable.
+- Scoping helpers are reused by the store and verify script.
+
+---
+
+## Phase 8: Verification & Documentation
+
+**Qoder Action**: Replaced the simple fixture verifier with a TypeScript harness that tests the reminder engine, auth scoping, deactivation, and schema.
+
+Files generated/updated:
+- `scripts/verify.mts` — 47 assertions covering working days, run generation, simulation, scoping, deactivation, files, docs, and schema
+- `package.json` — Test script uses `tsx scripts/verify.mts`
+- `README.md`, `Spec.md`, `PROOF_LEDGER.md`, `QODER_BUILD_LEDGER.md`, `DEMO_SCRIPT.md`, `SUBMISSION_CHECKLIST.md`
+
+---
+
+## Phase 9: Build Verification
+
+**Qoder Action**: Ran `npm install`, `npm run build`, and `npm test` repeatedly; fixed all TypeScript strict-mode errors until build and verify passed.
+
+Final result:
+- `npm run build` — passes
+- `npm test` — 47 passed, 0 failed
 
 ---
 
 ## Qoder Capabilities Demonstrated
 
-1. **Full-stack project generation** — Scaffolding Vite + React + TypeScript from scratch
-2. **Domain modeling** — Malaysian corporate compliance data structures with statutory references
-3. **Component architecture** — 6 typed React components with proper state management
-4. **CSS theming** — Professional dark/cream/crimson theme without CSS framework
-5. **Interactive features** — Status updates, evidence entry, audit logging
-6. **Verification scripting** — Automated fixture and documentation checks
-7. **Documentation generation** — 6 documentation files covering spec, proofs, demo, checklist
+1. **Full-stack project upgrade** — Added Tailwind, Supabase, and tsx to an existing Vite + React project
+2. **Domain modeling** — Relational data model for staff, clients, rules, jobs, logs, proofs
+3. **Pure business logic** — Reminder engine and reducers independent of UI
+4. **Component architecture** — shadcn-inspired design system + screen-level composition
+5. **Auth & scoping** — Department-based access control
+6. **Supabase integration** — Schema design and client adapter with graceful fallback
+7. **Verification engineering** — Automated tests for engine, scoping, and state mutations
+8. **Documentation** — README, spec, proof ledger, build ledger, demo script, checklist

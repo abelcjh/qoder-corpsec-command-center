@@ -1,101 +1,113 @@
-# Technical Specification — CorpSec Command Center
+# Technical Specification — Credence / CorpSec Command Center
 
 ## 1. Purpose
 
-A local web application that serves as a compliance workflow cockpit for Malaysian SMEs (Sdn Bhd entities). It guides company secretaries through annual compliance obligations with deterministic workflow templates, evidence tracking, and optional AI-assisted draft summaries.
+A full-stack prototype of a Malaysia-first corporate-secretarial compliance reminder and workflow platform. It gives staff a department-scoped client database, turns statutory deadlines into recurring scheduled reminder jobs, records simulated send evidence, and retains proof even when clients are deactivated.
 
 ## 2. Scope
 
 ### In Scope
-- Company profile display (SSM-registered entity)
-- Compliance event with task timeline (12 tasks for annual cycle)
-- Interactive task status management (pending, in_progress, completed, overdue)
-- Evidence note entry with artifact references
-- Immutable audit ledger logging all state changes
-- AI draft summaries (clearly marked as AI-generated, review required)
-- Human company secretary review panel with findings and approval status
-- Dark/cream/crimson professional theme
-- Verification script for fixtures and documentation
+- Staff login with role/department scoping
+- Client database with company profile and contacts
+- Department-specific views: audit, tax, accounting, corp sec
+- Predefined compliance rules library
+- New send job creation with rule/custom body and editable preview
+- Working-day recurrence engine until stop date
+- Scheduled queue and send logs / evidence
+- Company deactivation that stops future jobs but retains logs
+- Supabase-ready schema and client adapter with seeded demo fallback
+- Modern React + Tailwind + shadcn-inspired UI
+- Automated verification for engine, scoping, deactivation, fixtures
 
 ### Out of Scope
 - Legal advice or automated legal reasoning
-- External API integrations or paid services
-- User authentication or multi-tenancy
-- Persistent backend storage (all state in-memory for MVP)
+- Real email/WhatsApp/SMS transmission (simulated only)
+- Production Supabase RLS policies (schema includes notes/templates)
 - Actual document upload/file storage (artifact references only)
 
 ## 3. Architecture
 
 ### Frontend
-- **React 18** with TypeScript for type-safe component development
-- **Vite** for fast development and optimized production builds
-- **CSS Custom Properties** for theming (no CSS framework dependency)
-- **Lucide React** for consistent iconography
+- **React 18** with TypeScript
+- **Vite** for build tooling
+- **Tailwind CSS** with custom design tokens (ink/cream/crimson)
+- **Custom shadcn-inspired components** under `src/components/ui/`
 
 ### State Management
-- React `useState` hooks in the root `App` component
-- Callback props passed down for task status updates and evidence addition
-- Audit ledger entries appended immutably on each state change
+- Local React state via `useAppStore()` custom hook
+- Pure reducer functions for complex mutations (deactivation)
+- Department-scoped selectors in `src/lib/scoping.ts`
 
-### Data Layer
-- All data is deterministic and stored in TypeScript source files under `src/data/`
-- Fixtures are importable and verifiable via the verification script
-- No external database or API calls
+### Backend (ready via Supabase)
+- Tables: `staff_users`, `companies`, `company_contacts`, `compliance_rules`, `scheduled_send_jobs`, `send_logs`, `proof_documents`, `audit_events`
+- RLS enabled with policy notes; full policies to be added per-deployment
+- Demo mode seeds data when `VITE_SUPABASE_URL` / `VITE_SUPABASE_ANON_KEY` are absent
+
+### Reminder Engine
+- Pure TypeScript module `src/lib/reminderEngine.ts`
+- `createScheduledSendJob(input)` — build a job record
+- `buildScheduledSendJobRuns(job)` — generate working-day recurring runs until stop date
+- `simulateDueSends(...)` — cron-style simulator with deduplication
+- `recordSendProof(...)` — construct a send log entry
 
 ## 4. Data Model
 
+### StaffUser
+- id, email, fullName, department (admin|audit|tax|accounting|corp_sec), role, active
+
 ### Company
-- name, registrationNo, incorporationDate, ssmState, sicCodes
-- registeredAddress, directors[], companySecretary, financialYearEnd
+- id, name, registrationNo, incorporationDate, ssmState, sicCodes, registeredAddress, directors[], companySecretary, financialYearEnd, departments[], active
 
-### ComplianceTask
-- id, title, description, category (filing|governance|tax|audit|statutory)
-- dueDate, status (pending|in_progress|completed|overdue), owner
-- evidence: EvidenceEntry[]
-- aiDraft?: string (optional, clearly marked)
-- ssmRef?, actRef? (statutory references)
+### CompanyContact
+- id, companyId, name, email, phone, role, preferredChannel, isPrimary
 
-### EvidenceEntry
-- id, taskId, note, artifactRef, timestamp, addedBy
+### ComplianceRule
+- id, name, department, defaultSubject, defaultBody, defaultEveryNWorkingDays, variables[], statutoryRef, active
 
-### AuditLedgerEntry
-- timestamp, actor, action, taskId, evidenceId?, detail
+### ScheduledSendJob
+- id, companyId, contactId, ruleId, department, channel, subject, body, firstSendAt, everyNWorkingDays, stopDate, status, createdBy, createdAt
 
-### ReviewSummary
-- reviewer, reviewedAt, findings[], approved, notes
+### SendLog
+- id, jobId, companyId, contactId, scheduledRunAt, sentAt, senderStaffId, senderEmail, recipient, channel, status, messageSnapshot, providerMessageId, evidenceType, demoMarked, createdAt
+
+### ProofDocument
+- id, sendLogId, documentType, storagePath, metadata, uploadedBy, createdAt
+
+### AuditEvent
+- id, actorStaffId, actorEmail, action, entityType, entityId, detail, createdAt
 
 ## 5. User Flow
 
-1. User sees company profile and compliance progress stats
-2. User reviews task timeline sorted by due date
-3. User selects a task to view details
-4. User can update task status (interactive buttons)
-5. User can add evidence notes with artifact references
-6. All changes are logged to the audit ledger
-7. AI drafts (where available) provide contextual summaries
-8. Human secretary review panel shows overall findings and approval status
+1. Staff logs in and lands on department-scoped dashboard.
+2. Staff browses the client database and views company profiles.
+3. Staff selects or creates a compliance rule.
+4. Staff creates a new send job from a rule or custom body.
+5. System previews first 10 working-day runs.
+6. Job appears in scheduled queue; future runs are generated.
+7. Staff simulates cron or a single job send.
+8. Send logs / evidence update live and remain when a company is deactivated.
 
 ## 6. Theme
 
-- **Background**: Dark navy (#1A1A2E)
-- **Cards**: Darker card (#222240) with subtle borders
-- **Text**: Cream (#FFF8F0) with muted variants
-- **Accent**: Crimson (#DC2626) for primary actions and highlights
-- **Status Colors**: Green (completed), Blue (in progress), Amber (pending), Red (overdue)
+- **Background**: Deep charcoal (#0f0f12)
+- **Cards**: Slightly lifted surface (#18181b)
+- **Text**: Cream (#fff8f0)
+- **Accent**: Crimson (#dc2626)
+- **Status Colors**: Emerald (success), Sky (info), Amber (warning), Crimson (danger)
 
 ## 7. Security & Privacy
 
-- All data is local and deterministic — no external network calls
-- No user data is collected or transmitted
-- No authentication tokens, API keys, or secrets in the codebase
-- Artifact references are filename strings, not actual file uploads
+- Demo mode requires no credentials and makes no external network calls.
+- Supabase mode uses environment variables; no secrets are committed.
+- All simulated sends are marked as demo evidence.
+- Deactivation retains logs for audit/evidence purposes.
 
 ## 8. Verification
 
-The `scripts/verify.mjs` script checks:
-- Compliance event fixture has >= 8 tasks (currently 12)
-- Each task has all required fields
-- Company fixture has all required fields
-- Audit ledger, review summary fixtures exist and have content
-- All 6 UI components exist
-- All 6 documentation files exist
+`scripts/verify.mts` checks:
+- Working-day math and run generation
+- Simulated send construction and cron deduplication
+- Department scoping for companies, rules, jobs, logs
+- Company deactivation stops future jobs but retains logs
+- Build output and required project files
+- Documentation and schema completeness

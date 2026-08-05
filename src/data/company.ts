@@ -1,6 +1,7 @@
 import type { Company } from '../types';
 
 export const fixtureCompany: Company = {
+  id: 'comp-nusantara',
   name: 'Nusantara Digital Sdn Bhd',
   registrationNo: '202301012345 (1509876-K)',
   incorporationDate: '2023-04-15',
@@ -10,4 +11,6 @@ export const fixtureCompany: Company = {
   directors: ['Ahmad bin Ismail', 'Siti Nurhaliza binti Rahman'],
   companySecretary: 'Lee Wei Ming (MAISAC No. MA-00456)',
   financialYearEnd: '2025-12-31',
+  departments: ['corp_sec', 'audit', 'tax', 'accounting'],
+  active: true,
 };
