@@ -165,19 +165,19 @@ const judgeLiveCheck = [
   ['Golden loop', 'Client Database → Scheduled Queue → Send Logs / Evidence → Proof → AI Workbench → Qoder Build Ledger → Submission Pack.'],
   ['AI endpoint expectation', 'Click Generate Agnes briefing once; if Agnes/Cloudflare is unavailable, show the visible deterministic fallback banner as resilience proof rather than hiding it.'],
   ['No side effects', 'Do not send email, WhatsApp, social posts, or forms from the app; the demo uses fixture-safe proof rows and human-reviewed copy only.'],
-  ['Final proof command', 'Keep terminal receipt ready: npm run build && npm run verify, currently covering 77 deterministic assertions plus build output.'],
+  ['Final proof command', 'Keep terminal receipt ready: npm run build && npm run verify, currently covering 90 deterministic assertions plus build output.'],
 ];
 
 const liveSmokeReceipt = [
-  ['Current live smoke check', 'Aug 5 21:49 GMT+8: live Worker home route returned HTTP 200 app HTML in 183ms and the Agnes bridge returned HTTP 200 JSON in 4.6s with a browser-like fixture request, plus no-secret/API-key-shape checks passed.'],
+  ['Current live smoke check', 'Aug 5 22:21 GMT+8: live Worker home route returned HTTP 200 app HTML in 197ms and the Agnes bridge returned HTTP 200 JSON in 10.0s with a browser-like fixture request, plus no-secret/API-key-shape checks passed.'],
   ['Home page', 'Open the deployed Worker first; the latest smoke confirms the staff-login app shell loads from the public URL, not only from local dev.'],
   ['Agnes API route', 'POST /api/ai-brief returned HTTP 200 JSON for a safe fixture company, proving the server-side AI bridge is reachable without exposing the key.'],
   ['Recording fallback', 'If the live network stalls, narrate the saved smoke receipt plus npm run build && npm run verify instead of improvising.'],
 ];
 
 const finalReadinessReceipt = [
-  ['Live URL works', 'Latest smoke passed at Aug 5 21:49 GMT+8: public Worker home route HTTP 200, staff-login app shell returned.'],
-  ['Agnes bridge works', 'Fixture-safe POST /api/ai-brief returned HTTP 200 JSON in 4.6s and passed secret-name/API-key-shape checks.'],
+  ['Live URL works', 'Latest smoke passed at Aug 5 22:21 GMT+8: public Worker home route HTTP 200, staff-login app shell returned.'],
+  ['Agnes bridge works', 'Fixture-safe POST /api/ai-brief returned HTTP 200 JSON in 10.0s and passed secret-name/API-key-shape checks.'],
   ['Local proof command', 'Keep npm run build && npm run verify visible as the fallback receipt; the harness covers the deterministic middle and submission-proof surfaces.'],
   ['Manual boundaries', 'Social post, organizer form, email/WhatsApp, and legal-status changes remain manual; the app demonstrates fixture-safe receipts only.'],
 ];
@@ -229,6 +229,14 @@ const offlineVerifierReceipt = [
   ['Reviewer-safe fields', 'Exportable fields are limited to entity/rule, owner, recipient, cadence state, provider field, snapshot, and unresolved risk — not secrets or full mailboxes.'],
   ['Freshness recheck', 'Current / Expiring / Stale status can be recalculated from the evidence timestamp, giving judges a quick rerun path for the proof claim.'],
   ['Blocked-action receipt', 'The packet makes non-actions visible too: no external send, no legal-status mutation, no form/social posting, and staff review remains the approval boundary.'],
+];
+
+const auditorChallengeReceipt = [
+  ['Auditor asks “prove it”', 'Start from one Send Logs / Evidence row and open the matching Proof packet instead of relying on narration or screenshots.'],
+  ['Re-derive the receipt', 'Point to the deterministic packet ID plus chain head; if a retained proof row is missing or edited, the verifier changes the receipt.'],
+  ['Open only safe fields', 'Show entity/rule, owner/recipient, cadence, provider field, snapshot, and unresolved risk while keeping secrets and raw mailboxes out.'],
+  ['Show a blocked boundary', 'Say the same packet records what Credence did not do: no external send, no legal-status mutation, and no organizer/social submission.'],
+  ['Fallback command', 'If challenged after the video, rerun npm run build && npm run verify to prove the packet IDs, chain stability, missing-row detection, and docs surface.'],
 ];
 
 const pilotHandoffReceipt = [
@@ -463,6 +471,21 @@ export function SubmissionPackScreen() {
         </CardHeader>
         <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
           {offlineVerifierReceipt.map(([label, detail]) => (
+            <div key={label} className="rounded-xl border border-emerald-500/20 bg-emerald-950/10 p-4">
+              <div className="font-semibold text-emerald-100">{label}</div>
+              <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2"><ClipboardList size={18} className="text-emerald-500" /> Auditor challenge drill</CardTitle>
+          <CardDescription>Recording fallback for skeptical judges: convert one proof row into a re-runnable, reviewer-safe evidence challenge</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
+          {auditorChallengeReceipt.map(([label, detail]) => (
             <div key={label} className="rounded-xl border border-emerald-500/20 bg-emerald-950/10 p-4">
               <div className="font-semibold text-emerald-100">{label}</div>
               <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>

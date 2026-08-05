@@ -56,13 +56,13 @@
 ```bash
 npm install          # Installs all dependencies
 npm run build        # TypeScript check + Vite build
-npm test             # Verification script passes (77 assertions)
+npm test             # Verification script passes (90 assertions)
 ```
 
 ### Live Worker Smoke Receipt
 
-- [x] Live Cloudflare Worker home route returned HTTP 200 app HTML during the Aug 5 21:42 GMT+8 Ralph smoke check.
-- [x] `POST /api/ai-brief` returned HTTP 200 fixture JSON in 5.3s in the same smoke check, proving the server-side Agnes bridge is reachable without exposing the key in the browser; no secret-name or API-key-shaped values were exposed.
+- [x] Live Cloudflare Worker home route returned HTTP 200 app HTML during the Aug 5 22:21 GMT+8 Ralph smoke check.
+- [x] `POST /api/ai-brief` returned HTTP 200 fixture JSON in 10.0s in the same smoke check, proving the server-side Agnes bridge is reachable without exposing the key in the browser; no secret-name or API-key-shaped values were exposed.
 - [x] Recording fallback is explicit: if live network/Agnes stalls, show this smoke receipt plus `npm run build && npm run verify` instead of hiding the failure.
 
 ### Files in Repository
@@ -179,6 +179,7 @@ From the organizer master deck and UGC screenshot:
 | [UiPath AgentHack winners](https://forum.uipath.com/t/here-are-the-uipath-agenthack-2025-winners/3586396) / [ABBYY 2026 winner](https://www.globenewswire.com/news-release/2026/08/04/3338139/0/en/ABBYY-2026-Hackathon-Winner-Accelerates-Mortgage-Auditing-Review-Leveraging-Document-AI-and-Large-Language-Models.html) | Enterprise-agent winners are praised for business-ready agents, reusable artifacts, deployable workflows, and auditable regulated-industry operations. | Pause on the new Pilot handoff receipt: live URL, one-command proof, Supabase data contract, operator-safe boundaries, and reusable Qoder workflow artifacts. |
 | [Trust Receipt AGI House winner](https://ashah007.medium.com/we-won-at-agi-house-by-building-the-proof-layer-for-ai-agents-ebdd0f27eced) | A current agent-infrastructure winner says every agent action should leave a receipt across identity, authority, intent alignment, policy compliance, and provenance. | Pause on the Authority and provenance receipt: staff identity, delegated rule authority, approved intent snapshot, no-send policy boundary, and reviewer-safe proof provenance after deactivation. |
 | [Trust Receipt repo](https://github.com/ankitshah009/TrustReceipt) / [AgentAudit scan](https://lablab.ai/ai-hackathons/techex-intelligent-enterprise-solutions-hackathon/diego-ia-enterprise/agentaudit-immutable-ai-audit-trail) | Agent-proof winners increasingly frame trust as independently checkable receipts: hashes, policy outcomes, public/private evidence boundaries, and offline verification paths. | Use the new Offline verifier receipt if challenged: Credence's proof packet has a deterministic packet ID, reviewer-safe fields, freshness recheck, and a blocked-action/no-send receipt instead of relying on screenshots. |
+| [Forensa evidence layer](https://lablab.ai/ai-hackathons/techex-intelligent-enterprise-solutions-hackathon/forensa/forensa-evidence-layer-for-ai-agents) / [raucle capability receipts](https://github.laiyagushi.com/craigamcw/raucle) | The enterprise proof bar is moving from “show logs” to auditor challenge paths: receipt hash, authority boundary, policy verdict, safe evidence opening, and offline verification. | If judges ask “how do I know this row is real?”, use the Auditor challenge drill: open one proof row, re-derive packet ID/chain head, show reviewer-safe fields, state the blocked no-send boundary, then point to `npm run build && npm run verify`. |
 
 ### Aug 5 evidence freshness sweep — Ralph loop
 
@@ -230,7 +231,7 @@ Before recording or live judging, run this exact reliability pass:
 4. Click Agnes briefing once; if the endpoint is unavailable, show the deterministic fallback banner as resilience proof.
 5. Do not send email/WhatsApp/social/form actions from the app; all proof rows are fixture-safe and human-reviewed.
 6. Keep `npm run build && npm run verify` output visible as the deterministic receipt.
-7. Latest remote smoke receipt to say on camera if asked: Aug 5 21:42 GMT+8, `/` returned HTTP 200 app HTML and `/api/ai-brief` returned HTTP 200 fixture JSON through the server-side Agnes bridge, with no secret-name or API-key-shaped leakage.
+7. Latest remote smoke receipt to say on camera if asked: Aug 5 22:21 GMT+8, `/` returned HTTP 200 app HTML and `/api/ai-brief` returned HTTP 200 fixture JSON through the server-side Agnes bridge, with no secret-name or API-key-shaped leakage.
 
 ### AI Workbench recording packet — Aug 5 Ralph loop
 
@@ -254,9 +255,9 @@ npm run build && npm run verify && npm run smoke:live
 `smoke:live` checks the public Cloudflare Worker home route and posts fixture-safe data to `/api/ai-brief`. It verifies HTTP 200 responses, JSON shape, and that no Agnes secret-shaped values are exposed. This improves demo reliability without sending email, WhatsApp, forms, or client messages.
 
 
-## Final readiness receipt — Aug 5 21:49 GMT+8
+## Final readiness receipt — Aug 5 22:21 GMT+8
 
-- `npm run smoke:live` passed against the public Cloudflare Worker: home HTTP 200 app shell in 183ms; `/api/ai-brief` HTTP 200 JSON in 4.6s.
+- `npm run smoke:live` passed against the public Cloudflare Worker: home HTTP 200 app shell in 197ms; `/api/ai-brief` HTTP 200 JSON in 10.0s.
 - Secret-name and API-key-shaped leakage checks passed.
 - Keep `npm run build && npm run verify` visible as the local fallback receipt.
 - Manual boundary: do not send social posts, forms, email, WhatsApp, or legal-status changes from the app.

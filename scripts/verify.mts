@@ -190,7 +190,7 @@ for (const doc of docs) {
 }
 const submissionPack = readFileSync(resolve(root, 'src/components/screens/SubmissionPackScreen.tsx'), 'utf-8');
 assert(submissionPack.includes('Final readiness receipt'), 'Submission Pack includes final readiness receipt');
-assert(submissionPack.includes('Aug 5 21:49 GMT+8'), 'Submission Pack includes latest Aug 5 21:49 live smoke receipt');
+assert(submissionPack.includes('Aug 5 22:21 GMT+8'), 'Submission Pack includes latest Aug 5 22:21 live smoke receipt');
 assert(submissionPack.includes('Manual boundaries'), 'Submission Pack keeps manual boundary receipt visible');
 assert(submissionPack.includes('60-second judge live check'), 'Submission Pack includes 60-second judge live check');
 assert(submissionPack.includes('Client Database → Scheduled Queue → Send Logs / Evidence → Proof → AI Workbench'), 'Submission Pack documents the golden demo loop');
@@ -207,6 +207,9 @@ assert(submissionPack.includes('Staff identity'), 'Submission Pack states staff 
 assert(submissionPack.includes('Offline verifier receipt'), 'Submission Pack includes offline verifier receipt for re-derivable proof');
 assert(submissionPack.includes('Hashable packet ID'), 'Submission Pack states hashable packet ID as verifier proof');
 assert(submissionPack.includes('Blocked-action receipt'), 'Submission Pack keeps blocked actions visible as proof');
+assert(submissionPack.includes('Auditor challenge drill'), 'Submission Pack includes an auditor challenge drill for skeptical judges');
+assert(submissionPack.includes('Re-derive the receipt'), 'Submission Pack tells judges how to re-derive the proof receipt');
+assert(submissionPack.includes('missing-row detection'), 'Submission Pack keeps missing-row detection tied to the verifier fallback');
 assert(submissionPack.includes('Pilot handoff receipt'), 'Submission Pack includes pilot handoff receipt for adoption readiness');
 assert(submissionPack.includes('Reusable workflow'), 'Submission Pack states reusable workflow artifacts for pilot handoff');
 assert(submissionPack.includes('Deterministic middle'), 'Submission Pack states deterministic rules remain the trusted middle');

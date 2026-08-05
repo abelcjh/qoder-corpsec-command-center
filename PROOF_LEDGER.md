@@ -69,7 +69,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | Evidence | Location |
 |----------|----------|
 | `npm run build` output | `dist/` |
-| Verification script with 77 assertions | `scripts/verify.mts` |
+| Verification script with 90 assertions | `scripts/verify.mts` |
 | Package scripts | `package.json` |
 
 ## Claim 9: Qoder usage is visible, rule-clean, and reviewable
@@ -124,7 +124,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 - Required command before shipping: `npm run build && npm run verify`
 - Expected verify scope: working-day recurrence, run generation, cron simulation, department scoping, company deactivation, schema/docs checks.
 - Safe-send boundary: the hackathon build records fixture-safe send/proof rows and does not contact real clients from the frontend.
-- Live Worker smoke receipt from Aug 5 21:49 GMT+8 Ralph loop: `/` returned HTTP 200 app HTML in 183ms and `POST /api/ai-brief` returned HTTP 200 fixture JSON in 4.6s using a browser-like smoke request; no secret-name or API-key-shaped values were exposed. Use this as the demo reliability proof before recording; if the network stalls, fall back to the build+verify terminal receipt.
+- Live Worker smoke receipt from Aug 5 22:21 GMT+8 Ralph loop: `/` returned HTTP 200 app HTML in 197ms and `POST /api/ai-brief` returned HTTP 200 fixture JSON in 10.0s using a browser-like smoke request; no secret-name or API-key-shaped values were exposed. Use this as the demo reliability proof before recording; if the network stalls, fall back to the build+verify terminal receipt.
 
 ## Evidence freshness receipt
 
@@ -143,6 +143,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | Pilot handoff receipt | Live pilot URL → one-command proof → data contract → operator-safe boundaries → reusable workflow turns Credence from demo video into a judge-rerunnable pilot handoff. | Submission Pack screen pilot handoff receipt; final recording pause after enterprise trust scorecard |
 | Authority/provenance receipt | Staff identity → delegated rule authority → approved intent snapshot → no-send policy boundary → proof provenance maps the agent-trust winner pattern onto one CorpSec chase. | Submission Pack screen authority and provenance receipt; final recording pause before pilot handoff |
 | Offline verifier receipt | Hashable packet ID → reviewer-safe fields → freshness recheck → blocked-action receipt turns the proof row into a re-derivable trust artifact rather than a screenshot. | Submission Pack screen offline verifier receipt; proof packet utility; final recording pause if judges ask how the evidence can be inspected later |
+| Auditor challenge drill | Skeptical judge asks “prove it” → open one Send Logs proof row → re-derive packet ID/chain head → show only safe fields → point to blocked boundaries and `npm run build && npm run verify`. | Submission Pack auditor challenge drill; `src/lib/proofPacket.ts`; verifier chain-stability and missing-row detection assertions |
 | Singapore practice-suite calibration | ClientBase / VOPlus-style platforms already sell whole-practice visibility, ACRA/AGM deadline tracking, compliance dashboards, document portals, audit trails, and system-bounded AI. | Submission Pack competitor calibration now tells Abel to avoid a broad-suite claim and prove the narrow owner-specific chase → reviewer-safe proof receipt instead |
 | 2–3 minute cutdown path | The required organizer video window is protected by a compressed recording path: problem/Qoder → client DB → rule/queue → proof row → governed Agnes → Submission Pack close. | Submission Pack screen cutdown panel; `VIDEO_AND_SOCIAL_FINAL_PACK.md` run-of-show |
 | Final readiness receipt | Live URL works, Agnes bridge works, local build+verify is ready, and manual side-effect boundaries are visible before submission. | Submission Pack top panel; `npm run smoke:live`; final recording confidence check |
@@ -167,7 +168,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 
 | Evidence | Location |
 |----------|----------|
-| Aug 5 21:42 GMT+8 remote smoke check returned HTTP 200 app HTML for `/` on the Cloudflare Worker | terminal smoke receipt from Ralph loop; `src/components/screens/SubmissionPackScreen.tsx` |
+| Aug 5 22:21 GMT+8 remote smoke check returned HTTP 200 app HTML for `/` on the Cloudflare Worker | terminal smoke receipt from Ralph loop; `src/components/screens/SubmissionPackScreen.tsx` |
 | Same smoke check returned HTTP 200 JSON from `POST /api/ai-brief` with fixture-only request data and browser-like headers, while no secret-name or API-key-shaped values were exposed | terminal smoke receipt from Ralph loop; `src/components/screens/SubmissionPackScreen.tsx` |
 | If live network/AI stalls during recording, the documented fallback remains `npm run build && npm run verify` instead of unsafe external sends | `VIDEO_AND_SOCIAL_FINAL_PACK.md`, `SUBMISSION_CHECKLIST.md` |
 
@@ -231,3 +232,11 @@ A compact Aug 5 scan of recent enterprise-agent hackathon winners found repeated
 | A compact winner scan found enterprise AI hackathon winners are praised when they are ready to deploy, solve daily regulated workflows, keep deterministic control in the middle, and leave auditable proof rather than only a chatbot surface | ABBYY 2026 hackathon winner coverage; enterprise-agent public submission scans |
 | Submission Pack now puts a 10-second demo spine above the fold: client database → deterministic rule authority → retained proof packet → governed Agnes brief → Qoder verification receipt | `src/components/screens/SubmissionPackScreen.tsx` |
 | Verification harness asserts the 10-second spine and deterministic scheduled-chase wording so the judge-visible loop cannot silently disappear before recording | `scripts/verify.mts` |
+
+## Claim 20: Skeptical judges get an auditor challenge drill, not another proof slogan
+
+| Evidence | Location |
+|----------|----------|
+| Aug 5 enterprise proof-layer scan found winners like Trust Receipt, AgentAudit, Forensa, and raucle emphasize independently checkable receipts, authority/policy boundaries, tamper-evident chains, and offline verification rather than screenshot trust | Public winner/repo scans captured in the Ralph-loop report |
+| Submission Pack now gives a five-step auditor challenge: open one proof row, re-derive packet ID/chain head, inspect only reviewer-safe fields, show blocked/no-send boundary, and rerun `npm run build && npm run verify` if challenged | `src/components/screens/SubmissionPackScreen.tsx` |
+| Verification harness asserts the auditor challenge drill, re-derive wording, and missing-row detection fallback so this judge-defense surface cannot disappear before recording | `scripts/verify.mts` |
