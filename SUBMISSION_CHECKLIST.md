@@ -190,3 +190,9 @@ Optional but strategically important:
 - [ ] Presentation Slides URL
 
 Live demo link for optional/supporting materials: https://credence-qoder-corpsec.abelchinjh.workers.dev
+
+### Operator deployment note — Aug 5 Ralph loop
+
+- Local build and verification passed after the Submission Pack update.
+- Headless Cloudflare deploy was attempted with `npx wrangler deploy`, but Wrangler reported that non-interactive deploys require `CLOUDFLARE_API_TOKEN` in the environment.
+- The existing live Worker URL remains the last deployed version until Abel's PC/session has the Cloudflare token exported or an interactive Wrangler login is available.
