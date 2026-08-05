@@ -56,7 +56,7 @@
 ```bash
 npm install          # Installs all dependencies
 npm run build        # TypeScript check + Vite build
-npm test             # Verification script passes (100 assertions)
+npm test             # Verification script passes (103 assertions)
 ```
 
 ### Live Worker Smoke Receipt
@@ -182,6 +182,7 @@ From the organizer master deck and UGC screenshot:
 | [Forensa evidence layer](https://lablab.ai/ai-hackathons/techex-intelligent-enterprise-solutions-hackathon/forensa/forensa-evidence-layer-for-ai-agents) / [raucle capability receipts](https://github.laiyagushi.com/craigamcw/raucle) | The enterprise proof bar is moving from “show logs” to auditor challenge paths: receipt hash, authority boundary, policy verdict, safe evidence opening, and offline verification. | If judges ask “how do I know this row is real?”, use the Auditor challenge drill: open one proof row, re-derive packet ID/chain head, show reviewer-safe fields, state the blocked no-send boundary, then point to `npm run build && npm run verify`. |
 | [Microsoft AI agent receipt guidance](https://microsoft.github.io/ai-agents-for-beginners/18-securing-ai-agents/) | Agent receipts prove attribution, integrity, and ordering; they do not by themselves prove correctness, legal sufficiency, or policy soundness. | Pause on the Receipt truth boundary if judges press on audit claims: Credence is honest that receipts make the trail inspectable, while deterministic rules, staff approval, freshness checks, and `npm run verify` provide the workflow control layer. |
 | [Agent Receipts protocol](https://agentreceipts.ai/) | Agent-receipt systems increasingly split public tamper evidence from sensitive payload disclosure: hash/chain proofs can be verified while parameters or client data remain gated by the operator. | Pause on the Public/private disclosure boundary: show public receipt ID/freshness/blocked status first, reveal selected reviewer-safe details only when needed, and never export secrets, raw mailboxes, or real send controls. |
+| [TrustProof protocol](https://github.com/ataraxia-labs-ai/trustproof-protocol) / [Trust Receipt verifier scan](https://github.com/trusteedxyz/trust-receipt-verifier) | Portable agent receipts are moving toward action types, policy decisions, hashed attachments, protocol references, and offline verification rather than app-specific screenshots. | Pause on the Protocol-ready receipt bridge: Credence can describe one CorpSec chase as action type + policy decision + hashed safe attachments + future protocol bridge, while the hackathon demo remains local, deterministic, and no-mutation. |
 
 ### Aug 5 evidence freshness sweep — Ralph loop
 

@@ -220,6 +220,9 @@ assert(submissionPack.includes('verified rule engine and human approval'), 'Subm
 assert(submissionPack.includes('Public/private disclosure boundary'), 'Submission Pack includes public/private disclosure boundary for receipt privacy');
 assert(submissionPack.includes('Reviewer-gated detail'), 'Submission Pack keeps sensitive evidence behind reviewer-gated detail');
 assert(submissionPack.includes('Never exported'), 'Submission Pack states secrets/raw inboxes/real send controls are never exported');
+assert(submissionPack.includes('Protocol-ready receipt bridge'), 'Submission Pack includes protocol-ready receipt bridge for portable action receipts');
+assert(submissionPack.includes('Action type'), 'Submission Pack names the CorpSec chase action type for protocol mapping');
+assert(submissionPack.includes('Protocol bridge'), 'Submission Pack keeps future MCP/AP2/filing bridge honest and no-mutation');
 assert(submissionPack.includes('Pilot handoff receipt'), 'Submission Pack includes pilot handoff receipt for adoption readiness');
 assert(submissionPack.includes('Reusable workflow'), 'Submission Pack states reusable workflow artifacts for pilot handoff');
 assert(submissionPack.includes('Deterministic middle'), 'Submission Pack states deterministic rules remain the trusted middle');

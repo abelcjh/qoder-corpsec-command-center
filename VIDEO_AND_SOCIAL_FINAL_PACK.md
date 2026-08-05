@@ -51,8 +51,9 @@ Golden path:
 13. If a judge asks “prove this row was not cherry-picked,” use the Auditor challenge drill: pick one Send Logs proof row, re-derive the packet ID and chain head, show only reviewer-safe fields, then cite `npm run build && npm run verify` for chain stability and missing-row detection.
 14. Pause on the Receipt truth boundary if judges challenge audit overclaims: say “the receipt makes the audit trail honest; the verified rule engine and human approval make the workflow defensible.”
 15. Pause on the Public/private disclosure boundary if judges ask about client confidentiality: public receipt fields prove existence/freshness/blocked status, reviewer-gated fields reveal only selected context, and secrets/raw inboxes/real send controls never leave the safe path.
-16. Pause on the Live Worker smoke receipt if the browser or Agnes call feels slow: it proves the public URL and server-side AI bridge were checked close to submission time, while the terminal fallback remains deterministic.
-17. End on the Submission Pack screen so the organizer requirements are visually obvious.
+16. Pause on the Protocol-ready receipt bridge if judges ask whether this can integrate beyond the demo: say each CorpSec chase is already shaped as action type, policy decision, hashed safe attachments, and future MCP/AP2/filing-system references — but today’s hackathon proof stays local, deterministic, and no-mutation.
+17. Pause on the Live Worker smoke receipt if the browser or Agnes call feels slow: it proves the public URL and server-side AI bridge were checked close to submission time, while the terminal fallback remains deterministic.
+18. End on the Submission Pack screen so the organizer requirements are visually obvious.
 
 Role-switch ladder if the recording has extra time:
 

@@ -104,6 +104,12 @@ const marketFindings = [
     signal: 'Agent receipt systems increasingly separate public tamper evidence from sensitive payload disclosure: parameters can be hashed, operators decide what is revealed, and verification does not require dumping private business data.',
     credenceAngle: 'Make Credence\'s disclosure boundary visible: public-safe receipt ID/freshness/status proves the chase exists, while detailed client snippets stay reviewer-gated and never expose secrets or full mailboxes.',
   },
+  {
+    source: 'TrustProof / TrustReceipt protocol scan',
+    url: 'https://github.com/ataraxia-labs-ai/trustproof-protocol',
+    signal: 'Agent-receipt protocols are standardizing portable action receipts with policy decisions, hashed attachments, protocol references, and offline verification instead of app-specific screenshots.',
+    credenceAngle: 'Pitch Credence proof rows as protocol-ready receipts: a CorpSec chase can later link to Gmail, MCP, AP2, or filing-system artifacts while keeping raw client payloads gated.',
+  },
 ];
 
 const formValues = [
@@ -185,7 +191,7 @@ const judgeLiveCheck = [
   ['Golden loop', 'Client Database → Scheduled Queue → Send Logs / Evidence → Proof → AI Workbench → Qoder Build Ledger → Submission Pack.'],
   ['AI endpoint expectation', 'Click Generate Agnes briefing once; if Agnes/Cloudflare is unavailable, show the visible deterministic fallback banner as resilience proof rather than hiding it.'],
   ['No side effects', 'Do not send email, WhatsApp, social posts, or forms from the app; the demo uses fixture-safe proof rows and human-reviewed copy only.'],
-  ['Final proof command', 'Keep terminal receipt ready: npm run build && npm run verify, currently covering 100 deterministic assertions plus build output.'],
+  ['Final proof command', 'Keep terminal receipt ready: npm run build && npm run verify, currently covering 103 deterministic assertions plus build output.'],
 ];
 
 const liveSmokeReceipt = [
@@ -271,6 +277,13 @@ const disclosureBoundaryReceipt = [
   ['Reviewer-gated detail', 'Reveal only selected message snapshot, recipient/channel, provider field, unresolved-risk note, and acceptance evidence when a judge or auditor needs the operational context.'],
   ['Never exported', 'API keys, secret names, full Gmail/WhatsApp inboxes, raw private client documents, and real send controls stay outside the export and recording path.'],
   ['Operator-controlled disclosure', 'Staff choose the safe packet view first, then escalate to detail view intentionally; the agent cannot widen disclosure by itself.'],
+];
+
+const protocolReadyReceipt = [
+  ['Action type', 'Name the proof row as a CorpSec chase action — staff owner, rule, company, recipient, and scheduled cadence — so another system can understand what happened.'],
+  ['Policy decision', 'Keep the allow / review / blocked boundary explicit: fixture-safe sends are retained as evidence, while real sends and legal-status changes require staff approval.'],
+  ['Hashed attachments', 'Provider IDs, Gmail print status, snapshots, and acceptance notes can be referenced by hash or safe field without exporting raw inboxes or secrets.'],
+  ['Protocol bridge', 'Future pilots can map the packet to MCP/AP2/filing-system artifacts, but the hackathon demo stays honest with local deterministic receipts and no external mutation.'],
 ];
 
 const pilotHandoffReceipt = [
@@ -565,6 +578,21 @@ export function SubmissionPackScreen() {
         </CardHeader>
         <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
           {disclosureBoundaryReceipt.map(([label, detail]) => (
+            <div key={label} className="rounded-xl border border-emerald-500/20 bg-emerald-950/10 p-4">
+              <div className="font-semibold text-emerald-100">{label}</div>
+              <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2"><ClipboardList size={18} className="text-emerald-500" /> Protocol-ready receipt bridge</CardTitle>
+          <CardDescription>Agent-receipt protocol calibration: make each CorpSec chase portable without overclaiming external integrations or leaking client payloads</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+          {protocolReadyReceipt.map(([label, detail]) => (
             <div key={label} className="rounded-xl border border-emerald-500/20 bg-emerald-950/10 p-4">
               <div className="font-semibold text-emerald-100">{label}</div>
               <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>

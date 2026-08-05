@@ -69,7 +69,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | Evidence | Location |
 |----------|----------|
 | `npm run build` output | `dist/` |
-| Verification script with 100 assertions | `scripts/verify.mts` |
+| Verification script with 103 assertions | `scripts/verify.mts` |
 | Package scripts | `package.json` |
 
 ## Claim 9: Qoder usage is visible, rule-clean, and reviewable
@@ -149,6 +149,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | 2–3 minute cutdown path | The required organizer video window is protected by a compressed recording path: problem/Qoder → client DB → rule/queue → proof row → governed Agnes → Submission Pack close. | Submission Pack screen cutdown panel; `VIDEO_AND_SOCIAL_FINAL_PACK.md` run-of-show |
 | Final readiness receipt | Live URL works, Agnes bridge works, local build+verify is ready, and manual side-effect boundaries are visible before submission. | Submission Pack top panel; `npm run smoke:live`; final recording confidence check |
 | Public/private disclosure boundary | Public receipt ID/chain/freshness/blocked status is shareable, selected message/provider/risk detail is reviewer-gated, and secrets/raw inboxes/real send controls are never exported. | Submission Pack disclosure-boundary panel; final video confidentiality pause |
+| Protocol-ready receipt bridge | Action type → policy decision → hashed attachments → protocol bridge frames each CorpSec chase as a portable trust receipt without claiming live MCP/AP2/filing integrations. | Submission Pack protocol-ready bridge; final video interoperability pause |
 
 ---
 
