@@ -29,6 +29,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | `simulateCronSend`, `recordSendProof` | `src/lib/reminderEngine.ts` |
 | Send logs table and detail modal backed by Supabase rows | `src/components/screens/SendLogsScreen.tsx` |
 | Evidence retention policy screen | `src/components/screens/ProofScreen.tsx` |
+| Reviewer-safe packet ID, freshness status, and non-secret export fields | `src/lib/proofPacket.ts`, `src/components/screens/ProofScreen.tsx`, `src/components/screens/SendLogsScreen.tsx` |
 
 ## Claim 4: Deactivating a company stops future jobs but retains logs
 
@@ -181,3 +182,8 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | Submission Pack gives Abel a six-part recording packet: selected client only, role-scoped evidence, human-reviewed output, no-secret Worker bridge, deterministic authority, and competitor-trap avoidance | `src/components/screens/SubmissionPackScreen.tsx` |
 | Live smoke script checks the Agnes bridge response for secret names and API-key-shaped values | `scripts/live-smoke.mjs` |
 | Final video pack tells Abel to frame Agnes as advisory over deterministic proof records, not as legal advice or auto-send authority | `VIDEO_AND_SOCIAL_FINAL_PACK.md` |
+
+
+## Research signal — 2026 enterprise-agent winner bar
+
+A compact winner scan found that recent enterprise-agent winners are rewarded for acting inside real workflows and leaving inspectable evidence, not for generic chat UX. Examples include AWS/GitLab-style winners with transparent coverage decisions, MR/compliance evidence, tests, and audit trails. Credence's practical response is the reviewer-safe proof packet: the demo now shows a deterministic packet ID, freshness state, retained fields, and the no-secret export boundary for each reminder proof row.

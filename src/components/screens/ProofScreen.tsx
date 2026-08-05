@@ -1,6 +1,7 @@
 import type { SendLog } from '../../types';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '../ui/Card';
-import { FileCheck, Database } from 'lucide-react';
+import { FileCheck, Database, Fingerprint, ShieldCheck } from 'lucide-react';
+import { summarizeProofPackets } from '../../lib/proofPacket';
 
 export interface ProofScreenProps {
   logs: SendLog[];
@@ -10,6 +11,8 @@ export function ProofScreen({ logs }: ProofScreenProps) {
   const gmailProof = logs.filter((l) => l.evidenceType === 'gmail_print').length;
   const providerProof = logs.filter((l) => l.providerMessageId).length;
   const failed = logs.filter((l) => l.status === 'failed').length;
+  const proofSummary = summarizeProofPackets(logs);
+  const latestPacket = proofSummary.packets[0];
 
   return (
     <div className="space-y-5 animate-fade-in">
@@ -24,6 +27,41 @@ export function ProofScreen({ logs }: ProofScreenProps) {
         <Card><CardHeader className="pb-2"><CardDescription>Provider IDs</CardDescription><CardTitle className="text-2xl">{providerProof}</CardTitle></CardHeader></Card>
         <Card><CardHeader className="pb-2"><CardDescription>Failed</CardDescription><CardTitle className="text-2xl">{failed}</CardTitle></CardHeader></Card>
       </div>
+
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2"><Fingerprint size={18} className="text-crimson-500" /> Reviewer-Safe Proof Packet</CardTitle>
+          <CardDescription>10-second judge receipt: every reminder can be exported as a hashable, non-secret evidence bundle</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4 text-sm">
+          <div className="grid gap-3 sm:grid-cols-3">
+            <StatusTile label="Current" value={proofSummary.current} tone="emerald" />
+            <StatusTile label="Expiring" value={proofSummary.expiring} tone="amber" />
+            <StatusTile label="Stale" value={proofSummary.stale} tone="crimson" />
+          </div>
+          {latestPacket && (
+            <div className="rounded-xl border border-brand-border bg-brand-surface/50 p-4">
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <div>
+                  <div className="text-xs font-medium uppercase tracking-wider text-brand-muted">Latest packet ID</div>
+                  <div className="mt-1 font-mono text-base text-brand-text">{latestPacket.packetId}</div>
+                </div>
+                <div className="rounded-full border border-emerald-800/50 bg-emerald-950/40 px-3 py-1 text-xs font-medium text-emerald-200">
+                  {latestPacket.statusLabel} · {latestPacket.ageDays}d old
+                </div>
+              </div>
+              <p className="mt-3 text-brand-muted">{latestPacket.exportNote}</p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {latestPacket.evidenceFields.slice(0, 7).map((field) => (
+                  <span key={field} className="rounded-full bg-brand-panel px-2 py-1 text-xs text-brand-muted">{field}</span>
+                ))}
+              </div>
+            </div>
+          )}
+        </CardContent>
+      </Card>
+
 
       <Card>
         <CardHeader>
@@ -47,6 +85,17 @@ export function ProofScreen({ logs }: ProofScreenProps) {
           </div>
         </CardContent>
       </Card>
+    </div>
+  );
+}
+
+
+function StatusTile({ label, value, tone }: { label: string; value: number; tone: 'emerald' | 'amber' | 'crimson' }) {
+  const toneClass = tone === 'emerald' ? 'text-emerald-300' : tone === 'amber' ? 'text-amber-300' : 'text-crimson-300';
+  return (
+    <div className="rounded-lg border border-brand-border bg-brand-panel/70 p-3">
+      <div className="flex items-center gap-2 text-xs uppercase tracking-wider text-brand-muted"><ShieldCheck size={14} /> {label}</div>
+      <div className={`mt-1 text-2xl font-semibold ${toneClass}`}>{value}</div>
     </div>
   );
 }

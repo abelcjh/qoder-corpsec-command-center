@@ -24,6 +24,7 @@ import {
   seedSendLogs,
   seedStaffUsers,
 } from '../src/data/seed';
+import { buildProofPacket, summarizeProofPackets } from '../src/lib/proofPacket';
 import type { AppState, Department, ScheduledSendJob, StaffUser } from '../src/types';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -137,6 +138,15 @@ assert(
 );
 assert(deactivated.sendLogs.length === beforeLogCount, 'Historical send logs are retained');
 
+// 5b. Reviewer-safe proof packet
+console.log('\n[Reviewer-Safe Proof Packet]');
+const packet = buildProofPacket(seedSendLogs[0], new Date('2026-04-15T09:00:00+08:00'));
+assert(packet.packetId.startsWith('proof-'), 'Proof packet gets deterministic hashable ID');
+assert(packet.freshness === 'current', 'Fresh proof is classified current');
+assert(packet.evidenceFields.includes('provider_message_id'), 'Proof packet lists provider message ID as reviewer-safe field');
+const packetSummary = summarizeProofPackets(seedSendLogs, new Date('2026-04-15T09:00:00+08:00'));
+assert(packetSummary.current === 1, 'Proof packet summary counts current evidence');
+
 // 6. Build output
 console.log('\n[Build Output]');
 assert(existsSync(resolve(root, 'dist/index.html')), 'dist/index.html exists');
@@ -179,6 +189,7 @@ assert(submissionPack.includes('Current live smoke check'), 'Submission Pack inc
 assert(submissionPack.includes('AI Workbench recording packet'), 'Submission Pack includes governed AI Workbench recording packet');
 assert(submissionPack.includes('ClientBase / VOPlus Singapore scan'), 'Submission Pack includes Singapore practice-suite competitor calibration');
 assert(submissionPack.includes('owner-specific chase becomes a reviewer-safe proof receipt'), 'Submission Pack states the narrow proof-receipt wedge');
+assert(readFileSync(resolve(root, 'src/lib/proofPacket.ts'), 'utf-8').includes('Reviewer-safe packet'), 'Proof packet utility documents non-secret reviewer export boundary');
 assert(submissionPack.includes('Deterministic authority'), 'Submission Pack states deterministic records remain authoritative over AI output');
 const packageJson = readFileSync(resolve(root, 'package.json'), 'utf-8');
 assert(packageJson.includes('smoke:live'), 'Package exposes npm run smoke:live for deployed demo reliability');

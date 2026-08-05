@@ -7,7 +7,8 @@ import { Badge } from '../ui/Badge';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../ui/Table';
 import { formatDateTime } from '../../lib/utils';
 import { getChannelLabel } from '../../data/seed';
-import { MailCheck, FileText } from 'lucide-react';
+import { MailCheck, FileText, Fingerprint } from 'lucide-react';
+import { buildProofPacket } from '../../lib/proofPacket';
 
 export interface SendLogsScreenProps {
   companies: Company[];
@@ -17,6 +18,7 @@ export interface SendLogsScreenProps {
 
 export function SendLogsScreen({ companies, logs, onRunDueCheck }: SendLogsScreenProps) {
   const [selectedLog, setSelectedLog] = useState<SendLog | null>(null);
+  const selectedPacket = selectedLog ? buildProofPacket(selectedLog) : null;
 
   return (
     <div className="space-y-5 animate-fade-in">
@@ -93,6 +95,13 @@ export function SendLogsScreen({ companies, logs, onRunDueCheck }: SendLogsScree
                 <div className="mb-2 text-xs font-medium uppercase tracking-wider text-brand-muted">Snapshot</div>
                 <pre className="whitespace-pre-wrap text-sm text-brand-text">{selectedLog.messageSnapshot}</pre>
               </div>
+              {selectedPacket && (
+                <div className="rounded-lg border border-brand-border bg-brand-surface/50 p-4">
+                  <div className="mb-2 flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-brand-muted"><Fingerprint size={14} /> Reviewer-safe packet</div>
+                  <div className="font-mono text-sm text-brand-text">{selectedPacket.packetId}</div>
+                  <p className="mt-2 text-xs text-brand-muted">{selectedPacket.statusLabel} · {selectedPacket.ageDays}d old · hashable non-secret export fields retained for audit review.</p>
+                </div>
+              )}
            </DialogContent>
             <DialogFooter>
               <Button variant="secondary" onClick={() => setSelectedLog(null)}>
