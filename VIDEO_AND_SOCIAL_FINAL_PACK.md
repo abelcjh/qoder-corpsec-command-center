@@ -28,7 +28,8 @@ Target length: 2:55.
 | 2:45–2:52 | Submission Pack / MBRS readiness packet | "Downstream MBRS tools validate and export XBRL; Credence owns the upstream question: is the client evidence ready, who chased it, and what late-risk defense exists?" |
 | 2:52–2:58 | Submission Pack / AI Workbench recording packet | "CoSec competitors already market AI assistants. Credence's Agnes loop is governed: one selected client, role-scoped evidence, human-reviewed wording, no-secret Worker bridge, and deterministic proof records as authority." |
 | 2:58–3:03 | Submission Pack / AI-to-staff handoff receipt | "AI-guided filing handoffs are now expected. Credence makes the approval receipt visible: Agnes drafts only, staff approves, deterministic schedules run, and proof is retained." |
-| 3:03–3:05 | Submission Pack / competitor calibration | "Singapore practice suites already sell full dashboards, portals, audit trails, and bounded AI, so Credence stays narrow: one owner-specific chase becomes a reviewer-safe proof receipt." |
+| 3:03–3:08 | Submission Pack / enterprise trust scorecard | "Enterprise-agent winners compress manual workflows, keep deterministic control in the middle, and ship audit-ready reports. Credence does that for one CorpSec chase: AI drafts, rules decide, proof survives." |
+| 3:08–3:10 | Submission Pack / competitor calibration | "Singapore practice suites already sell full dashboards, portals, audit trails, and bounded AI, so Credence stays narrow: one owner-specific chase becomes a reviewer-safe proof receipt." |
 
 ## Demo reliability checklist
 
@@ -51,8 +52,9 @@ Golden path:
 6. Pause on the MBRS readiness packet if judges ask about real CoSec workflow depth: Credence complements downstream MBRS/XBRL tools by proving upstream client evidence, validation handoff, export receipt, and late-risk defense.
 7. Pause on the AI Workbench recording packet before or after clicking Agnes: say the AI gets one bounded client context, visible role-scoped jobs/logs/rules, and no authority to auto-send, change compliance state, or provide legal advice.
 8. Pause on the AI-to-staff handoff receipt if there is time: this answers Counto/Bossi-style AI-guided handoff claims by showing AI drafts only, staff approval gate, deterministic schedule, and retained proof.
-9. Pause on the Live Worker smoke receipt if the browser or Agnes call feels slow: it proves the public URL and server-side AI bridge were checked close to submission time, while the terminal fallback remains deterministic.
-10. End on the Submission Pack screen so the organizer requirements are visually obvious.
+9. Pause on the Enterprise trust scorecard if judges ask why this is more than a demo app: workflow compression, deterministic rules, audit-ready proof, governed AI, and pilot-ready artifacts match the enterprise-agent winner bar.
+10. Pause on the Live Worker smoke receipt if the browser or Agnes call feels slow: it proves the public URL and server-side AI bridge were checked close to submission time, while the terminal fallback remains deterministic.
+11. End on the Submission Pack screen so the organizer requirements are visually obvious.
 
 Role-switch ladder if the recording has extra time:
 

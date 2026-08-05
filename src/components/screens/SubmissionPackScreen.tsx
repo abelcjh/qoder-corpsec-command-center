@@ -177,6 +177,14 @@ const humanHandoffReceipt = [
   ['Proof retained', 'The handoff ends in reviewer-safe evidence fields — owner, recipient, cadence, snapshot, provider/message ID field, and unresolved risk.'],
 ];
 
+const enterpriseTrustScorecard = [
+  ['Minutes not weeks', 'Recent enterprise-agent winners lead with a painful manual workflow compressed into a measurable loop; Credence says one client chase becomes inspectable proof in under 60 seconds.'],
+  ['Deterministic middle', 'AI can draft summaries, but department scoping, working-day recurrence, freshness status, and evidence retention are TypeScript rules verified by npm run verify.'],
+  ['Audit-ready report', 'Each proof row exposes owner, recipient, timestamp, cadence state, provider/message ID field, Gmail print status, and retained snapshot without secrets.'],
+  ['Governed AI', 'Agnes receives bounded role-scoped context through the Worker, cannot send externally, and the staff owner remains the approval authority.'],
+  ['Ready to adopt', 'The live demo, Supabase schema, proof ledger, build ledger, and smoke script make the project look like an operational wedge a CorpSec team could pilot.'],
+];
+
 const demoScenes = [
   'Open polished staff login; call out Supabase-seeded credentials and CLPC database connection.',
   'Login as admin; show dashboard stats, active clients, scheduled jobs, and proof logs.',
@@ -313,6 +321,21 @@ export function SubmissionPackScreen() {
           {humanHandoffReceipt.map(([label, detail]) => (
             <div key={label} className="rounded-xl border border-emerald-500/20 bg-emerald-950/10 p-4">
               <div className="font-semibold text-emerald-100">{label}</div>
+              <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2"><Trophy size={18} className="text-crimson-500" /> Enterprise trust scorecard</CardTitle>
+          <CardDescription>Compact winner calibration: enterprise-agent winners show measurable workflow compression, deterministic control, audit-ready receipts, and governed AI</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
+          {enterpriseTrustScorecard.map(([label, detail]) => (
+            <div key={label} className="rounded-xl border border-crimson-500/20 bg-crimson-950/10 p-4">
+              <div className="font-semibold text-crimson-100">{label}</div>
               <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
             </div>
           ))}

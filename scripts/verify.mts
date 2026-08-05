@@ -188,6 +188,8 @@ assert(submissionPack.includes('Client Database → Scheduled Queue → Send Log
 assert(submissionPack.includes('Current live smoke check'), 'Submission Pack includes current live Worker smoke receipt');
 assert(submissionPack.includes('AI Workbench recording packet'), 'Submission Pack includes governed AI Workbench recording packet');
 assert(submissionPack.includes('AI-to-staff handoff receipt'), 'Submission Pack includes AI-to-staff handoff receipt');
+assert(submissionPack.includes('Enterprise trust scorecard'), 'Submission Pack includes enterprise trust winner-calibration scorecard');
+assert(submissionPack.includes('Deterministic middle'), 'Submission Pack states deterministic rules remain the trusted middle');
 assert(submissionPack.includes('AI drafts only'), 'Submission Pack states AI drafts only before staff approval');
 assert(submissionPack.includes('ClientBase / VOPlus Singapore scan'), 'Submission Pack includes Singapore practice-suite competitor calibration');
 assert(submissionPack.includes('owner-specific chase becomes a reviewer-safe proof receipt'), 'Submission Pack states the narrow proof-receipt wedge');
