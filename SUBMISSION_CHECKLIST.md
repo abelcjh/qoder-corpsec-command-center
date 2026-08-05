@@ -134,3 +134,12 @@ From the organizer master deck and UGC screenshot:
 | Impact | 20% | LinkedIn/X reach and engagement, real industry pain point, screenshots/video proof |
 | Technical Execution | 15% | Supabase-backed staff auth, client database, scheduled jobs, proof logs, build plus verify passing |
 | Presentation and UGC | 10% | Polished login/dashboard, 2-3 minute video, correct tags/hashtags, Submission Pack screen |
+
+### Compact market calibration — Aug 5 Ralph loop
+
+| Source | Signal | How Credence should answer in pitch/demo |
+|---|---|---|
+| [Officio Malaysia](https://getofficio.today/) | Local CoSec tools already emphasize client portals, task/date reminders, statutory reminders, and automated email reminders. | Do not pitch only "reminders"; pitch department-scoped operations plus evidence retention. |
+| [CA-Kompas](https://ca-kompas.com/) | Malaysian accounting/company-secretary buyers expect client databases, compliance tracking, and email/SMS notifications. | Show client database as source of truth and proof rows as the differentiator. |
+| [iCorpSec](https://icorpsec.com/) | Singapore/Malaysia competitors advertise AI drafting, compliance calendars, and scanners. | Position Credence as a human-approved command center with deterministic rule/job/proof trails, not a black-box AI secretary. |
+| [Qoder SG Luma](https://luma.com/92h6pyl1) | Official wording rewards Spec-Driven Workflow, Quest Mode orchestration, Qoder IDE/CLI/JetBrains, and real functional software. | Keep Qoder Build Ledger, verification output, and submission-pack screen visible during the recording. |

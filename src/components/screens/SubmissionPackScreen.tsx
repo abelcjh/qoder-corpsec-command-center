@@ -18,6 +18,27 @@ const requirements = [
   ['Submission form', 'Required', 'Submit both the social post URL and demo video link via the organizer form before Aug 5.'],
 ];
 
+const marketFindings = [
+  {
+    source: 'Officio Malaysia',
+    url: 'https://getofficio.today/',
+    signal: 'Malaysian company-secretary tools already sell client portals, date tracking, and automatic statutory reminders.',
+    credenceAngle: 'Lead with proof retention and department-scoped reminder operations, not another generic calendar.',
+  },
+  {
+    source: 'CA-Kompas',
+    url: 'https://ca-kompas.com/',
+    signal: 'Local accounting/company-secretary buyers expect client databases, 80+ fields, compliance tracking, and email/SMS notifications.',
+    credenceAngle: 'Show the client database as the operational source of truth and make every reminder produce auditable evidence.',
+  },
+  {
+    source: 'iCorpSec',
+    url: 'https://icorpsec.com/',
+    signal: 'Singapore/Malaysia competitors are moving toward AI drafting and compliance scanners.',
+    credenceAngle: 'Differentiate as a human-approved command center where AI assists messy intake while deterministic rules create the deadline/job/proof trail.',
+  },
+];
+
 const demoScenes = [
   'Open polished staff login; call out Supabase-seeded credentials and CLPC database connection.',
   'Login as admin; show dashboard stats, active clients, scheduled jobs, and proof logs.',
@@ -79,6 +100,22 @@ export function SubmissionPackScreen() {
             <div key={item} className="rounded-xl border border-brand-border bg-brand-surface/40 p-4">
               <div className="mb-2 flex items-center justify-between gap-3"><div className="font-medium">{item}</div><Badge variant="success">{status}</Badge></div>
               <p className="text-sm text-brand-muted">{detail}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2"><Trophy size={18} className="text-crimson-500" /> Competitor calibration</CardTitle>
+          <CardDescription>Why this entry is positioned beyond a standard reminder calendar</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 lg:grid-cols-3">
+          {marketFindings.map((finding) => (
+            <div key={finding.source} className="rounded-xl border border-brand-border bg-brand-surface/40 p-4">
+              <a href={finding.url} className="text-sm font-semibold text-crimson-300 underline-offset-4 hover:underline" target="_blank" rel="noreferrer">{finding.source}</a>
+              <p className="mt-2 text-sm text-brand-muted">{finding.signal}</p>
+              <p className="mt-3 text-sm text-brand-text"><span className="font-medium">Credence angle:</span> {finding.credenceAngle}</p>
             </div>
           ))}
         </CardContent>
