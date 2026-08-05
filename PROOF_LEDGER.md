@@ -71,13 +71,22 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | Verification script with 47 assertions | `scripts/verify.mts` |
 | Package scripts | `package.json` |
 
+## Claim 9: Qoder usage is visible, rule-clean, and reviewable
+
+| Evidence | Location |
+|----------|----------|
+| Spec-first build plan and full-stack Qoder prompts | `Spec.md`, `QODER_FULLSTACK_PROMPT.md`, `QODER_TASK_PROMPT.md` |
+| Qoder-generated phases and human verification receipt | `QODER_BUILD_LEDGER.md`, `scripts/verify.mts` |
+| Qoder Security checkpoint documents optional L1/L2/L3 scan path and credit/access limitation | `QODER_BUILD_LEDGER.md` |
+| Submission Pack screen tells judges where to look during the recording | `src/components/screens/SubmissionPackScreen.tsx`, `src/components/screens/BuildLedgerScreen.tsx` |
+
 ---
 
 ## Rubric proof map for final submission
 
 | Judging criterion | Weight | Hard proof artifact | Video / judge moment |
 |---|---:|---|---|
-| Use of Qoder | 30% | `QODER_BUILD_LEDGER.md`, `QODER_FULLSTACK_PROMPT.md`, `Spec.md`, `scripts/verify.mts` | Open the Qoder Build screen, then show this ledger and say Qoder produced the schema, state model, UI screens, reminder engine, and verification harness under Abel's human review. |
+| Use of Qoder | 30% | `QODER_BUILD_LEDGER.md`, `QODER_FULLSTACK_PROMPT.md`, `Spec.md`, `scripts/verify.mts`, Qoder Security checkpoint | Open the Qoder Build screen, then show this ledger and say Qoder produced the schema, state model, UI screens, reminder engine, and verification harness under Abel's human review. |
 | Innovation and creativity | 25% | `src/lib/reminderEngine.ts`, `src/lib/scoping.ts`, `src/components/screens/SendLogsScreen.tsx`, `src/components/screens/ProofScreen.tsx` | Position Credence as a department-scoped compliance command center with evidence retention, not another generic reminder/calendar app. |
 | Impact | 20% | `SUBMISSION_CHECKLIST.md` market calibration, CLPC workflow references, seeded Malaysia Sdn Bhd client records | Say the wedge is for Malaysian company-secretary/accounting firms whose work begins before invoicing, so the client database and proof trail become operational infrastructure. |
 | Technical execution | 15% | `supabase/schema.sql`, `src/lib/store.ts`, `src/lib/reducers.ts`, `npm run build`, `npm run verify` | Show Supabase-backed staff login, scoped clients/jobs/logs, deactivation preserving evidence, and passing verification. |

@@ -21,6 +21,16 @@ Core capabilities:
 - **Qoder Build Ledger** — Live view of the artifacts and capabilities Qoder delivered.
 - **Supabase Cloud Wired** — Staff credentials, client profiles, scheduled jobs, and proof logs load from the CLPC Supabase project via `.env.local`.
 
+## Defensible reminder evidence
+
+Credence is deliberately narrower than full Malaysian CoSec suites such as Officio, CA-Kompas, iCorpSec, ezcosec, or ACE. Those platforms manage broad statutory operations, portals, registers, and filing workflows. Credence focuses on the accountability gap that still exists when teams chase clients through Gmail and spreadsheets:
+
+1. **Rule and owner selected** — a staff member chooses the company, department, recipient, rule, cadence, and stop date.
+2. **Reminder safely scheduled** — the working-day engine previews exactly when follow-ups will be queued.
+3. **Proof row retained** — each send/proof record preserves actor, recipient, timestamp, provider/message ID fields, Gmail print-document status, evidence type, and message snapshot.
+
+Pitch line: **workflow complete is not proof; Credence packages who reminded whom, when, under which rule, with what evidence, and what remains at risk.**
+
 This system provides **operational workflow assistance only** — it does not constitute legal advice. A qualified company secretary or professional must review and approve all compliance actions.
 
 ## Quick Start

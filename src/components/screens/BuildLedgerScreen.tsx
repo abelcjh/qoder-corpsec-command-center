@@ -47,6 +47,14 @@ export function BuildLedgerScreen() {
         'npm run build passes TypeScript strict mode',
       ],
     },
+    {
+      phase: 'Security / Review',
+      items: [
+        'Qoder Security checkpoint mapped to L1 static, L2 lightweight, and L3 deep scan docs',
+        'No secrets committed; Supabase credentials stay in .env.local',
+        'Human review boundary preserved for compliance actions and paid/credit-consuming scans',
+      ],
+    },
   ];
 
   return (
@@ -95,7 +103,7 @@ export function BuildLedgerScreen() {
           <p>
             Qoder scaffolded the upgraded full-stack prototype end-to-end: dependency setup, Tailwind theming,
             Supabase integration, reminder engine, screen components, fixture-backed local state, verification tests, and
-            documentation. All changes are kept inside this repository.
+            documentation. All changes are kept inside this repository. The security checkpoint is documented honestly: run Qoder L2/L3 scan if access/credits allow, otherwise show build+verify and human review as the current receipt.
           </p>
           <div className="flex flex-wrap gap-2">
             <Badge variant="info">React 18</Badge>
@@ -104,6 +112,7 @@ export function BuildLedgerScreen() {
             <Badge variant="info">Supabase</Badge>
             <Badge variant="info">Vite</Badge>
             <Badge variant="warning">Fixture-safe Sends</Badge>
+            <Badge variant="info">Qoder Security Checkpoint</Badge>
           </div>
         </CardContent>
       </Card>

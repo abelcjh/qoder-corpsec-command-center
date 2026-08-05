@@ -3,7 +3,7 @@ import { Badge } from '../ui/Badge';
 import { CheckCircle2, Film, Megaphone, Send, Trophy, CalendarDays } from 'lucide-react';
 
 const rubric = [
-  ['Use of Qoder', '30%', 'Spec-driven prompt, Qoder CLI build session, build ledger, verification logs, reusable workflow proof.'],
+  ['Use of Qoder', '30%', 'Spec-driven prompt, Qoder CLI build session, build ledger, verification logs, reusable workflow proof, and Qoder Security checkpoint.'],
   ['Innovation & Creativity', '25%', 'Malaysia-first corporate-secretarial reminder platform with department-scoped workflows and evidence retention.'],
   ['Impact', '20%', 'Social reach and engagement from LinkedIn/X post; real CLPC/industry validation angle.'],
   ['Technical Execution', '15%', 'Supabase-backed staff login, client database, scheduled jobs, proof logs, build + verify passing.'],
@@ -37,6 +37,12 @@ const marketFindings = [
     signal: 'Singapore/Malaysia competitors are moving toward AI drafting and compliance scanners.',
     credenceAngle: 'Differentiate as a human-approved command center where AI assists messy intake while deterministic rules create the deadline/job/proof trail.',
   },
+  {
+    source: 'Qoder Security',
+    url: 'https://docs.qoder.com/qoder-security-guide',
+    signal: 'Qoder positions L1/L2/L3 security scans as staged review from coding loop to pre-push handoff.',
+    credenceAngle: 'Show a rule-clean security checkpoint: Qoder-built code, human review, build+verify receipt, and scan/credit limitation noted honestly.',
+  },
 ];
 
 const demoScenes = [
@@ -46,10 +52,10 @@ const demoScenes = [
   'Create or show a predefined compliance rule; explain client database is the source of truth, not invoices.',
   'Create a New Send Job with working-day recurrence and editable body preview.',
   'Show Send Logs / Evidence: provider IDs, sender/recipient, message snapshot, Gmail print-document status.',
-  'Open Qoder Build Ledger: explain spec-driven Qoder workflow, CLI build, verification, and reusable artifacts.',
+  'Open Qoder Build Ledger: explain spec-driven Qoder workflow, CLI build, verification, Qoder Security checkpoint, and reusable artifacts.',
 ];
 
-const socialDraft = `I built Credence for the Alibaba Cloud x Qoder Hackathon Singapore 2026 — a Malaysia-first corporate-secretarial compliance workflow platform for firms like CLPC.\n\nThe app turns client company records into department-scoped reminder jobs, scheduled queues, and auditable proof logs so tax, audit, accounting, and corp sec teams can reduce missed follow-ups and preserve evidence even when clients are deactivated.\n\nQoder was central to the build: I used a clear spec, Qoder CLI/agentic workflow, and verification loops to upgrade the app into a Supabase-backed React/Tailwind platform with staff credentials, client profiles, scheduled jobs, and proof records.\n\n@QoderOfficial @AlibabaCloud #QoderHackathon #BuildWithQoder`;
+const socialDraft = `I built Credence for the Alibaba Cloud x Qoder Hackathon Singapore 2026 — a Malaysia-first corporate-secretarial compliance workflow platform for firms like CLPC.\n\nThe app turns client company records into department-scoped reminder jobs, scheduled queues, and defensible evidence logs: who reminded whom, when, under which rule, with what proof, and what remains at risk.\n\nQoder was central to the build: I used a clear spec, Qoder CLI/agentic workflow, verification loops, and a security-review checkpoint to upgrade the app into a Supabase-backed React/Tailwind platform with staff credentials, client profiles, scheduled jobs, and proof records.\n\n@QoderOfficial @AlibabaCloud #QoderHackathon #BuildWithQoder`;
 
 export function SubmissionPackScreen() {
   return (

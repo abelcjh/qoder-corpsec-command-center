@@ -147,6 +147,18 @@ Final result:
 
 ---
 
+## Phase 10: Security & Human Review Checkpoint
+
+**Qoder-related security signal**: Qoder Security documentation describes a three-tier workflow that strengthens the 30% Qoder-usage story: L1 Static Check during coding, L2 Lightweight Scan for incremental semantic review, and L3 Deep Scan before push/release handoff. The Qoder CLI docs also state that L2/L3 may consume credits and that security scanning is not a replacement for human review.
+
+Judge-facing handling for Credence:
+- Keep the repository and video honest: Qoder was central for spec-driven build, implementation, and verification; Hermes/Ralph loops are post-build improvements, not hidden Qoder claims.
+- Show this ledger and `npm run build && npm run verify` as the review receipt.
+- If Abel has Qoder CLI access/credits during final packaging, run or screenshot a focused `/security-scan L3 deep review` before final social/video submission.
+- If Qoder credits/access are unavailable, state the blocker plainly: security-scan proof is prepared as an upgrade checkpoint, while current proof remains TypeScript strict build + deterministic verification + Supabase secret separation.
+
+---
+
 ## Qoder Capabilities Demonstrated
 
 1. **Full-stack project upgrade** — Added Tailwind, Supabase, and tsx to an existing Vite + React project
