@@ -13,6 +13,7 @@ import {
   Send,
   LogOut,
   Shield,
+  BrainCircuit,
 } from 'lucide-react';
 
 export type Screen =
@@ -22,6 +23,7 @@ export type Screen =
   | 'queue'
   | 'logs'
   | 'proof'
+  | 'ai'
   | 'build-ledger'
   | 'submission';
 
@@ -40,6 +42,7 @@ const navItems: { id: Screen; label: string; icon: React.ElementType }[] = [
   { id: 'queue', label: 'Scheduled Queue', icon: CalendarClock },
   { id: 'logs', label: 'Send Logs', icon: MailCheck },
   { id: 'proof', label: 'Evidence', icon: FileCheck },
+  { id: 'ai', label: 'AI Workbench', icon: BrainCircuit },
   { id: 'build-ledger', label: 'Qoder Build', icon: Wrench },
   { id: 'submission', label: 'Submission Pack', icon: Send },
 ];

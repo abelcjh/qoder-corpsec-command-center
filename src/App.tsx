@@ -10,6 +10,7 @@ import { SendLogsScreen } from './components/screens/SendLogsScreen';
 import { ProofScreen } from './components/screens/ProofScreen';
 import { BuildLedgerScreen } from './components/screens/BuildLedgerScreen';
 import { SubmissionPackScreen } from './components/screens/SubmissionPackScreen';
+import { AIWorkbenchScreen } from './components/screens/AIWorkbenchScreen';
 
 function App() {
   const [screen, setScreen] = useState<Screen>('dashboard');
@@ -68,6 +69,15 @@ function App() {
         <SendLogsScreen companies={store.scopedCompanies} logs={store.scopedLogs} onRunDueCheck={() => store.simulateCron(new Date('2026-12-31T23:59:00+08:00'))} />
       )}
       {screen === 'proof' && <ProofScreen logs={store.scopedLogs} />}
+      {screen === 'ai' && (
+        <AIWorkbenchScreen
+          user={state.currentUser}
+          companies={store.scopedCompanies}
+          rules={store.scopedRules}
+          jobs={store.scopedJobs}
+          logs={store.scopedLogs}
+        />
+      )}
       {screen === 'build-ledger' && <BuildLedgerScreen />}
       {screen === 'submission' && <SubmissionPackScreen />}
     </Layout>

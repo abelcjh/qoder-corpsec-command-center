@@ -41,10 +41,10 @@ export default {
           950: '#450a0a',
         },
         brand: {
-          bg: '#0f0f12',
-          card: '#18181b',
-          surface: '#27272a',
-          border: '#3f3f46',
+          bg: '#09090b',
+          card: '#151417',
+          surface: '#242126',
+          border: '#3a3335',
           text: '#fff8f0',
           muted: '#a1a1aa',
           accent: '#dc2626',
@@ -52,11 +52,12 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        serif: ['Newsreader', 'ui-serif', 'Georgia', 'serif'],
         mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
       },
       boxShadow: {
-        soft: '0 1px 3px rgba(0,0,0,0.35), 0 1px 2px rgba(0,0,0,0.25)',
-        card: '0 4px 20px rgba(0,0,0,0.4)',
+        soft: '0 10px 28px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.04)',
+        card: '0 24px 80px rgba(0,0,0,0.42), inset 0 1px 0 rgba(255,255,255,0.05)',
         glow: '0 0 24px rgba(220,38,38,0.15)',
       },
       borderRadius: {
