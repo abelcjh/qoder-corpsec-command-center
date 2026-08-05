@@ -13,10 +13,14 @@ export type EvidenceType = 'simulated' | 'provider_receipt' | 'gmail_print';
 export interface StaffUser {
   id: string;
   email: string;
+  username: string;
   fullName: string;
+  displayName: string;
   department: Department;
+  allowedDepartments: Department[];
   role: 'admin' | 'manager' | 'staff';
   active: boolean;
+  passwordHash?: string;
 }
 
 export interface Company {
@@ -171,6 +175,9 @@ export interface ReviewSummary {
 export interface AppState {
   staffUsers: StaffUser[];
   currentUser: StaffUser | null;
+  cloudReady: boolean;
+  loading: boolean;
+  error?: string;
   companies: Company[];
   contacts: CompanyContact[];
   rules: ComplianceRule[];

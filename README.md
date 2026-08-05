@@ -17,9 +17,9 @@ Core capabilities:
 - **Rules Library** — Predefined reminder templates by department (Annual Return, Tax CP204/Form C, Audit FS, etc.).
 - **New Send Job** — Choose company, apply a rule or write a custom body, preview working-day recurrence, and schedule.
 - **Scheduled Queue** — Recurring reminder jobs with working-day recurrence until a stop date.
-- **Send Logs / Evidence** — Timestamped send snapshots with provider/message IDs and explicit DEMO marking for simulated sends.
+- **Send Logs / Evidence** — Timestamped database proof records with provider/message IDs, Gmail print-document fields, sender/recipient metadata, and message snapshots.
 - **Qoder Build Ledger** — Live view of the artifacts and capabilities Qoder delivered.
-- **Supabase-Ready** — Full schema with RLS notes; app falls back to seeded demo mode when credentials are absent.
+- **Supabase Cloud Wired** — Staff credentials, client profiles, scheduled jobs, and proof logs load from the CLPC Supabase project via `.env.local`.
 
 This system provides **operational workflow assistance only** — it does not constitute legal advice. A qualified company secretary or professional must review and approve all compliance actions.
 
@@ -30,7 +30,7 @@ npm install
 npm run dev
 ```
 
-The app runs at `http://localhost:5173`. No external APIs or credentials are required.
+The app runs at `http://localhost:5173`. The current CLPC build requires `.env.local` with `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` so the seeded staff credentials and client rows come from Supabase.
 
 ## Scripts
 
@@ -57,12 +57,12 @@ The app runs at `http://localhost:5173`. No external APIs or credentials are req
 src/
   components/
     ui/             shadcn-inspired reusable components
-    screens/        Login, Dashboard, Clients, Rules, Queue, Logs, Proof, Build Ledger
+    screens/        Login, Dashboard, Clients, Rules, Queue, Logs, Proof, Build Ledger, Submission Pack
   data/             Demo fixtures and seed data
   lib/
-    supabase.ts     Supabase client with demo fallback
-    store.ts        Local/demo app state and actions
-    reminderEngine.ts  Working-day recurrence + simulated sends
+    supabase.ts     Supabase client configured through Vite env vars
+    store.ts        Supabase-backed app state, staff auth, and actions
+    reminderEngine.ts  Working-day recurrence + proof-record construction
     scoping.ts      Department-scoped filtering
     reducers.ts     Pure state reducers (e.g. deactivation)
     utils.ts        cn(), ID/date helpers
@@ -82,9 +82,9 @@ docs/
   SUBMISSION_CHECKLIST.md
 ```
 
-## Supabase Configuration (Optional)
+## Supabase Configuration
 
-To connect to a real Supabase project instead of demo mode:
+This repo is wired to the CLPC Supabase cloud project through `.env.local` on Abel's PC. To use another project:
 
 ```bash
 cp .env.example .env

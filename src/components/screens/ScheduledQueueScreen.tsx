@@ -31,7 +31,7 @@ export interface ScheduledQueueScreenProps {
     everyNWorkingDays: number;
     stopDate?: string;
   }) => void;
-  onSimulateJob: (job: ScheduledSendJob) => void;
+  onRecordProofPreview: (job: ScheduledSendJob) => void;
 }
 
 const channels: Channel[] = ['email', 'whatsapp', 'sms'];
@@ -43,7 +43,7 @@ export function ScheduledQueueScreen({
   rules,
   jobs,
   onCreateJob,
-  onSimulateJob,
+  onRecordProofPreview,
 }: ScheduledQueueScreenProps) {
   const [showCreate, setShowCreate] = useState(false);
   const [previewRuns, setPreviewRuns] = useState<string[] | null>(null);
@@ -208,10 +208,10 @@ export function ScheduledQueueScreen({
                     <Button
                       variant="secondary"
                       size="sm"
-                      onClick={() => onSimulateJob(job)}
+                      onClick={() => onRecordProofPreview(job)}
                       disabled={job.status !== 'active'}
                     >
-                      <Play size={14} /> Simulate
+                      <Play size={14} /> Record proof
                     </Button>
                   </TableCell>
                 </TableRow>

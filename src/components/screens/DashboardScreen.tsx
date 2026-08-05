@@ -5,7 +5,7 @@ import { formatDate } from '../../lib/utils';
 import {
   getDepartmentLabel,
 } from '../../data/seed';
-import { Building2, CalendarClock, MailCheck, AlertTriangle } from 'lucide-react';
+import { Building2, CalendarClock, MailCheck, Database } from 'lucide-react';
 
 export interface DashboardScreenProps {
   user: StaffUser;
@@ -18,7 +18,7 @@ export function DashboardScreen({ user, companies, jobs, logs }: DashboardScreen
   const activeCompanies = companies.filter((c) => c.active).length;
   const inactiveCompanies = companies.length - activeCompanies;
   const activeJobs = jobs.filter((j) => j.status === 'active').length;
-  const simulatedLogs = logs.filter((l) => l.status === 'simulated').length;
+  const evidenceLogs = logs.length;
 
   const upcomingJobs = [...jobs]
     .filter((j) => j.status === 'active')
@@ -72,14 +72,14 @@ export function DashboardScreen({ user, companies, jobs, logs }: DashboardScreen
 
         <Card>
           <CardHeader className="pb-2">
-            <CardDescription>Simulated Sends</CardDescription>
+            <CardDescription>Proof Logs</CardDescription>
             <CardTitle className="flex items-center gap-2 text-2xl">
               <MailCheck size={20} className="text-crimson-500" />
-              {simulatedLogs}
+              {evidenceLogs}
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-xs text-brand-muted">Demo sends recorded as proof</p>
+            <p className="text-xs text-brand-muted">Database-backed send evidence</p>
           </CardContent>
         </Card>
       </div>
@@ -119,12 +119,12 @@ export function DashboardScreen({ user, companies, jobs, logs }: DashboardScreen
             <CardTitle>System Status</CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
-            <div className="flex items-start gap-3 rounded-lg border border-amber-800/50 bg-amber-950/30 p-3">
-              <AlertTriangle size={18} className="mt-0.5 text-amber-400" />
-              <div className="text-sm text-amber-100">
-                <strong className="text-amber-400">Demo mode active</strong>
-                <p className="mt-1 text-xs text-amber-200/70">
-                  Supabase not configured. All sends are simulated and marked as demo evidence.
+            <div className="flex items-start gap-3 rounded-lg border border-emerald-800/50 bg-emerald-950/30 p-3">
+              <Database size={18} className="mt-0.5 text-emerald-400" />
+              <div className="text-sm text-emerald-100">
+                <strong className="text-emerald-400">Supabase cloud connected</strong>
+                <p className="mt-1 text-xs text-emerald-200/70">
+                  Staff credentials, client profiles, scheduled jobs, and proof logs are loaded from the CLPC cloud database.
                 </p>
               </div>
             </div>

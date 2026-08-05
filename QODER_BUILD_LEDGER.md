@@ -28,7 +28,7 @@ Files generated/updated:
 
 ## Phase 2: Supabase Schema & Client Adapter
 
-**Qoder Action**: Designed the production PostgreSQL schema and a Supabase client that falls back to demo mode.
+**Qoder Action**: Designed the production PostgreSQL schema and wired the app to the CLPC Supabase cloud project through `.env.local`.
 
 Files generated:
 - `supabase/schema.sql` — 8 tables (`staff_users`, `companies`, `company_contacts`, `compliance_rules`, `scheduled_send_jobs`, `send_logs`, `proof_documents`, `audit_events`), indexes, triggers, RLS notes
@@ -48,7 +48,7 @@ Files generated/updated:
 
 Key decisions:
 - Companies carry `departments[]` so each department sees only its clients.
-- Send logs carry `demoMarked` and `evidenceType` to distinguish simulated vs. live proof.
+- Send logs carry `evidenceType`, provider IDs, Gmail print-document status, and message snapshots for proof handling.
 - Audit events are immutable and actor-tagged.
 
 ---
@@ -64,7 +64,7 @@ Key decisions:
 - Recurrence skips weekends (Mon–Fri only).
 - Run generation respects `stopDate` and caps at 500 runs for safety.
 - Cron simulator deduplicates against existing logs.
-- All simulated sends are marked with `demoMarked: true`.
+- Existing cloud proof rows are loaded from Supabase and rendered as database-backed evidence.
 
 ---
 
@@ -106,7 +106,7 @@ Features implemented:
 - Login changes department scope.
 - Create company, rule, and job locally.
 - Job preview shows first 10 working-day runs.
-- Simulate single job or full cron run.
+- Run due-check or record proof preview from selected jobs.
 - Deactivate company stops future jobs while retaining logs.
 
 ---

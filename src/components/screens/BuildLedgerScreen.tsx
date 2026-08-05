@@ -8,7 +8,7 @@ export function BuildLedgerScreen() {
       phase: 'Architecture',
       items: [
         'Supabase schema with RLS notes (supabase/schema.sql)',
-        'Supabase-ready client adapter with demo fallback (src/lib/supabase.ts)',
+        'Supabase cloud client adapter wired through .env.local (src/lib/supabase.ts)',
         'TypeScript domain types covering staff, companies, contacts, rules, jobs, logs, proofs',
       ],
     },
@@ -17,8 +17,8 @@ export function BuildLedgerScreen() {
       items: [
         'createScheduledSendJob with deterministic ID',
         'buildScheduledSendJobRuns using working-day recurrence',
-        'simulateDueSends cron simulator with deduplication',
-        'recordSendProof with snapshot, provider ID, and demo marking',
+        'due-send checker with deduplication',
+        'recordSendProof with snapshot, provider ID, and evidence type',
       ],
     },
     {
@@ -35,8 +35,8 @@ export function BuildLedgerScreen() {
       phase: 'Interactivity',
       items: [
         'Login changes department scope',
-        'Create company / rule / job locally',
-        'Simulate cron or single job send',
+        'Create company / job with Supabase persistence where supported',
+        'Run due-check or record proof preview',
         'Deactivate company stops future jobs but retains logs',
       ],
     },
@@ -59,7 +59,7 @@ export function BuildLedgerScreen() {
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <MetricCard icon={Wrench} label="UI Components" value="10+" />
         <MetricCard icon={Database} label="Tables" value="8" />
-        <MetricCard icon={ShieldCheck} label="Demo Users" value="5" />
+        <MetricCard icon={ShieldCheck} label="Staff Users" value="5" />
         <MetricCard icon={TestTube2} label="Verify Tests" value="20+" />
       </div>
 

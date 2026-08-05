@@ -2,7 +2,7 @@
 
 ## 1. Purpose
 
-A full-stack prototype of a Malaysia-first corporate-secretarial compliance reminder and workflow platform. It gives staff a department-scoped client database, turns statutory deadlines into recurring scheduled reminder jobs, records simulated send evidence, and retains proof even when clients are deactivated.
+A full-stack prototype of a Malaysia-first corporate-secretarial compliance reminder and workflow platform. It gives staff a department-scoped client database, turns statutory deadlines into recurring scheduled reminder jobs, records database-backed send evidence, and retains proof even when clients are deactivated.
 
 ## 2. Scope
 
@@ -15,13 +15,13 @@ A full-stack prototype of a Malaysia-first corporate-secretarial compliance remi
 - Working-day recurrence engine until stop date
 - Scheduled queue and send logs / evidence
 - Company deactivation that stops future jobs but retains logs
-- Supabase-ready schema and client adapter with seeded demo fallback
+- Supabase cloud client adapter wired to CLPC seeded tables
 - Modern React + Tailwind + shadcn-inspired UI
 - Automated verification for engine, scoping, deactivation, fixtures
 
 ### Out of Scope
 - Legal advice or automated legal reasoning
-- Real email/WhatsApp/SMS transmission (simulated only)
+- Uncontrolled production email/WhatsApp/SMS transmission from the frontend; proof rows use the CLPC database evidence model.
 - Production Supabase RLS policies (schema includes notes/templates)
 - Actual document upload/file storage (artifact references only)
 
@@ -34,14 +34,14 @@ A full-stack prototype of a Malaysia-first corporate-secretarial compliance remi
 - **Custom shadcn-inspired components** under `src/components/ui/`
 
 ### State Management
-- Local React state via `useAppStore()` custom hook
+- React store hydrates staff users, client profiles, scheduled jobs, and send logs from Supabase.
 - Pure reducer functions for complex mutations (deactivation)
 - Department-scoped selectors in `src/lib/scoping.ts`
 
 ### Backend (ready via Supabase)
 - Tables: `staff_users`, `companies`, `company_contacts`, `compliance_rules`, `scheduled_send_jobs`, `send_logs`, `proof_documents`, `audit_events`
 - RLS enabled with policy notes; full policies to be added per-deployment
-- Demo mode seeds data when `VITE_SUPABASE_URL` / `VITE_SUPABASE_ANON_KEY` are absent
+- `.env.local` provides `VITE_SUPABASE_URL` / `VITE_SUPABASE_ANON_KEY`; missing env vars surface a connection error rather than pretending to be connected.
 
 ### Reminder Engine
 - Pure TypeScript module `src/lib/reminderEngine.ts`
@@ -84,7 +84,7 @@ A full-stack prototype of a Malaysia-first corporate-secretarial compliance remi
 4. Staff creates a new send job from a rule or custom body.
 5. System previews first 10 working-day runs.
 6. Job appears in scheduled queue; future runs are generated.
-7. Staff simulates cron or a single job send.
+7. Staff runs a due-check or records a proof preview for a selected job.
 8. Send logs / evidence update live and remain when a company is deactivated.
 
 ## 6. Theme
@@ -97,16 +97,16 @@ A full-stack prototype of a Malaysia-first corporate-secretarial compliance remi
 
 ## 7. Security & Privacy
 
-- Demo mode requires no credentials and makes no external network calls.
+- Staff login requires credentials seeded in the Supabase `staff_users` table.
 - Supabase mode uses environment variables; no secrets are committed.
-- All simulated sends are marked as demo evidence.
+- Existing proof rows retain provider IDs, Gmail print-document status, message snapshots, recipient, and sender metadata.
 - Deactivation retains logs for audit/evidence purposes.
 
 ## 8. Verification
 
 `scripts/verify.mts` checks:
 - Working-day math and run generation
-- Simulated send construction and cron deduplication
+- Proof-record construction and due-check deduplication
 - Department scoping for companies, rules, jobs, logs
 - Company deactivation stops future jobs but retains logs
 - Build output and required project files

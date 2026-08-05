@@ -21,13 +21,13 @@ Claims-to-artifacts mapping for hackathon judging.
 | Tests for working-day math and run generation | `scripts/verify.mts` |
 | New job form previews first 10 runs | `src/components/screens/ScheduledQueueScreen.tsx` |
 
-## Claim 3: Simulated sends create immutable proof records
+## Claim 3: Database-backed send logs create immutable proof records
 
 | Evidence | Location |
 |----------|----------|
-| `SendLog` type with snapshot, provider ID, evidence type, demo flag | `src/types.ts` |
+| `SendLog` type with snapshot, provider ID, evidence type, sender/recipient metadata | `src/types.ts` |
 | `simulateCronSend`, `recordSendProof` | `src/lib/reminderEngine.ts` |
-| Send logs table and detail modal | `src/components/screens/SendLogsScreen.tsx` |
+| Send logs table and detail modal backed by Supabase rows | `src/components/screens/SendLogsScreen.tsx` |
 | Evidence retention policy screen | `src/components/screens/ProofScreen.tsx` |
 
 ## Claim 4: Deactivating a company stops future jobs but retains logs

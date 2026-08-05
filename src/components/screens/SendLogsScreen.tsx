@@ -12,10 +12,10 @@ import { MailCheck, FileText } from 'lucide-react';
 export interface SendLogsScreenProps {
   companies: Company[];
   logs: SendLog[];
-  onSimulateCron: () => void;
+  onRunDueCheck: () => void;
 }
 
-export function SendLogsScreen({ companies, logs, onSimulateCron }: SendLogsScreenProps) {
+export function SendLogsScreen({ companies, logs, onRunDueCheck }: SendLogsScreenProps) {
   const [selectedLog, setSelectedLog] = useState<SendLog | null>(null);
 
   return (
@@ -23,10 +23,10 @@ export function SendLogsScreen({ companies, logs, onSimulateCron }: SendLogsScre
       <div className="flex items-center justify-between">
         <div>
           <h2 className="text-lg font-semibold">Send Logs / Evidence</h2>
-          <p className="text-sm text-brand-muted">Timestamped proof of simulated sends</p>
+          <p className="text-sm text-brand-muted">Timestamped database-backed proof records</p>
         </div>
-        <Button onClick={onSimulateCron}>
-          <MailCheck size={16} /> Simulate Cron Run
+        <Button onClick={onRunDueCheck}>
+          <MailCheck size={16} /> Run Due Check
         </Button>
       </div>
 
@@ -52,13 +52,13 @@ export function SendLogsScreen({ companies, logs, onSimulateCron }: SendLogsScre
                   <TableCell>{log.recipient}</TableCell>
                   <TableCell>{getChannelLabel(log.channel)}</TableCell>
                   <TableCell>
-                    <Badge variant={log.status === 'simulated' ? 'info' : 'success'}>{log.status}</Badge>
+                    <Badge variant={log.status === 'failed' ? 'danger' : log.status === 'scheduled' ? 'warning' : 'success'}>{log.status === 'simulated' ? 'queued' : log.status}</Badge>
                   </TableCell>
                   <TableCell>
                     <div className="flex items-center gap-2 text-xs text-brand-muted">
                       <FileText size={14} />
                       {log.evidenceType}
-                      {log.demoMarked && <Badge variant="warning">DEMO</Badge>}
+                      
                     </div>
                   </TableCell>
                 </TableRow>
@@ -75,7 +75,7 @@ export function SendLogsScreen({ companies, logs, onSimulateCron }: SendLogsScre
               <div>
                 <DialogTitle>Message Snapshot</DialogTitle>
                 <DialogDescription>
-                  {selectedLog.providerMessageId ? `Provider ID: ${selectedLog.providerMessageId}` : 'Simulated demo send'}
+                  {selectedLog.providerMessageId ? `Provider ID: ${selectedLog.providerMessageId}` : 'Pending provider receipt'}
                 </DialogDescription>
               </div>
               <DialogClose onClose={() => setSelectedLog(null)} />
@@ -93,15 +93,7 @@ export function SendLogsScreen({ companies, logs, onSimulateCron }: SendLogsScre
                 <div className="mb-2 text-xs font-medium uppercase tracking-wider text-brand-muted">Snapshot</div>
                 <pre className="whitespace-pre-wrap text-sm text-brand-text">{selectedLog.messageSnapshot}</pre>
               </div>
-              {selectedLog.demoMarked && (
-                <div className="rounded-lg border border-crimson-800/50 bg-crimson-950/30 p-3 text-sm text-crimson-100">
-                  <strong className="text-crimson-400">Demo evidence</strong>
-                  <p className="mt-1 text-xs text-crimson-200/70">
-                    This send was simulated locally. In production, authoritative proof is a Gmail print-to-PDF or provider receipt.
-                  </p>
-                </div>
-              )}
-            </DialogContent>
+           </DialogContent>
             <DialogFooter>
               <Button variant="secondary" onClick={() => setSelectedLog(null)}>
                 Close

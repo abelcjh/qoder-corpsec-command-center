@@ -10,6 +10,7 @@ import {
   MailCheck,
   FileCheck,
   Wrench,
+  Send,
   LogOut,
   Shield,
 } from 'lucide-react';
@@ -21,7 +22,8 @@ export type Screen =
   | 'queue'
   | 'logs'
   | 'proof'
-  | 'build-ledger';
+  | 'build-ledger'
+  | 'submission';
 
 export interface LayoutProps {
   user: StaffUser;
@@ -39,6 +41,7 @@ const navItems: { id: Screen; label: string; icon: React.ElementType }[] = [
   { id: 'logs', label: 'Send Logs', icon: MailCheck },
   { id: 'proof', label: 'Evidence', icon: FileCheck },
   { id: 'build-ledger', label: 'Qoder Build', icon: Wrench },
+  { id: 'submission', label: 'Submission Pack', icon: Send },
 ];
 
 export function Layout({ user, screen, onNavigate, onLogout, children }: LayoutProps) {
