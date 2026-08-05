@@ -12,7 +12,7 @@ Purpose: give Abel a ready-to-record and ready-to-post package for the Aug 5 Ali
 
 ## 2–3 minute video run of show
 
-Target length: 2:35.
+Target length: 2:55.
 
 | Time | Screen/action | Exact point to make |
 |---:|---|---|
@@ -25,8 +25,9 @@ Target length: 2:35.
 | 2:05–2:25 | Send Logs / Evidence | "Every reminder produces a reviewer-safe proof row: owner, recipient, timestamp, evidence type, provider/message ID field, Gmail print status, and message snapshot." |
 | 2:25–2:35 | Submission Pack / Reviewer-safe export packet | "Competitors already have reminders, portals, AI, and audit trails. Credence wins the narrow proof moment: entity and rule, owner and recipient, freshness status, evidence snapshot, safety boundary, and proof retained after deactivation." |
 | 2:35–2:45 | Submission Pack / MBRS loop | "For a real MBRS lodger, the workflow is T-60 chase, T-30 preparation, T-7 validation, then acceptance receipt. Credence makes those chases reviewer-safe evidence around the lodger's signature risk." |
-| 2:45–2:55 | AI Workbench | "Agnes AI drafts the messy brief and client wording, but Credence keeps the deterministic client, rule, schedule, and proof records authoritative and human-reviewed." |
-| 2:55–3:00 | Qoder Build Ledger + Submission Pack | "Qoder produced the full-stack upgrade: Supabase schema, React/Tailwind UI, reminder engine, scoping, verification harness, and documentation. Build plus verify passes." |
+| 2:45–2:52 | Submission Pack / MBRS readiness packet | "Downstream MBRS tools validate and export XBRL; Credence owns the upstream question: is the client evidence ready, who chased it, and what late-risk defense exists?" |
+| 2:52–2:58 | AI Workbench | "Agnes AI drafts the messy brief and client wording, but Credence keeps the deterministic client, rule, schedule, and proof records authoritative and human-reviewed." |
+| 2:58–3:00 | Qoder Build Ledger + Submission Pack | "Qoder produced the full-stack upgrade: Supabase schema, React/Tailwind UI, reminder engine, scoping, verification harness, and documentation. Build plus verify passes." |
 
 ## Demo reliability checklist
 
@@ -44,7 +45,8 @@ Golden path:
 3. Do not create a job with a real client email during the recording; use seeded fixture data only.
 4. Show `QODER_BUILD_LEDGER.md` either in the app's Qoder Build screen or in the editor for judge-visible Qoder proof.
 5. On the Submission Pack screen, pause on the Official Brief Compliance Receipt: Qoder as primary build canvas, spec/Quest/Expert workflow shown as method evidence, post-event refinement kept rule-clean, and deadline stated as Aug 5 11:30 PM GMT+8.
-6. End on the Submission Pack screen so the organizer requirements are visually obvious.
+6. Pause on the MBRS readiness packet if judges ask about real CoSec workflow depth: Credence complements downstream MBRS/XBRL tools by proving upstream client evidence, validation handoff, export receipt, and late-risk defense.
+7. End on the Submission Pack screen so the organizer requirements are visually obvious.
 
 Role-switch ladder if the recording has extra time:
 

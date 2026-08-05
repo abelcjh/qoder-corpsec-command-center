@@ -57,6 +57,12 @@ const marketFindings = [
     credenceAngle: 'Show Credence as the reviewer-safe chase ledger for the Maker/Lodger control loop: each reminder has an owner, cadence, snapshot, unresolved-risk note, and retained proof before acceptance.',
   },
   {
+    source: 'IRIS INSTANT 2.0 MBRS scan',
+    url: 'https://irisregtech.com/blog/suptech/company-secretaries/iris-instant-20-ai-powered-mbrs-20-filing-software-for-malaysian-company-secretaries/',
+    signal: 'MBRS 2.0 tooling now sells validation engines, previous-year XML checks, reviewer PDFs, JSON exports, and traceable handoffs before SSM mPortal upload.',
+    credenceAngle: 'Frame Credence as the upstream proof packet that tells the lodger whether client evidence is complete before validation/export, rather than pretending to replace MBRS filing software.',
+  },
+  {
     source: 'BizAid / ACE market scan',
     url: 'https://www.bizaid.my/our-solutions/',
     signal: 'Malaysia CoSec suites advertise AI assistants, OCR document storage, e-signatures, MBRS/SSM workflows, and broad client portals.',
@@ -109,6 +115,13 @@ const mbrsControlLoop = [
   ['T-30 prepare', 'Owner checks that preparation is underway and records the latest client response or missing-input risk.'],
   ['T-7 validate', 'Reviewer confirms the MBRS file / evidence pack is ready before lodgement-day pressure.'],
   ['Acceptance receipt', 'After signing/lodgement, the proof row keeps provider ID, snapshot, unresolved risk, and acceptance evidence for later review.'],
+];
+
+const mbrsReadinessPacket = [
+  ['Client evidence ready', 'Every missing director/client/auditor input has an owner, latest chase, and unresolved-risk note before the lodger starts final validation.'],
+  ['Validation handoff', 'Credence does not claim to generate XBRL; it hands a clean proof packet into MBRS tooling / reviewer workflow.'],
+  ['Export receipt', 'Reviewer can see message snapshot, provider ID field, Gmail print status, and acceptance/export note without exposing secrets.'],
+  ['Late-risk defense', 'If filing slips, the firm can show when the client was chased and what blocker remained, instead of relying on memory or scattered email.'],
 ];
 
 const qoderWorkflowReceipts = [
@@ -300,6 +313,21 @@ export function SubmissionPackScreen() {
         </CardHeader>
         <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
           {mbrsControlLoop.map(([label, detail]) => (
+            <div key={label} className="rounded-xl border border-brand-border bg-brand-surface/40 p-4">
+              <div className="font-semibold text-brand-text">{label}</div>
+              <p className="mt-2 text-sm text-brand-muted">{detail}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2"><ClipboardList size={18} className="text-emerald-500" /> MBRS readiness packet</CardTitle>
+          <CardDescription>Competitor scan response: validation/export tools are downstream; Credence proves the upstream client-chase evidence is ready for the lodger</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+          {mbrsReadinessPacket.map(([label, detail]) => (
             <div key={label} className="rounded-xl border border-brand-border bg-brand-surface/40 p-4">
               <div className="font-semibold text-brand-text">{label}</div>
               <p className="mt-2 text-sm text-brand-muted">{detail}</p>
