@@ -26,6 +26,13 @@ export function BuildLedgerScreen() {
     },
   ];
 
+  const expertModeReceipts = [
+    ['End goal first', 'Qoder prompts describe the business outcome — client DB → rule → scheduled chase → retained proof — before asking for implementation details.'],
+    ['Planned phases', 'The repo keeps the decomposition judges expect from Expert/Quest workflows: architecture, schema, UI, reminder engine, verification, and submission proof.'],
+    ['Human intervention points', 'Compliance copy, AI brief outputs, scan claims, and any external send/submission remain review-required instead of auto-approved by an agent.'],
+    ['Inspectable canvas substitute', 'This ledger is the judge-visible replay surface for what the Qoder expert team built, what humans reviewed, and what npm build+verify rechecks.'],
+  ];
+
   const artifacts = [
     {
       phase: 'Architecture',
@@ -91,7 +98,7 @@ export function BuildLedgerScreen() {
         <MetricCard icon={Wrench} label="UI Components" value="10+" />
         <MetricCard icon={Database} label="Tables" value="8" />
         <MetricCard icon={ShieldCheck} label="Staff Users" value="5" />
-        <MetricCard icon={TestTube2} label="Verify Tests" value="47" />
+        <MetricCard icon={TestTube2} label="Verify Tests" value="50" />
       </div>
 
       <Card className="border-emerald-500/20 bg-emerald-950/10">
@@ -109,6 +116,24 @@ export function BuildLedgerScreen() {
                 <Icon size={16} />
                 {label}
               </div>
+              <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+
+      <Card className="border-sky-500/20 bg-sky-950/10">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <UserCheck size={18} className="text-sky-300" />
+            Expert Mode replay receipt
+          </CardTitle>
+          <CardDescription>Qoder docs stress end-goal prompts, planning, expert coordination, human intervention, and task visibility — Credence turns that workflow into a replayable judging artifact.</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+          {expertModeReceipts.map(([label, detail]) => (
+            <div key={label} className="rounded-xl border border-sky-500/20 bg-black/20 p-4">
+              <div className="font-semibold text-sky-100">{label}</div>
               <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
             </div>
           ))}

@@ -68,7 +68,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | Evidence | Location |
 |----------|----------|
 | `npm run build` output | `dist/` |
-| Verification script with 47 assertions | `scripts/verify.mts` |
+| Verification script with 50 assertions | `scripts/verify.mts` |
 | Package scripts | `package.json` |
 
 ## Claim 9: Qoder usage is visible, rule-clean, and reviewable
@@ -155,3 +155,10 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | Aug 5 19:35 GMT+8 remote smoke check returned HTTP 200 app HTML for `/` on the Cloudflare Worker | terminal smoke receipt from Ralph loop; `src/components/screens/SubmissionPackScreen.tsx` |
 | Same smoke check returned HTTP 200 JSON from `POST /api/ai-brief` with fixture-only request data and browser-like headers | terminal smoke receipt from Ralph loop; `src/components/screens/SubmissionPackScreen.tsx` |
 | If live network/AI stalls during recording, the documented fallback remains `npm run build && npm run verify` instead of unsafe external sends | `VIDEO_AND_SOCIAL_FINAL_PACK.md`, `SUBMISSION_CHECKLIST.md` |
+
+## Claim 14: Expert Mode workflow is replayable without overclaiming hidden traces
+
+| Evidence | Location |
+|----------|----------|
+| Qoder Experts Mode docs emphasize end-goal prompts, planning, expert coordination, progress visibility, and human intervention for confirmations or changes | `QODER_BUILD_LEDGER.md`, `src/components/screens/BuildLedgerScreen.tsx` |
+| Build Ledger now shows an Expert Mode replay receipt: end goal first, planned phases, human intervention points, and an inspectable canvas substitute backed by build+verify | `src/components/screens/BuildLedgerScreen.tsx` |

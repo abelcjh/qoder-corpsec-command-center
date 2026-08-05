@@ -56,7 +56,7 @@
 ```bash
 npm install          # Installs all dependencies
 npm run build        # TypeScript check + Vite build
-npm test             # Verification script passes (47 assertions)
+npm test             # Verification script passes (50 assertions)
 ```
 
 ### Live Worker Smoke Receipt
@@ -174,6 +174,7 @@ From the organizer master deck and UGC screenshot:
 | Source | New signal | Submission action |
 |---|---|---|
 | [Alibaba Cloud x Qoder SG Luma](https://luma.com/92h6pyl1) and indexed Qoder/Alibaba posts | Public wording still stresses real functional software, Qoder as the primary build canvas, Qoder IDE/CLI/JetBrains, Spec-Driven Workflow, Quest Mode, Expert Mode, and posting on LinkedIn/X with official tags. | Keep the Submission Pack screen as a recording endpoint and show the official-brief compliance receipt before polish: spec, build ledger, verify output, social/video requirements, and Aug 5 11:30 PM GMT+8 deadline. |
+| [Qoder Experts Mode docs](https://docs.qoder.com/user-guide/quest/experts-mode) | Experts Mode guidance stresses stating the end goal, letting the Lead Agent plan/decompose, coordinating expert work, viewing progress, and preserving human intervention when confirmation or requirement changes are needed. | On the Qoder Build Ledger screen, pause on the Expert Mode replay receipt: Credence packages the build as end-goal prompt → planned phases → human review gates → build+verify replay, without pretending Hermes/Ralph patches were Qoder traces. |
 | [teamWork CGS](https://linkedin.com/company/teamwork-cgs) | Singapore corporate-governance software messaging includes compliance management, document management, events/reminders/alerts, board resolutions, dashboards, and governance workflow. | Differentiate Credence around reminder proof and evidence freshness rather than generic governance dashboards. |
 | [Konsise](https://konsise.com/) and Malaysia competitors such as [ezcosec](https://ezcosec.com/) / [Officio](https://getofficio.today/) | Competitors sell broad entity management, statutory records, filings, portals, tax/compliance automation, and audit trails. | Keep Credence narrow: an accountability layer for Gmail/spreadsheet teams that turns each chase into current/expiring/stale proof rows and reviewer-safe exports. |
 

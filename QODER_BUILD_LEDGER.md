@@ -131,7 +131,7 @@ Key decisions:
 **Qoder Action**: Replaced the simple fixture verifier with a TypeScript harness that tests the reminder engine, auth scoping, deactivation, and schema.
 
 Files generated/updated:
-- `scripts/verify.mts` — 47 assertions covering working days, run generation, simulation, scoping, deactivation, files, docs, and schema
+- `scripts/verify.mts` — 50 assertions covering working days, run generation, simulation, scoping, deactivation, files, docs, and schema
 - `package.json` — Test script uses `tsx scripts/verify.mts`
 - `README.md`, `Spec.md`, `PROOF_LEDGER.md`, `QODER_BUILD_LEDGER.md`, `DEMO_SCRIPT.md`, `SUBMISSION_CHECKLIST.md`
 
@@ -143,7 +143,7 @@ Files generated/updated:
 
 Final result:
 - `npm run build` — passes
-- `npm test` — 47 passed, 0 failed
+- `npm test` — 50 passed, 0 failed
 
 ---
 
@@ -175,3 +175,14 @@ Judge-facing handling for Credence:
 ## Phase 11: Judge-Visible Qoder Workflow Receipt
 
 The Build Ledger screen now includes a spec → quest-style decomposition → human review → verify receipt mapped to the official Qoder scoring language. This avoids treating Qoder as a hidden code generator: judges can see the build method, review boundary, verification command, and support-tool disclosure in the product itself.
+
+---
+
+## Phase 12: Expert Mode Replay Receipt
+
+Compact Qoder docs check: Qoder Experts Mode asks builders to state the end goal, let the Lead Agent plan/decompose, coordinate specialist work, surface progress in an expert-team canvas, and keep human intervention for confirmation or requirement changes. Credence mirrors that expectation without overclaiming live Qoder traces:
+
+- **End goal first** — prompts and spec anchor the business loop: client DB → rule → scheduled chase → retained proof.
+- **Planned phases** — architecture, schema, UI, reminder engine, verification, and submission proof are documented as reviewable phases.
+- **Human intervention points** — compliance copy, Agnes AI briefs, Qoder security-scan claims, social/form submission, and external sends remain human-approved.
+- **Replay surface** — the Build Ledger screen acts as an inspectable canvas substitute: what Qoder built, what humans reviewed, and what `npm run build && npm run verify` rechecks.
