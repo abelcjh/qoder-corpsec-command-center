@@ -42,7 +42,8 @@ Golden path:
 2. If Supabase is slow, pause on the login screen until staff credentials load rather than narrating over a spinner.
 3. Do not create a job with a real client email during the recording; use seeded fixture data only.
 4. Show `QODER_BUILD_LEDGER.md` either in the app's Qoder Build screen or in the editor for judge-visible Qoder proof.
-5. End on the Submission Pack screen so the organizer requirements are visually obvious.
+5. On the Submission Pack screen, pause on the Official Brief Compliance Receipt: Qoder as primary build canvas, spec/Quest/Expert workflow shown as method evidence, post-event refinement kept rule-clean, and deadline stated as Aug 5 11:30 PM GMT+8.
+6. End on the Submission Pack screen so the organizer requirements are visually obvious.
 
 Role-switch ladder if the recording has extra time:
 

@@ -15,7 +15,14 @@ const requirements = [
   ['Tags', 'Required', 'Tag @QoderOfficial and @AlibabaCloud.'],
   ['Hashtags', 'Required', '#QoderHackathon #BuildWithQoder'],
   ['Demo video', 'Required', '2–3 minutes. Show the project in action, explain the problem, demonstrate key features. Upload to YouTube, Loom, or Vimeo.'],
-  ['Submission form', 'Required', 'Submit both the social post URL and demo video link via the organizer form before Aug 5.'],
+  ['Submission form', 'Required', 'Submit both the social post URL and demo video link via the organizer form before Aug 5, 11:30 PM GMT+8.'],
+];
+
+const organizerSourceReceipts = [
+  ['Official source', 'Luma event page says the hackathon is about building real software with Qoder as the primary build canvas.'],
+  ['Workflow requirement', 'Spec-Driven Workflow plus Quest Mode / Expert Mode should be shown as the build method and proof surface, not hidden behind the finished UI.'],
+  ['Post-event window', 'The public brief allows the onsite Jul 22 build day plus a two-week refinement window, so docs must distinguish Qoder-built core from Ralph/Hermes packaging polish.'],
+  ['Submission deadline', 'Submit public social post and 2–3 minute demo link by Aug 5, 11:30 PM GMT+8; do not rely on private drafts.'],
 ];
 
 const marketFindings = [
@@ -159,7 +166,23 @@ export function SubmissionPackScreen() {
 
       <Card>
         <CardHeader>
+          <CardTitle className="flex items-center gap-2"><ClipboardList size={18} className="text-emerald-500" /> Official brief compliance receipt</CardTitle>
+          <CardDescription>Source-backed guardrails from the Qoder SG public brief so the final recording stays rule-clean</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+          {organizerSourceReceipts.map(([label, detail]) => (
+            <div key={label} className="rounded-xl border border-brand-border bg-brand-surface/40 p-4">
+              <div className="font-semibold text-brand-text">{label}</div>
+              <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
           <CardTitle className="flex items-center gap-2"><Send size={18} className="text-crimson-500" /> Required submission items</CardTitle>
+          <CardDescription>Submission conversion blocker reducer — keep external posting/submission manual</CardDescription>
         </CardHeader>
         <CardContent className="grid gap-3 md:grid-cols-2">
           {requirements.map(([item, status, detail]) => (
