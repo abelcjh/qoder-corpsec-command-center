@@ -201,6 +201,9 @@ assert(readFileSync(resolve(root, 'src/lib/proofPacket.ts'), 'utf-8').includes('
 assert(submissionPack.includes('Deterministic authority'), 'Submission Pack states deterministic records remain authoritative over AI output');
 const packageJson = readFileSync(resolve(root, 'package.json'), 'utf-8');
 assert(packageJson.includes('smoke:live'), 'Package exposes npm run smoke:live for deployed demo reliability');
+const liveSmokeScript = readFileSync(resolve(root, 'scripts/live-smoke.mjs'), 'utf-8');
+assert(liveSmokeScript.includes('45000'), 'Live smoke allows a 45s Agnes bridge window for realistic cold starts');
+assert(liveSmokeScript.includes('clear bounded error'), 'Live smoke accepts only generated brief JSON or bounded error JSON');
 const submissionChecklist = readFileSync(resolve(root, 'SUBMISSION_CHECKLIST.md'), 'utf-8');
 assert(submissionChecklist.includes('npm run smoke:live'), 'Submission checklist includes live smoke command');
 

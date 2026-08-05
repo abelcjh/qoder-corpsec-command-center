@@ -1,6 +1,6 @@
 const DEFAULT_URL = 'https://credence-qoder-corpsec.abelchinjh.workers' + '.dev';
 const target = (process.env.CREDENCE_LIVE_URL || DEFAULT_URL).replace(/\/$/, '');
-const timeoutMs = Number(process.env.CREDENCE_SMOKE_TIMEOUT_MS || 15000);
+const timeoutMs = Number(process.env.CREDENCE_SMOKE_TIMEOUT_MS || 45000);
 
 function timeoutSignal(ms) {
   const controller = new AbortController();
