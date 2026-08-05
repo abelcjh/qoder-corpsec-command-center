@@ -4,6 +4,10 @@
 
 Built for the **Alibaba Cloud x Qoder Hackathon Singapore 2026**.
 
+**Live Cloudflare demo:** https://credence-qoder-corpsec.abelchinjh.workers.dev
+
+**AI feature:** Agnes AI Workbench via Cloudflare Worker endpoint `/api/ai-brief`; the Agnes key is kept server-side as a Worker secret.
+
 ---
 
 ## Overview

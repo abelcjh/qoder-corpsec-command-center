@@ -165,3 +165,26 @@ From the organizer master deck and UGC screenshot:
 | [Alibaba Cloud x Qoder SG Luma](https://luma.com/92h6pyl1) and indexed Qoder/Alibaba posts | Public wording still stresses real functional software, Qoder IDE/CLI/JetBrains, Spec-Driven Workflow, Quest Mode, Expert Mode, and posting on LinkedIn/X with official tags. | Keep the Submission Pack screen as a recording endpoint and show Qoder evidence before polish: spec, build ledger, verify output, and social/video requirements. |
 | [teamWork CGS](https://linkedin.com/company/teamwork-cgs) | Singapore corporate-governance software messaging includes compliance management, document management, events/reminders/alerts, board resolutions, dashboards, and governance workflow. | Differentiate Credence around reminder proof and evidence freshness rather than generic governance dashboards. |
 | [Konsise](https://konsise.com/) and Malaysia competitors such as [ezcosec](https://ezcosec.com/) / [Officio](https://getofficio.today/) | Competitors sell broad entity management, statutory records, filings, portals, tax/compliance automation, and audit trails. | Keep Credence narrow: an accountability layer for Gmail/spreadsheet teams that turns each chase into current/expiring/stale proof rows and reviewer-safe exports. |
+
+
+### Actual Submission Form Fields
+
+Submission form: https://survey.alibabacloud.com/uone/sg/survey/U-1jNntGK
+
+Required:
+
+- [ ] Team Name
+- [ ] Project Title
+- [ ] One sentence about your project description
+- [ ] Social Post Link — public URL
+- [ ] Team Leaders Emailn- [ ] Team Leaders Phone Number
+- [ ] Consent: allow Alibaba Cloud to share project on Project Hub
+- [ ] Consent: allow project details/materials to be shared with judges, organizers, and mentors
+
+Optional but strategically important:
+
+- [ ] Demo YouTube Video
+- [ ] Presentation Slides upload
+- [ ] Presentation Slides URL
+
+Live demo link for optional/supporting materials: https://credence-qoder-corpsec.abelchinjh.workers.dev
