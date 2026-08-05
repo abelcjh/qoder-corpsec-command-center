@@ -20,7 +20,7 @@ Open `http://localhost:5173` in a browser.
 
 > "Corporate secretarial firms like CLPC manage hundreds of client deadlines — annual returns, tax filings, audited financial statements, AGMs. Work often starts before an invoice is raised, so the client database, not the invoice, must be the source of truth. Different departments need different views."
 
-**Show**: Login screen with 5 demo staff accounts.
+**Show**: Login screen with 5 seeded staff accounts.
 
 ---
 
@@ -91,9 +91,9 @@ Open `http://localhost:5173` in a browser.
 
 **Do**: Navigate to "Send Logs", click on the latest log row.
 
-**Show**: Detail modal with snapshot and DEMO badge.
+**Show**: Detail modal with timestamp, provider/message ID, evidence type, recipient, sender, and immutable message snapshot.
 
-> "In production, authoritative proof is a Gmail print-to-PDF or provider receipt. Here we simulate sends and mark them clearly as demo evidence."
+> "In production, authoritative proof is a Gmail print-to-PDF or provider receipt. For the hackathon recording, the app uses safe simulated sends and labels the evidence type instead of contacting real clients."
 
 ---
 
@@ -143,4 +143,4 @@ Open `http://localhost:5173` in a browser.
 
 ## Closing (15 seconds)
 
-> "Credence / CorpSec Command Center: a Malaysia-first compliance OS prototype with department-scoped client data, working-day reminder jobs, simulated send proof, and full audit retention — built with Qoder. Thank you."
+> "Credence / CorpSec Command Center: a Malaysia-first compliance OS with department-scoped client data, working-day reminder jobs, simulated send proof, and full audit retention — built with Qoder. Thank you."

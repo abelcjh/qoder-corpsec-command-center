@@ -143,3 +143,13 @@ From the organizer master deck and UGC screenshot:
 | [CA-Kompas](https://ca-kompas.com/) | Malaysian accounting/company-secretary buyers expect client databases, compliance tracking, and email/SMS notifications. | Show client database as source of truth and proof rows as the differentiator. |
 | [iCorpSec](https://icorpsec.com/) | Singapore/Malaysia competitors advertise AI drafting, compliance calendars, and scanners. | Position Credence as a human-approved command center with deterministic rule/job/proof trails, not a black-box AI secretary. |
 | [Qoder SG Luma](https://luma.com/92h6pyl1) | Official wording rewards Spec-Driven Workflow, Quest Mode orchestration, Qoder IDE/CLI/JetBrains, and real functional software. | Keep Qoder Build Ledger, verification output, and submission-pack screen visible during the recording. |
+
+### Aug 5 final intelligence pass — judge-facing wording updates
+
+| Source | New signal | Submission action |
+|---|---|---|
+| [Qoder Quest Mode blog](https://www.alibabacloud.com/blog/quest-mode-task-delegation-to-agents_603328) | Quest Mode is framed around spec as source of truth, visible Action Flow, self-validation, and Task Reports. | In the video, say Qoder was used with a spec-first workflow plus verify loops; show `QODER_BUILD_LEDGER.md`, not just the finished UI. |
+| [Qoder Experts Mode docs](http://docs.qoder.com/user-guide/quest/experts-mode) | Experts Mode emphasizes multi-agent decomposition, plan review, parallel execution, and human confirmation. | Keep the pitch human-in-command: Abel reviewed scope, verified output, and preserved Qoder evidence instead of claiming unsupervised magic. |
+| [CLPC Corporate Secretarial](https://clpc.my/corporate-secretarial/) | CLPC services include SSM compliance, annual returns, meetings, notifications to SSM, statutory records, and beneficial-owner reporting. | Name these exact workflows when explaining why corporate-secretarial teams need a client-centered command center. |
+| [CLPC Corporate Tax & SST](https://clpc.my/corporate-tax-and-sst/) | Tax teams handle Form C, CP204, CP204A 6th/9th-month revisions, tax audit and investigation responses. | Use the Tax Staff login moment to prove this is multi-department, not only company-secretary reminders. |
+| [ezcosec](https://ezcosec.com/) and [BlazeTech ACE](https://stg.blazetech.my/ace/) | Malaysian CoSec competitors sell SSM workflows, client portals, statutory registers, MBRS exports, and automated reminders. | Do not pitch generic reminders; pitch Credence's wedge as department-scoped operations plus auditable evidence/proof retention. |

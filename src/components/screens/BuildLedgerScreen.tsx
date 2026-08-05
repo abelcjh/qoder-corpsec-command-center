@@ -94,7 +94,7 @@ export function BuildLedgerScreen() {
         <CardContent className="space-y-3 text-sm text-brand-text">
           <p>
             Qoder scaffolded the upgraded full-stack prototype end-to-end: dependency setup, Tailwind theming,
-            Supabase integration, reminder engine, screen components, local demo state, verification tests, and
+            Supabase integration, reminder engine, screen components, fixture-backed local state, verification tests, and
             documentation. All changes are kept inside this repository.
           </p>
           <div className="flex flex-wrap gap-2">
@@ -103,7 +103,7 @@ export function BuildLedgerScreen() {
             <Badge variant="info">Tailwind CSS</Badge>
             <Badge variant="info">Supabase</Badge>
             <Badge variant="info">Vite</Badge>
-            <Badge variant="warning">Demo Mode</Badge>
+            <Badge variant="warning">Fixture-safe Sends</Badge>
           </div>
         </CardContent>
       </Card>
