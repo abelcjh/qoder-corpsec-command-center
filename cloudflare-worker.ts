@@ -17,6 +17,28 @@ function safeArray(value: unknown): unknown[] {
   return Array.isArray(value) ? value.slice(0, 8) : [];
 }
 
+function fallbackBrief(reason: string) {
+  return json({
+    mode: 'Bounded Cloudflare fallback',
+    executiveBrief: 'Agnes upstream was unavailable during this request, so Credence kept the demo live with a deterministic fallback: client record → department rule → scheduled reminder → reviewer-safe proof receipt → human-reviewed next action.',
+    risks: [
+      'AI bridge did not complete inside the Worker timeout; do not block the demo on upstream latency.',
+      'Use deterministic queue/proof records as the authority while the AI brief is degraded.',
+      'Human staff must review any compliance wording before external send or legal action.',
+    ],
+    recommendedActions: [
+      'Open the selected client record and show the owner-scoped reminder job.',
+      'Open Send Logs / Evidence and point to packet ID, freshness, sender, recipient, and retained snapshot.',
+      'Close with Qoder Build Ledger plus npm run build && npm run verify as rerunnable proof.',
+    ],
+    clientMessage: 'Hi, this is a reminder from the CLPC team. We are preparing the next compliance follow-up for your company record. Please confirm the latest responsible contact and supporting documents for the upcoming filing window.',
+    proofNotes: [
+      'Fallback reason: ' + reason,
+      'No browser-side secret exposure and no email, WhatsApp, form, or legal-status mutation occurred.',
+    ],
+  });
+}
+
 async function aiBrief(request: Request, env: Env) {
   if (request.method === 'GET') return json({ ok: true, endpoint: 'Credence Agnes AI briefing' });
   if (request.method !== 'POST') return json({ error: 'Method not allowed' }, 405);
@@ -35,24 +57,34 @@ async function aiBrief(request: Request, env: Env) {
 
   const base = (env.AGNES_BASE_URL || 'https://apihub.agnes-ai.com/v1').replace(/\/$/, '');
   const model = env.AGNES_MODEL || env.AGNES_VISION_MODEL || 'agnes-2.5-flash';
-  const upstream = await fetch(`${base}/chat/completions`, {
-    method: 'POST',
-    headers: {
-      authorization: `Bearer ${env.AGNES_API_KEY}`,
-      'content-type': 'application/json',
-    },
-    body: JSON.stringify({
-      model,
-      temperature: 0.2,
-      messages: [
-        { role: 'system', content: 'Return strict JSON only. No markdown.' },
-        { role: 'user', content: prompt },
-      ],
-    }),
-  });
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort('upstream timeout'), 15000);
+  let upstream: Response;
+  try {
+    upstream = await fetch(`${base}/chat/completions`, {
+      method: 'POST',
+      signal: controller.signal,
+      headers: {
+        authorization: `Bearer ${env.AGNES_API_KEY}`,
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        model,
+        temperature: 0.2,
+        messages: [
+          { role: 'system', content: 'Return strict JSON only. No markdown.' },
+          { role: 'user', content: prompt },
+        ],
+      }),
+    });
+  } catch {
+    clearTimeout(timer);
+    return fallbackBrief('Agnes upstream timeout or network error');
+  }
+  clearTimeout(timer);
 
   const raw = await upstream.text();
-  if (!upstream.ok) return json({ error: 'Agnes upstream failed', status: upstream.status }, 502);
+  if (!upstream.ok) return fallbackBrief(`Agnes upstream returned HTTP ${upstream.status}`);
 
   try {
     const payload = JSON.parse(raw);
@@ -61,7 +93,7 @@ async function aiBrief(request: Request, env: Env) {
     const parsed = JSON.parse(match ? match[0] : content);
     return json({ ...parsed, mode: 'Agnes AI via Cloudflare Worker' });
   } catch (error) {
-    return json({ error: 'Could not parse Agnes JSON response' }, 502);
+    return fallbackBrief('Agnes upstream returned non-JSON or malformed JSON');
   }
 }
 

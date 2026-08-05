@@ -150,6 +150,8 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | Final readiness receipt | Live URL works, Agnes bridge works, local build+verify is ready, and manual side-effect boundaries are visible before submission. | Submission Pack top panel; `npm run smoke:live`; final recording confidence check |
 | Public/private disclosure boundary | Public receipt ID/chain/freshness/blocked status is shareable, selected message/provider/risk detail is reviewer-gated, and secrets/raw inboxes/real send controls are never exported. | Submission Pack disclosure-boundary panel; final video confidentiality pause |
 | Protocol-ready receipt bridge | Action type → policy decision → hashed attachments → protocol bridge frames each CorpSec chase as a portable trust receipt without claiming live MCP/AP2/filing integrations. | Submission Pack protocol-ready bridge; final video interoperability pause |
+| Organizer form submission gate | Official survey URL, Aug 5 11:30 PM GMT+8 deadline, required paste set, optional video/slide fields, and manual-submit boundary are visible in-app. | Submission Pack organizer form gate; final recording close before Abel manually submits |
+| Bounded Agnes fallback receipt | Worker returns a demo-safe JSON fallback after upstream timeout/error, preserving no-secret/no-side-effect claims instead of hanging the AI Workbench. | `cloudflare-worker.ts`, `scripts/live-smoke.mjs`, AI Workbench fallback banner |
 
 ---
 

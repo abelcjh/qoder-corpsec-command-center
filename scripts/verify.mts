@@ -203,6 +203,14 @@ assert(submissionPack.includes('deterministically creates the scheduled chase'),
 assert(submissionPack.includes('Current live smoke check'), 'Submission Pack includes current live Worker smoke receipt');
 assert(submissionPack.includes('2–3 minute cutdown path'), 'Submission Pack includes 2–3 minute video cutdown path');
 assert(submissionPack.includes('manual submission boundary'), 'Submission Pack closes the cutdown with the manual submission boundary');
+assert(submissionPack.includes('Organizer form submission gate'), 'Submission Pack includes organizer form submission gate');
+assert(submissionPack.includes('https://survey.alibabacloud.com/uone/sg/survey/U-1jNntGK'), 'Submission Pack includes official Alibaba Cloud survey form URL');
+assert(submissionPack.includes('Aug 5, 11:30 PM GMT+8'), 'Submission Pack includes exact Aug 5 11:30 PM GMT+8 submission deadline');
+assert(submissionPack.includes('Manual submit boundary'), 'Submission Pack keeps manual submit boundary visible');
+const workerSrc = readFileSync(resolve(root, 'cloudflare-worker.ts'), 'utf-8');
+assert(workerSrc.includes('Bounded Cloudflare fallback'), 'Worker includes bounded Cloudflare fallback for Agnes outages');
+assert(workerSrc.includes('upstream timeout'), 'Worker has bounded Agnes upstream timeout');
+assert(workerSrc.includes('No browser-side secret exposure'), 'Worker fallback preserves no-secret/no-side-effect receipt');
 assert(submissionPack.includes('AI Workbench recording packet'), 'Submission Pack includes governed AI Workbench recording packet');
 assert(submissionPack.includes('AI-to-staff handoff receipt'), 'Submission Pack includes AI-to-staff handoff receipt');
 assert(submissionPack.includes('Qoder Experts Mode replay receipt'), 'Submission Pack includes docs-backed Experts Mode replay receipt');

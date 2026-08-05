@@ -218,6 +218,15 @@ Optional but strategically important:
 
 Live demo link for optional/supporting materials: https://credence-qoder-corpsec.abelchinjh.workers.dev
 
+
+### Organizer form submission gate — Aug 5 Ralph loop
+
+- Official form URL: https://survey.alibabacloud.com/uone/sg/survey/U-1jNntGK
+- Hard deadline: Aug 5, 11:30 PM GMT+8; include social/video upload time before this cutoff.
+- Required paste set: team name, project title, one-sentence description, public social post URL, leader email, leader phone, and both consent fields.
+- Optional but high-value: demo YouTube/Loom/Vimeo link and slide URL/upload if ready.
+- Manual boundary: do not auto-submit, auto-post, email, WhatsApp, or mutate legal status from the app; Abel reviews every link before submission.
+
 ### Operator deployment note — Aug 5 Ralph loop
 
 - Local build and verification passed after the Submission Pack update.

@@ -122,6 +122,15 @@ const formValues = [
   ['Consent fields', 'Select Yes for both organizer sharing/judging consent fields if Abel approves submission.'],
 ];
 
+const organizerFormGate = [
+  ['Form URL', 'Use the official Alibaba Cloud survey form: https://survey.alibabacloud.com/uone/sg/survey/U-1jNntGK'],
+  ['Hard deadline', 'Submit by Aug 5, 11:30 PM GMT+8; treat social/video upload time as part of the deadline, not after it.'],
+  ['Required paste set', 'Team name, project title, one-sentence description, public social post URL, leader email, leader phone, and both consent yes fields.'],
+  ['Optional but winning', 'Attach the 2–3 minute demo video and slide URL/upload if ready; do not block the required form on a last-minute slide polish loop.'],
+  ['Manual submit boundary', 'Credence shows the form packet but never auto-posts, auto-submits, emails, WhatsApps, or mutates legal status. Abel submits only after reviewing every link.'],
+];
+
+
 const recordingCredentials = [
   ['Admin', 'admin / admin123', 'Start here for the complete dashboard, client database, scheduled queue, evidence logs, AI Workbench, Qoder ledger, and Submission Pack.'],
   ['Tax', 'tax / tax123', 'Use only if there is time to prove the CLPC multi-department wedge with CP204/Form C and tax-audit workflows.'],
@@ -664,6 +673,21 @@ export function SubmissionPackScreen() {
             <div key={label} className="rounded-xl border border-brand-border bg-brand-surface/40 p-4">
               <div className="text-xs uppercase tracking-[0.2em] text-brand-muted">{label}</div>
               <p className="mt-2 text-sm leading-6 text-brand-text">{value}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2"><ClipboardList size={18} className="text-emerald-500" /> Organizer form submission gate</CardTitle>
+          <CardDescription>Deadline blocker reducer from the latest public Qoder/Luma scan: public social proof + form link must be ready before polish</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
+          {organizerFormGate.map(([label, value]) => (
+            <div key={label} className="rounded-xl border border-emerald-500/20 bg-emerald-950/10 p-4">
+              <div className="text-xs uppercase tracking-[0.2em] text-emerald-200/80">{label}</div>
+              <p className="mt-2 text-sm leading-6 text-brand-muted">{value}</p>
             </div>
           ))}
         </CardContent>
