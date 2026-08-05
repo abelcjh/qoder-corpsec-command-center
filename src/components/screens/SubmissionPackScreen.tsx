@@ -95,6 +95,15 @@ const evidenceFreshness = [
   ['Reviewer-safe export', 'Judges and reviewers can inspect owner, recipient, timestamp, source type, message snapshot, and unresolved risk without exposing secrets or contacting real clients.'],
 ];
 
+const reviewerExportPacket = [
+  ['Entity + rule', 'Company, department, statutory rule, and deadline are visible so a reviewer knows why the chase happened.'],
+  ['Owner + recipient', 'Staff owner, client contact, role, and communication channel are retained for accountability.'],
+  ['Cadence status', 'Current / Expiring / Stale status turns freshness into a triage surface instead of a buried timestamp.'],
+  ['Evidence snapshot', 'Message body, provider/message ID field, Gmail print-document status, and unresolved-risk note are preserved.'],
+  ['Safety boundary', 'Exports show proof metadata and selected snippets only; secrets, API keys, and live client sends stay outside the demo path.'],
+  ['After deactivation', 'Inactive companies stop future scheduled jobs but keep historical proof rows for audit/reviewer continuity.'],
+];
+
 const mbrsControlLoop = [
   ['T-60 chase', 'Client-facing reminder captures audit-status or signed-FS blocker before the annual-return / financial-statement cluster becomes urgent.'],
   ['T-30 prepare', 'Owner checks that preparation is underway and records the latest client response or missing-input risk.'],
@@ -261,6 +270,21 @@ export function SubmissionPackScreen() {
         </CardHeader>
         <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
           {evidenceFreshness.map(([label, detail]) => (
+            <div key={label} className="rounded-xl border border-brand-border bg-brand-surface/40 p-4">
+              <div className="font-semibold text-brand-text">{label}</div>
+              <p className="mt-2 text-sm text-brand-muted">{detail}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2"><ClipboardList size={18} className="text-emerald-500" /> Reviewer-safe export packet</CardTitle>
+          <CardDescription>Competitor scan response: broad CoSec suites advertise reminders, portals, AI, and audit trails, so Credence makes the actual evidence packet inspectable in 10 seconds</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+          {reviewerExportPacket.map(([label, detail]) => (
             <div key={label} className="rounded-xl border border-brand-border bg-brand-surface/40 p-4">
               <div className="font-semibold text-brand-text">{label}</div>
               <p className="mt-2 text-sm text-brand-muted">{detail}</p>
