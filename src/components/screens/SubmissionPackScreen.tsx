@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '../ui/Card';
 import { Badge } from '../ui/Badge';
-import { CheckCircle2, Film, Megaphone, Send, Trophy, CalendarDays } from 'lucide-react';
+import { CheckCircle2, ClipboardList, Film, Megaphone, Send, Trophy, CalendarDays } from 'lucide-react';
 
 const rubric = [
   ['Use of Qoder', '30%', 'Spec-driven prompt, Qoder CLI build session, build ledger, verification logs, reusable workflow proof, and Qoder Security checkpoint.'],
@@ -38,11 +38,27 @@ const marketFindings = [
     credenceAngle: 'Differentiate as a human-approved command center where AI assists messy intake while deterministic rules create the deadline/job/proof trail.',
   },
   {
+    source: 'BizAid / ACE market scan',
+    url: 'https://www.bizaid.my/our-solutions/',
+    signal: 'Malaysia CoSec suites advertise AI assistants, OCR document storage, e-signatures, MBRS/SSM workflows, and broad client portals.',
+    credenceAngle: 'Stay sharp: Credence is the lightweight accountability layer for Gmail/spreadsheet teams that need owner-specific chasers and reviewer-safe evidence quickly.',
+  },
+  {
     source: 'Qoder Security',
     url: 'https://docs.qoder.com/qoder-security-guide',
     signal: 'Qoder positions L1/L2/L3 security scans as staged review from coding loop to pre-push handoff.',
     credenceAngle: 'Show a rule-clean security checkpoint: Qoder-built code, human review, build+verify receipt, and scan/credit limitation noted honestly.',
   },
+];
+
+const formValues = [
+  ['Team name', 'Credence'],
+  ['Project title', 'Credence / CorpSec Command Center'],
+  ['One-sentence description', 'Malaysia-first corporate-secretarial command center that turns statutory reminders into department-scoped workflows and defensible proof logs.'],
+  ['Social post link', 'Paste public LinkedIn/X URL after posting; do not submit a draft or private link.'],
+  ['Demo video link', 'Paste YouTube/Loom/Vimeo URL after the 2–3 minute recording uploads.'],
+  ['Live demo link', 'https://credence-qoder-corpsec.abelchinjh.workers.dev'],
+  ['Consent fields', 'Select Yes for both organizer sharing/judging consent fields if Abel approves submission.'],
 ];
 
 const evidenceFreshness = [
@@ -136,6 +152,21 @@ export function SubmissionPackScreen() {
             <div key={item} className="rounded-xl border border-brand-border bg-brand-surface/40 p-4">
               <div className="mb-2 flex items-center justify-between gap-3"><div className="font-medium">{item}</div><Badge variant="success">{status}</Badge></div>
               <p className="text-sm text-brand-muted">{detail}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2"><ClipboardList size={18} className="text-emerald-500" /> Paste-ready organizer form values</CardTitle>
+          <CardDescription>Submission conversion blocker reducer — keep external posting/submission manual</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 lg:grid-cols-2">
+          {formValues.map(([label, value]) => (
+            <div key={label} className="rounded-xl border border-brand-border bg-brand-surface/40 p-4">
+              <div className="text-xs uppercase tracking-[0.2em] text-brand-muted">{label}</div>
+              <p className="mt-2 text-sm leading-6 text-brand-text">{value}</p>
             </div>
           ))}
         </CardContent>

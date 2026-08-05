@@ -155,6 +155,7 @@ From the organizer master deck and UGC screenshot:
 | [CLPC Corporate Secretarial](https://clpc.my/corporate-secretarial/) | CLPC services include SSM compliance, annual returns, meetings, notifications to SSM, statutory records, and beneficial-owner reporting. | Name these exact workflows when explaining why corporate-secretarial teams need a client-centered command center. |
 | [CLPC Corporate Tax & SST](https://clpc.my/corporate-tax-and-sst/) | Tax teams handle Form C, CP204, CP204A 6th/9th-month revisions, tax audit and investigation responses. | Use the Tax Staff login moment to prove this is multi-department, not only company-secretary reminders. |
 | [ezcosec](https://ezcosec.com/) and [BlazeTech ACE](https://stg.blazetech.my/ace/) | Malaysian CoSec competitors sell SSM workflows, client portals, statutory registers, MBRS exports, and automated reminders. | Do not pitch generic reminders; pitch Credence's wedge as department-scoped operations plus auditable evidence/proof retention. |
+| [BizAid](https://www.bizaid.my/our-solutions/) / ACE market scan | Local suites now advertise AI assistants, OCR document management, e-signatures, MBRS/SSM workflows, and broad portals. | Keep Credence narrower and more demoable: owner-specific chasers plus reviewer-safe evidence for teams still operating through Gmail and spreadsheets. |
 | [Qoder Security docs](https://docs.qoder.com/qoder-security-guide) and [Qoder CLI Security Scan](https://docs.qoder.com/cli/security) | Qoder now markets L1 Static Check, L2 Lightweight Scan, and L3 Deep Scan as staged security from coding loop to pre-push handoff; L2/L3 may consume credits and are not a full audit replacement. | Add a rule-clean checkpoint in the ledger: run/screenshot Qoder scan if available; otherwise state the credit/access blocker and rely on build+verify+human review as current proof. |
 | [Starch SOC 2 evidence automation](https://starch.ai/how-to/collect-soc2-evidence/for-small-legal-compliance-teams/) and [Zapier SOC 2 automation](https://zapier.com/automations/it/security-compliance/soc-2-compliance) | Compliance buyers understand evidence trackers, owner-specific chasers, and proof rows better than generic reminder language. | Use the phrase "defensible reminder evidence": owner, recipient, deadline/rule, timestamp, evidence status, and unresolved risk. |
 
@@ -177,7 +178,8 @@ Required:
 - [ ] Project Title
 - [ ] One sentence about your project description
 - [ ] Social Post Link — public URL
-- [ ] Team Leaders Emailn- [ ] Team Leaders Phone Number
+- [ ] Team Leader Email
+- [ ] Team Leader Phone Number
 - [ ] Consent: allow Alibaba Cloud to share project on Project Hub
 - [ ] Consent: allow project details/materials to be shared with judges, organizers, and mentors
 
