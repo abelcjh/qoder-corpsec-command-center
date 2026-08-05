@@ -21,6 +21,13 @@ const governanceReceipts = [
   ['Fallback visible', 'If the Cloudflare/Agnes route is unavailable, the screen switches to a local deterministic fallback instead of blocking the demo.'],
 ];
 
+const contextBoundaryReceipts = [
+  ['Role scoped', 'Only the logged-in staff member\'s scoped companies, jobs, logs, and rules are eligible for the AI packet.'],
+  ['Record limited', 'The live request intentionally caps each packet at 1 selected client, 8 jobs, 8 proof logs, and 8 rules for low-risk reviewability.'],
+  ['Secrets excluded', 'The browser never receives the Agnes key; Cloudflare adds the server-side secret only inside `/api/ai-brief`.'],
+  ['No auto-send', 'Generated wording is displayed for staff review only; Credence does not email, WhatsApp, or submit anything from this screen.'],
+];
+
 export interface AIWorkbenchScreenProps {
   user: StaffUser;
   companies: Company[];
@@ -124,6 +131,21 @@ export function AIWorkbenchScreen({ user, companies, rules, jobs, logs }: AIWork
         </CardHeader>
         <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
           {governanceReceipts.map(([label, detail]) => (
+            <div key={label} className="rounded-xl border border-brand-border bg-brand-surface/40 p-4">
+              <div className="font-semibold text-brand-text">{label}</div>
+              <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2"><ClipboardList size={18} className="text-crimson-400" /> AI context packet boundary</CardTitle>
+          <CardDescription>Judge-visible safety surface: what Agnes may see, what stays deterministic, and what cannot happen automatically</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+          {contextBoundaryReceipts.map(([label, detail]) => (
             <div key={label} className="rounded-xl border border-brand-border bg-brand-surface/40 p-4">
               <div className="font-semibold text-brand-text">{label}</div>
               <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>

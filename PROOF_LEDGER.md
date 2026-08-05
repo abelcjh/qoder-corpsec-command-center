@@ -86,6 +86,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 |----------|----------|
 | Cloudflare Worker keeps Agnes API key server-side and exposes `/api/ai-brief` only | `cloudflare-worker.ts`, `wrangler.jsonc` |
 | AI Workbench displays bounded client/job/log/rule context, advisory risks/actions/client wording, and deterministic fallback | `src/components/screens/AIWorkbenchScreen.tsx` |
+| AI context-packet boundary is judge-visible: role-scoped, record-limited, secrets excluded, no auto-send | `src/components/screens/AIWorkbenchScreen.tsx` |
 | Human-review and non-legal-advice boundary documented | `README.md`, `VIDEO_AND_SOCIAL_FINAL_PACK.md` |
 
 ---
@@ -105,6 +106,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | Source | Actionable signal | Credence response |
 |---|---|---|
 | ezcosec Malaysia (`https://ezcosec.com/`) | Current Malaysian CoSec positioning names missed deadlines, Excel chaos, scattered documents, manual reminders, and knowledge silos as buyer pains. | Keep the demo wedge narrow and judge-visible: client DB → owner/rule scoped reminder → retained reviewer-safe evidence row, including after company deactivation. |
+| iCorpSec / BizAid AI CoSec scan (`https://icorpsec.com/`, `https://www.bizaid.my/`) | Competitors now advertise AI assistants, drafting, compliance scanners, client support, OCR/document storage, and due-date monitoring as broad-suite features. | Do not pitch Credence as “another AI assistant”; show the AI Workbench context boundary: role-scoped packet, max 8 jobs/logs/rules, server-side Agnes key, no auto-send, and deterministic proof records as authority. |
 
 
 ## Current verification receipt
