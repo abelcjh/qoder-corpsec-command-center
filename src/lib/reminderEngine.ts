@@ -106,9 +106,9 @@ export function simulateCronSend(
     channel: job.channel,
     status: 'simulated',
     messageSnapshot: `${job.subject}\n\n${job.body}`,
-    providerMessageId: `demo-${generateId('msg')}`,
+    providerMessageId: `fixture-${generateId('msg')}`,
     evidenceType: 'simulated',
-    demoMarked: true,
+    fixtureMarked: true,
     createdAt: now.toISOString(),
   };
 }

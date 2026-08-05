@@ -273,9 +273,9 @@ export const seedSendLogs: SendLog[] = [
     channel: 'email',
     status: 'simulated',
     messageSnapshot: 'Annual Return Filing Reminder — Nusantara Digital Sdn Bhd',
-    providerMessageId: 'demo-msg-001',
+    providerMessageId: 'fixture-msg-001',
     evidenceType: 'simulated',
-    demoMarked: true,
+    fixtureMarked: true,
     createdAt: '2026-04-14T09:00:03+08:00',
   },
 ];
@@ -285,9 +285,9 @@ export const seedAuditEvents: AuditEvent[] = [
     id: 'evt-init',
     actorStaffId: 'staff-admin',
     actorEmail: 'admin@clpc.my',
-    action: 'DEMO_SEED_LOADED',
+    action: 'FIXTURE_SEED_LOADED',
     entityType: 'system',
-    detail: { note: 'Demo data seeded; Supabase not configured.' },
+    detail: { note: 'Fixture-backed seed records loaded; Supabase not configured.' },
     createdAt: '2026-04-01T00:00:00+08:00',
   },
 ];

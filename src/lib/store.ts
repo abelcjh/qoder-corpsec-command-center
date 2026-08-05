@@ -216,7 +216,7 @@ function cloudLogToApp(row: CloudSendLogRow): SendLog {
     messageSnapshot: row.message_snapshot,
     providerMessageId: row.provider_message_id,
     evidenceType: evidence,
-    demoMarked: evidence === 'simulated',
+    fixtureMarked: evidence === 'simulated',
     createdAt: row.created_at ?? row.sent_at,
   };
 }

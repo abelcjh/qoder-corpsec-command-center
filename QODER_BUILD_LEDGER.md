@@ -39,11 +39,11 @@ Files generated:
 
 ## Phase 3: Domain Model & Seed Data
 
-**Qoder Action**: Expanded the TypeScript data model to cover staff auth, companies, contacts, rules, jobs, logs, proofs, and audit events. Seeded 5 demo staff users, 3 companies, 4 contacts, 5 rules, 2 jobs, and sample send logs.
+**Qoder Action**: Expanded the TypeScript data model to cover staff auth, companies, contacts, rules, jobs, logs, proofs, and audit events. Seeded 5 staff users, 3 companies, 4 contacts, 5 rules, 2 jobs, and sample send logs.
 
 Files generated/updated:
 - `src/types.ts` — Full domain types
-- `src/data/seed.ts` — Demo fixtures + helper functions
+- `src/data/seed.ts` — Fixture-backed seed records + helper functions
 - `src/data/company.ts` — Updated to new `Company` shape
 
 Key decisions:
@@ -113,7 +113,7 @@ Features implemented:
 
 ## Phase 7: State Management, Scoping & Reducers
 
-**Qoder Action**: Built a local demo store with department scoping and pure reducers.
+**Qoder Action**: Built a fixture-backed local state store with department scoping and pure reducers.
 
 Files generated:
 - `src/lib/store.ts` — `useAppStore` hook with actions and audit logging

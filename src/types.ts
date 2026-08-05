@@ -98,7 +98,7 @@ export interface SendLog {
   messageSnapshot: string;
   providerMessageId?: string;
   evidenceType: EvidenceType;
-  demoMarked: boolean;
+  fixtureMarked: boolean;
   createdAt: string;
 }
 
@@ -171,7 +171,7 @@ export interface ReviewSummary {
   notes: string;
 }
 
-// Demo store state shape
+// Fixture-backed store state shape
 export interface AppState {
   staffUsers: StaffUser[];
   currentUser: StaffUser | null;

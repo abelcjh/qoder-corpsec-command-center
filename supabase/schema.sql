@@ -1,6 +1,6 @@
 -- CorpSec Command Center — Supabase Schema
 -- Run this in the Supabase SQL Editor after creating a project.
--- The local demo mode does NOT need a real Supabase instance.
+-- The fixture-backed local state path does NOT need a real Supabase instance.
 
 -- Enable UUID extension
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
@@ -100,7 +100,7 @@ CREATE TABLE send_logs (
   message_snapshot TEXT NOT NULL,
   provider_message_id TEXT,
   evidence_type TEXT NOT NULL DEFAULT 'simulated', -- simulated, provider_receipt, gmail_print
-  demo_marked BOOLEAN NOT NULL DEFAULT true,
+  fixture_marked BOOLEAN NOT NULL DEFAULT true,
   created_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 

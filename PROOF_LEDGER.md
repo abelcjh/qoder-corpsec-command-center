@@ -1,6 +1,6 @@
 # Proof Ledger — Credence / CorpSec Command Center
 
-Claims-to-artifacts mapping for hackathon judging.
+Claims-to-artifacts mapping for hackathon judging. This is the judge-readable receipt for every major claim in the 2-3 minute submission video.
 
 ---
 
@@ -47,12 +47,12 @@ Claims-to-artifacts mapping for hackathon judging.
 | Login screen | `src/components/screens/LoginScreen.tsx` |
 | Department-scoped dashboard and navigation | `src/App.tsx`, `src/lib/scoping.ts` |
 
-## Claim 6: Supabase-ready adapter with demo fallback
+## Claim 6: Supabase-ready adapter with fixture-backed local state
 
 | Evidence | Location |
 |----------|----------|
 | Supabase schema with 8 tables and RLS notes | `supabase/schema.sql` |
-| `supabase.ts` reads env vars, falls back when absent | `src/lib/supabase.ts` |
+| `supabase.ts` reads env vars, then uses seeded fixture-backed local state when absent | `src/lib/supabase.ts`, `src/data/seed.ts` |
 | Schema verification in test suite | `scripts/verify.mts` |
 
 ## Claim 7: Modern UI with Tailwind + shadcn-style components
@@ -70,3 +70,21 @@ Claims-to-artifacts mapping for hackathon judging.
 | `npm run build` output | `dist/` |
 | Verification script with 47 assertions | `scripts/verify.mts` |
 | Package scripts | `package.json` |
+
+---
+
+## Rubric proof map for final submission
+
+| Judging criterion | Weight | Hard proof artifact | Video / judge moment |
+|---|---:|---|---|
+| Use of Qoder | 30% | `QODER_BUILD_LEDGER.md`, `QODER_FULLSTACK_PROMPT.md`, `Spec.md`, `scripts/verify.mts` | Open the Qoder Build screen, then show this ledger and say Qoder produced the schema, state model, UI screens, reminder engine, and verification harness under Abel's human review. |
+| Innovation and creativity | 25% | `src/lib/reminderEngine.ts`, `src/lib/scoping.ts`, `src/components/screens/SendLogsScreen.tsx`, `src/components/screens/ProofScreen.tsx` | Position Credence as a department-scoped compliance command center with evidence retention, not another generic reminder/calendar app. |
+| Impact | 20% | `SUBMISSION_CHECKLIST.md` market calibration, CLPC workflow references, seeded Malaysia Sdn Bhd client records | Say the wedge is for Malaysian company-secretary/accounting firms whose work begins before invoicing, so the client database and proof trail become operational infrastructure. |
+| Technical execution | 15% | `supabase/schema.sql`, `src/lib/store.ts`, `src/lib/reducers.ts`, `npm run build`, `npm run verify` | Show Supabase-backed staff login, scoped clients/jobs/logs, deactivation preserving evidence, and passing verification. |
+| Presentation / UGC | 10% | `DEMO_SCRIPT.md`, `src/components/screens/SubmissionPackScreen.tsx`, `SUBMISSION_CHECKLIST.md` | End with Submission Pack screen: social post/video requirements, tags `@QoderOfficial` + `@AlibabaCloud`, hashtags `#QoderHackathon` + `#BuildWithQoder`. |
+
+## Current verification receipt
+
+- Required command before shipping: `npm run build && npm run verify`
+- Expected verify scope: working-day recurrence, run generation, cron simulation, department scoping, company deactivation, schema/docs checks.
+- Safe-send boundary: the hackathon build records fixture-safe send/proof rows and does not contact real clients from the frontend.

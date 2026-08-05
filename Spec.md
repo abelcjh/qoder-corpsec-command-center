@@ -68,7 +68,7 @@ A full-stack prototype of a Malaysia-first corporate-secretarial compliance remi
 - id, companyId, contactId, ruleId, department, channel, subject, body, firstSendAt, everyNWorkingDays, stopDate, status, createdBy, createdAt
 
 ### SendLog
-- id, jobId, companyId, contactId, scheduledRunAt, sentAt, senderStaffId, senderEmail, recipient, channel, status, messageSnapshot, providerMessageId, evidenceType, demoMarked, createdAt
+- id, jobId, companyId, contactId, scheduledRunAt, sentAt, senderStaffId, senderEmail, recipient, channel, status, messageSnapshot, providerMessageId, evidenceType, fixtureMarked, createdAt
 
 ### ProofDocument
 - id, sendLogId, documentType, storagePath, metadata, uploadedBy, createdAt

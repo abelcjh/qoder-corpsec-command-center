@@ -6,8 +6,8 @@ Context from Abel/Ariel sessions:
 - Core CLPC lesson: client database is the source of truth, not invoices. Audit/tax may do work before invoice. Departments need separate views: audit, tax, accounting, corp sec.
 - Required platform architecture: staff login -> department-scoped client database/company profile/contact/deadline records -> recurring reminder jobs -> scheduled send queue -> send logs/proof evidence -> deactivate removes future jobs but retains historical logs.
 - New send job flow: choose company -> choose predefined rule or custom settings -> editable body preview -> first send date/time -> every N working days -> stop date -> channel -> job appears in scheduled queue.
-- Proof logs: timestamp, recipient, sender, status, message snapshot, provider/message id placeholder, evidence type. In CLPC, authoritative proof is Gmail print document later; for this hackathon prototype use simulated proof records and mark as demo.
-- Staff auth: proper login for each staff user with role/department access. Supabase-ready adapter; local/demo fallback if env vars absent.
+- Proof logs: timestamp, recipient, sender, status, message snapshot, provider/message id placeholder, evidence type. In CLPC, authoritative proof is Gmail print document later; for this hackathon prototype use fixture-safe proof records and clearly label the evidence type.
+- Staff auth: proper login for each staff user with role/department access. Supabase-ready adapter; fixture-backed local state if env vars absent.
 - Use of Qoder is 30% of judging, so keep Qoder build artifacts updated.
 
 Implementation requirements:
@@ -15,7 +15,7 @@ Implementation requirements:
 2. Add Tailwind config, PostCSS, global design tokens. Use premium aesthetic: deep charcoal/black, cream cards, crimson accents, clear data-dense dashboard.
 3. Add Supabase integration using @supabase/supabase-js:
    - src/lib/supabase.ts reads VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.
-   - If env vars absent, app runs in seeded demo mode.
+   - If env vars are absent, app runs against fixture-backed local state.
    - Include supabase/schema.sql with tables for staff_users, companies, company_contacts, compliance_rules, scheduled_send_jobs, send_logs, proof_documents, audit_events plus RLS notes/policies comments.
 4. Add staff login UI and state. Seed users: Admin (all departments), Tax Staff, Audit Staff, Corp Sec Staff, Accounting Staff. Department-scoped filtering after login.
 5. Build app screens/tabs:

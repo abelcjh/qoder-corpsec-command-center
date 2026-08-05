@@ -58,7 +58,7 @@ src/
   components/
     ui/             shadcn-inspired reusable components
     screens/        Login, Dashboard, Clients, Rules, Queue, Logs, Proof, Build Ledger, Submission Pack
-  data/             Demo fixtures and seed data
+  data/             Fixture-backed seed records and helper data
   lib/
     supabase.ts     Supabase client configured through Vite env vars
     store.ts        Supabase-backed app state, staff auth, and actions

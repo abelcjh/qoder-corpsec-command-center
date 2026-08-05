@@ -78,7 +78,7 @@ const contact = seedContacts[0];
 const staff = seedStaffUsers.find((u) => u.department === 'corp_sec');
 const log = simulateCronSend(job, runs[0], contact, staff, new Date('2026-08-03T09:05:00+08:00'));
 assert(log.status === 'simulated', 'Simulated send has status simulated');
-assert(log.demoMarked === true, 'Simulated send is marked as demo');
+assert(log.fixtureMarked === true, 'Safe simulated send is fixture-marked for judge clarity');
 assert(log.recipient === contact.email, 'Recipient uses primary contact email');
 assert(log.messageSnapshot.includes('Test'), 'Snapshot includes subject');
 
