@@ -44,6 +44,16 @@ Golden path:
 4. Show `QODER_BUILD_LEDGER.md` either in the app's Qoder Build screen or in the editor for judge-visible Qoder proof.
 5. End on the Submission Pack screen so the organizer requirements are visually obvious.
 
+Role-switch ladder if the recording has extra time:
+
+| Role | Credential | Use in recording |
+|---|---|---|
+| Admin | `admin / admin123` | Primary golden path; shows every screen and avoids role-scoping confusion. |
+| Tax | `tax / tax123` | Optional 10-second proof that Credence supports CP204/Form C and tax-audit workflows, not only corporate-secretarial reminders. |
+| Audit | `audit / audit123` | Optional proof of audited-financial-statement ownership and evidence review. |
+| Accounts | `accounts / accounts123` | Fallback role for management-account reminders. |
+| CorpSec | `corpsec / corpsec123` | Optional proof for annual return, AGM, SSM, and statutory-record workflows. |
+
 Fallback if the live app misbehaves:
 
 ```bash

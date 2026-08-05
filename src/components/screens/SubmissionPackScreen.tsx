@@ -67,6 +67,14 @@ const formValues = [
   ['Consent fields', 'Select Yes for both organizer sharing/judging consent fields if Abel approves submission.'],
 ];
 
+const recordingCredentials = [
+  ['Admin', 'admin / admin123', 'Start here for the complete dashboard, client database, scheduled queue, evidence logs, AI Workbench, Qoder ledger, and Submission Pack.'],
+  ['Tax', 'tax / tax123', 'Use only if there is time to prove the CLPC multi-department wedge with CP204/Form C and tax-audit workflows.'],
+  ['Audit', 'audit / audit123', 'Optional 10-second role switch for audited financial statement and evidence-review ownership.'],
+  ['Accounts', 'accounts / accounts123', 'Fallback role to show management-account reminders without touching corpsec-only records.'],
+  ['CorpSec', 'corpsec / corpsec123', 'Optional role for annual return, AGM, SSM, and statutory-record workflows.'],
+];
+
 const evidenceFreshness = [
   ['Current', 'Reminder proof exists for this rule/deadline and the latest evidence snapshot is still inside the expected cadence.'],
   ['Expiring', 'A proof row exists, but the next statutory/customer follow-up is close enough that a staff owner should chase before the risk becomes stale.'],
@@ -173,6 +181,22 @@ export function SubmissionPackScreen() {
             <div key={label} className="rounded-xl border border-brand-border bg-brand-surface/40 p-4">
               <div className="text-xs uppercase tracking-[0.2em] text-brand-muted">{label}</div>
               <p className="mt-2 text-sm leading-6 text-brand-text">{value}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2"><ClipboardList size={18} className="text-emerald-500" /> Recording credential ladder</CardTitle>
+          <CardDescription>Use these only for the video/live demo; start with Admin and switch roles only if it strengthens the multi-department story</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 lg:grid-cols-5">
+          {recordingCredentials.map(([role, credential, detail]) => (
+            <div key={role} className="rounded-xl border border-brand-border bg-brand-surface/40 p-4">
+              <div className="text-xs uppercase tracking-[0.2em] text-brand-muted">{role}</div>
+              <div className="mt-2 font-mono text-sm font-semibold text-crimson-200">{credential}</div>
+              <p className="mt-2 text-sm text-brand-muted">{detail}</p>
             </div>
           ))}
         </CardContent>

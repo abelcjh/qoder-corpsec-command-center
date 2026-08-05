@@ -121,3 +121,4 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | Expiring | Reminder proof exists, but a staff owner should chase soon before unresolved risk becomes stale. | Scheduled Queue next-run date plus proof row owner/recipient |
 | Stale | Missing or outdated proof is visible instead of hidden, preserving escalation accountability. | Proof screen risk note and retained send-log history |
 | Reviewer-safe export | Judges can inspect owner, recipient, timestamp, evidence type, snapshot, and Gmail/provider fields without secrets or live sends. | Submission Pack screen and README reviewer-safe export table |
+| Recording credential ladder | Seeded credentials let judges see Admin first, then optional Tax/Audit/Accounts/CorpSec role scoping without creating external side effects. | Submission Pack screen and `VIDEO_AND_SOCIAL_FINAL_PACK.md` demo reliability checklist |
