@@ -169,15 +169,15 @@ const judgeLiveCheck = [
 ];
 
 const liveSmokeReceipt = [
-  ['Current live smoke check', 'Aug 5 22:28 GMT+8: live Worker home route returned HTTP 200 app HTML in 176ms and the Agnes bridge returned HTTP 200 JSON in 9.7s with a browser-like fixture request, plus no-secret/API-key-shape checks passed.'],
+  ['Current live smoke check', 'Aug 5 22:37 GMT+8: live Worker home route returned HTTP 200 app HTML in 187ms and the Agnes bridge returned HTTP 200 JSON in 4.2s with a browser-like fixture request, plus no-secret/API-key-shape checks passed.'],
   ['Home page', 'Open the deployed Worker first; the latest smoke confirms the staff-login app shell loads from the public URL, not only from local dev.'],
   ['Agnes API route', 'POST /api/ai-brief returned HTTP 200 JSON for a safe fixture company, proving the server-side AI bridge is reachable without exposing the key.'],
   ['Recording fallback', 'If the live network stalls, narrate the saved smoke receipt plus npm run build && npm run verify instead of improvising.'],
 ];
 
 const finalReadinessReceipt = [
-  ['Live URL works', 'Latest smoke passed at Aug 5 22:28 GMT+8: public Worker home route HTTP 200, staff-login app shell returned.'],
-  ['Agnes bridge works', 'Fixture-safe POST /api/ai-brief returned HTTP 200 JSON in 9.7s and passed secret-name/API-key-shape checks.'],
+  ['Live URL works', 'Latest smoke passed at Aug 5 22:37 GMT+8: public Worker home route HTTP 200, staff-login app shell returned.'],
+  ['Agnes bridge works', 'Fixture-safe POST /api/ai-brief returned HTTP 200 JSON in 4.2s and passed secret-name/API-key-shape checks.'],
   ['Local proof command', 'Keep npm run build && npm run verify visible as the fallback receipt; the harness covers the deterministic middle and submission-proof surfaces.'],
   ['Manual boundaries', 'Social post, organizer form, email/WhatsApp, and legal-status changes remain manual; the app demonstrates fixture-safe receipts only.'],
 ];
