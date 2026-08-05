@@ -193,6 +193,9 @@ assert(submissionPack.includes('AI-to-staff handoff receipt'), 'Submission Pack 
 assert(submissionPack.includes('Enterprise trust scorecard'), 'Submission Pack includes enterprise trust winner-calibration scorecard');
 assert(submissionPack.includes('Authority and provenance receipt'), 'Submission Pack includes authority/provenance trust receipt');
 assert(submissionPack.includes('Staff identity'), 'Submission Pack states staff identity as the action owner');
+assert(submissionPack.includes('Offline verifier receipt'), 'Submission Pack includes offline verifier receipt for re-derivable proof');
+assert(submissionPack.includes('Hashable packet ID'), 'Submission Pack states hashable packet ID as verifier proof');
+assert(submissionPack.includes('Blocked-action receipt'), 'Submission Pack keeps blocked actions visible as proof');
 assert(submissionPack.includes('Pilot handoff receipt'), 'Submission Pack includes pilot handoff receipt for adoption readiness');
 assert(submissionPack.includes('Reusable workflow'), 'Submission Pack states reusable workflow artifacts for pilot handoff');
 assert(submissionPack.includes('Deterministic middle'), 'Submission Pack states deterministic rules remain the trusted middle');

@@ -32,7 +32,7 @@ npm run build && npm run verify
 npm run dev
 ```
 
-Live smoke receipt to mention if judges ask about deployment reliability: on the Aug 5 21:31 GMT+8 Ralph smoke check, the Cloudflare Worker home route returned HTTP 200 app HTML and `POST /api/ai-brief` returned HTTP 200 fixture JSON in 5.0s through the server-side Agnes bridge, with no secret-name or API-key-shaped leakage.
+Live smoke receipt to mention if judges ask about deployment reliability: on the Aug 5 21:42 GMT+8 Ralph smoke check, the Cloudflare Worker home route returned HTTP 200 app HTML and `POST /api/ai-brief` returned HTTP 200 fixture JSON in 5.3s through the server-side Agnes bridge, with no secret-name or API-key-shaped leakage.
 
 Golden path:
 
@@ -47,8 +47,9 @@ Golden path:
 9. Pause on the Enterprise trust scorecard if judges ask why this is more than a demo app: workflow compression, deterministic rules, audit-ready proof, governed AI, and pilot-ready artifacts match the enterprise-agent winner bar.
 10. Pause on the Authority and provenance receipt if judges ask why the agent workflow is trustworthy: staff identity, delegated rule authority, approved intent, policy boundary, and retained proof provenance.
 11. Pause on the Pilot handoff receipt if judges ask how to adopt or rerun it: live URL, one-command proof, Supabase data contract, operator-safe boundaries, and reusable Qoder workflow artifacts.
-12. Pause on the Live Worker smoke receipt if the browser or Agnes call feels slow: it proves the public URL and server-side AI bridge were checked close to submission time, while the terminal fallback remains deterministic.
-13. End on the Submission Pack screen so the organizer requirements are visually obvious.
+12. Pause on the Offline verifier receipt if judges ask how to trust the evidence later: deterministic proof packet ID, reviewer-safe fields, freshness recheck, and blocked-action/no-send boundary make the proof row re-derivable instead of screenshot-trusted.
+13. Pause on the Live Worker smoke receipt if the browser or Agnes call feels slow: it proves the public URL and server-side AI bridge were checked close to submission time, while the terminal fallback remains deterministic.
+14. End on the Submission Pack screen so the organizer requirements are visually obvious.
 
 Role-switch ladder if the recording has extra time:
 

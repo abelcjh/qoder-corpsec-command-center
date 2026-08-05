@@ -56,13 +56,13 @@
 ```bash
 npm install          # Installs all dependencies
 npm run build        # TypeScript check + Vite build
-npm test             # Verification script passes (74 assertions)
+npm test             # Verification script passes (77 assertions)
 ```
 
 ### Live Worker Smoke Receipt
 
-- [x] Live Cloudflare Worker home route returned HTTP 200 app HTML during the Aug 5 21:31 GMT+8 Ralph smoke check.
-- [x] `POST /api/ai-brief` returned HTTP 200 fixture JSON in 5.0s in the same smoke check, proving the server-side Agnes bridge is reachable without exposing the key in the browser; no secret-name or API-key-shaped values were exposed.
+- [x] Live Cloudflare Worker home route returned HTTP 200 app HTML during the Aug 5 21:42 GMT+8 Ralph smoke check.
+- [x] `POST /api/ai-brief` returned HTTP 200 fixture JSON in 5.3s in the same smoke check, proving the server-side Agnes bridge is reachable without exposing the key in the browser; no secret-name or API-key-shaped values were exposed.
 - [x] Recording fallback is explicit: if live network/Agnes stalls, show this smoke receipt plus `npm run build && npm run verify` instead of hiding the failure.
 
 ### Files in Repository
@@ -178,6 +178,7 @@ From the organizer master deck and UGC screenshot:
 | [Counto](https://counto.sg/company-secretary/) / [Bossi](https://ebos-sg.com/bossi-secretary/) AI-human handoff scan | Singapore products advertise AI-guided submissions, expert-team handoff, automated deadline alerts, and background audit trails. | Add one sentence during the Agnes moment: Credence makes the approval handoff inspectable — AI drafts only, staff approves the rule/job path, deterministic schedules run the queue, and reviewer-safe proof is retained. |
 | [UiPath AgentHack winners](https://forum.uipath.com/t/here-are-the-uipath-agenthack-2025-winners/3586396) / [ABBYY 2026 winner](https://www.globenewswire.com/news-release/2026/08/04/3338139/0/en/ABBYY-2026-Hackathon-Winner-Accelerates-Mortgage-Auditing-Review-Leveraging-Document-AI-and-Large-Language-Models.html) | Enterprise-agent winners are praised for business-ready agents, reusable artifacts, deployable workflows, and auditable regulated-industry operations. | Pause on the new Pilot handoff receipt: live URL, one-command proof, Supabase data contract, operator-safe boundaries, and reusable Qoder workflow artifacts. |
 | [Trust Receipt AGI House winner](https://ashah007.medium.com/we-won-at-agi-house-by-building-the-proof-layer-for-ai-agents-ebdd0f27eced) | A current agent-infrastructure winner says every agent action should leave a receipt across identity, authority, intent alignment, policy compliance, and provenance. | Pause on the Authority and provenance receipt: staff identity, delegated rule authority, approved intent snapshot, no-send policy boundary, and reviewer-safe proof provenance after deactivation. |
+| [Trust Receipt repo](https://github.com/ankitshah009/TrustReceipt) / [AgentAudit scan](https://lablab.ai/ai-hackathons/techex-intelligent-enterprise-solutions-hackathon/diego-ia-enterprise/agentaudit-immutable-ai-audit-trail) | Agent-proof winners increasingly frame trust as independently checkable receipts: hashes, policy outcomes, public/private evidence boundaries, and offline verification paths. | Use the new Offline verifier receipt if challenged: Credence's proof packet has a deterministic packet ID, reviewer-safe fields, freshness recheck, and a blocked-action/no-send receipt instead of relying on screenshots. |
 
 ### Aug 5 evidence freshness sweep — Ralph loop
 
@@ -229,7 +230,7 @@ Before recording or live judging, run this exact reliability pass:
 4. Click Agnes briefing once; if the endpoint is unavailable, show the deterministic fallback banner as resilience proof.
 5. Do not send email/WhatsApp/social/form actions from the app; all proof rows are fixture-safe and human-reviewed.
 6. Keep `npm run build && npm run verify` output visible as the deterministic receipt.
-7. Latest remote smoke receipt to say on camera if asked: Aug 5 21:31 GMT+8, `/` returned HTTP 200 app HTML and `/api/ai-brief` returned HTTP 200 fixture JSON through the server-side Agnes bridge, with no secret-name or API-key-shaped leakage.
+7. Latest remote smoke receipt to say on camera if asked: Aug 5 21:42 GMT+8, `/` returned HTTP 200 app HTML and `/api/ai-brief` returned HTTP 200 fixture JSON through the server-side Agnes bridge, with no secret-name or API-key-shaped leakage.
 
 ### AI Workbench recording packet — Aug 5 Ralph loop
 
