@@ -144,6 +144,10 @@ const packet = buildProofPacket(seedSendLogs[0], new Date('2026-04-15T09:00:00+0
 assert(packet.packetId.startsWith('proof-'), 'Proof packet gets deterministic hashable ID');
 assert(packet.freshness === 'current', 'Fresh proof is classified current');
 assert(packet.evidenceFields.includes('provider_message_id'), 'Proof packet lists provider message ID as reviewer-safe field');
+assert(packet.authorityControls.includes('staff_identity_present'), 'Proof packet records staff identity authority control');
+assert(packet.authorityControls.includes('fixture_safe_no_external_send'), 'Proof packet records fixture-safe no-send authority boundary');
+assert(packet.authorityControls.includes('deterministic_rule_authority'), 'Proof packet records deterministic rule authority');
+assert(packet.authorityControls.includes('no_secret_payload_export'), 'Proof packet records no-secret payload export boundary');
 const packetSummary = summarizeProofPackets(seedSendLogs, new Date('2026-04-15T09:00:00+08:00'));
 assert(packetSummary.current === 1, 'Proof packet summary counts current evidence');
 assert(packetSummary.chainHead.startsWith('chain-'), 'Proof packet summary exposes tamper-evident chain head');
@@ -234,6 +238,9 @@ assert(submissionPack.includes('ClientBase / VOPlus Singapore scan'), 'Submissio
 assert(submissionPack.includes('owner-specific chase becomes a reviewer-safe proof receipt'), 'Submission Pack states the narrow proof-receipt wedge');
 assert(readFileSync(resolve(root, 'src/lib/proofPacket.ts'), 'utf-8').includes('Reviewer-safe packet'), 'Proof packet utility documents non-secret reviewer export boundary');
 assert(readFileSync(resolve(root, 'src/lib/proofPacket.ts'), 'utf-8').includes('buildProofPacketChain'), 'Proof packet utility includes deterministic receipt-chain verifier');
+assert(readFileSync(resolve(root, 'src/lib/proofPacket.ts'), 'utf-8').includes('authorityControls'), 'Proof packet utility includes authority control strip');
+assert(readFileSync(resolve(root, 'src/components/screens/ProofScreen.tsx'), 'utf-8').includes('Authority control strip'), 'Proof screen exposes packet authority control strip');
+assert(readFileSync(resolve(root, 'src/components/screens/SendLogsScreen.tsx'), 'utf-8').includes('no-send boundary'), 'Send Logs dialog exposes no-send authority boundary');
 assert(submissionPack.toLowerCase().includes('tamper-evident'), 'Submission Pack mentions tamper-evident proof integrity');
 assert(submissionPack.includes('Deterministic authority'), 'Submission Pack states deterministic records remain authoritative over AI output');
 const packageJson = readFileSync(resolve(root, 'package.json'), 'utf-8');

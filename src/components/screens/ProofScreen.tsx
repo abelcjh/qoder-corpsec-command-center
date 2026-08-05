@@ -71,6 +71,17 @@ export function ProofScreen({ logs }: ProofScreenProps) {
                   <span key={field} className="rounded-full bg-brand-panel px-2 py-1 text-xs text-brand-muted">{field}</span>
                 ))}
               </div>
+              <div className="mt-4 rounded-lg border border-emerald-800/40 bg-emerald-950/20 p-3">
+                <div className="text-xs font-medium uppercase tracking-wider text-emerald-200/80">Authority control strip</div>
+                <p className="mt-2 text-xs leading-5 text-brand-muted">
+                  Each packet carries judge-visible authority checks: staff identity, deterministic rule authority, fixture/no-send boundary, human-review status, and no-secret payload export.
+                </p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {latestPacket.authorityControls.map((control) => (
+                    <span key={control} className="rounded-full bg-emerald-950/60 px-2 py-1 text-xs text-emerald-100">{control}</span>
+                  ))}
+                </div>
+              </div>
             </div>
           )}
         </CardContent>

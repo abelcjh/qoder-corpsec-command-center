@@ -100,6 +100,12 @@ export function SendLogsScreen({ companies, logs, onRunDueCheck }: SendLogsScree
                   <div className="mb-2 flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-brand-muted"><Fingerprint size={14} /> Reviewer-safe packet</div>
                   <div className="font-mono text-sm text-brand-text">{selectedPacket.packetId}</div>
                   <p className="mt-2 text-xs text-brand-muted">{selectedPacket.statusLabel} · {selectedPacket.ageDays}d old · hashable non-secret export fields retained for audit review.</p>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {selectedPacket.authorityControls.map((control) => (
+                      <span key={control} className="rounded-full bg-brand-panel px-2 py-1 text-xs text-brand-muted">{control}</span>
+                    ))}
+                  </div>
+                  <p className="mt-2 text-xs text-brand-muted">Authority control strip keeps staff identity, deterministic rule authority, no-send boundary, and no-secret export visible inside the evidence dialog.</p>
                 </div>
               )}
            </DialogContent>

@@ -29,7 +29,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | `simulateCronSend`, `recordSendProof` | `src/lib/reminderEngine.ts` |
 | Send logs table and detail modal backed by Supabase rows | `src/components/screens/SendLogsScreen.tsx` |
 | Evidence retention policy screen | `src/components/screens/ProofScreen.tsx` |
-| Reviewer-safe packet ID, freshness status, and non-secret export fields | `src/lib/proofPacket.ts`, `src/components/screens/ProofScreen.tsx`, `src/components/screens/SendLogsScreen.tsx` |
+| Reviewer-safe packet ID, freshness status, non-secret export fields, and authority control strip | `src/lib/proofPacket.ts`, `src/components/screens/ProofScreen.tsx`, `src/components/screens/SendLogsScreen.tsx` |
 
 ## Claim 4: Deactivating a company stops future jobs but retains logs
 
@@ -69,7 +69,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | Evidence | Location |
 |----------|----------|
 | `npm run build` output | `dist/` |
-| Verification script with 106 assertions | `scripts/verify.mts` |
+| Verification script with 113 assertions | `scripts/verify.mts` |
 | Package scripts | `package.json` |
 
 ## Claim 9: Qoder usage is visible, rule-clean, and reviewable
@@ -268,4 +268,13 @@ A compact Aug 5 scan of recent enterprise-agent hackathon winners found repeated
 |----------|----------|
 | Qoder Quest docs state Agent/Experts mode is selected at task start and cannot be switched later; Credence now turns that into a judge-visible mode-choice receipt instead of vague Qoder mentions | `src/components/screens/SubmissionPackScreen.tsx`, `scripts/verify.mts` |
 | Experts Mode docs position plan-before-execution, expert coordination, and intervention notifications as the workflow shape; Credence maps those to Spec.md, preserved prompts, human checkpoints, manual side-effect boundaries, and rerunnable verifier output | `Spec.md`, `QODER_FULLSTACK_PROMPT.md`, `QODER_TASK_PROMPT.md`, `QODER_BUILD_LEDGER.md` |
+
+## Claim 26: Proof packets expose authority controls, not only hashes
+
+| Evidence | Location |
+|----------|----------|
+| Compact enterprise-agent winner scan found the current trust bar is action receipts with authority, policy, provenance, and blocked/no-send boundaries visible next to the proof artifact | Trust Receipt / AgentAudit / AuditShield public scans from Aug 5 Ralph-loop research |
+| `ReviewerProofPacket.authorityControls` records staff identity status, fixture-safe no-send boundary, human-review policy status, deterministic rule authority, and no-secret payload export for every send-log receipt | `src/lib/proofPacket.ts` |
+| The Proof screen and Send Logs evidence dialog now show an Authority control strip, so judges can see who/what authorized the retained reminder proof without opening raw client data | `src/components/screens/ProofScreen.tsx`, `src/components/screens/SendLogsScreen.tsx` |
+| Verification asserts the authority controls and UI strings, preventing the trust strip from silently disappearing before recording | `scripts/verify.mts` |
 

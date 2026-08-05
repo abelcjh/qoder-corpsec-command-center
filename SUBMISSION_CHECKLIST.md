@@ -56,7 +56,7 @@
 ```bash
 npm install          # Installs all dependencies
 npm run build        # TypeScript check + Vite build
-npm test             # Verification script passes (106 assertions)
+npm test             # Verification script passes (113 assertions)
 ```
 
 ### Live Worker Smoke Receipt

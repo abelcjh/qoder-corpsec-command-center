@@ -8,6 +8,7 @@ export interface ReviewerProofPacket {
   statusLabel: string;
   ageDays: number;
   evidenceFields: string[];
+  authorityControls: string[];
   exportNote: string;
   chainIndex?: number;
   previousPacketId?: string;
@@ -61,6 +62,13 @@ export function buildProofPacket(log: SendLog, now = new Date()): ReviewerProofP
       'evidence_type',
       'provider_message_id',
       'message_snapshot',
+    ],
+    authorityControls: [
+      log.senderStaffId ? 'staff_identity_present' : 'staff_identity_pending',
+      log.fixtureMarked ? 'fixture_safe_no_external_send' : 'live_send_requires_staff_review',
+      log.status === 'failed' ? 'needs_human_review' : 'policy_allows_reviewer_export',
+      'deterministic_rule_authority',
+      'no_secret_payload_export',
     ],
     exportNote: 'Reviewer-safe packet: deterministic ID is derived from non-secret proof fields; real client secrets and provider credentials are never included.',
   };
