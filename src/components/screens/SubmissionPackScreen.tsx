@@ -150,6 +150,14 @@ const qoderWorkflowReceipts = [
   ['Security checkpoint', 'QODER_BUILD_LEDGER.md names the Qoder L1/L2/L3 scan path and the honest access/credit fallback.'],
 ];
 
+const qoderExpertsReplayReceipt = [
+  ['Goal prompt', 'Qoder Experts Mode guidance starts from a clear natural-language goal; Credence keeps that goal in Spec.md and the preserved Qoder task prompts.'],
+  ['Plan before execution', 'The Qoder docs emphasize generated plans before execution, so the recording should point to Spec → task phases → verifier rather than implying hidden magic.'],
+  ['Expert coordination', 'Experts Mode coordinates specialist work in parallel; Credence translates that into visible artifacts: schema, reminder engine, role scoping, UI, and QA checks.'],
+  ['Human checkpoints', 'Qoder allows requirement changes and confirmation points; Abel keeps scope, safety boundaries, credentials, and submission actions human-owned.'],
+  ['Replayable proof', 'Because judges may not see the original Qoder canvas, the repo substitutes durable proof: build ledger, proof ledger, prompts, and npm run build && npm run verify.'],
+];
+
 const tenSecondDemoSpine = [
   ['1. Client database', 'Open Nusantara/Ace from the seeded staff login and show department owners + contacts as the source of truth.'],
   ['2. Rule authority', 'Show the statutory rule and working-day cadence that deterministically creates the scheduled chase.'],
@@ -339,6 +347,21 @@ export function SubmissionPackScreen() {
             <div key={label} className="rounded-xl border border-brand-border bg-brand-surface/40 p-4">
               <div className="font-semibold text-brand-text">{label}</div>
               <p className="mt-2 text-sm text-brand-muted">{detail}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2"><ClipboardList size={18} className="text-emerald-500" /> Qoder Experts Mode replay receipt</CardTitle>
+          <CardDescription>Docs-backed Qoder centrality: make the agentic build workflow inspectable without overclaiming private canvas traces</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
+          {qoderExpertsReplayReceipt.map(([label, detail]) => (
+            <div key={label} className="rounded-xl border border-emerald-500/20 bg-emerald-950/10 p-4">
+              <div className="font-semibold text-emerald-100">{label}</div>
+              <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
             </div>
           ))}
         </CardContent>

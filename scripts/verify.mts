@@ -201,6 +201,10 @@ assert(submissionPack.includes('2–3 minute cutdown path'), 'Submission Pack in
 assert(submissionPack.includes('manual submission boundary'), 'Submission Pack closes the cutdown with the manual submission boundary');
 assert(submissionPack.includes('AI Workbench recording packet'), 'Submission Pack includes governed AI Workbench recording packet');
 assert(submissionPack.includes('AI-to-staff handoff receipt'), 'Submission Pack includes AI-to-staff handoff receipt');
+assert(submissionPack.includes('Qoder Experts Mode replay receipt'), 'Submission Pack includes docs-backed Experts Mode replay receipt');
+assert(submissionPack.includes('private canvas traces'), 'Submission Pack avoids overclaiming hidden Qoder canvas traces');
+assert(submissionPack.includes('Plan before execution'), 'Submission Pack states Qoder plan-before-execution workflow proof');
+assert(submissionPack.includes('Replayable proof'), 'Submission Pack ties Qoder workflow to durable rerunnable artifacts');
 assert(submissionPack.includes('Enterprise trust scorecard'), 'Submission Pack includes enterprise trust winner-calibration scorecard');
 assert(submissionPack.includes('Authority and provenance receipt'), 'Submission Pack includes authority/provenance trust receipt');
 assert(submissionPack.includes('Staff identity'), 'Submission Pack states staff identity as the action owner');
