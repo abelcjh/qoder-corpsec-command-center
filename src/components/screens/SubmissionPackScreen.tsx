@@ -51,6 +51,12 @@ const marketFindings = [
     credenceAngle: 'Differentiate as a human-approved command center where AI assists messy intake while deterministic rules create the deadline/job/proof trail.',
   },
   {
+    source: 'MBRS operational guide',
+    url: 'https://www.mbrs.com.my/mbrs-for-company-secretaries/',
+    signal: 'Real MBRS practice risk is not just a due date: lodgers need T-60 client chases, T-30 preparation checks, T-7 validation, same-day signing, acceptance tracking, and evidence that late inputs were the client-side blocker.',
+    credenceAngle: 'Show Credence as the reviewer-safe chase ledger for the Maker/Lodger control loop: each reminder has an owner, cadence, snapshot, unresolved-risk note, and retained proof before acceptance.',
+  },
+  {
     source: 'BizAid / ACE market scan',
     url: 'https://www.bizaid.my/our-solutions/',
     signal: 'Malaysia CoSec suites advertise AI assistants, OCR document storage, e-signatures, MBRS/SSM workflows, and broad client portals.',
@@ -87,6 +93,13 @@ const evidenceFreshness = [
   ['Expiring', 'A proof row exists, but the next statutory/customer follow-up is close enough that a staff owner should chase before the risk becomes stale.'],
   ['Stale', 'The deadline/rule has no recent proof row or unresolved risk remains after the expected follow-up window.'],
   ['Reviewer-safe export', 'Judges and reviewers can inspect owner, recipient, timestamp, source type, message snapshot, and unresolved risk without exposing secrets or contacting real clients.'],
+];
+
+const mbrsControlLoop = [
+  ['T-60 chase', 'Client-facing reminder captures audit-status or signed-FS blocker before the annual-return / financial-statement cluster becomes urgent.'],
+  ['T-30 prepare', 'Owner checks that preparation is underway and records the latest client response or missing-input risk.'],
+  ['T-7 validate', 'Reviewer confirms the MBRS file / evidence pack is ready before lodgement-day pressure.'],
+  ['Acceptance receipt', 'After signing/lodgement, the proof row keeps provider ID, snapshot, unresolved risk, and acceptance evidence for later review.'],
 ];
 
 const qoderWorkflowReceipts = [
@@ -248,6 +261,21 @@ export function SubmissionPackScreen() {
         </CardHeader>
         <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
           {evidenceFreshness.map(([label, detail]) => (
+            <div key={label} className="rounded-xl border border-brand-border bg-brand-surface/40 p-4">
+              <div className="font-semibold text-brand-text">{label}</div>
+              <p className="mt-2 text-sm text-brand-muted">{detail}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2"><ClipboardList size={18} className="text-emerald-500" /> MBRS Maker/Lodger control loop</CardTitle>
+          <CardDescription>Market-backed operational proof that Credence solves a real company-secretary deadline workflow, not just a calendar</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+          {mbrsControlLoop.map(([label, detail]) => (
             <div key={label} className="rounded-xl border border-brand-border bg-brand-surface/40 p-4">
               <div className="font-semibold text-brand-text">{label}</div>
               <p className="mt-2 text-sm text-brand-muted">{detail}</p>
