@@ -31,6 +31,7 @@
 - [x] Spec.md — Technical specification with data model and architecture
 - [x] QODER_BUILD_LEDGER.md — Qoder build process documentation
 - [x] PROOF_LEDGER.md — Claims-to-artifacts mapping
+- [x] AGENTS.md + .qoder/rules — Qoder Memory Kit for reusable project instructions, proof gate, and submission boundary
 - [x] DEMO_SCRIPT.md — Demo walkthrough for judges
 - [x] SUBMISSION_CHECKLIST.md — This checklist
 - [x] VIDEO_AND_SOCIAL_FINAL_PACK.md — Ready-to-record 2–3 minute video run of show, social drafts, submission form values, and fallback recording path
@@ -56,7 +57,7 @@
 ```bash
 npm install          # Installs all dependencies
 npm run build        # TypeScript check + Vite build
-npm test             # Verification script passes (120 assertions)
+npm test             # Verification script passes (137 assertions)
 ```
 
 ### Live Worker Smoke Receipt
@@ -171,6 +172,7 @@ From the organizer master deck and UGC screenshot:
 |---|---|---|
 | [Qoder Quest Mode blog](https://www.alibabacloud.com/blog/quest-mode-task-delegation-to-agents_603328) | Quest Mode is framed around spec as source of truth, visible Action Flow, self-validation, and Task Reports. | In the video, say Qoder was used with a spec-first workflow plus verify loops; show `QODER_BUILD_LEDGER.md`, not just the finished UI. |
 | [Qoder Experts Mode docs](http://docs.qoder.com/user-guide/quest/experts-mode) | Experts Mode emphasizes multi-agent decomposition, plan review, parallel execution, and human confirmation. | Keep the pitch human-in-command: Abel reviewed scope, verified output, and preserved Qoder evidence instead of claiming unsupervised magic. |
+| [Qoder CLI Memory docs](https://docs.qoder.com/en/cli/memory) | Qoder loads committed `AGENTS.md` and `.qoder/rules/**/*.md` as static project memory / project instructions in trusted workspaces. | Point to the Qoder Memory Kit receipt: Credence packages the CorpSec proof gate and submission boundary as reusable Qoder workflow instructions, not just a one-off app. |
 | [CLPC Corporate Secretarial](https://clpc.my/corporate-secretarial/) | CLPC services include SSM compliance, annual returns, meetings, notifications to SSM, statutory records, and beneficial-owner reporting. | Name these exact workflows when explaining why corporate-secretarial teams need a client-centered command center. |
 | [CLPC Corporate Tax & SST](https://clpc.my/corporate-tax-and-sst/) | Tax teams handle Form C, CP204, CP204A 6th/9th-month revisions, tax audit and investigation responses. | Use the Tax Staff login moment to prove this is multi-department, not only company-secretary reminders. |
 | [ezcosec](https://ezcosec.com/) and [BlazeTech ACE](https://stg.blazetech.my/ace/) | Malaysian CoSec competitors sell SSM workflows, client portals, statutory registers, MBRS exports, and automated reminders. | Do not pitch generic reminders; pitch Credence's wedge as department-scoped operations plus auditable evidence/proof retention. |

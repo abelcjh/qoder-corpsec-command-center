@@ -186,3 +186,15 @@ Compact Qoder docs check: Qoder Experts Mode asks builders to state the end goal
 - **Planned phases** — architecture, schema, UI, reminder engine, verification, and submission proof are documented as reviewable phases.
 - **Human intervention points** — compliance copy, Agnes AI briefs, Qoder security-scan claims, social/form submission, and external sends remain human-approved.
 - **Replay surface** — the Build Ledger screen acts as an inspectable canvas substitute: what Qoder built, what humans reviewed, and what `npm run build && npm run verify` rechecks.
+
+---
+
+## Phase 13: Qoder Memory Kit Receipt
+
+Latest Qoder CLI memory calibration: Qoder loads committed project `AGENTS.md` plus `.qoder/rules/**/*.md` as static project memory. Credence now packages the reusable workflow directly in the repo:
+
+- `AGENTS.md` — project spine, safety boundaries, build/verify commands, and source-of-truth file map for future Qoder sessions.
+- `.qoder/rules/proof-gate.md` — deterministic closure/status rules, reviewer-safe proof fields, freshness states, and packet authority controls.
+- `.qoder/rules/submission-boundary.md` — manual-only external actions, rule-clean Qoder story, and no-overclaim boundaries for social/form/email/WhatsApp/Gmail/MBRS/MCP claims.
+
+Judge-facing line: **Credence is not only a one-off app; it is a Qoder-rerunnable CorpSec evidence workflow with committed memory, proof rules, and verification receipts.**

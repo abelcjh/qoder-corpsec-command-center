@@ -8,6 +8,7 @@ Purpose: give Abel a ready-to-record and ready-to-post package for the Aug 5 Ali
 - Use existing Supabase-seeded staff credentials only for the recording.
 - Do not contact real clients from the app during the recording.
 - If asked about Qoder usage, show `QODER_BUILD_LEDGER.md` and say Qoder was central to the original spec-driven build; Ralph/Hermes cron loops only strengthened packaging and proof afterward.
+- If asked whether the workflow is reusable, show `AGENTS.md` and `.qoder/rules/`: Qoder can reload the CorpSec proof gate, no-send boundary, and build/verify contract as committed project memory.
 - If Qoder Security scan access/credits are unavailable, say: "security scan is queued as an access-dependent checkpoint; current verified proof is TypeScript strict build, deterministic verification, no committed secrets, and human review."
 
 ## 2–3 minute video run of show
@@ -39,7 +40,7 @@ Golden path:
 1. Use `admin / admin123` first so every screen has data.
 2. If Supabase is slow, pause on the login screen until staff credentials load rather than narrating over a spinner.
 3. Do not create a job with a real client email during the recording; use seeded fixture data only.
-4. Show `QODER_BUILD_LEDGER.md` either in the app's Qoder Build screen or in the editor for judge-visible Qoder proof.
+4. Show `QODER_BUILD_LEDGER.md` either in the app's Qoder Build screen or in the editor for judge-visible Qoder proof; if judges ask about reusability, show `AGENTS.md` plus `.qoder/rules/proof-gate.md` and `.qoder/rules/submission-boundary.md` as the Qoder Memory Kit.
 5. On the Submission Pack screen, pause on the Official Brief Compliance Receipt: Qoder as primary build canvas, spec/Quest/Expert workflow shown as method evidence, post-event refinement kept rule-clean, and deadline stated as Aug 5 11:30 PM GMT+8.
 6. Pause on the MBRS readiness packet if judges ask about real CoSec workflow depth: Credence complements downstream MBRS/XBRL tools by proving upstream client evidence, validation handoff, export receipt, and late-risk defense.
 7. Pause on the AI Workbench recording packet before or after clicking Agnes: say the AI gets one bounded client context, visible role-scoped jobs/logs/rules, and no authority to auto-send, change compliance state, or provide legal advice.

@@ -176,6 +176,9 @@ const requiredFiles = [
   'tailwind.config.js',
   'postcss.config.js',
   'scripts/live-smoke.mjs',
+  'AGENTS.md',
+  '.qoder/rules/proof-gate.md',
+  '.qoder/rules/submission-boundary.md',
 ];
 for (const file of requiredFiles) {
   assert(existsSync(resolve(root, file)), `${file} exists`);
@@ -223,6 +226,20 @@ assert(submissionPack.includes('Replayable proof'), 'Submission Pack ties Qoder 
 assert(submissionPack.includes('Qoder mode-choice receipt'), 'Submission Pack includes Qoder mode-choice receipt');
 assert(submissionPack.includes('cannot be switched later'), 'Submission Pack captures Qoder mode-lock pitfall');
 assert(submissionPack.includes('Notification boundary'), 'Submission Pack maps Qoder intervention notifications to Credence safety boundaries');
+assert(submissionPack.includes('Qoder memory kit receipt'), 'Submission Pack includes Qoder memory kit receipt');
+assert(submissionPack.includes('AGENTS.md'), 'Submission Pack names AGENTS.md as Qoder project memory');
+assert(submissionPack.includes('.qoder/rules/proof-gate.md'), 'Submission Pack names the Qoder proof-gate rule');
+assert(submissionPack.includes('.qoder/rules/submission-boundary.md'), 'Submission Pack names the Qoder submission-boundary rule');
+assert(submissionPack.includes('rerunnable CorpSec evidence workflow'), 'Submission Pack states the reusable Qoder memory workflow');
+const agentsDoc = readFileSync(resolve(root, 'AGENTS.md'), 'utf-8');
+assert(agentsDoc.includes('Credence Qoder Project Instructions'), 'AGENTS.md gives Qoder project instructions');
+assert(agentsDoc.includes('npm run build && npm run verify'), 'AGENTS.md includes required build+verify command');
+const qoderProofRule = readFileSync(resolve(root, '.qoder/rules/proof-gate.md'), 'utf-8');
+assert(qoderProofRule.includes('Credence Proof Gate'), 'Qoder proof-gate rule exists with title');
+assert(qoderProofRule.includes('BLOCK'), 'Qoder proof-gate rule keeps deterministic closure states');
+const qoderSubmissionRule = readFileSync(resolve(root, '.qoder/rules/submission-boundary.md'), 'utf-8');
+assert(qoderSubmissionRule.includes('Credence Submission Boundary'), 'Qoder submission-boundary rule exists with title');
+assert(qoderSubmissionRule.includes('Do not claim private Qoder canvas screenshots'), 'Qoder submission-boundary rule prevents overclaiming private traces');
 assert(submissionPack.includes('Enterprise trust scorecard'), 'Submission Pack includes enterprise trust winner-calibration scorecard');
 assert(submissionPack.includes('Authority and provenance receipt'), 'Submission Pack includes authority/provenance trust receipt');
 assert(submissionPack.includes('Staff identity'), 'Submission Pack states staff identity as the action owner');

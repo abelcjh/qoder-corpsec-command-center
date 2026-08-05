@@ -193,6 +193,13 @@ const qoderModeChoiceReceipt = [
   ['Replay substitute', 'If judges cannot inspect the private Qoder canvas, the public substitute is exact prompts, build/proof ledgers, verifier output, and this mode-choice receipt.'],
 ];
 
+const qoderMemoryKitReceipt = [
+  ['Project memory', 'AGENTS.md gives Qoder future sessions the product spine, no-send boundaries, and exact build/verify commands as committed static memory.'],
+  ['Proof gate rule', '.qoder/rules/proof-gate.md keeps deterministic closure statuses, reviewer-safe fields, freshness states, and packet authority controls front-of-context.'],
+  ['Submission boundary rule', '.qoder/rules/submission-boundary.md preserves rule-clean claims: no social/form/email/WhatsApp mutation and no overclaiming private Qoder traces.'],
+  ['Reusable workflow proof', 'Because Qoder loads AGENTS.md plus .qoder/rules/**/*.md as project instructions, Credence is packaged as a rerunnable CorpSec evidence workflow, not only a one-off app.'],
+];
+
 const tenSecondDemoSpine = [
   ['1. Client database', 'Open Nusantara/Ace from the seeded staff login and show department owners + contacts as the source of truth.'],
   ['2. Rule authority', 'Show the statutory rule and working-day cadence that deterministically creates the scheduled chase.'],
@@ -453,6 +460,21 @@ export function SubmissionPackScreen() {
         </CardHeader>
         <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
           {qoderModeChoiceReceipt.map(([label, detail]) => (
+            <div key={label} className="rounded-xl border border-emerald-500/20 bg-emerald-950/10 p-4">
+              <div className="font-semibold text-emerald-100">{label}</div>
+              <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2"><ClipboardList size={18} className="text-emerald-500" /> Qoder memory kit receipt</CardTitle>
+          <CardDescription>Latest Qoder CLI memory calibration: committed AGENTS.md and .qoder/rules make the proof workflow reusable by future Qoder sessions</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+          {qoderMemoryKitReceipt.map(([label, detail]) => (
             <div key={label} className="rounded-xl border border-emerald-500/20 bg-emerald-950/10 p-4">
               <div className="font-semibold text-emerald-100">{label}</div>
               <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>

@@ -79,6 +79,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | Spec-first build plan and full-stack Qoder prompts | `Spec.md`, `QODER_FULLSTACK_PROMPT.md`, `QODER_TASK_PROMPT.md` |
 | Qoder-generated phases and human verification receipt | `QODER_BUILD_LEDGER.md`, `scripts/verify.mts` |
 | Qoder Security checkpoint documents optional L1/L2/L3 scan path and credit/access limitation | `QODER_BUILD_LEDGER.md` |
+| Qoder Memory Kit makes the workflow reusable in future Qoder CLI sessions without overclaiming private traces | `AGENTS.md`, `.qoder/rules/proof-gate.md`, `.qoder/rules/submission-boundary.md` |
 | Submission Pack screen tells judges where to look during the recording | `src/components/screens/SubmissionPackScreen.tsx`, `src/components/screens/BuildLedgerScreen.tsx` |
 
 ## Claim 10: Agnes AI assists at the edge while deterministic records stay authoritative
@@ -271,6 +272,15 @@ A compact Aug 5 scan of recent enterprise-agent hackathon winners found repeated
 |----------|----------|
 | Qoder Quest docs state Agent/Experts mode is selected at task start and cannot be switched later; Credence now turns that into a judge-visible mode-choice receipt instead of vague Qoder mentions | `src/components/screens/SubmissionPackScreen.tsx`, `scripts/verify.mts` |
 | Experts Mode docs position plan-before-execution, expert coordination, and intervention notifications as the workflow shape; Credence maps those to Spec.md, preserved prompts, human checkpoints, manual side-effect boundaries, and rerunnable verifier output | `Spec.md`, `QODER_FULLSTACK_PROMPT.md`, `QODER_TASK_PROMPT.md`, `QODER_BUILD_LEDGER.md` |
+
+## Claim 27: Qoder project memory makes the CorpSec evidence workflow reusable
+
+| Evidence | Location |
+|----------|----------|
+| Qoder CLI memory docs say committed project `AGENTS.md` and `.qoder/rules/**/*.md` load as static memory / project instructions in trusted workspaces | Qoder CLI Memory docs; Aug 6 Ralph-loop research signal |
+| Credence now includes a project-level `AGENTS.md` with the 10-second product spine, no-send/no-secret/no-overclaim boundaries, build+verify command, and source-of-truth file map | `AGENTS.md` |
+| Focused Qoder rules preserve the proof gate and submission boundary as reusable project instructions instead of burying them in a long README | `.qoder/rules/proof-gate.md`, `.qoder/rules/submission-boundary.md` |
+| Submission Pack surfaces the Qoder memory kit receipt, and the verifier asserts the files/strings exist so the workflow-reusability proof cannot silently disappear | `src/components/screens/SubmissionPackScreen.tsx`, `scripts/verify.mts` |
 
 ## Latest Ralph-loop research signal — HITL audit workflow bar
 

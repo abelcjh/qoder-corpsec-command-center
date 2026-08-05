@@ -24,6 +24,7 @@ Core capabilities:
 - **Send Logs / Evidence** — Timestamped database proof records with provider/message IDs, Gmail print-document fields, sender/recipient metadata, and message snapshots.
 - **Agnes AI Workbench** — Server-side Agnes briefing for executive summary, risks, reviewed client wording, and proof notes while deterministic Credence records remain the source of truth.
 - **Qoder Build Ledger** — Live view of the artifacts and capabilities Qoder delivered.
+- **Qoder Memory Kit** — Committed `AGENTS.md` and `.qoder/rules/` files keep future Qoder sessions aligned to the CorpSec proof gate, no-send boundary, and rerunnable build/verify workflow.
 - **Supabase Cloud Wired** — Staff credentials, client profiles, scheduled jobs, and proof logs load from the CLPC Supabase project via `.env.local`.
 
 ## Defensible reminder evidence
@@ -100,6 +101,9 @@ supabase/
   schema.sql        Full PostgreSQL schema with RLS notes
 scripts/
   verify.mts        Automated verification harness
+.qoder/
+  rules/            Qoder project rules for proof-gate and submission-boundary memory
+AGENTS.md           Qoder project instructions / reusable CorpSec evidence workflow contract
 docs/
   README.md
   Spec.md
