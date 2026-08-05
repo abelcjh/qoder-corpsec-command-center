@@ -155,6 +155,7 @@ const requiredFiles = [
   'supabase/schema.sql',
   'tailwind.config.js',
   'postcss.config.js',
+  'scripts/live-smoke.mjs',
 ];
 for (const file of requiredFiles) {
   assert(existsSync(resolve(root, file)), `${file} exists`);
@@ -175,6 +176,10 @@ const submissionPack = readFileSync(resolve(root, 'src/components/screens/Submis
 assert(submissionPack.includes('60-second judge live check'), 'Submission Pack includes 60-second judge live check');
 assert(submissionPack.includes('Client Database → Scheduled Queue → Send Logs / Evidence → Proof → AI Workbench'), 'Submission Pack documents the golden demo loop');
 assert(submissionPack.includes('Current live smoke check'), 'Submission Pack includes current live Worker smoke receipt');
+const packageJson = readFileSync(resolve(root, 'package.json'), 'utf-8');
+assert(packageJson.includes('smoke:live'), 'Package exposes npm run smoke:live for deployed demo reliability');
+const submissionChecklist = readFileSync(resolve(root, 'SUBMISSION_CHECKLIST.md'), 'utf-8');
+assert(submissionChecklist.includes('npm run smoke:live'), 'Submission checklist includes live smoke command');
 
 // 9. Schema includes expected tables
 console.log('\n[Supabase Schema]');

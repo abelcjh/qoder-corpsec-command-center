@@ -162,3 +162,11 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 |----------|----------|
 | Qoder Experts Mode docs emphasize end-goal prompts, planning, expert coordination, progress visibility, and human intervention for confirmations or changes | `QODER_BUILD_LEDGER.md`, `src/components/screens/BuildLedgerScreen.tsx` |
 | Build Ledger now shows an Expert Mode replay receipt: end goal first, planned phases, human intervention points, and an inspectable canvas substitute backed by build+verify | `src/components/screens/BuildLedgerScreen.tsx` |
+
+## Claim 15: Live deploy smoke command is reusable
+
+| Evidence | Location |
+|----------|----------|
+| `npm run smoke:live` checks the public Cloudflare Worker home route and `/api/ai-brief` with fixture-safe data | `scripts/live-smoke.mjs`, `package.json` |
+| Smoke verifies HTTP 200, app HTML shell, JSON AI route response, and no exposed Agnes secret-shaped values | `scripts/live-smoke.mjs` |
+| Submission checklist now tells Abel to run build + verify + live smoke before recording/submission | `SUBMISSION_CHECKLIST.md` |

@@ -219,3 +219,14 @@ Before recording or live judging, run this exact reliability pass:
 5. Do not send email/WhatsApp/social/form actions from the app; all proof rows are fixture-safe and human-reviewed.
 6. Keep `npm run build && npm run verify` output visible as the deterministic receipt.
 7. Latest remote smoke receipt to say on camera if asked: Aug 5 19:35 GMT+8, `/` returned HTTP 200 app HTML and `/api/ai-brief` returned HTTP 200 fixture JSON through the server-side Agnes bridge.
+
+
+## Live deploy smoke check
+
+Before recording or submitting, run:
+
+```bash
+npm run build && npm run verify && npm run smoke:live
+```
+
+`smoke:live` checks the public Cloudflare Worker home route and posts fixture-safe data to `/api/ai-brief`. It verifies HTTP 200 responses, JSON shape, and that no Agnes secret-shaped values are exposed. This improves demo reliability without sending email, WhatsApp, forms, or client messages.

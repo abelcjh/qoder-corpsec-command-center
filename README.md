@@ -67,6 +67,7 @@ The app runs at `http://localhost:5173`. The current CLPC build requires `.env.l
 | `npm run preview` | Preview production build |
 | `npm test` | Run verification script (reminder engine, scoping, deactivation, fixtures) |
 | `npm run verify` | Same as test |
+| `npm run smoke:live` | Smoke-check the deployed Worker home page and Agnes AI bridge with fixture-safe data. Set `CREDENCE_LIVE_URL` to override the default deployment. |
 
 ## Tech Stack
 
