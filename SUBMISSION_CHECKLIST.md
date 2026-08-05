@@ -59,6 +59,12 @@ npm run build        # TypeScript check + Vite build
 npm test             # Verification script passes (47 assertions)
 ```
 
+### Live Worker Smoke Receipt
+
+- [x] Live Cloudflare Worker home route returned HTTP 200 app HTML during the Aug 5 Ralph smoke check.
+- [x] `POST /api/ai-brief` returned HTTP 200 fixture JSON, proving the server-side Agnes bridge is reachable without exposing the key in the browser.
+- [x] Recording fallback is explicit: if live network/Agnes stalls, show this smoke receipt plus `npm run build && npm run verify` instead of hiding the failure.
+
 ### Files in Repository
 
 ```

@@ -38,6 +38,8 @@ npm run build && npm run verify
 npm run dev
 ```
 
+Live smoke receipt to mention if judges ask about deployment reliability: on the Aug 5 Ralph smoke check, the Cloudflare Worker home route returned HTTP 200 app HTML and `POST /api/ai-brief` returned HTTP 200 fixture JSON through the server-side Agnes bridge.
+
 Golden path:
 
 1. Use `admin / admin123` first so every screen has data.

@@ -142,6 +142,12 @@ const judgeLiveCheck = [
   ['Final proof command', 'Keep terminal receipt ready: npm run build && npm run verify, currently covering 47 deterministic assertions plus build output.'],
 ];
 
+const liveSmokeReceipt = [
+  ['Home page', 'Live Worker home route returned HTTP 200 with app HTML during the Aug 5 Ralph smoke check.'],
+  ['Agnes API route', 'POST /api/ai-brief returned HTTP 200 JSON for a safe fixture company, proving the server-side AI bridge is reachable.'],
+  ['Recording fallback', 'If the live network stalls, narrate the saved smoke receipt plus npm run build && npm run verify instead of improvising.'],
+];
+
 const demoScenes = [
   'Open polished staff login; call out Supabase-seeded credentials and CLPC database connection.',
   'Login as admin; show dashboard stats, active clients, scheduled jobs, and proof logs.',
@@ -231,6 +237,21 @@ export function SubmissionPackScreen() {
         </CardHeader>
         <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
           {judgeLiveCheck.map(([label, detail]) => (
+            <div key={label} className="rounded-xl border border-emerald-500/20 bg-emerald-950/10 p-4">
+              <div className="font-semibold text-emerald-100">{label}</div>
+              <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2"><CheckCircle2 size={18} className="text-emerald-500" /> Live Worker smoke receipt</CardTitle>
+          <CardDescription>Current deploy reliability proof for the recorded demo path</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 md:grid-cols-3">
+          {liveSmokeReceipt.map(([label, detail]) => (
             <div key={label} className="rounded-xl border border-emerald-500/20 bg-emerald-950/10 p-4">
               <div className="font-semibold text-emerald-100">{label}</div>
               <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
