@@ -67,6 +67,17 @@ export function AIWorkbenchScreen({ user, companies, rules, jobs, logs }: AIWork
   const selectedCompany = useMemo(() => companies.find((c) => c.active) ?? companies[0], [companies]);
   const companyJobs = useMemo(() => jobs.filter((j) => !selectedCompany || j.companyId === selectedCompany.id), [jobs, selectedCompany]);
   const companyLogs = useMemo(() => logs.filter((l) => !selectedCompany || l.companyId === selectedCompany.id), [logs, selectedCompany]);
+  const approvalReceipt = useMemo(() => {
+    const latestProof = companyLogs[0];
+    const contextUnits = 1 + Math.min(companyJobs.length, 8) + Math.min(companyLogs.length, 8) + Math.min(rules.length, 8);
+    return {
+      packet: `${user.department.toUpperCase()}-${selectedCompany?.id ?? 'no-client'}-${contextUnits}ctx`,
+      reviewer: `${user.displayName} · ${user.role}`,
+      authority: selectedCompany ? `${selectedCompany.name} / ${user.department}` : 'No selected client',
+      evidence: latestProof ? `${latestProof.evidenceType} · ${latestProof.providerMessageId}` : 'No retained proof row in current scope',
+      verdict: 'READY_FOR_REVIEW — AI draft can be copied only after staff approval; sending stays blocked in demo mode.',
+    };
+  }, [companyJobs.length, companyLogs, rules.length, selectedCompany, user]);
 
   async function generateBrief() {
     setLoading(true);
@@ -186,6 +197,22 @@ export function AIWorkbenchScreen({ user, companies, rules, jobs, logs }: AIWork
 
       <Card>
         <CardHeader>
+          <CardTitle>AI approval receipt</CardTitle>
+          <CardDescription>Judge challenge surface: prove who may approve the Agnes draft, what evidence it used, and why no external send can happen automatically</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
+            <ReceiptField label="Packet" value={approvalReceipt.packet} />
+            <ReceiptField label="Reviewer" value={approvalReceipt.reviewer} />
+            <ReceiptField label="Authority" value={approvalReceipt.authority} />
+            <ReceiptField label="Evidence" value={approvalReceipt.evidence} />
+            <ReceiptField label="Gate verdict" value={approvalReceipt.verdict} />
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
           <CardTitle>AI-drafted client follow-up</CardTitle>
           <CardDescription>Editable wording for the human staff member to review before any real send</CardDescription>
         </CardHeader>
@@ -195,6 +222,15 @@ export function AIWorkbenchScreen({ user, companies, rules, jobs, logs }: AIWork
           </div>
         </CardContent>
       </Card>
+    </div>
+  );
+}
+
+function ReceiptField({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-xl border border-brand-border bg-brand-surface/35 p-3">
+      <div className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-muted">{label}</div>
+      <div className="mt-2 text-sm font-medium leading-5 text-brand-text">{value}</div>
     </div>
   );
 }

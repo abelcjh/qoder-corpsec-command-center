@@ -88,6 +88,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 |----------|----------|
 | Cloudflare Worker keeps Agnes API key server-side and exposes `/api/ai-brief` only | `cloudflare-worker.ts`, `wrangler.jsonc` |
 | AI Workbench displays bounded client/job/log/rule context, advisory risks/actions/client wording, and deterministic fallback | `src/components/screens/AIWorkbenchScreen.tsx` |
+| AI approval receipt shows packet, reviewer, authority, evidence, and `READY_FOR_REVIEW` no-send gate beside the draft | `src/components/screens/AIWorkbenchScreen.tsx`, `scripts/verify.mts` |
 | AI context-packet boundary is judge-visible: role-scoped, record-limited, secrets excluded, no auto-send | `src/components/screens/AIWorkbenchScreen.tsx` |
 | Human-review and non-legal-advice boundary documented | `README.md`, `VIDEO_AND_SOCIAL_FINAL_PACK.md` |
 
