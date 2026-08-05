@@ -86,6 +86,12 @@ const marketFindings = [
     signal: 'Qoder positions L1/L2/L3 security scans as staged review from coding loop to pre-push handoff.',
     credenceAngle: 'Show a rule-clean security checkpoint: Qoder-built code, human review, build+verify receipt, and scan/credit limitation noted honestly.',
   },
+  {
+    source: 'Trust Receipt / enterprise agent proof-layer winner scan',
+    url: 'https://ashah007.medium.com/we-won-at-agi-house-by-building-the-proof-layer-for-ai-agents-ebdd0f27eced',
+    signal: 'Recent agent-infrastructure winners argue that autonomous workflows need inspectable receipts for identity, authority, intent alignment, policy compliance, and provenance instead of screenshots alone.',
+    credenceAngle: 'Turn every CorpSec chase into the same kind of trust moment: staff identity, delegated rule authority, approved intent, no-send policy boundary, and retained proof provenance.',
+  },
 ];
 
 const formValues = [
@@ -151,11 +157,11 @@ const judgeLiveCheck = [
   ['Golden loop', 'Client Database → Scheduled Queue → Send Logs / Evidence → Proof → AI Workbench → Qoder Build Ledger → Submission Pack.'],
   ['AI endpoint expectation', 'Click Generate Agnes briefing once; if Agnes/Cloudflare is unavailable, show the visible deterministic fallback banner as resilience proof rather than hiding it.'],
   ['No side effects', 'Do not send email, WhatsApp, social posts, or forms from the app; the demo uses fixture-safe proof rows and human-reviewed copy only.'],
-  ['Final proof command', 'Keep terminal receipt ready: npm run build && npm run verify, currently covering 68 deterministic assertions plus build output.'],
+  ['Final proof command', 'Keep terminal receipt ready: npm run build && npm run verify, currently covering 70 deterministic assertions plus build output.'],
 ];
 
 const liveSmokeReceipt = [
-  ['Current live smoke check', 'Aug 5 21:00 GMT+8: live Worker home route returned HTTP 200 app HTML and the Agnes bridge returned HTTP 200 JSON with a browser-like fixture request, plus no-secret/API-key-shape checks passed.'],
+  ['Current live smoke check', 'Aug 5 21:06 GMT+8: live Worker home route returned HTTP 200 app HTML and the Agnes bridge returned HTTP 200 JSON with a browser-like fixture request, plus no-secret/API-key-shape checks passed.'],
   ['Home page', 'Open the deployed Worker first; the latest smoke confirms the staff-login app shell loads from the public URL, not only from local dev.'],
   ['Agnes API route', 'POST /api/ai-brief returned HTTP 200 JSON for a safe fixture company, proving the server-side AI bridge is reachable without exposing the key.'],
   ['Recording fallback', 'If the live network stalls, narrate the saved smoke receipt plus npm run build && npm run verify instead of improvising.'],
@@ -183,6 +189,14 @@ const enterpriseTrustScorecard = [
   ['Audit-ready report', 'Each proof row exposes owner, recipient, timestamp, cadence state, provider/message ID field, Gmail print status, and retained snapshot without secrets.'],
   ['Governed AI', 'Agnes receives bounded role-scoped context through the Worker, cannot send externally, and the staff owner remains the approval authority.'],
   ['Ready to adopt', 'The live demo, Supabase schema, proof ledger, build ledger, and smoke script make the project look like an operational wedge a CorpSec team could pilot.'],
+];
+
+const authorityProvenanceReceipt = [
+  ['Staff identity', 'The recording starts from a seeded staff login, so each chase is tied to an owner rather than an anonymous automation bot.'],
+  ['Delegated authority', 'Department-scoped rules show why that staff role may act on this company, deadline, channel, and recipient.'],
+  ['Intent alignment', 'The job preview and client-message snapshot prove the reminder matches the original compliance chase before it becomes evidence.'],
+  ['Policy boundary', 'External sends, legal-status changes, social posts, and form submissions stay human-controlled; Agnes drafts and explains only.'],
+  ['Proof provenance', 'Reviewer-safe packet IDs, provider/message fields, timestamps, freshness state, and retained snapshots make the action traceable after deactivation.'],
 ];
 
 const pilotHandoffReceipt = [
@@ -344,6 +358,21 @@ export function SubmissionPackScreen() {
           {enterpriseTrustScorecard.map(([label, detail]) => (
             <div key={label} className="rounded-xl border border-crimson-500/20 bg-crimson-950/10 p-4">
               <div className="font-semibold text-crimson-100">{label}</div>
+              <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2"><ClipboardList size={18} className="text-emerald-500" /> Authority and provenance receipt</CardTitle>
+          <CardDescription>Winner-calibration response: trust-layer agent winners prove who acted, under what authority, with which policy boundary, and what evidence survived</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
+          {authorityProvenanceReceipt.map(([label, detail]) => (
+            <div key={label} className="rounded-xl border border-emerald-500/20 bg-emerald-950/10 p-4">
+              <div className="font-semibold text-emerald-100">{label}</div>
               <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
             </div>
           ))}

@@ -69,7 +69,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | Evidence | Location |
 |----------|----------|
 | `npm run build` output | `dist/` |
-| Verification script with 68 assertions | `scripts/verify.mts` |
+| Verification script with 70 assertions | `scripts/verify.mts` |
 | Package scripts | `package.json` |
 
 ## Claim 9: Qoder usage is visible, rule-clean, and reviewable
@@ -115,6 +115,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | Counto / Bossi Singapore AI-human handoff scan (`https://counto.sg/company-secretary/`, `https://ebos-sg.com/bossi-secretary/`) | Singapore providers now advertise AI-guided submissions, expert-team handoff, automated deadline alerts, and background audit trails. | Make Credence's handoff visible in the Submission Pack: AI drafts only, staff approval gate, deterministic schedule, and reviewer-safe proof retained after the reminder workflow. |
 | Enterprise-agent winner calibration (`LinkedIn enterprise agents winner`, `ABBYY 2026 hackathon winner`, `lablab.ai AgentAudit/AuditShield`) | Recent enterprise AI winners emphasize workflow compression from weeks to minutes, audit-ready reports, deterministic governance/scoring, transparent trails, and ready-to-adopt deployment surfaces. | Add the Submission Pack enterprise trust scorecard: minutes-not-weeks loop, deterministic middle, audit-ready proof row, governed Agnes AI, and live/schema/ledger/smoke artifacts that make Credence pilotable. |
 | UiPath AgentHack / ABBYY enterprise winner scan (`https://forum.uipath.com/t/here-are-the-uipath-agenthack-2025-winners/3586396`, `https://www.globenewswire.com/news-release/2026/08/04/3338139/0/en/ABBYY-2026-Hackathon-Winner-Accelerates-Mortgage-Auditing-Review-Leveraging-Document-AI-and-Large-Language-Models.html`) | Enterprise-agent winners are called out for business-ready agents, reusable/community artifacts, deployable out-of-the-box workflows, and auditable regulated-industry operations. | Add the Submission Pack pilot handoff receipt: live pilot URL, one-command proof, Supabase/data contract, operator-safe boundaries, and reusable Qoder workflow artifacts. |
+| Trust Receipt / enterprise agent proof-layer winner scan (`https://ashah007.medium.com/we-won-at-agi-house-by-building-the-proof-layer-for-ai-agents-ebdd0f27eced`) | A recent agent-infrastructure winner frames the prize-winning trust layer as receipts for identity, authority, intent alignment, policy compliance, and provenance rather than screenshots alone. | Add the Submission Pack authority/provenance receipt: staff identity, delegated rule authority, approved intent, no-send policy boundary, and reviewer-safe provenance retained after deactivation. |
 
 
 ## Current verification receipt
@@ -122,7 +123,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 - Required command before shipping: `npm run build && npm run verify`
 - Expected verify scope: working-day recurrence, run generation, cron simulation, department scoping, company deactivation, schema/docs checks.
 - Safe-send boundary: the hackathon build records fixture-safe send/proof rows and does not contact real clients from the frontend.
-- Live Worker smoke receipt from Aug 5 21:00 GMT+8 Ralph loop: `/` returned HTTP 200 app HTML and `POST /api/ai-brief` returned HTTP 200 fixture JSON using a browser-like smoke request; no secret-name or API-key-shaped values were exposed. Use this as the demo reliability proof before recording; if the network stalls, fall back to the build+verify terminal receipt.
+- Live Worker smoke receipt from Aug 5 21:06 GMT+8 Ralph loop: `/` returned HTTP 200 app HTML and `POST /api/ai-brief` returned HTTP 200 fixture JSON using a browser-like smoke request; no secret-name or API-key-shaped values were exposed. Use this as the demo reliability proof before recording; if the network stalls, fall back to the build+verify terminal receipt.
 
 ## Evidence freshness receipt
 
@@ -139,6 +140,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | AI Workbench recording packet | Selected client only, role-scoped evidence, human-reviewed wording, no-secret bridge, deterministic authority, and competitor-trap avoidance turn Agnes into governed product AI instead of a generic assistant. | Submission Pack screen AI Workbench recording packet; AI Workbench screen; live smoke secret-shape checks |
 | AI-to-staff handoff receipt | AI drafts only → staff approval gate → deterministic schedule → retained proof shows why Credence is safer than an opaque AI-guided filing assistant. | Submission Pack screen handoff receipt; final video line before the organizer checklist |
 | Pilot handoff receipt | Live pilot URL → one-command proof → data contract → operator-safe boundaries → reusable workflow turns Credence from demo video into a judge-rerunnable pilot handoff. | Submission Pack screen pilot handoff receipt; final recording pause after enterprise trust scorecard |
+| Authority/provenance receipt | Staff identity → delegated rule authority → approved intent snapshot → no-send policy boundary → proof provenance maps the agent-trust winner pattern onto one CorpSec chase. | Submission Pack screen authority and provenance receipt; final recording pause before pilot handoff |
 | Singapore practice-suite calibration | ClientBase / VOPlus-style platforms already sell whole-practice visibility, ACRA/AGM deadline tracking, compliance dashboards, document portals, audit trails, and system-bounded AI. | Submission Pack competitor calibration now tells Abel to avoid a broad-suite claim and prove the narrow owner-specific chase → reviewer-safe proof receipt instead |
 
 ---
@@ -161,7 +163,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 
 | Evidence | Location |
 |----------|----------|
-| Aug 5 21:00 GMT+8 remote smoke check returned HTTP 200 app HTML for `/` on the Cloudflare Worker | terminal smoke receipt from Ralph loop; `src/components/screens/SubmissionPackScreen.tsx` |
+| Aug 5 21:06 GMT+8 remote smoke check returned HTTP 200 app HTML for `/` on the Cloudflare Worker | terminal smoke receipt from Ralph loop; `src/components/screens/SubmissionPackScreen.tsx` |
 | Same smoke check returned HTTP 200 JSON from `POST /api/ai-brief` with fixture-only request data and browser-like headers, while no secret-name or API-key-shaped values were exposed | terminal smoke receipt from Ralph loop; `src/components/screens/SubmissionPackScreen.tsx` |
 | If live network/AI stalls during recording, the documented fallback remains `npm run build && npm run verify` instead of unsafe external sends | `VIDEO_AND_SOCIAL_FINAL_PACK.md`, `SUBMISSION_CHECKLIST.md` |
 
