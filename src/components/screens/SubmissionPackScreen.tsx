@@ -98,6 +98,12 @@ const marketFindings = [
     signal: 'Cryptographic receipts prove attribution, integrity, and ordering, but they do not prove the action was correct or that policy was sound unless separate controls enforce those claims.',
     credenceAngle: 'Keep the pitch honest: Credence proof packets make reminder evidence auditable and tamper-evident, while deterministic rules, staff approval, and verifier checks remain the correctness controls.',
   },
+  {
+    source: 'Agent Receipts protocol scan',
+    url: 'https://agentreceipts.ai/',
+    signal: 'Agent receipt systems increasingly separate public tamper evidence from sensitive payload disclosure: parameters can be hashed, operators decide what is revealed, and verification does not require dumping private business data.',
+    credenceAngle: 'Make Credence\'s disclosure boundary visible: public-safe receipt ID/freshness/status proves the chase exists, while detailed client snippets stay reviewer-gated and never expose secrets or full mailboxes.',
+  },
 ];
 
 const formValues = [
@@ -179,19 +185,19 @@ const judgeLiveCheck = [
   ['Golden loop', 'Client Database → Scheduled Queue → Send Logs / Evidence → Proof → AI Workbench → Qoder Build Ledger → Submission Pack.'],
   ['AI endpoint expectation', 'Click Generate Agnes briefing once; if Agnes/Cloudflare is unavailable, show the visible deterministic fallback banner as resilience proof rather than hiding it.'],
   ['No side effects', 'Do not send email, WhatsApp, social posts, or forms from the app; the demo uses fixture-safe proof rows and human-reviewed copy only.'],
-  ['Final proof command', 'Keep terminal receipt ready: npm run build && npm run verify, currently covering 97 deterministic assertions plus build output.'],
+  ['Final proof command', 'Keep terminal receipt ready: npm run build && npm run verify, currently covering 100 deterministic assertions plus build output.'],
 ];
 
 const liveSmokeReceipt = [
-  ['Current live smoke check', 'Aug 5 22:57 GMT+8: live Worker home route returned HTTP 200 app HTML in 187ms and the Agnes bridge returned HTTP 200 JSON in 4.8s with a browser-like fixture request, plus no-secret/API-key-shape checks passed.'],
+  ['Current live smoke check', 'Aug 5 23:09 GMT+8: live Worker home route returned HTTP 200 app HTML in 213ms and the Agnes bridge returned HTTP 200 JSON in 21.4s with a browser-like fixture request, plus no-secret/API-key-shape checks passed.'],
   ['Home page', 'Open the deployed Worker first; the latest smoke confirms the staff-login app shell loads from the public URL, not only from local dev.'],
   ['Agnes API route', 'POST /api/ai-brief returned HTTP 200 JSON for a safe fixture company, proving the server-side AI bridge is reachable without exposing the key.'],
   ['Recording fallback', 'If the live network stalls, narrate the saved smoke receipt plus npm run build && npm run verify instead of improvising.'],
 ];
 
 const finalReadinessReceipt = [
-  ['Live URL works', 'Latest smoke passed at Aug 5 22:57 GMT+8: public Worker home route HTTP 200, staff-login app shell returned.'],
-  ['Agnes bridge works', 'Fixture-safe POST /api/ai-brief returned HTTP 200 JSON in 4.8s and passed secret-name/API-key-shape checks.'],
+  ['Live URL works', 'Latest smoke passed at Aug 5 23:09 GMT+8: public Worker home route HTTP 200, staff-login app shell returned.'],
+  ['Agnes bridge works', 'Fixture-safe POST /api/ai-brief returned HTTP 200 JSON in 21.4s and passed secret-name/API-key-shape checks.'],
   ['Local proof command', 'Keep npm run build && npm run verify visible as the fallback receipt; the harness covers the deterministic middle and submission-proof surfaces.'],
   ['Manual boundaries', 'Social post, organizer form, email/WhatsApp, and legal-status changes remain manual; the app demonstrates fixture-safe receipts only.'],
 ];
@@ -258,6 +264,13 @@ const receiptTruthBoundary = [
   ['What it does not prove', 'A valid receipt alone does not prove the reminder was legally sufficient, the policy was perfect, or the client actually complied. Credence keeps that boundary explicit.'],
   ['Correctness controls', 'Deterministic rules, department scoping, staff approval gates, evidence freshness, and npm run build && npm run verify sit beside the receipt so judges see more than a signed log.'],
   ['Recording line', 'Say: “the receipt makes the audit trail honest; the verified rule engine and human approval make the workflow defensible.”'],
+];
+
+const disclosureBoundaryReceipt = [
+  ['Public receipt', 'Show packet ID, chain head, company/rule label, freshness state, owner role, and blocked-action status as the shareable proof layer.'],
+  ['Reviewer-gated detail', 'Reveal only selected message snapshot, recipient/channel, provider field, unresolved-risk note, and acceptance evidence when a judge or auditor needs the operational context.'],
+  ['Never exported', 'API keys, secret names, full Gmail/WhatsApp inboxes, raw private client documents, and real send controls stay outside the export and recording path.'],
+  ['Operator-controlled disclosure', 'Staff choose the safe packet view first, then escalate to detail view intentionally; the agent cannot widen disclosure by itself.'],
 ];
 
 const pilotHandoffReceipt = [
@@ -537,6 +550,21 @@ export function SubmissionPackScreen() {
         </CardHeader>
         <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
           {receiptTruthBoundary.map(([label, detail]) => (
+            <div key={label} className="rounded-xl border border-emerald-500/20 bg-emerald-950/10 p-4">
+              <div className="font-semibold text-emerald-100">{label}</div>
+              <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2"><ClipboardList size={18} className="text-emerald-500" /> Public/private disclosure boundary</CardTitle>
+          <CardDescription>Agent-receipt calibration: prove the workflow without leaking private client data, raw mailboxes, or secrets</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+          {disclosureBoundaryReceipt.map(([label, detail]) => (
             <div key={label} className="rounded-xl border border-emerald-500/20 bg-emerald-950/10 p-4">
               <div className="font-semibold text-emerald-100">{label}</div>
               <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>

@@ -69,7 +69,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | Evidence | Location |
 |----------|----------|
 | `npm run build` output | `dist/` |
-| Verification script with 97 assertions | `scripts/verify.mts` |
+| Verification script with 100 assertions | `scripts/verify.mts` |
 | Package scripts | `package.json` |
 
 ## Claim 9: Qoder usage is visible, rule-clean, and reviewable
@@ -125,7 +125,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 - Required command before shipping: `npm run build && npm run verify`
 - Expected verify scope: working-day recurrence, run generation, cron simulation, department scoping, company deactivation, schema/docs checks.
 - Safe-send boundary: the hackathon build records fixture-safe send/proof rows and does not contact real clients from the frontend.
-- Live Worker smoke receipt from Aug 5 22:37 GMT+8 Ralph loop: `/` returned HTTP 200 app HTML in 187ms and `POST /api/ai-brief` returned HTTP 200 fixture JSON in 4.2s using a browser-like smoke request; no secret-name or API-key-shaped values were exposed. Use this as the demo reliability proof before recording; if the network stalls, fall back to the build+verify terminal receipt.
+- Live Worker smoke receipt from Aug 5 23:09 GMT+8 Ralph loop: `/` returned HTTP 200 app HTML in 213ms and `POST /api/ai-brief` returned HTTP 200 fixture JSON in 21.4s using a browser-like smoke request; no secret-name or API-key-shaped values were exposed. Use this as the demo reliability proof before recording; if the network stalls, fall back to the build+verify terminal receipt.
 
 ## Evidence freshness receipt
 
@@ -148,6 +148,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | Singapore practice-suite calibration | ClientBase / VOPlus-style platforms already sell whole-practice visibility, ACRA/AGM deadline tracking, compliance dashboards, document portals, audit trails, and system-bounded AI. | Submission Pack competitor calibration now tells Abel to avoid a broad-suite claim and prove the narrow owner-specific chase → reviewer-safe proof receipt instead |
 | 2–3 minute cutdown path | The required organizer video window is protected by a compressed recording path: problem/Qoder → client DB → rule/queue → proof row → governed Agnes → Submission Pack close. | Submission Pack screen cutdown panel; `VIDEO_AND_SOCIAL_FINAL_PACK.md` run-of-show |
 | Final readiness receipt | Live URL works, Agnes bridge works, local build+verify is ready, and manual side-effect boundaries are visible before submission. | Submission Pack top panel; `npm run smoke:live`; final recording confidence check |
+| Public/private disclosure boundary | Public receipt ID/chain/freshness/blocked status is shareable, selected message/provider/risk detail is reviewer-gated, and secrets/raw inboxes/real send controls are never exported. | Submission Pack disclosure-boundary panel; final video confidentiality pause |
 
 ---
 
@@ -169,8 +170,8 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 
 | Evidence | Location |
 |----------|----------|
-| Aug 5 22:57 GMT+8 remote smoke check returned HTTP 200 app HTML for `/` on the Cloudflare Worker | terminal smoke receipt from Ralph loop; `src/components/screens/SubmissionPackScreen.tsx` |
-| Same smoke check returned HTTP 200 JSON from `POST /api/ai-brief` with fixture-only request data and browser-like headers in 4.8s, while no secret-name or API-key-shaped values were exposed | terminal smoke receipt from Ralph loop; `src/components/screens/SubmissionPackScreen.tsx` |
+| Aug 5 23:09 GMT+8 remote smoke check returned HTTP 200 app HTML for `/` on the Cloudflare Worker | terminal smoke receipt from Ralph loop; `src/components/screens/SubmissionPackScreen.tsx` |
+| Same smoke check returned HTTP 200 JSON from `POST /api/ai-brief` with fixture-only request data and browser-like headers in 21.4s, while no secret-name or API-key-shaped values were exposed | terminal smoke receipt from Ralph loop; `src/components/screens/SubmissionPackScreen.tsx` |
 | If live network/AI stalls during recording, the documented fallback remains `npm run build && npm run verify` instead of unsafe external sends | `VIDEO_AND_SOCIAL_FINAL_PACK.md`, `SUBMISSION_CHECKLIST.md` |
 
 ## Claim 14: Expert Mode workflow is replayable without overclaiming hidden traces
@@ -251,3 +252,11 @@ A compact Aug 5 scan of recent enterprise-agent hackathon winners found repeated
 | Aug 5 proof-layer research found a recurring warning in agent receipt guidance: receipts prove attribution, integrity, and ordering, but they do not prove the action was correct or the policy was sound by themselves | Microsoft AI agent receipt guidance; Trust Receipt winner scan |
 | Submission Pack now includes a Receipt truth boundary panel that says exactly what Credence packets prove, what they do not prove, and which deterministic controls sit beside the receipt | `src/components/screens/SubmissionPackScreen.tsx` |
 | Recording line: “the receipt makes the audit trail honest; the verified rule engine and human approval make the workflow defensible” | `VIDEO_AND_SOCIAL_FINAL_PACK.md`, `SUBMISSION_CHECKLIST.md` |
+
+## Claim 22: Receipt disclosure is privacy-preserving and operator-controlled
+
+| Evidence | Location |
+|----------|----------|
+| Aug 5 agent-receipt protocol scan found the enterprise proof bar moving toward public tamper evidence with operator-gated payload disclosure, so verification should not require exposing private business data | Agent Receipts protocol scan; Trust Receipt / AgentAudit winner scans |
+| Submission Pack now includes a Public/private disclosure boundary panel: public receipt ID/chain/freshness/blocked status first, reviewer-gated detail only when needed, and never-exported secrets/raw mailboxes/real send controls | `src/components/screens/SubmissionPackScreen.tsx` |
+| Final video pack tells Abel how to narrate the disclosure boundary without overclaiming cryptography or leaking private client evidence | `VIDEO_AND_SOCIAL_FINAL_PACK.md`, `SUBMISSION_CHECKLIST.md` |

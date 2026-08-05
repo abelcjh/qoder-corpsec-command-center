@@ -190,7 +190,7 @@ for (const doc of docs) {
 }
 const submissionPack = readFileSync(resolve(root, 'src/components/screens/SubmissionPackScreen.tsx'), 'utf-8');
 assert(submissionPack.includes('Final readiness receipt'), 'Submission Pack includes final readiness receipt');
-assert(submissionPack.includes('Aug 5 22:57 GMT+8'), 'Submission Pack includes latest Aug 5 22:57 live smoke receipt');
+assert(submissionPack.includes('Aug 5 23:09 GMT+8'), 'Submission Pack includes latest Aug 5 23:09 live smoke receipt');
 assert(submissionPack.includes('Manual boundaries'), 'Submission Pack keeps manual boundary receipt visible');
 assert(submissionPack.includes('60-second judge live check'), 'Submission Pack includes 60-second judge live check');
 assert(submissionPack.includes('Client Database → Scheduled Queue → Send Logs / Evidence → Proof → AI Workbench'), 'Submission Pack documents the golden demo loop');
@@ -217,6 +217,9 @@ assert(submissionPack.includes('missing-row detection'), 'Submission Pack keeps 
 assert(submissionPack.includes('Receipt truth boundary'), 'Submission Pack includes the receipt truth boundary to prevent audit overclaiming');
 assert(submissionPack.includes('What it does not prove'), 'Submission Pack states what receipts do not prove');
 assert(submissionPack.includes('verified rule engine and human approval'), 'Submission Pack ties receipt proof to deterministic controls and human approval');
+assert(submissionPack.includes('Public/private disclosure boundary'), 'Submission Pack includes public/private disclosure boundary for receipt privacy');
+assert(submissionPack.includes('Reviewer-gated detail'), 'Submission Pack keeps sensitive evidence behind reviewer-gated detail');
+assert(submissionPack.includes('Never exported'), 'Submission Pack states secrets/raw inboxes/real send controls are never exported');
 assert(submissionPack.includes('Pilot handoff receipt'), 'Submission Pack includes pilot handoff receipt for adoption readiness');
 assert(submissionPack.includes('Reusable workflow'), 'Submission Pack states reusable workflow artifacts for pilot handoff');
 assert(submissionPack.includes('Deterministic middle'), 'Submission Pack states deterministic rules remain the trusted middle');
