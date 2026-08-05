@@ -27,7 +27,7 @@ Target length: 2:55.
 | 2:35–2:45 | Submission Pack / MBRS loop | "For a real MBRS lodger, the workflow is T-60 chase, T-30 preparation, T-7 validation, then acceptance receipt. Credence makes those chases reviewer-safe evidence around the lodger's signature risk." |
 | 2:45–2:52 | Submission Pack / MBRS readiness packet | "Downstream MBRS tools validate and export XBRL; Credence owns the upstream question: is the client evidence ready, who chased it, and what late-risk defense exists?" |
 | 2:52–2:58 | Submission Pack / AI Workbench recording packet | "CoSec competitors already market AI assistants. Credence's Agnes loop is governed: one selected client, role-scoped evidence, human-reviewed wording, no-secret Worker bridge, and deterministic proof records as authority." |
-| 2:58–3:00 | Qoder Build Ledger + Submission Pack | "Qoder produced the full-stack upgrade: Supabase schema, React/Tailwind UI, reminder engine, scoping, verification harness, and documentation. Build plus verify passes." |
+| 2:58–3:00 | Submission Pack / competitor calibration | "Singapore practice suites already sell full dashboards, portals, audit trails, and bounded AI, so Credence stays narrow: one owner-specific chase becomes a reviewer-safe proof receipt." |
 
 ## Demo reliability checklist
 

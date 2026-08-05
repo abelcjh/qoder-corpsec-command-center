@@ -51,6 +51,12 @@ const marketFindings = [
     credenceAngle: 'Differentiate as a human-approved command center where AI assists messy intake while deterministic rules create the deadline/job/proof trail.',
   },
   {
+    source: 'ClientBase / VOPlus Singapore scan',
+    url: 'https://clientbase.pro/',
+    signal: 'Singapore practice platforms already sell whole-practice visibility, ACRA/AGM deadline tracking, compliance dashboards, audit trails, document portals, and AI that stays inside the system.',
+    credenceAngle: 'Do not compete as a broad suite in the recording; show the narrower judge-visible control: one owner-specific chase becomes a reviewer-safe proof receipt for Gmail/spreadsheet teams.',
+  },
+  {
     source: 'MBRS operational guide',
     url: 'https://www.mbrs.com.my/mbrs-for-company-secretaries/',
     signal: 'Real MBRS practice risk is not just a due date: lodgers need T-60 client chases, T-30 preparation checks, T-7 validation, same-day signing, acceptance tracking, and evidence that late inputs were the client-side blocker.',

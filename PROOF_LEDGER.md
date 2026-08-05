@@ -133,6 +133,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | MBRS Maker/Lodger cadence | T-60 chase → T-30 prepare → T-7 validate → acceptance receipt turns one MBRS deadline into a reviewer-safe operational control loop. | Submission Pack screen MBRS control-loop panel; final video voiceover after evidence freshness |
 | MBRS readiness packet | Client evidence ready → validation handoff → export receipt → late-risk defense explains how Credence complements downstream MBRS/XBRL tools instead of pretending to replace them. | Submission Pack screen MBRS readiness packet panel; final video line before AI Workbench |
 | AI Workbench recording packet | Selected client only, role-scoped evidence, human-reviewed wording, no-secret bridge, deterministic authority, and competitor-trap avoidance turn Agnes into governed product AI instead of a generic assistant. | Submission Pack screen AI Workbench recording packet; AI Workbench screen; live smoke secret-shape checks |
+| Singapore practice-suite calibration | ClientBase / VOPlus-style platforms already sell whole-practice visibility, ACRA/AGM deadline tracking, compliance dashboards, document portals, audit trails, and system-bounded AI. | Submission Pack competitor calibration now tells Abel to avoid a broad-suite claim and prove the narrow owner-specific chase → reviewer-safe proof receipt instead |
 
 ---
 
