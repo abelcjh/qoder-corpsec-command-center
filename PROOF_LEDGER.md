@@ -124,7 +124,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 - Required command before shipping: `npm run build && npm run verify`
 - Expected verify scope: working-day recurrence, run generation, cron simulation, department scoping, company deactivation, schema/docs checks.
 - Safe-send boundary: the hackathon build records fixture-safe send/proof rows and does not contact real clients from the frontend.
-- Live Worker smoke receipt from Aug 5 21:42 GMT+8 Ralph loop: `/` returned HTTP 200 app HTML and `POST /api/ai-brief` returned HTTP 200 fixture JSON in 5.3s using a browser-like smoke request; no secret-name or API-key-shaped values were exposed. Use this as the demo reliability proof before recording; if the network stalls, fall back to the build+verify terminal receipt.
+- Live Worker smoke receipt from Aug 5 21:49 GMT+8 Ralph loop: `/` returned HTTP 200 app HTML in 183ms and `POST /api/ai-brief` returned HTTP 200 fixture JSON in 4.6s using a browser-like smoke request; no secret-name or API-key-shaped values were exposed. Use this as the demo reliability proof before recording; if the network stalls, fall back to the build+verify terminal receipt.
 
 ## Evidence freshness receipt
 
@@ -145,6 +145,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | Offline verifier receipt | Hashable packet ID → reviewer-safe fields → freshness recheck → blocked-action receipt turns the proof row into a re-derivable trust artifact rather than a screenshot. | Submission Pack screen offline verifier receipt; proof packet utility; final recording pause if judges ask how the evidence can be inspected later |
 | Singapore practice-suite calibration | ClientBase / VOPlus-style platforms already sell whole-practice visibility, ACRA/AGM deadline tracking, compliance dashboards, document portals, audit trails, and system-bounded AI. | Submission Pack competitor calibration now tells Abel to avoid a broad-suite claim and prove the narrow owner-specific chase → reviewer-safe proof receipt instead |
 | 2–3 minute cutdown path | The required organizer video window is protected by a compressed recording path: problem/Qoder → client DB → rule/queue → proof row → governed Agnes → Submission Pack close. | Submission Pack screen cutdown panel; `VIDEO_AND_SOCIAL_FINAL_PACK.md` run-of-show |
+| Final readiness receipt | Live URL works, Agnes bridge works, local build+verify is ready, and manual side-effect boundaries are visible before submission. | Submission Pack top panel; `npm run smoke:live`; final recording confidence check |
 
 ---
 
