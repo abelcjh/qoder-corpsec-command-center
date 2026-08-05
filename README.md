@@ -134,3 +134,7 @@ Predefined reminder rules cover:
 ## License
 
 MIT
+
+## 60-second judge live check
+
+Use this before any recording or live judging: open the deployed Worker URL, login as `admin / admin123`, show Client Database → Scheduled Queue → Send Logs / Evidence → Proof → AI Workbench → Qoder Build Ledger → Submission Pack, click Agnes briefing once, and if the endpoint is unavailable show the deterministic fallback banner. No email, WhatsApp, social post, or form submission is triggered from the app; the demo uses fixture-safe proof rows and human-reviewed copy.

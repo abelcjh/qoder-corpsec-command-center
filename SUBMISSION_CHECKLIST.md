@@ -200,3 +200,14 @@ Live demo link for optional/supporting materials: https://credence-qoder-corpsec
 - Local build and verification passed after the Submission Pack update.
 - Headless Cloudflare deploy was attempted with `npx wrangler deploy`, but Wrangler reported that non-interactive deploys require `CLOUDFLARE_API_TOKEN` in the environment.
 - The existing live Worker URL remains the last deployed version until Abel's PC/session has the Cloudflare token exported or an interactive Wrangler login is available.
+
+### 60-second judge live check — Aug 5 Ralph loop
+
+Before recording or live judging, run this exact reliability pass:
+
+1. Open `https://credence-qoder-corpsec.abelchinjh.workers.dev` and confirm staff login renders.
+2. Login with `admin / admin123`.
+3. Show the golden loop: Client Database → Scheduled Queue → Send Logs / Evidence → Proof → AI Workbench → Qoder Build Ledger → Submission Pack.
+4. Click Agnes briefing once; if the endpoint is unavailable, show the deterministic fallback banner as resilience proof.
+5. Do not send email/WhatsApp/social/form actions from the app; all proof rows are fixture-safe and human-reviewed.
+6. Keep `npm run build && npm run verify` output visible as the deterministic receipt.

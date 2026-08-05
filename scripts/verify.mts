@@ -171,6 +171,9 @@ for (const doc of docs) {
     assert(false, `${doc} exists`);
   }
 }
+const submissionPack = readFileSync(resolve(root, 'src/components/screens/SubmissionPackScreen.tsx'), 'utf-8');
+assert(submissionPack.includes('60-second judge live check'), 'Submission Pack includes 60-second judge live check');
+assert(submissionPack.includes('Client Database → Scheduled Queue → Send Logs / Evidence → Proof → AI Workbench'), 'Submission Pack documents the golden demo loop');
 
 // 9. Schema includes expected tables
 console.log('\n[Supabase Schema]');

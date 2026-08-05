@@ -139,3 +139,10 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 |----------|----------|
 | Build Ledger screen maps spec-first work, Quest-style decomposition, human review, and verification receipt to Qoder judging language | `src/components/screens/BuildLedgerScreen.tsx` |
 | Official Qoder/Luma source emphasizes Spec-Driven Workflow, Quest Mode, Expert Mode, and Qoder as primary build canvas | `QODER_BUILD_LEDGER.md`, `SUBMISSION_CHECKLIST.md` |
+
+## Claim 12: 60-second judge live check reduces demo risk
+
+| Evidence | Location |
+|----------|----------|
+| Submission Pack now gives a live check order: open deployed URL, log in as admin, show golden loop, test Agnes/fallback, avoid side effects, keep build+verify receipt ready | `src/components/screens/SubmissionPackScreen.tsx` |
+| Verification harness asserts the live-check panel exists so submission packaging cannot silently drop the reliability receipt | `scripts/verify.mts` |

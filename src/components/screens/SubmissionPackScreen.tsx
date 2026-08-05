@@ -132,6 +132,16 @@ const qoderWorkflowReceipts = [
   ['Security checkpoint', 'QODER_BUILD_LEDGER.md names the Qoder L1/L2/L3 scan path and the honest access/credit fallback.'],
 ];
 
+
+const judgeLiveCheck = [
+  ['Open live URL', 'Use https://credence-qoder-corpsec.abelchinjh.workers.dev and confirm the staff login loads before recording.'],
+  ['Login path', 'Start with admin / admin123, then optionally switch to tax / tax123 or corpsec / corpsec123 only if it sharpens the department-scoping story.'],
+  ['Golden loop', 'Client Database → Scheduled Queue → Send Logs / Evidence → Proof → AI Workbench → Qoder Build Ledger → Submission Pack.'],
+  ['AI endpoint expectation', 'Click Generate Agnes briefing once; if Agnes/Cloudflare is unavailable, show the visible deterministic fallback banner as resilience proof rather than hiding it.'],
+  ['No side effects', 'Do not send email, WhatsApp, social posts, or forms from the app; the demo uses fixture-safe proof rows and human-reviewed copy only.'],
+  ['Final proof command', 'Keep terminal receipt ready: npm run build && npm run verify, currently covering 47 deterministic assertions plus build output.'],
+];
+
 const demoScenes = [
   'Open polished staff login; call out Supabase-seeded credentials and CLPC database connection.',
   'Login as admin; show dashboard stats, active clients, scheduled jobs, and proof logs.',
@@ -208,6 +218,21 @@ export function SubmissionPackScreen() {
           {organizerSourceReceipts.map(([label, detail]) => (
             <div key={label} className="rounded-xl border border-brand-border bg-brand-surface/40 p-4">
               <div className="font-semibold text-brand-text">{label}</div>
+              <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2"><CheckCircle2 size={18} className="text-emerald-500" /> 60-second judge live check</CardTitle>
+          <CardDescription>Demo reliability receipt: prove the live app, login, safe AI path, and verification command before polishing the video</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+          {judgeLiveCheck.map(([label, detail]) => (
+            <div key={label} className="rounded-xl border border-emerald-500/20 bg-emerald-950/10 p-4">
+              <div className="font-semibold text-emerald-100">{label}</div>
               <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
             </div>
           ))}
