@@ -150,6 +150,14 @@ const qoderWorkflowReceipts = [
   ['Security checkpoint', 'QODER_BUILD_LEDGER.md names the Qoder L1/L2/L3 scan path and the honest access/credit fallback.'],
 ];
 
+const tenSecondDemoSpine = [
+  ['1. Client database', 'Open Nusantara/Ace from the seeded staff login and show department owners + contacts as the source of truth.'],
+  ['2. Rule authority', 'Show the statutory rule and working-day cadence that deterministically creates the scheduled chase.'],
+  ['3. Proof retained', 'Open the reviewer-safe evidence packet: owner, recipient, provider field, freshness, unresolved risk, and retained snapshot after deactivation.'],
+  ['4. Agnes advisory', 'Generate or show the bounded AI brief as human-reviewed context only; deterministic records remain the authority.'],
+  ['5. Qoder receipt', 'Close on Spec/Qoder prompts/build ledger plus npm run build && npm run verify as the rerunnable judge proof.'],
+];
+
 
 const judgeLiveCheck = [
   ['Open live URL', 'Use https://credence-qoder-corpsec.abelchinjh.workers.dev and confirm the staff login loads before recording.'],
@@ -253,6 +261,21 @@ export function SubmissionPackScreen() {
         </div>
         <Badge variant="warning">Deadline: Aug 5</Badge>
       </div>
+
+      <Card className="border-crimson-500/30 bg-crimson-950/10">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2"><Trophy size={18} className="text-crimson-500" /> 10-second winning demo spine</CardTitle>
+          <CardDescription>Competitor/winner calibration: enterprise AI winners are deployment-ready, auditable, and deterministic in the middle, so the first screen should narrate this exact loop.</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
+          {tenSecondDemoSpine.map(([label, detail]) => (
+            <div key={label} className="rounded-xl border border-crimson-500/20 bg-black/20 p-4">
+              <div className="font-semibold text-crimson-100">{label}</div>
+              <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
 
       <div className="grid gap-4 lg:grid-cols-3">
         <Card className="lg:col-span-2">

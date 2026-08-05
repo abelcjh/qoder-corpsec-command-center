@@ -194,6 +194,8 @@ assert(submissionPack.includes('Aug 5 21:49 GMT+8'), 'Submission Pack includes l
 assert(submissionPack.includes('Manual boundaries'), 'Submission Pack keeps manual boundary receipt visible');
 assert(submissionPack.includes('60-second judge live check'), 'Submission Pack includes 60-second judge live check');
 assert(submissionPack.includes('Client Database → Scheduled Queue → Send Logs / Evidence → Proof → AI Workbench'), 'Submission Pack documents the golden demo loop');
+assert(submissionPack.includes('10-second winning demo spine'), 'Submission Pack puts the winning 10-second demo spine above the fold');
+assert(submissionPack.includes('deterministically creates the scheduled chase'), 'Submission Pack states deterministic scheduled-chase authority in the 10-second spine');
 assert(submissionPack.includes('Current live smoke check'), 'Submission Pack includes current live Worker smoke receipt');
 assert(submissionPack.includes('2–3 minute cutdown path'), 'Submission Pack includes 2–3 minute video cutdown path');
 assert(submissionPack.includes('manual submission boundary'), 'Submission Pack closes the cutdown with the manual submission boundary');

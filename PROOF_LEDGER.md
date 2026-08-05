@@ -223,3 +223,11 @@ A Singapore CorpSec scan found incumbents already advertising AI-guided submissi
 ## Latest Ralph-loop research signal — enterprise proof bar
 
 A compact Aug 5 scan of recent enterprise-agent hackathon winners found repeated emphasis on audit-grade receipts, policy/verdict logs, and hashable evidence trails (Ledger AI, AgentAudit, Forensa, AuditShield-style projects). Credence now answers that bar inside its narrower CorpSec workflow: proof rows keep reviewer-safe fields and the Proof screen exposes a deterministic receipt-chain head so judges can see missing or altered retained evidence would change the export receipt.
+
+## Claim 19: Submission Pack leads with a 10-second enterprise-agent winning loop
+
+| Evidence | Location |
+|----------|----------|
+| A compact winner scan found enterprise AI hackathon winners are praised when they are ready to deploy, solve daily regulated workflows, keep deterministic control in the middle, and leave auditable proof rather than only a chatbot surface | ABBYY 2026 hackathon winner coverage; enterprise-agent public submission scans |
+| Submission Pack now puts a 10-second demo spine above the fold: client database → deterministic rule authority → retained proof packet → governed Agnes brief → Qoder verification receipt | `src/components/screens/SubmissionPackScreen.tsx` |
+| Verification harness asserts the 10-second spine and deterministic scheduled-chase wording so the judge-visible loop cannot silently disappear before recording | `scripts/verify.mts` |
