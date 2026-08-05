@@ -151,11 +151,11 @@ const judgeLiveCheck = [
   ['Golden loop', 'Client Database → Scheduled Queue → Send Logs / Evidence → Proof → AI Workbench → Qoder Build Ledger → Submission Pack.'],
   ['AI endpoint expectation', 'Click Generate Agnes briefing once; if Agnes/Cloudflare is unavailable, show the visible deterministic fallback banner as resilience proof rather than hiding it.'],
   ['No side effects', 'Do not send email, WhatsApp, social posts, or forms from the app; the demo uses fixture-safe proof rows and human-reviewed copy only.'],
-  ['Final proof command', 'Keep terminal receipt ready: npm run build && npm run verify, currently covering 64 deterministic assertions plus build output.'],
+  ['Final proof command', 'Keep terminal receipt ready: npm run build && npm run verify, currently covering 68 deterministic assertions plus build output.'],
 ];
 
 const liveSmokeReceipt = [
-  ['Current live smoke check', 'Aug 5 20:40 GMT+8: live Worker home route returned HTTP 200 app HTML and the Agnes bridge returned HTTP 200 JSON with a browser-like fixture request, plus no-secret/API-key-shape checks passed.'],
+  ['Current live smoke check', 'Aug 5 21:00 GMT+8: live Worker home route returned HTTP 200 app HTML and the Agnes bridge returned HTTP 200 JSON with a browser-like fixture request, plus no-secret/API-key-shape checks passed.'],
   ['Home page', 'Open the deployed Worker first; the latest smoke confirms the staff-login app shell loads from the public URL, not only from local dev.'],
   ['Agnes API route', 'POST /api/ai-brief returned HTTP 200 JSON for a safe fixture company, proving the server-side AI bridge is reachable without exposing the key.'],
   ['Recording fallback', 'If the live network stalls, narrate the saved smoke receipt plus npm run build && npm run verify instead of improvising.'],
@@ -183,6 +183,14 @@ const enterpriseTrustScorecard = [
   ['Audit-ready report', 'Each proof row exposes owner, recipient, timestamp, cadence state, provider/message ID field, Gmail print status, and retained snapshot without secrets.'],
   ['Governed AI', 'Agnes receives bounded role-scoped context through the Worker, cannot send externally, and the staff owner remains the approval authority.'],
   ['Ready to adopt', 'The live demo, Supabase schema, proof ledger, build ledger, and smoke script make the project look like an operational wedge a CorpSec team could pilot.'],
+];
+
+const pilotHandoffReceipt = [
+  ['Live pilot URL', 'The Cloudflare Worker URL plus seeded staff credentials give judges a working entrypoint without needing Abel to create accounts on stage.'],
+  ['One-command proof', 'npm run build && npm run verify is the repeatable adoption check for rules, scoping, deactivation, proof packets, docs, and submission surfaces.'],
+  ['Data contract ready', 'Supabase schema, TypeScript types, fixture companies, and seed users show what a CLPC-style pilot would wire to real records next.'],
+  ['Operator-safe boundaries', 'No external sends, social posts, form submissions, or legal-status mutations happen automatically; staff approval and proof receipts stay visible.'],
+  ['Reusable workflow', 'Spec.md, Qoder prompts, build ledger, proof ledger, smoke script, and final pack turn the hackathon build into a repeatable implementation recipe.'],
 ];
 
 const demoScenes = [
@@ -336,6 +344,21 @@ export function SubmissionPackScreen() {
           {enterpriseTrustScorecard.map(([label, detail]) => (
             <div key={label} className="rounded-xl border border-crimson-500/20 bg-crimson-950/10 p-4">
               <div className="font-semibold text-crimson-100">{label}</div>
+              <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2"><ClipboardList size={18} className="text-emerald-500" /> Pilot handoff receipt</CardTitle>
+          <CardDescription>Winner calibration response: enterprise-agent projects score when they are ready to deploy, reuse, and pilot — not only impressive in a video</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
+          {pilotHandoffReceipt.map(([label, detail]) => (
+            <div key={label} className="rounded-xl border border-emerald-500/20 bg-emerald-950/10 p-4">
+              <div className="font-semibold text-emerald-100">{label}</div>
               <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
             </div>
           ))}

@@ -56,12 +56,12 @@
 ```bash
 npm install          # Installs all dependencies
 npm run build        # TypeScript check + Vite build
-npm test             # Verification script passes (64 assertions)
+npm test             # Verification script passes (68 assertions)
 ```
 
 ### Live Worker Smoke Receipt
 
-- [x] Live Cloudflare Worker home route returned HTTP 200 app HTML during the Aug 5 20:40 GMT+8 Ralph smoke check.
+- [x] Live Cloudflare Worker home route returned HTTP 200 app HTML during the Aug 5 21:00 GMT+8 Ralph smoke check.
 - [x] `POST /api/ai-brief` returned HTTP 200 fixture JSON in the same smoke check, proving the server-side Agnes bridge is reachable without exposing the key in the browser; no secret-name or API-key-shaped values were exposed.
 - [x] Recording fallback is explicit: if live network/Agnes stalls, show this smoke receipt plus `npm run build && npm run verify` instead of hiding the failure.
 
@@ -170,6 +170,7 @@ From the organizer master deck and UGC screenshot:
 | [Starch SOC 2 evidence automation](https://starch.ai/how-to/collect-soc2-evidence/for-small-legal-compliance-teams/) and [Zapier SOC 2 automation](https://zapier.com/automations/it/security-compliance/soc-2-compliance) | Compliance buyers understand evidence trackers, owner-specific chasers, and proof rows better than generic reminder language. | Use the phrase "defensible reminder evidence": owner, recipient, deadline/rule, timestamp, evidence status, and unresolved risk. |
 | [iCorpSec](https://icorpsec.com/), [BizAid](https://www.bizaid.my/our-solutions/), and [BPOSA360](https://bposa360.com/saas-govern-ai-business-solution-for-corporate-services/) AI scan | CoSec products already market AI assistants, drafting, compliance scanners, document/OCR modules, due-date queries, and 24/7 support. | In the AI Workbench moment, do not sell “chatbot for company secretaries”; show governed Agnes output over one selected client, role-scoped evidence, human approval, no-secret Worker bridge, and deterministic proof records. |
 | [Counto](https://counto.sg/company-secretary/) / [Bossi](https://ebos-sg.com/bossi-secretary/) AI-human handoff scan | Singapore products advertise AI-guided submissions, expert-team handoff, automated deadline alerts, and background audit trails. | Add one sentence during the Agnes moment: Credence makes the approval handoff inspectable — AI drafts only, staff approves the rule/job path, deterministic schedules run the queue, and reviewer-safe proof is retained. |
+| [UiPath AgentHack winners](https://forum.uipath.com/t/here-are-the-uipath-agenthack-2025-winners/3586396) / [ABBYY 2026 winner](https://www.globenewswire.com/news-release/2026/08/04/3338139/0/en/ABBYY-2026-Hackathon-Winner-Accelerates-Mortgage-Auditing-Review-Leveraging-Document-AI-and-Large-Language-Models.html) | Enterprise-agent winners are praised for business-ready agents, reusable artifacts, deployable workflows, and auditable regulated-industry operations. | Pause on the new Pilot handoff receipt: live URL, one-command proof, Supabase data contract, operator-safe boundaries, and reusable Qoder workflow artifacts. |
 
 ### Aug 5 evidence freshness sweep — Ralph loop
 
@@ -221,7 +222,7 @@ Before recording or live judging, run this exact reliability pass:
 4. Click Agnes briefing once; if the endpoint is unavailable, show the deterministic fallback banner as resilience proof.
 5. Do not send email/WhatsApp/social/form actions from the app; all proof rows are fixture-safe and human-reviewed.
 6. Keep `npm run build && npm run verify` output visible as the deterministic receipt.
-7. Latest remote smoke receipt to say on camera if asked: Aug 5 20:40 GMT+8, `/` returned HTTP 200 app HTML and `/api/ai-brief` returned HTTP 200 fixture JSON through the server-side Agnes bridge, with no secret-name or API-key-shaped leakage.
+7. Latest remote smoke receipt to say on camera if asked: Aug 5 21:00 GMT+8, `/` returned HTTP 200 app HTML and `/api/ai-brief` returned HTTP 200 fixture JSON through the server-side Agnes bridge, with no secret-name or API-key-shaped leakage.
 
 ### AI Workbench recording packet — Aug 5 Ralph loop
 
