@@ -56,13 +56,13 @@
 ```bash
 npm install          # Installs all dependencies
 npm run build        # TypeScript check + Vite build
-npm test             # Verification script passes (72 assertions)
+npm test             # Verification script passes (74 assertions)
 ```
 
 ### Live Worker Smoke Receipt
 
-- [x] Live Cloudflare Worker home route returned HTTP 200 app HTML during the Aug 5 21:20 GMT+8 Ralph smoke check.
-- [x] `POST /api/ai-brief` returned HTTP 200 fixture JSON in 14.6s in the same smoke check, proving the server-side Agnes bridge is reachable without exposing the key in the browser; no secret-name or API-key-shaped values were exposed.
+- [x] Live Cloudflare Worker home route returned HTTP 200 app HTML during the Aug 5 21:31 GMT+8 Ralph smoke check.
+- [x] `POST /api/ai-brief` returned HTTP 200 fixture JSON in 5.0s in the same smoke check, proving the server-side Agnes bridge is reachable without exposing the key in the browser; no secret-name or API-key-shaped values were exposed.
 - [x] Recording fallback is explicit: if live network/Agnes stalls, show this smoke receipt plus `npm run build && npm run verify` instead of hiding the failure.
 
 ### Files in Repository
@@ -131,7 +131,13 @@ From the organizer master deck and UGC screenshot:
 - [ ] Include `#BuildWithQoder`
 - [ ] Record a **2-3 minute demo video**
 - [ ] Upload video to YouTube, Loom, Vimeo, or another video platform
-- [ ] Submit both social post URL and demo video link via the organizer form before **Aug 5**
+- [ ] Submit both the social post URL and demo video link via the organizer form before **Aug 5**
+
+### 2–3 minute video cutdown receipt
+
+- [x] The app Submission Pack now includes a **2–3 minute cutdown path** so the recording stays inside the organizer window instead of overrunning with every proof panel.
+- [x] Recording-safe path: problem/Qoder → admin client DB → rule/scheduled queue → reviewer-safe proof row → governed Agnes AI → Submission Pack close.
+- [x] Longer MBRS, trust, authority, pilot, and competitor-calibration panels remain available as follow-up proof surfaces, not mandatory narration in the main video.
 
 ### Organizer Judging Criteria
 
@@ -223,7 +229,7 @@ Before recording or live judging, run this exact reliability pass:
 4. Click Agnes briefing once; if the endpoint is unavailable, show the deterministic fallback banner as resilience proof.
 5. Do not send email/WhatsApp/social/form actions from the app; all proof rows are fixture-safe and human-reviewed.
 6. Keep `npm run build && npm run verify` output visible as the deterministic receipt.
-7. Latest remote smoke receipt to say on camera if asked: Aug 5 21:06 GMT+8, `/` returned HTTP 200 app HTML and `/api/ai-brief` returned HTTP 200 fixture JSON through the server-side Agnes bridge, with no secret-name or API-key-shaped leakage.
+7. Latest remote smoke receipt to say on camera if asked: Aug 5 21:31 GMT+8, `/` returned HTTP 200 app HTML and `/api/ai-brief` returned HTTP 200 fixture JSON through the server-side Agnes bridge, with no secret-name or API-key-shaped leakage.
 
 ### AI Workbench recording packet — Aug 5 Ralph loop
 

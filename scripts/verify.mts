@@ -186,6 +186,8 @@ const submissionPack = readFileSync(resolve(root, 'src/components/screens/Submis
 assert(submissionPack.includes('60-second judge live check'), 'Submission Pack includes 60-second judge live check');
 assert(submissionPack.includes('Client Database → Scheduled Queue → Send Logs / Evidence → Proof → AI Workbench'), 'Submission Pack documents the golden demo loop');
 assert(submissionPack.includes('Current live smoke check'), 'Submission Pack includes current live Worker smoke receipt');
+assert(submissionPack.includes('2–3 minute cutdown path'), 'Submission Pack includes 2–3 minute video cutdown path');
+assert(submissionPack.includes('manual submission boundary'), 'Submission Pack closes the cutdown with the manual submission boundary');
 assert(submissionPack.includes('AI Workbench recording packet'), 'Submission Pack includes governed AI Workbench recording packet');
 assert(submissionPack.includes('AI-to-staff handoff receipt'), 'Submission Pack includes AI-to-staff handoff receipt');
 assert(submissionPack.includes('Enterprise trust scorecard'), 'Submission Pack includes enterprise trust winner-calibration scorecard');

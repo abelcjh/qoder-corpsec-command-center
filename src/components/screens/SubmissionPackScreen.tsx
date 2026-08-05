@@ -161,10 +161,19 @@ const judgeLiveCheck = [
 ];
 
 const liveSmokeReceipt = [
-  ['Current live smoke check', 'Aug 5 21:20 GMT+8: live Worker home route returned HTTP 200 app HTML and the Agnes bridge returned HTTP 200 JSON in 14.6s with a browser-like fixture request, plus no-secret/API-key-shape checks passed.'],
+  ['Current live smoke check', 'Aug 5 21:31 GMT+8: live Worker home route returned HTTP 200 app HTML and the Agnes bridge returned HTTP 200 JSON in 5.0s with a browser-like fixture request, plus no-secret/API-key-shape checks passed.'],
   ['Home page', 'Open the deployed Worker first; the latest smoke confirms the staff-login app shell loads from the public URL, not only from local dev.'],
   ['Agnes API route', 'POST /api/ai-brief returned HTTP 200 JSON for a safe fixture company, proving the server-side AI bridge is reachable without exposing the key.'],
   ['Recording fallback', 'If the live network stalls, narrate the saved smoke receipt plus npm run build && npm run verify instead of improvising.'],
+];
+
+const videoCutdownPath = [
+  ['0:00–0:20', 'Problem + Qoder: Malaysia CorpSec teams chase deadlines across Gmail/spreadsheets; Qoder turned the spec into a working compliance cockpit.'],
+  ['0:20–0:55', 'Login + client DB: admin / admin123, open one Sdn Bhd record, show departments, contacts, owners, and source-of-truth details.'],
+  ['0:55–1:30', 'Rule → queue: show one statutory rule and working-day schedule preview; staff approval happens before any reminder workflow.'],
+  ['1:30–2:05', 'Proof row: Send Logs / Evidence proves owner, recipient, timestamp, provider field, snapshot, freshness, and retained proof after deactivation.'],
+  ['2:05–2:35', 'Agnes + safety: bounded AI briefing drafts only; deterministic records remain authority and no external send/form/post happens automatically.'],
+  ['2:35–2:58', 'Submission Pack close: Qoder workflow receipt, live smoke receipt, one-command verify, social/video/form checklist, and manual submission boundary.'],
 ];
 
 const aiWorkbenchRecordingPacket = [
@@ -313,6 +322,21 @@ export function SubmissionPackScreen() {
           {liveSmokeReceipt.map(([label, detail]) => (
             <div key={label} className="rounded-xl border border-emerald-500/20 bg-emerald-950/10 p-4">
               <div className="font-semibold text-emerald-100">{label}</div>
+              <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2"><Film size={18} className="text-crimson-500" /> 2–3 minute cutdown path</CardTitle>
+          <CardDescription>Submission conversion fix: stay inside the organizer video window while preserving the 10-second proof loop</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+          {videoCutdownPath.map(([time, detail]) => (
+            <div key={time} className="rounded-xl border border-crimson-500/20 bg-crimson-950/10 p-4">
+              <div className="font-mono text-sm font-semibold text-crimson-200">{time}</div>
               <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
             </div>
           ))}

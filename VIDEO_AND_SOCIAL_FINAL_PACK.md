@@ -12,26 +12,16 @@ Purpose: give Abel a ready-to-record and ready-to-post package for the Aug 5 Ali
 
 ## 2–3 minute video run of show
 
-Target length: 2:55.
+Target length: 2:58. This is the recording-safe cutdown; keep the longer proof panels as pause points only if judges ask follow-up questions.
 
 | Time | Screen/action | Exact point to make |
 |---:|---|---|
-| 0:00–0:15 | Login screen | "Credence is a Malaysia-first CorpSec command center for firms like CLPC, built for the Alibaba Cloud x Qoder Hackathon using Qoder's spec-driven workflow." |
-| 0:15–0:35 | Admin login | "The seeded Supabase staff credentials prove this is not a static mockup. Each role enters a scoped workflow." |
-| 0:35–0:55 | Dashboard | "The app centers the client database, scheduled jobs, and proof logs — not invoice status — because compliance work starts before billing." |
-| 0:55–1:15 | Client Database + company drawer | "A company carries departments, contacts, directors, secretary, financial year end, and SSM details. This is the operational source of truth." |
-| 1:15–1:40 | Rules Library | "Rules encode reusable compliance reminders: Annual Return, CP204/Form C, audited financial statements, AGM notice, and management accounts." |
-| 1:40–2:05 | Scheduled Queue + New Send Job preview | "The working-day engine previews follow-ups and skips weekends, so staff know exactly what will happen before approving a reminder workflow." |
-| 2:05–2:25 | Send Logs / Evidence | "Every reminder produces a reviewer-safe proof row: owner, recipient, timestamp, evidence type, provider/message ID field, Gmail print status, and message snapshot." |
-| 2:25–2:35 | Submission Pack / Reviewer-safe export packet | "Competitors already have reminders, portals, AI, and audit trails. Credence wins the narrow proof moment: entity and rule, owner and recipient, freshness status, evidence snapshot, safety boundary, and proof retained after deactivation." |
-| 2:35–2:45 | Submission Pack / MBRS loop | "For a real MBRS lodger, the workflow is T-60 chase, T-30 preparation, T-7 validation, then acceptance receipt. Credence makes those chases reviewer-safe evidence around the lodger's signature risk." |
-| 2:45–2:52 | Submission Pack / MBRS readiness packet | "Downstream MBRS tools validate and export XBRL; Credence owns the upstream question: is the client evidence ready, who chased it, and what late-risk defense exists?" |
-| 2:52–2:58 | Submission Pack / AI Workbench recording packet | "CoSec competitors already market AI assistants. Credence's Agnes loop is governed: one selected client, role-scoped evidence, human-reviewed wording, no-secret Worker bridge, and deterministic proof records as authority." |
-| 2:58–3:03 | Submission Pack / AI-to-staff handoff receipt | "AI-guided filing handoffs are now expected. Credence makes the approval receipt visible: Agnes drafts only, staff approves, deterministic schedules run, and proof is retained." |
-| 3:03–3:08 | Submission Pack / enterprise trust scorecard | "Enterprise-agent winners compress manual workflows, keep deterministic control in the middle, and ship audit-ready reports. Credence does that for one CorpSec chase: AI drafts, rules decide, proof survives." |
-| 3:08–3:12 | Submission Pack / authority and provenance receipt | "Trust-layer agent winners prove identity, authority, intent, policy, and provenance. Credence maps that to staff identity, delegated rules, approved snapshot, no-send boundary, and retained proof." |
-| 3:12–3:15 | Submission Pack / pilot handoff receipt | "Business-ready agent winners are reusable and pilotable. Credence hands judges a live URL, one-command proof, data contract, safe boundaries, and the Qoder workflow recipe." |
-| 3:15–3:18 | Submission Pack / competitor calibration | "Singapore practice suites already sell full dashboards, portals, audit trails, and bounded AI, so Credence stays narrow: one owner-specific chase becomes a reviewer-safe proof receipt." |
+| 0:00–0:20 | Login screen | "Credence is a Malaysia-first CorpSec command center. Qoder turned my spec into a working compliance cockpit for teams chasing deadlines across Gmail and spreadsheets." |
+| 0:20–0:55 | Admin login + Client Database | "I start with admin / admin123, open one Sdn Bhd record, and show departments, contacts, owners, SSM details, and the source-of-truth client database." |
+| 0:55–1:30 | Rules Library + Scheduled Queue | "A statutory rule becomes a working-day queue only after staff approval. The preview shows exactly what will be chased before anything becomes scheduled work." |
+| 1:30–2:05 | Send Logs / Evidence + Proof | "The output is not just a reminder. It is a reviewer-safe proof row: owner, recipient, timestamp, provider field, message snapshot, freshness, and proof retained after deactivation." |
+| 2:05–2:35 | AI Workbench | "Agnes drafts briefs and client wording over one bounded role-scoped context. Deterministic records remain authority; AI cannot auto-send, submit forms, or change legal status." |
+| 2:35–2:58 | Submission Pack | "The final screen gives judges the Qoder workflow receipt, live smoke receipt, one-command verify path, social/video/form checklist, and the manual submission boundary." |
 
 ## Demo reliability checklist
 
@@ -42,7 +32,7 @@ npm run build && npm run verify
 npm run dev
 ```
 
-Live smoke receipt to mention if judges ask about deployment reliability: on the Aug 5 21:20 GMT+8 Ralph smoke check, the Cloudflare Worker home route returned HTTP 200 app HTML and `POST /api/ai-brief` returned HTTP 200 fixture JSON in 14.6s through the server-side Agnes bridge, with no secret-name or API-key-shaped leakage.
+Live smoke receipt to mention if judges ask about deployment reliability: on the Aug 5 21:31 GMT+8 Ralph smoke check, the Cloudflare Worker home route returned HTTP 200 app HTML and `POST /api/ai-brief` returned HTTP 200 fixture JSON in 5.0s through the server-side Agnes bridge, with no secret-name or API-key-shaped leakage.
 
 Golden path:
 
