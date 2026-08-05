@@ -143,7 +143,7 @@ const judgeLiveCheck = [
 ];
 
 const liveSmokeReceipt = [
-  ['Current live smoke check', 'Aug 5 19:27 GMT+8: live Worker home route returned HTTP 200 app HTML and the Agnes bridge returned HTTP 200 JSON with a browser-like fixture request.'],
+  ['Current live smoke check', 'Aug 5 19:35 GMT+8: live Worker home route returned HTTP 200 app HTML and the Agnes bridge returned HTTP 200 JSON with a browser-like fixture request.'],
   ['Home page', 'Open the deployed Worker first; the latest smoke confirms the staff-login app shell loads from the public URL, not only from local dev.'],
   ['Agnes API route', 'POST /api/ai-brief returned HTTP 200 JSON for a safe fixture company, proving the server-side AI bridge is reachable without exposing the key.'],
   ['Recording fallback', 'If the live network stalls, narrate the saved smoke receipt plus npm run build && npm run verify instead of improvising.'],
