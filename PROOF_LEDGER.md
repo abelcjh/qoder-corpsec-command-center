@@ -125,7 +125,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 - Required command before shipping: `npm run build && npm run verify`
 - Expected verify scope: working-day recurrence, run generation, cron simulation, department scoping, company deactivation, schema/docs checks.
 - Safe-send boundary: the hackathon build records fixture-safe send/proof rows and does not contact real clients from the frontend.
-- Live Worker smoke receipt from Aug 6 00:23 GMT+8 Ralph loop: `/` returned HTTP 200 app HTML in 225ms and `POST /api/ai-brief` returned HTTP 200 fixture JSON in 10.8s using a browser-like smoke request; no secret-name or API-key-shaped values were exposed. Use this as the demo reliability proof before recording; if the network stalls, fall back to the build+verify terminal receipt.
+- Live Worker smoke receipt from Aug 6 00:30 GMT+8 Ralph loop: `/` returned HTTP 200 app HTML in 208ms and `POST /api/ai-brief` returned HTTP 200 fixture JSON in 17.0s using a browser-like smoke request; no secret-name or API-key-shaped values were exposed. Use this as the demo reliability proof before recording; if the network stalls, fall back to the build+verify terminal receipt.
 
 ## Evidence freshness receipt
 
@@ -173,8 +173,8 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 
 | Evidence | Location |
 |----------|----------|
-| Aug 6 00:23 GMT+8 remote smoke check returned HTTP 200 app HTML for `/` on the Cloudflare Worker | terminal smoke receipt from Ralph loop; `src/components/screens/SubmissionPackScreen.tsx` |
-| Same smoke check returned HTTP 200 JSON from `POST /api/ai-brief` with fixture-only request data and browser-like headers in 10.8s, while no secret-name or API-key-shaped values were exposed | terminal smoke receipt from Ralph loop; `src/components/screens/SubmissionPackScreen.tsx` |
+| Aug 6 00:30 GMT+8 remote smoke check returned HTTP 200 app HTML for `/` on the Cloudflare Worker | terminal smoke receipt from Ralph loop; `src/components/screens/SubmissionPackScreen.tsx` |
+| Same smoke check returned HTTP 200 JSON from `POST /api/ai-brief` with fixture-only request data and browser-like headers in 17.0s, while no secret-name or API-key-shaped values were exposed | terminal smoke receipt from Ralph loop; `src/components/screens/SubmissionPackScreen.tsx` |
 | If live network/AI stalls during recording, the documented fallback remains `npm run build && npm run verify` instead of unsafe external sends | `VIDEO_AND_SOCIAL_FINAL_PACK.md`, `SUBMISSION_CHECKLIST.md` |
 
 ## Claim 14: Expert Mode workflow is replayable without overclaiming hidden traces
@@ -284,3 +284,12 @@ A compact Aug 6 scan of current agentic workflow automation winners found repeat
 | The Proof screen and Send Logs evidence dialog now show an Authority control strip, so judges can see who/what authorized the retained reminder proof without opening raw client data | `src/components/screens/ProofScreen.tsx`, `src/components/screens/SendLogsScreen.tsx` |
 | Verification asserts the authority controls and UI strings, preventing the trust strip from silently disappearing before recording | `scripts/verify.mts` |
 
+
+## Claim 11: Closure is human-approved, not AI-decided
+
+| Evidence | Location |
+|----------|----------|
+| Submission Pack shows enforceable closure buckets: source/status field, evidence requirement, metadata/timestamp/hash, and semantic AI advisory | `src/components/screens/SubmissionPackScreen.tsx` |
+| Deterministic outcomes remain BLOCK / NEEDS_REVIEW / READY_FOR_SIGNOFF before any item can be treated as closed | `src/components/screens/SubmissionPackScreen.tsx`, `scripts/verify.mts` |
+| Reviewer ceremony captures identity, decision, rationale, timestamp, evidence viewed, and no-send boundary | `src/components/screens/SubmissionPackScreen.tsx` |
+| Pitch boundary: Agnes drafts and explains; licensed humans authorize closure | `src/components/screens/SubmissionPackScreen.tsx`, `SUBMISSION_CHECKLIST.md` |

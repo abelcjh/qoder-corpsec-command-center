@@ -194,8 +194,11 @@ for (const doc of docs) {
 }
 const submissionPack = readFileSync(resolve(root, 'src/components/screens/SubmissionPackScreen.tsx'), 'utf-8');
 assert(submissionPack.includes('Final readiness receipt'), 'Submission Pack includes final readiness receipt');
-assert(submissionPack.includes('Aug 6 00:23 GMT+8'), 'Submission Pack includes latest Aug 6 00:23 live smoke receipt');
+assert(submissionPack.includes('Aug 6 00:30 GMT+8'), 'Submission Pack includes latest Aug 6 00:30 live smoke receipt');
 assert(submissionPack.includes('Manual boundaries'), 'Submission Pack keeps manual boundary receipt visible');
+assert(submissionPack.includes('Reviewer approval ceremony'), 'Submission Pack includes reviewer approval ceremony');
+assert(submissionPack.includes('BLOCK / NEEDS_REVIEW / READY_FOR_SIGNOFF'), 'Submission Pack includes deterministic closure status states');
+assert(submissionPack.includes('Credence never lets AI become the company secretary of record'), 'Submission Pack includes licensed-human closure pitch line');
 assert(submissionPack.includes('60-second judge live check'), 'Submission Pack includes 60-second judge live check');
 assert(submissionPack.includes('Client Database → Scheduled Queue → Send Logs / Evidence → Proof → AI Workbench'), 'Submission Pack documents the golden demo loop');
 assert(submissionPack.includes('10-second winning demo spine'), 'Submission Pack puts the winning 10-second demo spine above the fold');

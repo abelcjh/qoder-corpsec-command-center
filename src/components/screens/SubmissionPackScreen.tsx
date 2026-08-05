@@ -212,15 +212,15 @@ const judgeLiveCheck = [
 ];
 
 const liveSmokeReceipt = [
-  ['Current live smoke check', 'Aug 6 00:23 GMT+8: live Worker home route returned HTTP 200 app HTML in 225ms and the Agnes bridge returned HTTP 200 JSON in 10.8s with a browser-like fixture request, plus no-secret/API-key-shape checks passed.'],
+  ['Current live smoke check', 'Aug 6 00:30 GMT+8: live Worker home route returned HTTP 200 app HTML in 208ms and the Agnes bridge returned HTTP 200 JSON in 17.0s with a browser-like fixture request, plus no-secret/API-key-shape checks passed.'],
   ['Home page', 'Open the deployed Worker first; the latest smoke confirms the staff-login app shell loads from the public URL, not only from local dev.'],
   ['Agnes API route', 'POST /api/ai-brief returned HTTP 200 JSON for a safe fixture company, proving the server-side AI bridge is reachable without exposing the key.'],
   ['Recording fallback', 'If the live network stalls, narrate the saved smoke receipt plus npm run build && npm run verify instead of improvising.'],
 ];
 
 const finalReadinessReceipt = [
-  ['Live URL works', 'Latest smoke passed at Aug 6 00:23 GMT+8: public Worker home route HTTP 200, staff-login app shell returned.'],
-  ['Agnes bridge works', 'Fixture-safe POST /api/ai-brief returned HTTP 200 JSON in 10.8s and passed secret-name/API-key-shape checks.'],
+  ['Live URL works', 'Latest smoke passed at Aug 6 00:30 GMT+8: public Worker home route HTTP 200, staff-login app shell returned.'],
+  ['Agnes bridge works', 'Fixture-safe POST /api/ai-brief returned HTTP 200 JSON in 17.0s and passed secret-name/API-key-shape checks.'],
   ['Local proof command', 'Keep npm run build && npm run verify visible as the fallback receipt; the harness covers the deterministic middle and submission-proof surfaces.'],
   ['Manual boundaries', 'Social post, organizer form, email/WhatsApp, and legal-status changes remain manual; the app demonstrates fixture-safe receipts only.'],
 ];
@@ -248,6 +248,14 @@ const humanHandoffReceipt = [
   ['Staff approval gate', 'The recording should show a human owner choosing the rule/job path before any reminder becomes scheduled work.'],
   ['Deterministic schedule', 'Working-day recurrence and department scoping decide the queue; AI text is advisory context around that audited workflow.'],
   ['Proof retained', 'The handoff ends in reviewer-safe evidence fields — owner, recipient, cadence, snapshot, provider/message ID field, and unresolved risk.'],
+];
+
+const closureApprovalCeremony = [
+  ['Enforceable closure buckets', 'Every CorpSec item falls into source/status field, evidence requirement, metadata/timestamp/hash, or semantic AI advisory — so deterministic rules stay separate from Agnes wording.'],
+  ['Deterministic status', 'The review outcome is BLOCK / NEEDS_REVIEW / READY_FOR_SIGNOFF before any item can be treated as closed.'],
+  ['Licensed reviewer action', 'Reviewer identity, approve/decline/request-change decision, rationale, timestamp, and evidence viewed are captured as the closure ceremony.'],
+  ['No-send safety', 'AI drafts the chase; deterministic authority/scope checks and licensed reviewer approval happen before any send/export/close action.'],
+  ['Pitch line', 'Credence never lets AI become the company secretary of record; AI drafts and explains, licensed humans authorize closure.'],
 ];
 
 const enterpriseTrustScorecard = [
@@ -387,6 +395,21 @@ export function SubmissionPackScreen() {
           {finalReadinessReceipt.map(([label, detail]) => (
             <div key={label} className="rounded-xl border border-emerald-500/20 bg-black/20 p-4">
               <div className="font-semibold text-emerald-100">{label}</div>
+              <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+
+      <Card className="border-sky-500/30 bg-sky-950/10">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2"><CheckCircle2 size={18} className="text-sky-400" /> Reviewer approval ceremony</CardTitle>
+          <CardDescription>Fresh enterprise-compliance calibration: show the authority boundary as product behavior, not buried legal copy.</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
+          {closureApprovalCeremony.map(([label, detail]) => (
+            <div key={label} className="rounded-xl border border-sky-500/20 bg-black/20 p-4">
+              <div className="font-semibold text-sky-100">{label}</div>
               <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
             </div>
           ))}
