@@ -110,6 +110,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | MBRS company-secretary guide (`https://www.mbrs.com.my/mbrs-for-company-secretaries/`) | A real lodger workflow needs T-60 client chases, T-30 preparation checks, T-7 validation, same-day signing, acceptance tracking, and a written record when client delays force late filing or extensions. | Add the Submission Pack MBRS Maker/Lodger control-loop receipt: Credence is the chase/evidence ledger that proves who owned the reminder, what was missing, when it was escalated, and which acceptance/proof row survives review. |
 | Officio / iCorpSec / BizAid / BPOSA360 2026 scan (`https://getofficio.today/`, `https://icorpsec.com/`, `https://www.bizaid.my/our-solutions/`, `https://bposa360.com/saas-govern-ai-business-solution-for-corporate-services/`) | Competitors already advertise automatic reminders, weekly email summaries, audit trails, AI assistants, OCR/document management, AML/CTOS/SSM reports, e-signing, and broad client portals. | Make Credence's narrower evidence packet judge-visible: entity/rule, owner/recipient, cadence status, message/provider snapshot, safety boundary, and retained proof after deactivation. |
 | IRIS INSTANT 2.0 MBRS scan (`https://irisregtech.com/blog/suptech/company-secretaries/iris-instant-20-ai-powered-mbrs-20-filing-software-for-malaysian-company-secretaries/`) | MBRS tooling now emphasizes validation engines, previous-year XML checks, reviewer PDFs, JSON exports, traceable audit trails, and manual handoff to SSM mPortal. | Position Credence as the upstream readiness packet: client evidence ready, validation handoff, export/acceptance receipt, and late-risk defense before the lodger enters downstream MBRS tooling. |
+| iCorpSec / BizAid / BPOSA360 AI scan (`https://icorpsec.com/`, `https://www.bizaid.my/our-solutions/`, `https://bposa360.com/saas-govern-ai-business-solution-for-corporate-services/`) | Broad CoSec suites now market AI assistants, drafting, compliance scanners, due-date queries, OCR/document modules, and 24/7 client support as expected features. | Record the AI Workbench as a governed recording packet: one selected client, role-scoped evidence, human-reviewed output, no-secret Worker bridge, deterministic records as authority, and no chatbot overclaim. |
 
 
 ## Current verification receipt
@@ -131,6 +132,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | Recording credential ladder | Seeded credentials let judges see Admin first, then optional Tax/Audit/Accounts/CorpSec role scoping without creating external side effects. | Submission Pack screen and `VIDEO_AND_SOCIAL_FINAL_PACK.md` demo reliability checklist |
 | MBRS Maker/Lodger cadence | T-60 chase → T-30 prepare → T-7 validate → acceptance receipt turns one MBRS deadline into a reviewer-safe operational control loop. | Submission Pack screen MBRS control-loop panel; final video voiceover after evidence freshness |
 | MBRS readiness packet | Client evidence ready → validation handoff → export receipt → late-risk defense explains how Credence complements downstream MBRS/XBRL tools instead of pretending to replace them. | Submission Pack screen MBRS readiness packet panel; final video line before AI Workbench |
+| AI Workbench recording packet | Selected client only, role-scoped evidence, human-reviewed wording, no-secret bridge, deterministic authority, and competitor-trap avoidance turn Agnes into governed product AI instead of a generic assistant. | Submission Pack screen AI Workbench recording packet; AI Workbench screen; live smoke secret-shape checks |
 
 ---
 
@@ -170,3 +172,11 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | `npm run smoke:live` checks the public Cloudflare Worker home route and `/api/ai-brief` with fixture-safe data | `scripts/live-smoke.mjs`, `package.json` |
 | Smoke verifies HTTP 200, app HTML shell, JSON AI route response, and no exposed Agnes secret-shaped values | `scripts/live-smoke.mjs` |
 | Submission checklist now tells Abel to run build + verify + live smoke before recording/submission | `SUBMISSION_CHECKLIST.md` |
+
+## Claim 16: AI Workbench is recorded as governed product AI, not another generic CoSec chatbot
+
+| Evidence | Location |
+|----------|----------|
+| Submission Pack gives Abel a six-part recording packet: selected client only, role-scoped evidence, human-reviewed output, no-secret Worker bridge, deterministic authority, and competitor-trap avoidance | `src/components/screens/SubmissionPackScreen.tsx` |
+| Live smoke script checks the Agnes bridge response for secret names and API-key-shaped values | `scripts/live-smoke.mjs` |
+| Final video pack tells Abel to frame Agnes as advisory over deterministic proof records, not as legal advice or auto-send authority | `VIDEO_AND_SOCIAL_FINAL_PACK.md` |

@@ -149,6 +149,15 @@ const liveSmokeReceipt = [
   ['Recording fallback', 'If the live network stalls, narrate the saved smoke receipt plus npm run build && npm run verify instead of improvising.'],
 ];
 
+const aiWorkbenchRecordingPacket = [
+  ['Selected client only', 'Open one company context and show that Agnes receives a bounded packet instead of the full practice database.'],
+  ['Role-scoped evidence', 'The Workbench summarizes only visible jobs, logs, rules, owners, recipients, and unresolved risks for the logged-in staff role.'],
+  ['Human-reviewed output', 'Use Agnes for executive brief, risk summary, and client wording; a staff owner still approves every reminder and external message.'],
+  ['No-secret bridge', 'The live smoke checks `/api/ai-brief` through the Worker and verifies the response does not expose Agnes secret names or API-key-shaped values.'],
+  ['Deterministic authority', 'Client records, rules, scheduled jobs, and proof rows remain the source of truth; AI cannot change legal/compliance status by itself.'],
+  ['Competitor trap avoided', 'Market scans show CoSec suites already advertise AI assistants, so the winning angle is governed AI over reviewer-safe proof, not another chatbot.'],
+];
+
 const demoScenes = [
   'Open polished staff login; call out Supabase-seeded credentials and CLPC database connection.',
   'Login as admin; show dashboard stats, active clients, scheduled jobs, and proof logs.',
@@ -253,6 +262,21 @@ export function SubmissionPackScreen() {
         </CardHeader>
         <CardContent className="grid gap-3 md:grid-cols-3">
           {liveSmokeReceipt.map(([label, detail]) => (
+            <div key={label} className="rounded-xl border border-emerald-500/20 bg-emerald-950/10 p-4">
+              <div className="font-semibold text-emerald-100">{label}</div>
+              <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2"><ClipboardList size={18} className="text-emerald-500" /> AI Workbench recording packet</CardTitle>
+          <CardDescription>Product-AI proof: governed Agnes assistance over bounded CorpSec evidence, not a generic chatbot</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+          {aiWorkbenchRecordingPacket.map(([label, detail]) => (
             <div key={label} className="rounded-xl border border-emerald-500/20 bg-emerald-950/10 p-4">
               <div className="font-semibold text-emerald-100">{label}</div>
               <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>

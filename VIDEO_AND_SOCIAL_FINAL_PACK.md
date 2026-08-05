@@ -26,7 +26,7 @@ Target length: 2:55.
 | 2:25–2:35 | Submission Pack / Reviewer-safe export packet | "Competitors already have reminders, portals, AI, and audit trails. Credence wins the narrow proof moment: entity and rule, owner and recipient, freshness status, evidence snapshot, safety boundary, and proof retained after deactivation." |
 | 2:35–2:45 | Submission Pack / MBRS loop | "For a real MBRS lodger, the workflow is T-60 chase, T-30 preparation, T-7 validation, then acceptance receipt. Credence makes those chases reviewer-safe evidence around the lodger's signature risk." |
 | 2:45–2:52 | Submission Pack / MBRS readiness packet | "Downstream MBRS tools validate and export XBRL; Credence owns the upstream question: is the client evidence ready, who chased it, and what late-risk defense exists?" |
-| 2:52–2:58 | AI Workbench | "Agnes AI drafts the messy brief and client wording, but Credence keeps the deterministic client, rule, schedule, and proof records authoritative and human-reviewed." |
+| 2:52–2:58 | Submission Pack / AI Workbench recording packet | "CoSec competitors already market AI assistants. Credence's Agnes loop is governed: one selected client, role-scoped evidence, human-reviewed wording, no-secret Worker bridge, and deterministic proof records as authority." |
 | 2:58–3:00 | Qoder Build Ledger + Submission Pack | "Qoder produced the full-stack upgrade: Supabase schema, React/Tailwind UI, reminder engine, scoping, verification harness, and documentation. Build plus verify passes." |
 
 ## Demo reliability checklist
@@ -48,8 +48,9 @@ Golden path:
 4. Show `QODER_BUILD_LEDGER.md` either in the app's Qoder Build screen or in the editor for judge-visible Qoder proof.
 5. On the Submission Pack screen, pause on the Official Brief Compliance Receipt: Qoder as primary build canvas, spec/Quest/Expert workflow shown as method evidence, post-event refinement kept rule-clean, and deadline stated as Aug 5 11:30 PM GMT+8.
 6. Pause on the MBRS readiness packet if judges ask about real CoSec workflow depth: Credence complements downstream MBRS/XBRL tools by proving upstream client evidence, validation handoff, export receipt, and late-risk defense.
-7. Pause on the Live Worker smoke receipt if the browser or Agnes call feels slow: it proves the public URL and server-side AI bridge were checked close to submission time, while the terminal fallback remains deterministic.
-8. End on the Submission Pack screen so the organizer requirements are visually obvious.
+7. Pause on the AI Workbench recording packet before or after clicking Agnes: say the AI gets one bounded client context, visible role-scoped jobs/logs/rules, and no authority to auto-send, change compliance state, or provide legal advice.
+8. Pause on the Live Worker smoke receipt if the browser or Agnes call feels slow: it proves the public URL and server-side AI bridge were checked close to submission time, while the terminal fallback remains deterministic.
+9. End on the Submission Pack screen so the organizer requirements are visually obvious.
 
 Role-switch ladder if the recording has extra time:
 

@@ -176,6 +176,8 @@ const submissionPack = readFileSync(resolve(root, 'src/components/screens/Submis
 assert(submissionPack.includes('60-second judge live check'), 'Submission Pack includes 60-second judge live check');
 assert(submissionPack.includes('Client Database → Scheduled Queue → Send Logs / Evidence → Proof → AI Workbench'), 'Submission Pack documents the golden demo loop');
 assert(submissionPack.includes('Current live smoke check'), 'Submission Pack includes current live Worker smoke receipt');
+assert(submissionPack.includes('AI Workbench recording packet'), 'Submission Pack includes governed AI Workbench recording packet');
+assert(submissionPack.includes('Deterministic authority'), 'Submission Pack states deterministic records remain authoritative over AI output');
 const packageJson = readFileSync(resolve(root, 'package.json'), 'utf-8');
 assert(packageJson.includes('smoke:live'), 'Package exposes npm run smoke:live for deployed demo reliability');
 const submissionChecklist = readFileSync(resolve(root, 'SUBMISSION_CHECKLIST.md'), 'utf-8');
