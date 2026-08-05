@@ -169,3 +169,9 @@ Judge-facing handling for Credence:
 6. **Supabase integration** — Schema design and client adapter with graceful fallback
 7. **Verification engineering** — Automated tests for engine, scoping, and state mutations
 8. **Documentation** — README, spec, proof ledger, build ledger, demo script, checklist
+
+---
+
+## Phase 11: Judge-Visible Qoder Workflow Receipt
+
+The Build Ledger screen now includes a spec → quest-style decomposition → human review → verify receipt mapped to the official Qoder scoring language. This avoids treating Qoder as a hidden code generator: judges can see the build method, review boundary, verification command, and support-tool disclosure in the product itself.

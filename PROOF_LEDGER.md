@@ -124,3 +124,12 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | Stale | Missing or outdated proof is visible instead of hidden, preserving escalation accountability. | Proof screen risk note and retained send-log history |
 | Reviewer-safe export | Judges can inspect owner, recipient, timestamp, evidence type, snapshot, and Gmail/provider fields without secrets or live sends. | Submission Pack screen and README reviewer-safe export table |
 | Recording credential ladder | Seeded credentials let judges see Admin first, then optional Tax/Audit/Accounts/CorpSec role scoping without creating external side effects. | Submission Pack screen and `VIDEO_AND_SOCIAL_FINAL_PACK.md` demo reliability checklist |
+
+---
+
+## Claim 11: Qoder workflow receipt is visible inside the live app
+
+| Evidence | Location |
+|----------|----------|
+| Build Ledger screen maps spec-first work, Quest-style decomposition, human review, and verification receipt to Qoder judging language | `src/components/screens/BuildLedgerScreen.tsx` |
+| Official Qoder/Luma source emphasizes Spec-Driven Workflow, Quest Mode, Expert Mode, and Qoder as primary build canvas | `QODER_BUILD_LEDGER.md`, `SUBMISSION_CHECKLIST.md` |
