@@ -312,6 +312,14 @@ const approvalLaneReceipt = [
   ['Receipt back', 'The final row records plan, approval lane, policy decision, packet ID, freshness, and no-send boundary as the judge-readable proof of accountable automation.'],
 ];
 
+const approvalTimeoutReceipt = [
+  ['Pending is not allowed', 'AgentTrust-style approval layers make unresolved requests expire instead of leaving a risky action half-authorized in the background.'],
+  ['Bounded review window', 'Credence frames REVIEW / NEEDS_REVIEW as a staff-owned lane with a visible clock: if nobody approves, the next step remains blocked/manual.'],
+  ['No silent continuation', 'Agnes cannot long-poll forever, self-approve, or retry into a real send after staff attention disappears.'],
+  ['Expired receipt', 'The fallback proof row should say approval expired, who owned it, which packet/rule was affected, and why no external mutation happened.'],
+  ['Recording line', 'Say: “If the approver disappears, Credence expires the pending action into a retained no-send receipt — it never becomes hidden consent.”'],
+];
+
 const continuousReviewReceipt = [
   ['Daily review mode', 'ClientBase/iCorpSec-style suites promise continuous monitoring, so Credence should show one daily operator loop instead of a once-a-year compliance scramble.'],
   ['Risk queue', 'Current / Expiring / Stale proof status turns scattered reminders into a review queue: what needs chasing, who owns it, and what evidence is missing.'],
@@ -689,6 +697,21 @@ export function SubmissionPackScreen() {
         </CardHeader>
         <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
           {approvalLaneReceipt.map(([label, detail]) => (
+            <div key={label} className="rounded-xl border border-sky-500/20 bg-sky-950/10 p-4">
+              <div className="font-semibold text-sky-100">{label}</div>
+              <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2"><ClipboardList size={18} className="text-sky-400" /> Approval timeout receipt</CardTitle>
+          <CardDescription>AgentTrust calibration: step-up approvals should expire into a retained no-send proof row, not become hidden standing consent.</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
+          {approvalTimeoutReceipt.map(([label, detail]) => (
             <div key={label} className="rounded-xl border border-sky-500/20 bg-sky-950/10 p-4">
               <div className="font-semibold text-sky-100">{label}</div>
               <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>

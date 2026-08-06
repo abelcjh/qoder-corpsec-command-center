@@ -59,7 +59,7 @@
 ```bash
 npm install          # Installs all dependencies
 npm run build        # TypeScript check + Vite build
-npm test             # Verification script passes (162 assertions)
+npm test             # Verification script passes (165 assertions)
 ```
 
 ### Live Worker Smoke Receipt
@@ -79,6 +79,7 @@ npm test             # Verification script passes (162 assertions)
 
 - [x] Submission Pack now ties the enterprise-agent winner bar to Credence records: source client/rule/job, proof packet ID/chain head, duplicate-safe evidence narrative, approval/no-send gate, and fallback receipt.
 - [x] Submission Pack now includes an **Approval lane receipt**: client/rule/job plan → REVIEW/GATE lane → confirm-once retry → retained proof receipt, keeping real sends/forms/legal changes manual.
+- [x] Submission Pack now includes an **Approval timeout receipt**: unattended review requests expire into a retained no-send proof row instead of hidden consent, based on AgentTrust / Agent Receipts approval-expiry calibration.
 - [x] Latest calibration source: Microsoft Agent Academy winners and Bizsec-style Singapore CoSec tooling emphasize governed records, approval gates, audit logs, and correlation IDs over standalone AI answers.
 - [x] Recording line: “every CorpSec chase has a source record, a packet correlation receipt, a human approval boundary, and a rerunnable fallback.”
 

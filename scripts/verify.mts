@@ -282,6 +282,9 @@ assert(submissionPack.includes('Controlled failure path'), 'Submission Pack keep
 assert(submissionPack.includes('Approval lane receipt'), 'Submission Pack includes approval lane receipt');
 assert(submissionPack.includes('Plan → Review/Gate → Confirm once → Receipt'), 'Submission Pack includes plan/review/gate/confirm/receipt execution pattern');
 assert(submissionPack.includes('Confirm once'), 'Submission Pack keeps exactly-once approval confirmation visible');
+assert(submissionPack.includes('Approval timeout receipt'), 'Submission Pack includes approval timeout receipt');
+assert(submissionPack.includes('Pending is not allowed'), 'Submission Pack states unattended approvals cannot remain pending');
+assert(submissionPack.includes('retained no-send receipt'), 'Submission Pack keeps expired approval as retained no-send proof');
 assert(submissionPack.includes('Continuous review receipt'), 'Submission Pack includes continuous review receipt for daily compliance monitoring proof');
 assert(submissionPack.includes('Daily review mode'), 'Submission Pack frames Credence as a daily operator loop');
 assert(submissionPack.includes('current, expiring, stale, and reviewer-safe'), 'Submission Pack includes the continuous review recording line');
