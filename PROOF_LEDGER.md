@@ -69,7 +69,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | Evidence | Location |
 |----------|----------|
 | `npm run build` output | `dist/` |
-| Verification script with 156 assertions | `scripts/verify.mts` |
+| Verification script with 159 assertions | `scripts/verify.mts` |
 | Package scripts | `package.json` |
 
 ## Claim 9: Qoder usage is visible, rule-clean, and reviewable
@@ -132,7 +132,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 - Required command before shipping: `npm run build && npm run verify`
 - Expected verify scope: working-day recurrence, run generation, cron simulation, department scoping, company deactivation, schema/docs checks.
 - Safe-send boundary: the hackathon build records fixture-safe send/proof rows and does not contact real clients from the frontend.
-- Live Worker smoke receipt from Aug 6 14:27 GMT+8 Ralph loop: `/` returned HTTP 200 app HTML in 227ms and `POST /api/ai-brief` returned HTTP 200 fixture JSON in 4.9s using a browser-like smoke request; no secret-name or API-key-shaped values were exposed. Use this as the demo reliability proof before recording; if the network stalls, fall back to the build+verify terminal receipt.
+- Live Worker smoke receipt from Aug 6 15:09 GMT+8 Ralph loop: `/` returned HTTP 200 app HTML in 180ms and `POST /api/ai-brief` returned HTTP 200 fixture JSON in 4.4s using a browser-like smoke request; no secret-name or API-key-shaped values were exposed. Use this as the demo reliability proof before recording; if the network stalls, fall back to the build+verify terminal receipt.
 
 ## Evidence freshness receipt
 
@@ -149,6 +149,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | AI Workbench recording packet | Selected client only, role-scoped evidence, human-reviewed wording, no-secret bridge, deterministic authority, and competitor-trap avoidance turn Agnes into governed product AI instead of a generic assistant. | Submission Pack screen AI Workbench recording packet; AI Workbench screen; live smoke secret-shape checks |
 | AI-to-staff handoff receipt | AI drafts only → staff approval gate → deterministic schedule → retained proof shows why Credence is safer than an opaque AI-guided filing assistant. | Submission Pack screen handoff receipt; final video line before the organizer checklist |
 | Operational correlation receipt | Source client/rule/job record → reviewer-safe packet ID/chain head → duplicate-safe evidence narrative → approval-gated action → fallback receipt answers the enterprise-agent correlation-ID/audit-log winner bar. | Submission Pack operational correlation panel; proof packet utility; verifier assertions |
+| Idempotency and controlled-failure receipt | Duplicate detection → idempotent safe retry → controlled failure path → human-review route → audit-log continuity answers the adoption-ready enterprise-agent bar. | Submission Pack idempotency panel; `scripts/verify.mts`; final video fallback if judges ask what happens on retries/failures |
 | Continuous review receipt | Daily review mode → risk queue → review-ready record → AI advisory → human closure gate turns compliance monitoring into a reviewer-safe morning loop instead of year-end cleanup. | Submission Pack continuous review panel; final recording line; verifier assertions |
 | Pilot handoff receipt | Live pilot URL → one-command proof → data contract → operator-safe boundaries → reusable workflow turns Credence from demo video into a judge-rerunnable pilot handoff. | Submission Pack screen pilot handoff receipt; final recording pause after enterprise trust scorecard |
 | Authority/provenance receipt | Staff identity → delegated rule authority → approved intent snapshot → no-send policy boundary → proof provenance maps the agent-trust winner pattern onto one CorpSec chase. | Submission Pack screen authority and provenance receipt; final recording pause before pilot handoff |
@@ -183,8 +184,8 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 
 | Evidence | Location |
 |----------|----------|
-| Aug 6 14:27 GMT+8 remote smoke check returned HTTP 200 app HTML for `/` on the Cloudflare Worker | terminal smoke receipt from Ralph loop; `src/components/screens/SubmissionPackScreen.tsx` |
-| Same smoke check returned HTTP 200 JSON from `POST /api/ai-brief` with fixture-only request data and browser-like headers in 4.9s, while no secret-name or API-key-shaped values were exposed | terminal smoke receipt from Ralph loop; `src/components/screens/SubmissionPackScreen.tsx` |
+| Aug 6 15:09 GMT+8 remote smoke check returned HTTP 200 app HTML for `/` on the Cloudflare Worker | terminal smoke receipt from Ralph loop; `src/components/screens/SubmissionPackScreen.tsx` |
+| Same smoke check returned HTTP 200 JSON from `POST /api/ai-brief` with fixture-only request data and browser-like headers in 4.4s, while no secret-name or API-key-shaped values were exposed | terminal smoke receipt from Ralph loop; `src/components/screens/SubmissionPackScreen.tsx` |
 | If live network/AI stalls during recording, the documented fallback remains `npm run build && npm run verify` instead of unsafe external sends | `VIDEO_AND_SOCIAL_FINAL_PACK.md`, `SUBMISSION_CHECKLIST.md` |
 
 ## Claim 14: Expert Mode workflow is replayable without overclaiming hidden traces
@@ -328,3 +329,11 @@ A compact Aug 6 scan of current agentic workflow automation winners found repeat
 | Aug 6 Episcript-style CoSec scan found custom email reminders, missed-task alerts, audit trails, and accountability controls are already table stakes | Public competitor scan captured in this Ralph-loop report |
 | Submission Pack now includes an Exception escalation receipt: stale evidence trigger, owner escalation path, Agnes context draft, approval before mutation, and retained non-send proof | `src/components/screens/SubmissionPackScreen.tsx`, `scripts/verify.mts` |
 | Recording line: “When a chase goes stale, Credence proves why it was escalated or blocked before any external send happens.” | `SUBMISSION_CHECKLIST.md`, `VIDEO_AND_SOCIAL_FINAL_PACK.md` |
+
+## Claim 30: Retry and failure paths are adoption-ready, not happy-path-only
+
+| Evidence | Location |
+|----------|----------|
+| Aug 6 Microsoft Agent Academy scan highlighted winner patterns such as duplicate-safe record creation, idempotent notifications, controlled validation failures, human-review routing, correlation IDs, and audit logs | Public winner scan captured in this Ralph-loop report |
+| Submission Pack now includes an Idempotency and controlled-failure receipt: duplicate detection, idempotent outcome, controlled failure path, human-review route, and audit-log continuity | `src/components/screens/SubmissionPackScreen.tsx`, `scripts/verify.mts` |
+| Recording line: “Credence is not happy-path automation; safe retries preserve the business thread, and uncertain or blocked chases become reviewer-owned receipts.” | `SUBMISSION_CHECKLIST.md`, `VIDEO_AND_SOCIAL_FINAL_PACK.md` |

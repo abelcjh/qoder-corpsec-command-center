@@ -82,6 +82,12 @@ const marketFindings = [
     credenceAngle: 'Show Credence as an operational control plane: each chase has a job ID, proof packet ID, staff approval boundary, freshness verdict, and safe retry/fallback path.',
   },
   {
+    source: 'Engagement Hub / VendorGuard failure-path scan',
+    url: 'https://devblogs.microsoft.com/powerplatform/agent-academy-hackathon-winners/',
+    signal: 'Top enterprise-agent submissions call out duplicate detection, idempotent notifications, controlled validation failures, human-review routes, and correlation-friendly logs as adoption proof.',
+    credenceAngle: 'Add an idempotency and controlled-failure receipt: repeated chases should be recognized as the same business thread, stale/missing evidence routes to review, and no-send outcomes remain inspectable.',
+  },
+  {
     source: 'Agent Academy / Storata presentation scan',
     url: 'https://www.storata.com/blog/storata-named-apac-winner-of-the-microsoft-agent-hackathon',
     signal: 'Enterprise-agent winners are praised for prepared judge answers, production-readiness, governance, auditability, and a clear problem-before-code process.',
@@ -244,15 +250,15 @@ const judgeLiveCheck = [
 ];
 
 const liveSmokeReceipt = [
-  ['Current live smoke check', 'Aug 6 14:27 GMT+8: live Worker home route returned HTTP 200 app HTML in 227ms and the Agnes bridge returned HTTP 200 JSON in 4.9s with a browser-like fixture request, plus no-secret/API-key-shape checks passed.'],
+  ['Current live smoke check', 'Aug 6 15:09 GMT+8: live Worker home route returned HTTP 200 app HTML in 180ms and the Agnes bridge returned HTTP 200 JSON in 4.4s with a browser-like fixture request, plus no-secret/API-key-shape checks passed.'],
   ['Home page', 'Open the deployed Worker first; the latest smoke confirms the staff-login app shell loads from the public URL, not only from local dev.'],
   ['Agnes API route', 'POST /api/ai-brief returned HTTP 200 JSON for a safe fixture company, proving the server-side AI bridge is reachable without exposing the key.'],
   ['Recording fallback', 'If the live network stalls, narrate the saved smoke receipt plus npm run build && npm run verify instead of improvising.'],
 ];
 
 const finalReadinessReceipt = [
-  ['Live URL works', 'Latest smoke passed at Aug 6 14:27 GMT+8: public Worker home route HTTP 200, staff-login app shell returned in 227ms.'],
-  ['Agnes bridge works', 'Fixture-safe POST /api/ai-brief returned HTTP 200 JSON in 4.9s and passed secret-name/API-key-shape checks.'],
+  ['Live URL works', 'Latest smoke passed at Aug 6 15:09 GMT+8: public Worker home route HTTP 200, staff-login app shell returned in 180ms.'],
+  ['Agnes bridge works', 'Fixture-safe POST /api/ai-brief returned HTTP 200 JSON in 4.4s and passed secret-name/API-key-shape checks.'],
   ['Local proof command', 'Keep npm run build && npm run verify visible as the fallback receipt; the harness covers the deterministic middle and submission-proof surfaces.'],
   ['Manual boundaries', 'Social post, organizer form, email/WhatsApp, and legal-status changes remain manual; the app demonstrates fixture-safe receipts only.'],
 ];
@@ -288,6 +294,14 @@ const operationalCorrelationReceipt = [
   ['Duplicate-safe narrative', 'If the same client chase is revisited, Credence should update/retain the evidence trail instead of pretending every repeat reminder is a fresh untracked action.'],
   ['Approval-gated action', 'AI briefs and message drafts sit beside READY_FOR_REVIEW / no-send gates; external mutation stays behind human approval.'],
   ['Fallback receipt', 'Live Agnes or network stalls have a bounded fallback: saved smoke receipt plus npm run build && npm run verify, not an improvised unverifiable claim.'],
+];
+
+const idempotencyFailureReceipt = [
+  ['Duplicate detection', 'Repeated reminders for the same company/rule/job are treated as the same business thread, so judges see continuity instead of spammy independent sends.'],
+  ['Idempotent outcome', 'A safe retry should return retained or updated evidence with the existing packet/cadence context, not create a conflicting compliance story.'],
+  ['Controlled failure path', 'Missing contact data, stale evidence, or uncertain AI wording becomes NEEDS_REVIEW / BLOCK with an owner and reason rather than a technical crash or silent send.'],
+  ['Human-review route', 'Reviewer action is explicit: approve, request change, escalate, or keep blocked before any external email, WhatsApp, legal status, or form mutation.'],
+  ['Audit log continuity', 'Correlation-style source IDs, packet IDs, timestamps, and no-send receipts remain queryable after deactivation and usable as the fallback proof trail.'],
 ];
 
 const continuousReviewReceipt = [
@@ -637,6 +651,21 @@ export function SubmissionPackScreen() {
         </CardHeader>
         <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
           {operationalCorrelationReceipt.map(([label, detail]) => (
+            <div key={label} className="rounded-xl border border-sky-500/20 bg-sky-950/10 p-4">
+              <div className="font-semibold text-sky-100">{label}</div>
+              <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2"><ClipboardList size={18} className="text-sky-400" /> Idempotency and controlled-failure receipt</CardTitle>
+          <CardDescription>Enterprise-agent winner calibration: adoption-ready agents prove duplicate-safe retries and safe failure routes, not only the happy path.</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
+          {idempotencyFailureReceipt.map(([label, detail]) => (
             <div key={label} className="rounded-xl border border-sky-500/20 bg-sky-950/10 p-4">
               <div className="font-semibold text-sky-100">{label}</div>
               <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>

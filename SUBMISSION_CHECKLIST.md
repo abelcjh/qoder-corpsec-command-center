@@ -59,13 +59,13 @@
 ```bash
 npm install          # Installs all dependencies
 npm run build        # TypeScript check + Vite build
-npm test             # Verification script passes (156 assertions)
+npm test             # Verification script passes (159 assertions)
 ```
 
 ### Live Worker Smoke Receipt
 
-- [x] Live Cloudflare Worker home route returned HTTP 200 app HTML in 227ms during the Aug 6 14:27 GMT+8 Ralph smoke check.
-- [x] `POST /api/ai-brief` returned HTTP 200 fixture JSON in 4.9s in the same smoke check, proving the server-side Agnes bridge is reachable without exposing the key in the browser; no secret-name or API-key-shaped values were exposed.
+- [x] Live Cloudflare Worker home route returned HTTP 200 app HTML in 180ms during the Aug 6 15:09 GMT+8 Ralph smoke check.
+- [x] `POST /api/ai-brief` returned HTTP 200 fixture JSON in 4.4s in the same smoke check, proving the server-side Agnes bridge is reachable without exposing the key in the browser; no secret-name or API-key-shaped values were exposed.
 - [x] Recording fallback is explicit: if live network/Agnes stalls, show this smoke receipt plus `npm run build && npm run verify` instead of hiding the failure.
 
 
@@ -215,6 +215,7 @@ From the organizer master deck and UGC screenshot:
 | [Trust Receipt AGI House winner](https://ashah007.medium.com/we-won-at-agi-house-by-building-the-proof-layer-for-ai-agents-ebdd0f27eced) | A current agent-infrastructure winner says every agent action should leave a receipt across identity, authority, intent alignment, policy compliance, and provenance. | Pause on the Authority and provenance receipt: staff identity, delegated rule authority, approved intent snapshot, no-send policy boundary, and reviewer-safe proof provenance after deactivation. |
 | [Trust Receipt repo](https://github.com/ankitshah009/TrustReceipt) / [AgentAudit scan](https://lablab.ai/ai-hackathons/techex-intelligent-enterprise-solutions-hackathon/diego-ia-enterprise/agentaudit-immutable-ai-audit-trail) | Agent-proof winners increasingly frame trust as independently checkable receipts: hashes, policy outcomes, public/private evidence boundaries, and offline verification paths. | Use the new Offline verifier receipt if challenged: Credence's proof packet has a deterministic packet ID, reviewer-safe fields, freshness recheck, and a blocked-action/no-send receipt instead of relying on screenshots. |
 | [Microsoft Agent Academy winners](https://devblogs.microsoft.com/powerplatform/agent-academy-hackathon-winners/) / [Bizsec](https://bizsec.io/) | Enterprise workflow winners and modern CoSec tools emphasize governed records, approval gates, duplicate-safe actions, audit logs, and correlation IDs. | Pause on the Operational correlation receipt: source record → packet ID/chain head → approval gate → bounded fallback, so the demo looks like an adoptable control loop rather than a chatbot. |
+| [Microsoft Engagement Hub / VendorGuard winner notes](https://devblogs.microsoft.com/powerplatform/agent-academy-hackathon-winners/) | Top agent submissions call out duplicate-safe record creation, idempotent notifications, controlled validation failures, human-review paths, and queryable audit logs. | If judges ask about retries or failures, pause on the Idempotency and controlled-failure receipt: duplicate detection → idempotent outcome → controlled failure path → human-review route → audit-log continuity. |
 | [Forensa evidence layer](https://lablab.ai/ai-hackathons/techex-intelligent-enterprise-solutions-hackathon/forensa/forensa-evidence-layer-for-ai-agents) / [raucle capability receipts](https://github.laiyagushi.com/craigamcw/raucle) | The enterprise proof bar is moving from “show logs” to auditor challenge paths: receipt hash, authority boundary, policy verdict, safe evidence opening, and offline verification. | If judges ask “how do I know this row is real?”, use the Auditor challenge drill: open one proof row, re-derive packet ID/chain head, show reviewer-safe fields, state the blocked no-send boundary, then point to `npm run build && npm run verify`. |
 | [Microsoft AI agent receipt guidance](https://microsoft.github.io/ai-agents-for-beginners/18-securing-ai-agents/) | Agent receipts prove attribution, integrity, and ordering; they do not by themselves prove correctness, legal sufficiency, or policy soundness. | Pause on the Receipt truth boundary if judges press on audit claims: Credence is honest that receipts make the trail inspectable, while deterministic rules, staff approval, freshness checks, and `npm run verify` provide the workflow control layer. |
 | [Agent Receipts protocol](https://agentreceipts.ai/) | Agent-receipt systems increasingly split public tamper evidence from sensitive payload disclosure: hash/chain proofs can be verified while parameters or client data remain gated by the operator. | Pause on the Public/private disclosure boundary: show public receipt ID/freshness/blocked status first, reveal selected reviewer-safe details only when needed, and never export secrets, raw mailboxes, or real send controls. |
@@ -279,7 +280,7 @@ Before recording or live judging, run this exact reliability pass:
 4. Click Agnes briefing once; if the endpoint is unavailable, show the deterministic fallback banner as resilience proof.
 5. Do not send email/WhatsApp/social/form actions from the app; all proof rows are fixture-safe and human-reviewed.
 6. Keep `npm run build && npm run verify` output visible as the deterministic receipt.
-7. Latest remote smoke receipt to say on camera if asked: Aug 6 14:27 GMT+8, `/` returned HTTP 200 app HTML in 227ms and `/api/ai-brief` returned HTTP 200 fixture JSON in 4.9s through the server-side Agnes bridge, with no secret-name or API-key-shaped leakage.
+7. Latest remote smoke receipt to say on camera if asked: Aug 6 15:09 GMT+8, `/` returned HTTP 200 app HTML in 180ms and `/api/ai-brief` returned HTTP 200 fixture JSON in 4.4s through the server-side Agnes bridge, with no secret-name or API-key-shaped leakage.
 8. If a judge challenges the proof packet claim, use the Receipt truth boundary: the receipt proves attribution/order/integrity of retained fields, not legal correctness by itself; the verified rule engine and staff approval make the workflow defensible.
 
 ### AI Workbench recording packet — Aug 5 Ralph loop
@@ -304,9 +305,9 @@ npm run build && npm run verify && npm run smoke:live
 `smoke:live` checks the public Cloudflare Worker home route and posts fixture-safe data to `/api/ai-brief`. It verifies HTTP 200 responses, JSON shape, and that no Agnes secret-shaped values are exposed. This improves demo reliability without sending email, WhatsApp, forms, or client messages.
 
 
-## Final readiness receipt — Aug 6 14:27 GMT+8
+## Final readiness receipt — Aug 6 15:09 GMT+8
 
-- `npm run smoke:live` passed against the public Cloudflare Worker: home HTTP 200 app shell in 227ms; `/api/ai-brief` HTTP 200 JSON in 4.9s.
+- `npm run smoke:live` passed against the public Cloudflare Worker: home HTTP 200 app shell in 180ms; `/api/ai-brief` HTTP 200 JSON in 4.4s.
 - Secret-name and API-key-shaped leakage checks passed.
 - Keep `npm run build && npm run verify` visible as the local fallback receipt.
 - Manual boundary: do not send social posts, forms, email, WhatsApp, or legal-status changes from the app.

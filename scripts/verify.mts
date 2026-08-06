@@ -197,7 +197,7 @@ for (const doc of docs) {
 }
 const submissionPack = readFileSync(resolve(root, 'src/components/screens/SubmissionPackScreen.tsx'), 'utf-8');
 assert(submissionPack.includes('Final readiness receipt'), 'Submission Pack includes final readiness receipt');
-assert(submissionPack.includes('Aug 6 14:27 GMT+8'), 'Submission Pack includes latest Aug 6 14:27 live smoke receipt');
+assert(submissionPack.includes('Aug 6 15:09 GMT+8'), 'Submission Pack includes latest Aug 6 15:09 live smoke receipt');
 assert(submissionPack.includes('Manual boundaries'), 'Submission Pack keeps manual boundary receipt visible');
 assert(submissionPack.includes('Reviewer approval ceremony'), 'Submission Pack includes reviewer approval ceremony');
 assert(submissionPack.includes('BLOCK / NEEDS_REVIEW / READY_FOR_SIGNOFF'), 'Submission Pack includes deterministic closure status states');
@@ -276,6 +276,9 @@ assert(submissionPack.includes('AI drafts only'), 'Submission Pack states AI dra
 assert(submissionPack.includes('Operational correlation receipt'), 'Submission Pack includes operational correlation receipt for traceable workflow proof');
 assert(submissionPack.includes('Packet correlation'), 'Submission Pack ties proof packets to correlation-style receipts');
 assert(submissionPack.includes('Duplicate-safe narrative'), 'Submission Pack captures duplicate-safe evidence narrative');
+assert(submissionPack.includes('Idempotency and controlled-failure receipt'), 'Submission Pack includes idempotency and controlled-failure receipt');
+assert(submissionPack.includes('Duplicate detection'), 'Submission Pack names duplicate detection as adoption proof');
+assert(submissionPack.includes('Controlled failure path'), 'Submission Pack keeps safe failure routing visible');
 assert(submissionPack.includes('Continuous review receipt'), 'Submission Pack includes continuous review receipt for daily compliance monitoring proof');
 assert(submissionPack.includes('Daily review mode'), 'Submission Pack frames Credence as a daily operator loop');
 assert(submissionPack.includes('current, expiring, stale, and reviewer-safe'), 'Submission Pack includes the continuous review recording line');

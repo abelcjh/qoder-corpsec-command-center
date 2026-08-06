@@ -33,7 +33,7 @@ npm run build && npm run verify
 npm run dev
 ```
 
-Live smoke receipt to mention if judges ask about deployment reliability: on the Aug 6 14:27 GMT+8 Ralph smoke check, the Cloudflare Worker home route returned HTTP 200 app HTML in 227ms and `POST /api/ai-brief` returned HTTP 200 fixture JSON in 4.9s through the server-side Agnes bridge, with no secret-name or API-key-shaped leakage.
+Live smoke receipt to mention if judges ask about deployment reliability: on the Aug 6 15:09 GMT+8 Ralph smoke check, the Cloudflare Worker home route returned HTTP 200 app HTML in 180ms and `POST /api/ai-brief` returned HTTP 200 fixture JSON in 4.4s through the server-side Agnes bridge, with no secret-name or API-key-shaped leakage.
 
 Golden path:
 
@@ -46,19 +46,20 @@ Golden path:
 7. Pause on the AI Workbench recording packet before or after clicking Agnes: say the AI gets one bounded client context, visible role-scoped jobs/logs/rules, and no authority to auto-send, change compliance state, or provide legal advice.
 8. Pause on the AI-to-staff handoff receipt if there is time: this answers Counto/Bossi-style AI-guided handoff claims by showing AI drafts only, staff approval gate, deterministic schedule, and retained proof.
 9. Pause on the Operational correlation receipt if judges ask whether this is a real workflow: every chase ties source client/rule/job record → proof packet ID/chain head → approval/no-send gate → rerunnable fallback, not a standalone AI answer.
-10. Pause on the Continuous review receipt if judges compare against full CoSec suites: say “Credence makes compliance review continuous: each morning shows which client chases are current, expiring, stale, and reviewer-safe.”
-11. Pause on the Exception escalation receipt if judges ask what happens after missed follow-ups: stale evidence becomes an owner exception, Agnes drafts context only, staff approval is required, and the retained receipt proves why nothing was auto-sent.
-12. Pause on the Enterprise trust scorecard if judges ask why this is more than a demo app: workflow compression, deterministic rules, audit-ready proof, governed AI, and pilot-ready artifacts match the enterprise-agent winner bar.
-13. Pause on the Judge objection receipt if judges pressure-test the pitch: answer broad-suite, legal-advice, Qoder-centrality, AI-trust, and pilot-readiness objections from the screen instead of improvising.
-14. Pause on the Authority and provenance receipt if judges ask why the agent workflow is trustworthy: staff identity, delegated rule authority, approved intent, policy boundary, and retained proof provenance.
-15. Pause on the Pilot handoff receipt if judges ask how to adopt or rerun it: live URL, one-command proof, Supabase data contract, operator-safe boundaries, and reusable Qoder workflow artifacts.
-16. Pause on the Offline verifier receipt if judges ask how to trust the evidence later: deterministic proof packet ID, reviewer-safe fields, freshness recheck, and blocked-action/no-send boundary make the proof row re-derivable instead of screenshot-trusted.
-17. If a judge asks “prove this row was not cherry-picked,” use the Auditor challenge drill: pick one Send Logs proof row, re-derive the packet ID and chain head, show only reviewer-safe fields, then cite `npm run build && npm run verify` for chain stability and missing-row detection.
-18. Pause on the Receipt truth boundary if judges challenge audit overclaims: say “the receipt makes the audit trail honest; the verified rule engine and human approval make the workflow defensible.”
-19. Pause on the Public/private disclosure boundary if judges ask about client confidentiality: public receipt fields prove existence/freshness/blocked status, reviewer-gated fields reveal only selected context, and secrets/raw inboxes/real send controls never leave the safe path.
-20. Pause on the Protocol-ready receipt bridge if judges ask whether this can integrate beyond the demo: say each CorpSec chase is already shaped as action type, policy decision, hashed safe attachments, and future MCP/AP2/filing-system references — but today’s hackathon proof stays local, deterministic, and no-mutation.
-21. Pause on the Live Worker smoke receipt if the browser or Agnes call feels slow: it proves the public URL and server-side AI bridge were checked close to submission time, while the terminal fallback remains deterministic.
-22. End on the Submission Pack screen so the organizer requirements are visually obvious.
+10. Pause on the Idempotency and controlled-failure receipt if judges ask about retries or broken paths: safe retries preserve the same business thread, uncertain chases become NEEDS_REVIEW/BLOCK, and no-send outcomes remain inspectable.
+11. Pause on the Continuous review receipt if judges compare against full CoSec suites: say “Credence makes compliance review continuous: each morning shows which client chases are current, expiring, stale, and reviewer-safe.”
+12. Pause on the Exception escalation receipt if judges ask what happens after missed follow-ups: stale evidence becomes an owner exception, Agnes drafts context only, staff approval is required, and the retained receipt proves why nothing was auto-sent.
+13. Pause on the Enterprise trust scorecard if judges ask why this is more than a demo app: workflow compression, deterministic rules, audit-ready proof, governed AI, and pilot-ready artifacts match the enterprise-agent winner bar.
+14. Pause on the Judge objection receipt if judges pressure-test the pitch: answer broad-suite, legal-advice, Qoder-centrality, AI-trust, and pilot-readiness objections from the screen instead of improvising.
+15. Pause on the Authority and provenance receipt if judges ask why the agent workflow is trustworthy: staff identity, delegated rule authority, approved intent, policy boundary, and retained proof provenance.
+16. Pause on the Pilot handoff receipt if judges ask how to adopt or rerun it: live URL, one-command proof, Supabase data contract, operator-safe boundaries, and reusable Qoder workflow artifacts.
+17. Pause on the Offline verifier receipt if judges ask how to trust the evidence later: deterministic proof packet ID, reviewer-safe fields, freshness recheck, and blocked-action/no-send boundary make the proof row re-derivable instead of screenshot-trusted.
+18. If a judge asks “prove this row was not cherry-picked,” use the Auditor challenge drill: pick one Send Logs proof row, re-derive the packet ID and chain head, show only reviewer-safe fields, then cite `npm run build && npm run verify` for chain stability and missing-row detection.
+19. Pause on the Receipt truth boundary if judges challenge audit overclaims: say “the receipt makes the audit trail honest; the verified rule engine and human approval make the workflow defensible.”
+20. Pause on the Public/private disclosure boundary if judges ask about client confidentiality: public receipt fields prove existence/freshness/blocked status, reviewer-gated fields reveal only selected context, and secrets/raw inboxes/real send controls never leave the safe path.
+21. Pause on the Protocol-ready receipt bridge if judges ask whether this can integrate beyond the demo: say each CorpSec chase is already shaped as action type, policy decision, hashed safe attachments, and future MCP/AP2/filing-system references — but today’s hackathon proof stays local, deterministic, and no-mutation.
+22. Pause on the Live Worker smoke receipt if the browser or Agnes call feels slow: it proves the public URL and server-side AI bridge were checked close to submission time, while the terminal fallback remains deterministic.
+23. End on the Submission Pack screen so the organizer requirements are visually obvious.
 
 Role-switch ladder if the recording has extra time:
 
