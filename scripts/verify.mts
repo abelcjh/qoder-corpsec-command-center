@@ -197,7 +197,7 @@ for (const doc of docs) {
 }
 const submissionPack = readFileSync(resolve(root, 'src/components/screens/SubmissionPackScreen.tsx'), 'utf-8');
 assert(submissionPack.includes('Final readiness receipt'), 'Submission Pack includes final readiness receipt');
-assert(submissionPack.includes('Aug 6 14:07 GMT+8'), 'Submission Pack includes latest Aug 6 14:07 live smoke receipt');
+assert(submissionPack.includes('Aug 6 14:20 GMT+8'), 'Submission Pack includes latest Aug 6 14:20 live smoke receipt');
 assert(submissionPack.includes('Manual boundaries'), 'Submission Pack keeps manual boundary receipt visible');
 assert(submissionPack.includes('Reviewer approval ceremony'), 'Submission Pack includes reviewer approval ceremony');
 assert(submissionPack.includes('BLOCK / NEEDS_REVIEW / READY_FOR_SIGNOFF'), 'Submission Pack includes deterministic closure status states');
