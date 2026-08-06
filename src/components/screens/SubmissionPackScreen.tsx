@@ -70,6 +70,12 @@ const marketFindings = [
     credenceAngle: 'Show Credence as a daily control loop: Current / Expiring / Stale chases, owner queue, reviewer-safe packet, Agnes advisory, and human closure gate.',
   },
   {
+    source: 'Episcript reminder/escalation scan',
+    url: 'https://www.episcript.com/solutions/corporate-secretarial-software',
+    signal: 'Corporate-secretarial software already advertises custom email reminders, alerts for missed key tasks, background audit trails, and secure document/accountability controls.',
+    credenceAngle: 'Make the escalation moment judge-visible: stale evidence becomes an exception queue item, Agnes drafts context, staff approves the chase, and the retained proof row records the non-send boundary.',
+  },
+  {
     source: 'Agent Academy / Bizsec operational workflow scan',
     url: 'https://devblogs.microsoft.com/powerplatform/agent-academy-hackathon-winners/',
     signal: 'Enterprise-agent winners and current Singapore CoSec tools emphasize governed records, approval gates, duplicate-safe actions, audit logs, and correlation IDs rather than standalone AI answers.',
@@ -284,6 +290,14 @@ const continuousReviewReceipt = [
   ['Review-ready record', 'Every row keeps source client, rule, owner, recipient, packet ID, freshness, snapshot, unresolved risk, and no-send boundary for inspection.'],
   ['AI stays advisory', 'Agnes summarizes the queue and drafts wording, but deterministic status plus reviewer approval decide whether an item is BLOCK, NEEDS_REVIEW, or READY_FOR_SIGNOFF.'],
   ['Recording line', 'Say: “Credence makes compliance review continuous: each morning shows which client chases are current, expiring, stale, and reviewer-safe.”'],
+];
+
+const exceptionEscalationReceipt = [
+  ['Stale evidence trigger', 'When a proof row becomes stale or a required client input is missing, Credence treats it as an exception queue item rather than another silent calendar reminder.'],
+  ['Owner escalation path', 'The staff owner sees rule, recipient, cadence, unresolved risk, and last packet ID before deciding whether to chase, pause, or escalate.'],
+  ['Agnes context draft', 'Agnes can prepare the risk summary and client wording from bounded evidence, but it cannot approve, send, or mark the issue closed.'],
+  ['Approval before mutation', 'The visible gate stays NEEDS_REVIEW until staff accepts the next step; real email/WhatsApp/form actions remain manual and outside the demo path.'],
+  ['Retained non-send proof', 'Even when Credence blocks action, the retained receipt shows why the exception was not auto-sent and what evidence a reviewer may inspect.'],
 ];
 
 const closureApprovalCeremony = [
@@ -624,6 +638,21 @@ export function SubmissionPackScreen() {
         </CardHeader>
         <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
           {continuousReviewReceipt.map(([label, detail]) => (
+            <div key={label} className="rounded-xl border border-sky-500/20 bg-sky-950/10 p-4">
+              <div className="font-semibold text-sky-100">{label}</div>
+              <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2"><ClipboardList size={18} className="text-sky-400" /> Exception escalation receipt</CardTitle>
+          <CardDescription>Competitor response: reminder tools already alert on missed tasks, so Credence makes the exception, approval gate, and blocked non-send proof inspectable.</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
+          {exceptionEscalationReceipt.map(([label, detail]) => (
             <div key={label} className="rounded-xl border border-sky-500/20 bg-sky-950/10 p-4">
               <div className="font-semibold text-sky-100">{label}</div>
               <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>

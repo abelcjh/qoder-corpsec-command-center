@@ -59,7 +59,7 @@
 ```bash
 npm install          # Installs all dependencies
 npm run build        # TypeScript check + Vite build
-npm test             # Verification script passes (148 assertions)
+npm test             # Verification script passes (151 assertions)
 ```
 
 ### Live Worker Smoke Receipt
@@ -86,6 +86,12 @@ npm test             # Verification script passes (148 assertions)
 - [x] Submission Pack now answers the ClientBase/iCorpSec continuous-monitoring bar with a daily operator loop, not a year-end compliance scramble.
 - [x] Recording-safe path: Current / Expiring / Stale chases → owner queue → reviewer-safe packet → Agnes advisory → human closure gate.
 - [x] Recording line: “Credence makes compliance review continuous: each morning shows which client chases are current, expiring, stale, and reviewer-safe.”
+
+### Exception Escalation Receipt
+
+- [x] Submission Pack now answers Episcript-style missed-task alerts and audit trails with a judge-visible exception queue, not only a reminder list.
+- [x] Recording-safe path: stale evidence trigger → owner escalation path → Agnes context draft → staff approval gate → retained non-send proof.
+- [x] Recording line: “When a chase goes stale, Credence proves why it was escalated or blocked before any external send happens.”
 
 ### Files in Repository
 

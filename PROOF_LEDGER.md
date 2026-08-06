@@ -318,3 +318,11 @@ A compact Aug 6 scan of current agentic workflow automation winners found repeat
 | Aug 6 Singapore/Malaysia CoSec scan found ClientBase and iCorpSec-style platforms positioning continuous monitoring, system-bounded AI, compliance scanners, reminders, and review-ready records as the buyer bar | Public competitor scan captured in this Ralph-loop report |
 | Submission Pack now includes a Continuous review receipt: daily review mode, risk queue, review-ready record, AI advisory boundary, and human closure gate | `src/components/screens/SubmissionPackScreen.tsx`, `scripts/verify.mts` |
 | Recording line: “Credence makes compliance review continuous: each morning shows which client chases are current, expiring, stale, and reviewer-safe.” | `src/components/screens/SubmissionPackScreen.tsx`, `VIDEO_AND_SOCIAL_FINAL_PACK.md` |
+
+## Claim 29: Stale reminders become governed exceptions, not silent auto-sends
+
+| Evidence | Location |
+|----------|----------|
+| Aug 6 Episcript-style CoSec scan found custom email reminders, missed-task alerts, audit trails, and accountability controls are already table stakes | Public competitor scan captured in this Ralph-loop report |
+| Submission Pack now includes an Exception escalation receipt: stale evidence trigger, owner escalation path, Agnes context draft, approval before mutation, and retained non-send proof | `src/components/screens/SubmissionPackScreen.tsx`, `scripts/verify.mts` |
+| Recording line: “When a chase goes stale, Credence proves why it was escalated or blocked before any external send happens.” | `SUBMISSION_CHECKLIST.md`, `VIDEO_AND_SOCIAL_FINAL_PACK.md` |

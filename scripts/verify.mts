@@ -274,6 +274,9 @@ assert(submissionPack.includes('Duplicate-safe narrative'), 'Submission Pack cap
 assert(submissionPack.includes('Continuous review receipt'), 'Submission Pack includes continuous review receipt for daily compliance monitoring proof');
 assert(submissionPack.includes('Daily review mode'), 'Submission Pack frames Credence as a daily operator loop');
 assert(submissionPack.includes('current, expiring, stale, and reviewer-safe'), 'Submission Pack includes the continuous review recording line');
+assert(submissionPack.includes('Exception escalation receipt'), 'Submission Pack includes exception escalation receipt for stale follow-up proof');
+assert(submissionPack.includes('Stale evidence trigger'), 'Submission Pack names stale evidence as the escalation trigger');
+assert(submissionPack.includes('retained receipt shows why the exception was not auto-sent'), 'Submission Pack proves blocked non-send receipt for exceptions');
 assert(submissionPack.includes('ClientBase / VOPlus Singapore scan'), 'Submission Pack includes Singapore practice-suite competitor calibration');
 assert(submissionPack.includes('owner-specific chase becomes a reviewer-safe proof receipt'), 'Submission Pack states the narrow proof-receipt wedge');
 assert(readFileSync(resolve(root, 'src/lib/proofPacket.ts'), 'utf-8').includes('Reviewer-safe packet'), 'Proof packet utility documents non-secret reviewer export boundary');
