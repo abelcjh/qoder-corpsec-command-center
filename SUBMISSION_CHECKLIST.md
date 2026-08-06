@@ -64,8 +64,8 @@ npm test             # Verification script passes (162 assertions)
 
 ### Live Worker Smoke Receipt
 
-- [x] Live Cloudflare Worker home route returned HTTP 200 app HTML in 191ms during the Aug 6 15:28 GMT+8 Ralph smoke check.
-- [x] `POST /api/ai-brief` returned HTTP 200 fixture JSON in 20.5s in the same smoke check, proving the server-side Agnes bridge is reachable without exposing the key in the browser; no secret-name or API-key-shaped values were exposed.
+- [x] Live Cloudflare Worker home route returned HTTP 200 app HTML in 208ms during the Aug 6 15:37 GMT+8 Ralph smoke check.
+- [x] `POST /api/ai-brief` returned HTTP 200 fixture JSON in 4.33s in the same smoke check, proving the server-side Agnes bridge is reachable without exposing the key in the browser; no secret-name or API-key-shaped values were exposed.
 - [x] Recording fallback is explicit: if live network/Agnes stalls, show this smoke receipt plus `npm run build && npm run verify` instead of hiding the failure.
 
 
@@ -282,7 +282,7 @@ Before recording or live judging, run this exact reliability pass:
 4. Click Agnes briefing once; if the endpoint is unavailable, show the deterministic fallback banner as resilience proof.
 5. Do not send email/WhatsApp/social/form actions from the app; all proof rows are fixture-safe and human-reviewed.
 6. Keep `npm run build && npm run verify` output visible as the deterministic receipt.
-7. Latest remote smoke receipt to say on camera if asked: Aug 6 15:28 GMT+8, `/` returned HTTP 200 app HTML in 191ms and `/api/ai-brief` returned HTTP 200 fixture JSON in 20.5s through the server-side Agnes bridge, with no secret-name or API-key-shaped leakage.
+7. Latest remote smoke receipt to say on camera if asked: Aug 6 15:37 GMT+8, `/` returned HTTP 200 app HTML in 208ms and `/api/ai-brief` returned HTTP 200 fixture JSON in 4.33s through the server-side Agnes bridge, with no secret-name or API-key-shaped leakage.
 8. If a judge challenges the proof packet claim, use the Receipt truth boundary: the receipt proves attribution/order/integrity of retained fields, not legal correctness by itself; the verified rule engine and staff approval make the workflow defensible.
 
 ### AI Workbench recording packet — Aug 5 Ralph loop
@@ -307,9 +307,9 @@ npm run build && npm run verify && npm run smoke:live
 `smoke:live` checks the public Cloudflare Worker home route and posts fixture-safe data to `/api/ai-brief`. It verifies HTTP 200 responses, JSON shape, and that no Agnes secret-shaped values are exposed. This improves demo reliability without sending email, WhatsApp, forms, or client messages.
 
 
-## Final readiness receipt — Aug 6 15:28 GMT+8
+## Final readiness receipt — Aug 6 15:37 GMT+8
 
-- `npm run smoke:live` passed against the public Cloudflare Worker: home HTTP 200 app shell in 191ms; `/api/ai-brief` HTTP 200 JSON in 20.5s.
+- `npm run smoke:live` passed against the public Cloudflare Worker: home HTTP 200 app shell in 208ms; `/api/ai-brief` HTTP 200 JSON in 4.33s.
 - Secret-name and API-key-shaped leakage checks passed.
 - Keep `npm run build && npm run verify` visible as the local fallback receipt.
 - Manual boundary: do not send social posts, forms, email, WhatsApp, or legal-status changes from the app.
