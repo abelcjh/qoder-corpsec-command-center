@@ -279,6 +279,9 @@ assert(submissionPack.includes('Duplicate-safe narrative'), 'Submission Pack cap
 assert(submissionPack.includes('Idempotency and controlled-failure receipt'), 'Submission Pack includes idempotency and controlled-failure receipt');
 assert(submissionPack.includes('Duplicate detection'), 'Submission Pack names duplicate detection as adoption proof');
 assert(submissionPack.includes('Controlled failure path'), 'Submission Pack keeps safe failure routing visible');
+assert(submissionPack.includes('Approval lane receipt'), 'Submission Pack includes approval lane receipt');
+assert(submissionPack.includes('Plan → Review/Gate → Confirm once → Receipt'), 'Submission Pack includes plan/review/gate/confirm/receipt execution pattern');
+assert(submissionPack.includes('Confirm once'), 'Submission Pack keeps exactly-once approval confirmation visible');
 assert(submissionPack.includes('Continuous review receipt'), 'Submission Pack includes continuous review receipt for daily compliance monitoring proof');
 assert(submissionPack.includes('Daily review mode'), 'Submission Pack frames Credence as a daily operator loop');
 assert(submissionPack.includes('current, expiring, stale, and reviewer-safe'), 'Submission Pack includes the continuous review recording line');

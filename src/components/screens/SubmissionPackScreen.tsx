@@ -304,6 +304,14 @@ const idempotencyFailureReceipt = [
   ['Audit log continuity', 'Correlation-style source IDs, packet IDs, timestamps, and no-send receipts remain queryable after deactivation and usable as the fallback proof trail.'],
 ];
 
+const approvalLaneReceipt = [
+  ['Plan first', 'The client/rule/job packet is the plan: what will be chased, why it is allowed, which evidence is missing, and which staff owner is accountable.'],
+  ['Review lane', 'Medium-risk CorpSec actions stay in REVIEW / NEEDS_REVIEW, so Agnes can draft while staff explicitly approves or rejects the next step.'],
+  ['Gate lane', 'High-risk or irreversible actions — real sends, legal status changes, filings, payments, social posts, and organizer forms — remain blocked/manual in the hackathon build.'],
+  ['Confirm once', 'A staff-approved retry must preserve the same packet/correlation thread and cannot silently double-send or fork the proof story.'],
+  ['Receipt back', 'The final row records plan, approval lane, policy decision, packet ID, freshness, and no-send boundary as the judge-readable proof of accountable automation.'],
+];
+
 const continuousReviewReceipt = [
   ['Daily review mode', 'ClientBase/iCorpSec-style suites promise continuous monitoring, so Credence should show one daily operator loop instead of a once-a-year compliance scramble.'],
   ['Risk queue', 'Current / Expiring / Stale proof status turns scattered reminders into a review queue: what needs chasing, who owns it, and what evidence is missing.'],
@@ -666,6 +674,21 @@ export function SubmissionPackScreen() {
         </CardHeader>
         <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
           {idempotencyFailureReceipt.map(([label, detail]) => (
+            <div key={label} className="rounded-xl border border-sky-500/20 bg-sky-950/10 p-4">
+              <div className="font-semibold text-sky-100">{label}</div>
+              <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2"><ClipboardList size={18} className="text-sky-400" /> Approval lane receipt</CardTitle>
+          <CardDescription>Fresh agent-trust calibration: winning execution layers make Plan → Review/Gate → Confirm once → Receipt visible instead of hiding authorization in prompts.</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
+          {approvalLaneReceipt.map(([label, detail]) => (
             <div key={label} className="rounded-xl border border-sky-500/20 bg-sky-950/10 p-4">
               <div className="font-semibold text-sky-100">{label}</div>
               <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>

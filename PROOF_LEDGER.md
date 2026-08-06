@@ -69,7 +69,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | Evidence | Location |
 |----------|----------|
 | `npm run build` output | `dist/` |
-| Verification script with 159 assertions | `scripts/verify.mts` |
+| Verification script with 162 assertions | `scripts/verify.mts` |
 | Package scripts | `package.json` |
 
 ## Claim 9: Qoder usage is visible, rule-clean, and reviewable
@@ -125,6 +125,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | Microsoft Agent Academy / Bizsec operational workflow scan (`https://devblogs.microsoft.com/powerplatform/agent-academy-hackathon-winners/`, `https://bizsec.io/`) | Current enterprise-agent winners and Singapore CoSec tools emphasize governed records, human approval, duplicate-safe/idempotent actions, audit logs, and correlation IDs instead of standalone AI answers. | Add the Submission Pack operational correlation receipt: client/rule/job source record → proof packet ID/chain head → approval/no-send gate → bounded fallback, so every demo claim ties to a traceable record. |
 | Agent Academy / Storata presentation scan (`https://devblogs.microsoft.com/powerplatform/agent-academy-hackathon-winners/`, `https://www.storata.com/blog/storata-named-apac-winner-of-the-microsoft-agent-hackathon`) | Enterprise-agent winners are praised for prepared judge answers, production-readiness, governance, auditability, and problem-before-code process, not just model novelty. | Add a Submission Pack judge objection receipt so Abel can answer broad-suite, legal-advice, Qoder-centrality, AI-trust, and pilot-readiness objections from one screen. |
 | ClientBase / iCorpSec continuous-review scan (`https://clientbase.pro/`, `https://icorpsec.com/`) | Current Singapore/Malaysia platforms pitch continuous compliance monitoring, system-bounded AI, compliance scanners, reminders, and review-ready records instead of once-a-year cleanup. | Add the Submission Pack continuous review receipt: Current / Expiring / Stale chases → owner queue → reviewer-safe packet → Agnes advisory → human closure gate. |
+| Agent execution-layer scan (`https://github.com/syohei0325/yohaku`, `https://github.com/SUMAR7/airlock-python`, Microsoft Agent Academy winner notes) | Current trust-layer projects make authorization explicit with plan/approve/confirm/receipt flows, approval lanes, exactly-once/idempotent execution, and audit receipts rather than relying on prompt promises. | Add the Submission Pack approval lane receipt: client/rule/job plan → REVIEW/GATE lane → confirm-once retry → retained proof receipt, while real sends/forms/legal changes remain manual. |
 
 
 ## Current verification receipt
@@ -150,6 +151,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | AI-to-staff handoff receipt | AI drafts only → staff approval gate → deterministic schedule → retained proof shows why Credence is safer than an opaque AI-guided filing assistant. | Submission Pack screen handoff receipt; final video line before the organizer checklist |
 | Operational correlation receipt | Source client/rule/job record → reviewer-safe packet ID/chain head → duplicate-safe evidence narrative → approval-gated action → fallback receipt answers the enterprise-agent correlation-ID/audit-log winner bar. | Submission Pack operational correlation panel; proof packet utility; verifier assertions |
 | Idempotency and controlled-failure receipt | Duplicate detection → idempotent safe retry → controlled failure path → human-review route → audit-log continuity answers the adoption-ready enterprise-agent bar. | Submission Pack idempotency panel; `scripts/verify.mts`; final video fallback if judges ask what happens on retries/failures |
+| Approval lane receipt | Plan first → review/gate lane → confirm once → retained receipt maps modern agent-execution trust patterns onto one CorpSec chase without letting the model authorize side effects. | Submission Pack approval lane panel; verifier assertions; final video fallback if judges ask who authorized a chase |
 | Continuous review receipt | Daily review mode → risk queue → review-ready record → AI advisory → human closure gate turns compliance monitoring into a reviewer-safe morning loop instead of year-end cleanup. | Submission Pack continuous review panel; final recording line; verifier assertions |
 | Pilot handoff receipt | Live pilot URL → one-command proof → data contract → operator-safe boundaries → reusable workflow turns Credence from demo video into a judge-rerunnable pilot handoff. | Submission Pack screen pilot handoff receipt; final recording pause after enterprise trust scorecard |
 | Authority/provenance receipt | Staff identity → delegated rule authority → approved intent snapshot → no-send policy boundary → proof provenance maps the agent-trust winner pattern onto one CorpSec chase. | Submission Pack screen authority and provenance receipt; final recording pause before pilot handoff |
@@ -337,3 +339,11 @@ A compact Aug 6 scan of current agentic workflow automation winners found repeat
 | Aug 6 Microsoft Agent Academy scan highlighted winner patterns such as duplicate-safe record creation, idempotent notifications, controlled validation failures, human-review routing, correlation IDs, and audit logs | Public winner scan captured in this Ralph-loop report |
 | Submission Pack now includes an Idempotency and controlled-failure receipt: duplicate detection, idempotent outcome, controlled failure path, human-review route, and audit-log continuity | `src/components/screens/SubmissionPackScreen.tsx`, `scripts/verify.mts` |
 | Recording line: “Credence is not happy-path automation; safe retries preserve the business thread, and uncertain or blocked chases become reviewer-owned receipts.” | `SUBMISSION_CHECKLIST.md`, `VIDEO_AND_SOCIAL_FINAL_PACK.md` |
+
+## Claim 31: Approval lanes make authorization visible before side effects
+
+| Evidence | Location |
+|----------|----------|
+| Aug 6 execution-layer scan found trust products emphasizing plan/approve/confirm/receipt loops, approval lanes, exactly-once confirmation, idempotency, and audit receipts | Public winner/tooling scan captured in this Ralph-loop report |
+| Submission Pack now includes an Approval lane receipt: plan first, review lane, gate lane, confirm once, and receipt back | `src/components/screens/SubmissionPackScreen.tsx`, `scripts/verify.mts` |
+| Recording line: “The client/rule/job packet is the plan; Agnes drafts only; staff keeps REVIEW/GATE authority; safe retries confirm once; the retained row is the receipt.” | `SUBMISSION_CHECKLIST.md`, `VIDEO_AND_SOCIAL_FINAL_PACK.md` |
