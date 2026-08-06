@@ -271,6 +271,9 @@ assert(submissionPack.includes('AI drafts only'), 'Submission Pack states AI dra
 assert(submissionPack.includes('Operational correlation receipt'), 'Submission Pack includes operational correlation receipt for traceable workflow proof');
 assert(submissionPack.includes('Packet correlation'), 'Submission Pack ties proof packets to correlation-style receipts');
 assert(submissionPack.includes('Duplicate-safe narrative'), 'Submission Pack captures duplicate-safe evidence narrative');
+assert(submissionPack.includes('Continuous review receipt'), 'Submission Pack includes continuous review receipt for daily compliance monitoring proof');
+assert(submissionPack.includes('Daily review mode'), 'Submission Pack frames Credence as a daily operator loop');
+assert(submissionPack.includes('current, expiring, stale, and reviewer-safe'), 'Submission Pack includes the continuous review recording line');
 assert(submissionPack.includes('ClientBase / VOPlus Singapore scan'), 'Submission Pack includes Singapore practice-suite competitor calibration');
 assert(submissionPack.includes('owner-specific chase becomes a reviewer-safe proof receipt'), 'Submission Pack states the narrow proof-receipt wedge');
 assert(readFileSync(resolve(root, 'src/lib/proofPacket.ts'), 'utf-8').includes('Reviewer-safe packet'), 'Proof packet utility documents non-secret reviewer export boundary');

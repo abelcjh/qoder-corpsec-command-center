@@ -59,7 +59,7 @@
 ```bash
 npm install          # Installs all dependencies
 npm run build        # TypeScript check + Vite build
-npm test             # Verification script passes (145 assertions)
+npm test             # Verification script passes (148 assertions)
 ```
 
 ### Live Worker Smoke Receipt
@@ -80,6 +80,12 @@ npm test             # Verification script passes (145 assertions)
 - [x] Submission Pack now ties the enterprise-agent winner bar to Credence records: source client/rule/job, proof packet ID/chain head, duplicate-safe evidence narrative, approval/no-send gate, and fallback receipt.
 - [x] Latest calibration source: Microsoft Agent Academy winners and Bizsec-style Singapore CoSec tooling emphasize governed records, approval gates, audit logs, and correlation IDs over standalone AI answers.
 - [x] Recording line: “every CorpSec chase has a source record, a packet correlation receipt, a human approval boundary, and a rerunnable fallback.”
+
+### Continuous Review Receipt
+
+- [x] Submission Pack now answers the ClientBase/iCorpSec continuous-monitoring bar with a daily operator loop, not a year-end compliance scramble.
+- [x] Recording-safe path: Current / Expiring / Stale chases → owner queue → reviewer-safe packet → Agnes advisory → human closure gate.
+- [x] Recording line: “Credence makes compliance review continuous: each morning shows which client chases are current, expiring, stale, and reviewer-safe.”
 
 ### Files in Repository
 

@@ -64,6 +64,12 @@ const marketFindings = [
     credenceAngle: 'Do not compete as a broad suite in the recording; show the narrower judge-visible control: one owner-specific chase becomes a reviewer-safe proof receipt for Gmail/spreadsheet teams.',
   },
   {
+    source: 'ClientBase / iCorpSec continuous-review scan',
+    url: 'https://clientbase.pro/',
+    signal: 'Current Singapore/Malaysia platforms pitch continuous compliance monitoring, AI inside the system, compliance scanners, reminders, and review-ready records rather than once-a-year cleanup.',
+    credenceAngle: 'Show Credence as a daily control loop: Current / Expiring / Stale chases, owner queue, reviewer-safe packet, Agnes advisory, and human closure gate.',
+  },
+  {
     source: 'Agent Academy / Bizsec operational workflow scan',
     url: 'https://devblogs.microsoft.com/powerplatform/agent-academy-hackathon-winners/',
     signal: 'Enterprise-agent winners and current Singapore CoSec tools emphasize governed records, approval gates, duplicate-safe actions, audit logs, and correlation IDs rather than standalone AI answers.',
@@ -270,6 +276,14 @@ const operationalCorrelationReceipt = [
   ['Duplicate-safe narrative', 'If the same client chase is revisited, Credence should update/retain the evidence trail instead of pretending every repeat reminder is a fresh untracked action.'],
   ['Approval-gated action', 'AI briefs and message drafts sit beside READY_FOR_REVIEW / no-send gates; external mutation stays behind human approval.'],
   ['Fallback receipt', 'Live Agnes or network stalls have a bounded fallback: saved smoke receipt plus npm run build && npm run verify, not an improvised unverifiable claim.'],
+];
+
+const continuousReviewReceipt = [
+  ['Daily review mode', 'ClientBase/iCorpSec-style suites promise continuous monitoring, so Credence should show one daily operator loop instead of a once-a-year compliance scramble.'],
+  ['Risk queue', 'Current / Expiring / Stale proof status turns scattered reminders into a review queue: what needs chasing, who owns it, and what evidence is missing.'],
+  ['Review-ready record', 'Every row keeps source client, rule, owner, recipient, packet ID, freshness, snapshot, unresolved risk, and no-send boundary for inspection.'],
+  ['AI stays advisory', 'Agnes summarizes the queue and drafts wording, but deterministic status plus reviewer approval decide whether an item is BLOCK, NEEDS_REVIEW, or READY_FOR_SIGNOFF.'],
+  ['Recording line', 'Say: “Credence makes compliance review continuous: each morning shows which client chases are current, expiring, stale, and reviewer-safe.”'],
 ];
 
 const closureApprovalCeremony = [
@@ -595,6 +609,21 @@ export function SubmissionPackScreen() {
         </CardHeader>
         <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
           {operationalCorrelationReceipt.map(([label, detail]) => (
+            <div key={label} className="rounded-xl border border-sky-500/20 bg-sky-950/10 p-4">
+              <div className="font-semibold text-sky-100">{label}</div>
+              <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2"><ClipboardList size={18} className="text-sky-400" /> Continuous review receipt</CardTitle>
+          <CardDescription>Market calibration: competitors sell always-current compliance monitoring, so show Credence as a daily reviewer-safe control loop rather than a reminder archive.</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
+          {continuousReviewReceipt.map(([label, detail]) => (
             <div key={label} className="rounded-xl border border-sky-500/20 bg-sky-950/10 p-4">
               <div className="font-semibold text-sky-100">{label}</div>
               <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>

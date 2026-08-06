@@ -69,7 +69,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | Evidence | Location |
 |----------|----------|
 | `npm run build` output | `dist/` |
-| Verification script with 145 assertions | `scripts/verify.mts` |
+| Verification script with 148 assertions | `scripts/verify.mts` |
 | Package scripts | `package.json` |
 
 ## Claim 9: Qoder usage is visible, rule-clean, and reviewable
@@ -123,6 +123,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | Trust Receipt / AgentAudit verifier scan (`https://github.com/ankitshah009/TrustReceipt`, `https://lablab.ai/ai-hackathons/techex-intelligent-enterprise-solutions-hackathon/diego-ia-enterprise/agentaudit-immutable-ai-audit-trail`) | Current agent-proof winners emphasize receipts that can be independently verified from hashes, policy outcomes, and bounded evidence fields, not merely screenshot-trusted logs. | Add the Submission Pack offline verifier receipt: deterministic proof packet ID, reviewer-safe fields, freshness recheck, and blocked-action/no-send receipt so the judge can rerun the proof story from retained evidence. |
 | Aug 6 Qoder/market refresh (`https://luma.com/92h6pyl1`, `https://docs.qoder.com/user-guide/quest/overview`, `https://getofficio.today/`, `https://ezcosec.com/`) | The organizer still frames Qoder as the primary build canvas for real functional apps, while Malaysian CoSec competitors sell broad portals, reminders, statutory records, and AI drafting/support. | Keep the final recording anchored on the narrow proof loop: Qoder-built client DB → deterministic rule/job → reviewer-safe retained receipt → Agnes advisory with manual submission/send boundaries. |
 | Microsoft Agent Academy / Bizsec operational workflow scan (`https://devblogs.microsoft.com/powerplatform/agent-academy-hackathon-winners/`, `https://bizsec.io/`) | Current enterprise-agent winners and Singapore CoSec tools emphasize governed records, human approval, duplicate-safe/idempotent actions, audit logs, and correlation IDs instead of standalone AI answers. | Add the Submission Pack operational correlation receipt: client/rule/job source record → proof packet ID/chain head → approval/no-send gate → bounded fallback, so every demo claim ties to a traceable record. |
+| ClientBase / iCorpSec continuous-review scan (`https://clientbase.pro/`, `https://icorpsec.com/`) | Current Singapore/Malaysia platforms pitch continuous compliance monitoring, system-bounded AI, compliance scanners, reminders, and review-ready records instead of once-a-year cleanup. | Add the Submission Pack continuous review receipt: Current / Expiring / Stale chases → owner queue → reviewer-safe packet → Agnes advisory → human closure gate. |
 
 
 ## Current verification receipt
@@ -147,6 +148,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | AI Workbench recording packet | Selected client only, role-scoped evidence, human-reviewed wording, no-secret bridge, deterministic authority, and competitor-trap avoidance turn Agnes into governed product AI instead of a generic assistant. | Submission Pack screen AI Workbench recording packet; AI Workbench screen; live smoke secret-shape checks |
 | AI-to-staff handoff receipt | AI drafts only → staff approval gate → deterministic schedule → retained proof shows why Credence is safer than an opaque AI-guided filing assistant. | Submission Pack screen handoff receipt; final video line before the organizer checklist |
 | Operational correlation receipt | Source client/rule/job record → reviewer-safe packet ID/chain head → duplicate-safe evidence narrative → approval-gated action → fallback receipt answers the enterprise-agent correlation-ID/audit-log winner bar. | Submission Pack operational correlation panel; proof packet utility; verifier assertions |
+| Continuous review receipt | Daily review mode → risk queue → review-ready record → AI advisory → human closure gate turns compliance monitoring into a reviewer-safe morning loop instead of year-end cleanup. | Submission Pack continuous review panel; final recording line; verifier assertions |
 | Pilot handoff receipt | Live pilot URL → one-command proof → data contract → operator-safe boundaries → reusable workflow turns Credence from demo video into a judge-rerunnable pilot handoff. | Submission Pack screen pilot handoff receipt; final recording pause after enterprise trust scorecard |
 | Authority/provenance receipt | Staff identity → delegated rule authority → approved intent snapshot → no-send policy boundary → proof provenance maps the agent-trust winner pattern onto one CorpSec chase. | Submission Pack screen authority and provenance receipt; final recording pause before pilot handoff |
 | Offline verifier receipt | Hashable packet ID → reviewer-safe fields → freshness recheck → blocked-action receipt turns the proof row into a re-derivable trust artifact rather than a screenshot. | Submission Pack screen offline verifier receipt; proof packet utility; final recording pause if judges ask how the evidence can be inspected later |
@@ -308,3 +310,11 @@ A compact Aug 6 scan of current agentic workflow automation winners found repeat
 | Deterministic outcomes remain BLOCK / NEEDS_REVIEW / READY_FOR_SIGNOFF before any item can be treated as closed | `src/components/screens/SubmissionPackScreen.tsx`, `scripts/verify.mts` |
 | Reviewer ceremony captures identity, decision, rationale, timestamp, evidence viewed, and no-send boundary | `src/components/screens/SubmissionPackScreen.tsx` |
 | Pitch boundary: Agnes drafts and explains; licensed humans authorize closure | `src/components/screens/SubmissionPackScreen.tsx`, `SUBMISSION_CHECKLIST.md` |
+
+## Claim 28: Compliance review is continuous, not a year-end scramble
+
+| Evidence | Location |
+|----------|----------|
+| Aug 6 Singapore/Malaysia CoSec scan found ClientBase and iCorpSec-style platforms positioning continuous monitoring, system-bounded AI, compliance scanners, reminders, and review-ready records as the buyer bar | Public competitor scan captured in this Ralph-loop report |
+| Submission Pack now includes a Continuous review receipt: daily review mode, risk queue, review-ready record, AI advisory boundary, and human closure gate | `src/components/screens/SubmissionPackScreen.tsx`, `scripts/verify.mts` |
+| Recording line: “Credence makes compliance review continuous: each morning shows which client chases are current, expiring, stale, and reviewer-safe.” | `src/components/screens/SubmissionPackScreen.tsx`, `VIDEO_AND_SOCIAL_FINAL_PACK.md` |
