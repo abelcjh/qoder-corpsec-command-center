@@ -59,7 +59,7 @@
 ```bash
 npm install          # Installs all dependencies
 npm run build        # TypeScript check + Vite build
-npm test             # Verification script passes (151 assertions)
+npm test             # Verification script passes (156 assertions)
 ```
 
 ### Live Worker Smoke Receipt
@@ -80,6 +80,12 @@ npm test             # Verification script passes (151 assertions)
 - [x] Submission Pack now ties the enterprise-agent winner bar to Credence records: source client/rule/job, proof packet ID/chain head, duplicate-safe evidence narrative, approval/no-send gate, and fallback receipt.
 - [x] Latest calibration source: Microsoft Agent Academy winners and Bizsec-style Singapore CoSec tooling emphasize governed records, approval gates, audit logs, and correlation IDs over standalone AI answers.
 - [x] Recording line: “every CorpSec chase has a source record, a packet correlation receipt, a human approval boundary, and a rerunnable fallback.”
+
+### Judge Objection Receipt
+
+- [x] Latest calibration source: Microsoft Agent Academy / Storata-style enterprise-agent winners are praised for prepared judge answers, production-readiness, governance, auditability, and problem-before-code process.
+- [x] Submission Pack now includes five recording-safe objection answers: why not a broad CoSec suite, whether it is legal advice, why Qoder, why trust Agnes, and whether the pilot can be rerun tomorrow.
+- [x] Recording line: “Credence is narrow on purpose: Qoder built the operator proof loop, deterministic rules keep authority, Agnes drafts only, and humans approve every consequential action.”
 
 ### Continuous Review Receipt
 

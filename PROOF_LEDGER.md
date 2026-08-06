@@ -69,7 +69,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | Evidence | Location |
 |----------|----------|
 | `npm run build` output | `dist/` |
-| Verification script with 148 assertions | `scripts/verify.mts` |
+| Verification script with 156 assertions | `scripts/verify.mts` |
 | Package scripts | `package.json` |
 
 ## Claim 9: Qoder usage is visible, rule-clean, and reviewable
@@ -123,6 +123,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | Trust Receipt / AgentAudit verifier scan (`https://github.com/ankitshah009/TrustReceipt`, `https://lablab.ai/ai-hackathons/techex-intelligent-enterprise-solutions-hackathon/diego-ia-enterprise/agentaudit-immutable-ai-audit-trail`) | Current agent-proof winners emphasize receipts that can be independently verified from hashes, policy outcomes, and bounded evidence fields, not merely screenshot-trusted logs. | Add the Submission Pack offline verifier receipt: deterministic proof packet ID, reviewer-safe fields, freshness recheck, and blocked-action/no-send receipt so the judge can rerun the proof story from retained evidence. |
 | Aug 6 Qoder/market refresh (`https://luma.com/92h6pyl1`, `https://docs.qoder.com/user-guide/quest/overview`, `https://getofficio.today/`, `https://ezcosec.com/`) | The organizer still frames Qoder as the primary build canvas for real functional apps, while Malaysian CoSec competitors sell broad portals, reminders, statutory records, and AI drafting/support. | Keep the final recording anchored on the narrow proof loop: Qoder-built client DB → deterministic rule/job → reviewer-safe retained receipt → Agnes advisory with manual submission/send boundaries. |
 | Microsoft Agent Academy / Bizsec operational workflow scan (`https://devblogs.microsoft.com/powerplatform/agent-academy-hackathon-winners/`, `https://bizsec.io/`) | Current enterprise-agent winners and Singapore CoSec tools emphasize governed records, human approval, duplicate-safe/idempotent actions, audit logs, and correlation IDs instead of standalone AI answers. | Add the Submission Pack operational correlation receipt: client/rule/job source record → proof packet ID/chain head → approval/no-send gate → bounded fallback, so every demo claim ties to a traceable record. |
+| Agent Academy / Storata presentation scan (`https://devblogs.microsoft.com/powerplatform/agent-academy-hackathon-winners/`, `https://www.storata.com/blog/storata-named-apac-winner-of-the-microsoft-agent-hackathon`) | Enterprise-agent winners are praised for prepared judge answers, production-readiness, governance, auditability, and problem-before-code process, not just model novelty. | Add a Submission Pack judge objection receipt so Abel can answer broad-suite, legal-advice, Qoder-centrality, AI-trust, and pilot-readiness objections from one screen. |
 | ClientBase / iCorpSec continuous-review scan (`https://clientbase.pro/`, `https://icorpsec.com/`) | Current Singapore/Malaysia platforms pitch continuous compliance monitoring, system-bounded AI, compliance scanners, reminders, and review-ready records instead of once-a-year cleanup. | Add the Submission Pack continuous review receipt: Current / Expiring / Stale chases → owner queue → reviewer-safe packet → Agnes advisory → human closure gate. |
 
 
@@ -160,6 +161,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | Protocol-ready receipt bridge | Action type → policy decision → hashed attachments → protocol bridge frames each CorpSec chase as a portable trust receipt without claiming live MCP/AP2/filing integrations. | Submission Pack protocol-ready bridge; final video interoperability pause |
 | Organizer form submission gate | Official survey URL, Aug 5 11:30 PM GMT+8 deadline, required paste set, optional video/slide fields, and manual-submit boundary are visible in-app. | Submission Pack organizer form gate; final recording close before Abel manually submits |
 | Bounded Agnes fallback receipt | Worker returns a demo-safe JSON fallback after upstream timeout/error, preserving no-secret/no-side-effect claims instead of hanging the AI Workbench. | `cloudflare-worker.ts`, `scripts/live-smoke.mjs`, AI Workbench fallback banner |
+| Judge objection receipt | Broad-suite, legal-advice, Qoder-centrality, AI-trust, and pilot-readiness objections have screen-backed answers for live judging. | Submission Pack judge objection receipt; `VIDEO_AND_SOCIAL_FINAL_PACK.md`; verifier assertions |
 
 ---
 

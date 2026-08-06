@@ -247,6 +247,11 @@ const qoderSubmissionRule = readFileSync(resolve(root, '.qoder/rules/submission-
 assert(qoderSubmissionRule.includes('Credence Submission Boundary'), 'Qoder submission-boundary rule exists with title');
 assert(qoderSubmissionRule.includes('Do not claim private Qoder canvas screenshots'), 'Qoder submission-boundary rule prevents overclaiming private traces');
 assert(submissionPack.includes('Enterprise trust scorecard'), 'Submission Pack includes enterprise trust winner-calibration scorecard');
+assert(submissionPack.includes('Judge objection receipt'), 'Submission Pack includes prepared judge objection receipt');
+assert(submissionPack.includes('Why not a broad CoSec suite?'), 'Submission Pack answers broad-suite objection');
+assert(submissionPack.includes('Is this legal advice?'), 'Submission Pack keeps legal-advice objection answer visible');
+assert(submissionPack.includes('Why Qoder?'), 'Submission Pack keeps Qoder-centrality objection answer visible');
+assert(submissionPack.includes('Can this pilot tomorrow?'), 'Submission Pack includes pilot-readiness objection answer');
 assert(submissionPack.includes('Authority and provenance receipt'), 'Submission Pack includes authority/provenance trust receipt');
 assert(submissionPack.includes('Staff identity'), 'Submission Pack states staff identity as the action owner');
 assert(submissionPack.includes('Offline verifier receipt'), 'Submission Pack includes offline verifier receipt for re-derivable proof');

@@ -82,6 +82,12 @@ const marketFindings = [
     credenceAngle: 'Show Credence as an operational control plane: each chase has a job ID, proof packet ID, staff approval boundary, freshness verdict, and safe retry/fallback path.',
   },
   {
+    source: 'Agent Academy / Storata presentation scan',
+    url: 'https://www.storata.com/blog/storata-named-apac-winner-of-the-microsoft-agent-hackathon',
+    signal: 'Enterprise-agent winners are praised for prepared judge answers, production-readiness, governance, auditability, and a clear problem-before-code process.',
+    credenceAngle: 'Put objection handling inside the Submission Pack so Abel can answer why Credence is narrow, safe, Qoder-central, pilotable, and not legal advice without improvising.',
+  },
+  {
     source: 'MBRS operational guide',
     url: 'https://www.mbrs.com.my/mbrs-for-company-secretaries/',
     signal: 'Real MBRS practice risk is not just a due date: lodgers need T-60 client chases, T-30 preparation checks, T-7 validation, same-day signing, acceptance tracking, and evidence that late inputs were the client-side blocker.',
@@ -314,6 +320,14 @@ const enterpriseTrustScorecard = [
   ['Audit-ready report', 'Each proof row exposes owner, recipient, timestamp, cadence state, provider/message ID field, Gmail print status, and retained snapshot without secrets.'],
   ['Governed AI', 'Agnes receives bounded role-scoped context through the Worker, cannot send externally, and the staff owner remains the approval authority.'],
   ['Ready to adopt', 'The live demo, Supabase schema, proof ledger, build ledger, and smoke script make the project look like an operational wedge a CorpSec team could pilot.'],
+];
+
+const judgeObjectionReceipt = [
+  ['Why not a broad CoSec suite?', 'Credence wins the narrow proof gap: client DB → rule/job → retained evidence → governed AI brief, instead of pretending to replace MBRS, SSM, portals, or licensed secretaries.'],
+  ['Is this legal advice?', 'No. Deterministic rules and Agnes briefs are workflow assistance; licensed humans approve compliance closure, external sends, and filing/legal-status decisions.'],
+  ['Why Qoder?', 'Qoder stayed central through Spec.md, preserved Qoder prompts, build ledger, memory rules, and npm run build && npm run verify as a replayable workflow receipt.'],
+  ['Why trust the AI?', 'Agnes only sees bounded role-scoped context, cannot auto-send, and sits beside reviewer-safe packet IDs, chain heads, and human approval gates.'],
+  ['Can this pilot tomorrow?', 'Yes as an operator wedge: live URL, seeded credentials, Supabase schema, fixture-safe rows, no-secret Worker bridge, and one-command verification are ready for judge rerun.'],
 ];
 
 const authorityProvenanceReceipt = [
@@ -668,6 +682,21 @@ export function SubmissionPackScreen() {
         </CardHeader>
         <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
           {enterpriseTrustScorecard.map(([label, detail]) => (
+            <div key={label} className="rounded-xl border border-crimson-500/20 bg-crimson-950/10 p-4">
+              <div className="font-semibold text-crimson-100">{label}</div>
+              <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2"><Trophy size={18} className="text-crimson-500" /> Judge objection receipt</CardTitle>
+          <CardDescription>Presentation-readiness upgrade: answer the hard enterprise-agent judge questions without drifting into overclaiming.</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
+          {judgeObjectionReceipt.map(([label, detail]) => (
             <div key={label} className="rounded-xl border border-crimson-500/20 bg-crimson-950/10 p-4">
               <div className="font-semibold text-crimson-100">{label}</div>
               <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
