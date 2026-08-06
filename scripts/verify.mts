@@ -268,6 +268,9 @@ assert(submissionPack.includes('Pilot handoff receipt'), 'Submission Pack includ
 assert(submissionPack.includes('Reusable workflow'), 'Submission Pack states reusable workflow artifacts for pilot handoff');
 assert(submissionPack.includes('Deterministic middle'), 'Submission Pack states deterministic rules remain the trusted middle');
 assert(submissionPack.includes('AI drafts only'), 'Submission Pack states AI drafts only before staff approval');
+assert(submissionPack.includes('Operational correlation receipt'), 'Submission Pack includes operational correlation receipt for traceable workflow proof');
+assert(submissionPack.includes('Packet correlation'), 'Submission Pack ties proof packets to correlation-style receipts');
+assert(submissionPack.includes('Duplicate-safe narrative'), 'Submission Pack captures duplicate-safe evidence narrative');
 assert(submissionPack.includes('ClientBase / VOPlus Singapore scan'), 'Submission Pack includes Singapore practice-suite competitor calibration');
 assert(submissionPack.includes('owner-specific chase becomes a reviewer-safe proof receipt'), 'Submission Pack states the narrow proof-receipt wedge');
 assert(readFileSync(resolve(root, 'src/lib/proofPacket.ts'), 'utf-8').includes('Reviewer-safe packet'), 'Proof packet utility documents non-secret reviewer export boundary');

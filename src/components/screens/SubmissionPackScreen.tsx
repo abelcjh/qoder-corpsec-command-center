@@ -64,6 +64,12 @@ const marketFindings = [
     credenceAngle: 'Do not compete as a broad suite in the recording; show the narrower judge-visible control: one owner-specific chase becomes a reviewer-safe proof receipt for Gmail/spreadsheet teams.',
   },
   {
+    source: 'Agent Academy / Bizsec operational workflow scan',
+    url: 'https://devblogs.microsoft.com/powerplatform/agent-academy-hackathon-winners/',
+    signal: 'Enterprise-agent winners and current Singapore CoSec tools emphasize governed records, approval gates, duplicate-safe actions, audit logs, and correlation IDs rather than standalone AI answers.',
+    credenceAngle: 'Show Credence as an operational control plane: each chase has a job ID, proof packet ID, staff approval boundary, freshness verdict, and safe retry/fallback path.',
+  },
+  {
     source: 'MBRS operational guide',
     url: 'https://www.mbrs.com.my/mbrs-for-company-secretaries/',
     signal: 'Real MBRS practice risk is not just a due date: lodgers need T-60 client chases, T-30 preparation checks, T-7 validation, same-day signing, acceptance tracking, and evidence that late inputs were the client-side blocker.',
@@ -256,6 +262,14 @@ const humanHandoffReceipt = [
   ['Staff approval gate', 'The recording should show a human owner choosing the rule/job path before any reminder becomes scheduled work.'],
   ['Deterministic schedule', 'Working-day recurrence and department scoping decide the queue; AI text is advisory context around that audited workflow.'],
   ['Proof retained', 'The handoff ends in reviewer-safe evidence fields — owner, recipient, cadence, snapshot, provider/message ID field, and unresolved risk.'],
+];
+
+const operationalCorrelationReceipt = [
+  ['Source record', 'The client record, statutory rule, staff owner, and scheduled job ID stay connected so the proof row is traceable back to the original business reason.'],
+  ['Packet correlation', 'Each retained send log derives a reviewer-safe `proof-...` packet ID and chain head; judges can match the app row to verifier output without exposing secrets.'],
+  ['Duplicate-safe narrative', 'If the same client chase is revisited, Credence should update/retain the evidence trail instead of pretending every repeat reminder is a fresh untracked action.'],
+  ['Approval-gated action', 'AI briefs and message drafts sit beside READY_FOR_REVIEW / no-send gates; external mutation stays behind human approval.'],
+  ['Fallback receipt', 'Live Agnes or network stalls have a bounded fallback: saved smoke receipt plus npm run build && npm run verify, not an improvised unverifiable claim.'],
 ];
 
 const closureApprovalCeremony = [
@@ -568,6 +582,21 @@ export function SubmissionPackScreen() {
           {humanHandoffReceipt.map(([label, detail]) => (
             <div key={label} className="rounded-xl border border-emerald-500/20 bg-emerald-950/10 p-4">
               <div className="font-semibold text-emerald-100">{label}</div>
+              <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2"><ClipboardList size={18} className="text-sky-400" /> Operational correlation receipt</CardTitle>
+          <CardDescription>Fresh winner calibration: business agents win when every AI/workflow output ties back to records, approval gates, correlation IDs, and audit-safe fallbacks.</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
+          {operationalCorrelationReceipt.map(([label, detail]) => (
+            <div key={label} className="rounded-xl border border-sky-500/20 bg-sky-950/10 p-4">
+              <div className="font-semibold text-sky-100">{label}</div>
               <p className="mt-2 text-sm leading-6 text-brand-muted">{detail}</p>
             </div>
           ))}

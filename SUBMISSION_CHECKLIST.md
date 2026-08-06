@@ -59,7 +59,7 @@
 ```bash
 npm install          # Installs all dependencies
 npm run build        # TypeScript check + Vite build
-npm test             # Verification script passes (140 assertions)
+npm test             # Verification script passes (145 assertions)
 ```
 
 ### Live Worker Smoke Receipt
@@ -74,6 +74,12 @@ npm test             # Verification script passes (140 assertions)
 - [x] Submission Pack now foregrounds enforceable closure buckets: source/status field, evidence requirement, metadata/timestamp/hash, and semantic AI advisory.
 - [x] Closing states are deterministic and judge-readable: BLOCK / NEEDS_REVIEW / READY_FOR_SIGNOFF before a licensed reviewer accepts or declines with rationale.
 - [x] Boundary stays rule-clean: Agnes drafts and explains; deterministic checks plus licensed human approval authorize closure, send/export remains manual in the demo.
+
+### Operational Correlation Receipt
+
+- [x] Submission Pack now ties the enterprise-agent winner bar to Credence records: source client/rule/job, proof packet ID/chain head, duplicate-safe evidence narrative, approval/no-send gate, and fallback receipt.
+- [x] Latest calibration source: Microsoft Agent Academy winners and Bizsec-style Singapore CoSec tooling emphasize governed records, approval gates, audit logs, and correlation IDs over standalone AI answers.
+- [x] Recording line: “every CorpSec chase has a source record, a packet correlation receipt, a human approval boundary, and a rerunnable fallback.”
 
 ### Files in Repository
 
@@ -190,6 +196,7 @@ From the organizer master deck and UGC screenshot:
 | [UiPath AgentHack winners](https://forum.uipath.com/t/here-are-the-uipath-agenthack-2025-winners/3586396) / [ABBYY 2026 winner](https://www.globenewswire.com/news-release/2026/08/04/3338139/0/en/ABBYY-2026-Hackathon-Winner-Accelerates-Mortgage-Auditing-Review-Leveraging-Document-AI-and-Large-Language-Models.html) | Enterprise-agent winners are praised for business-ready agents, reusable artifacts, deployable workflows, and auditable regulated-industry operations. | Pause on the new Pilot handoff receipt: live URL, one-command proof, Supabase data contract, operator-safe boundaries, and reusable Qoder workflow artifacts. |
 | [Trust Receipt AGI House winner](https://ashah007.medium.com/we-won-at-agi-house-by-building-the-proof-layer-for-ai-agents-ebdd0f27eced) | A current agent-infrastructure winner says every agent action should leave a receipt across identity, authority, intent alignment, policy compliance, and provenance. | Pause on the Authority and provenance receipt: staff identity, delegated rule authority, approved intent snapshot, no-send policy boundary, and reviewer-safe proof provenance after deactivation. |
 | [Trust Receipt repo](https://github.com/ankitshah009/TrustReceipt) / [AgentAudit scan](https://lablab.ai/ai-hackathons/techex-intelligent-enterprise-solutions-hackathon/diego-ia-enterprise/agentaudit-immutable-ai-audit-trail) | Agent-proof winners increasingly frame trust as independently checkable receipts: hashes, policy outcomes, public/private evidence boundaries, and offline verification paths. | Use the new Offline verifier receipt if challenged: Credence's proof packet has a deterministic packet ID, reviewer-safe fields, freshness recheck, and a blocked-action/no-send receipt instead of relying on screenshots. |
+| [Microsoft Agent Academy winners](https://devblogs.microsoft.com/powerplatform/agent-academy-hackathon-winners/) / [Bizsec](https://bizsec.io/) | Enterprise workflow winners and modern CoSec tools emphasize governed records, approval gates, duplicate-safe actions, audit logs, and correlation IDs. | Pause on the Operational correlation receipt: source record → packet ID/chain head → approval gate → bounded fallback, so the demo looks like an adoptable control loop rather than a chatbot. |
 | [Forensa evidence layer](https://lablab.ai/ai-hackathons/techex-intelligent-enterprise-solutions-hackathon/forensa/forensa-evidence-layer-for-ai-agents) / [raucle capability receipts](https://github.laiyagushi.com/craigamcw/raucle) | The enterprise proof bar is moving from “show logs” to auditor challenge paths: receipt hash, authority boundary, policy verdict, safe evidence opening, and offline verification. | If judges ask “how do I know this row is real?”, use the Auditor challenge drill: open one proof row, re-derive packet ID/chain head, show reviewer-safe fields, state the blocked no-send boundary, then point to `npm run build && npm run verify`. |
 | [Microsoft AI agent receipt guidance](https://microsoft.github.io/ai-agents-for-beginners/18-securing-ai-agents/) | Agent receipts prove attribution, integrity, and ordering; they do not by themselves prove correctness, legal sufficiency, or policy soundness. | Pause on the Receipt truth boundary if judges press on audit claims: Credence is honest that receipts make the trail inspectable, while deterministic rules, staff approval, freshness checks, and `npm run verify` provide the workflow control layer. |
 | [Agent Receipts protocol](https://agentreceipts.ai/) | Agent-receipt systems increasingly split public tamper evidence from sensitive payload disclosure: hash/chain proofs can be verified while parameters or client data remain gated by the operator. | Pause on the Public/private disclosure boundary: show public receipt ID/freshness/blocked status first, reveal selected reviewer-safe details only when needed, and never export secrets, raw mailboxes, or real send controls. |
