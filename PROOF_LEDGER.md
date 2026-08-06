@@ -80,6 +80,7 @@ Claims-to-artifacts mapping for hackathon judging. This is the judge-readable re
 | Qoder-generated phases and human verification receipt | `QODER_BUILD_LEDGER.md`, `scripts/verify.mts` |
 | Qoder Security checkpoint documents optional L1/L2/L3 scan path and credit/access limitation | `QODER_BUILD_LEDGER.md` |
 | Qoder Memory Kit makes the workflow reusable in future Qoder CLI sessions without overclaiming private traces | `AGENTS.md`, `.qoder/rules/proof-gate.md`, `.qoder/rules/submission-boundary.md` |
+| Qoder CLI adoption signal is captured as automation-first, scriptable, reviewable workflow proof | `src/components/screens/SubmissionPackScreen.tsx`, `SUBMISSION_CHECKLIST.md` |
 | Submission Pack screen tells judges where to look during the recording | `src/components/screens/SubmissionPackScreen.tsx`, `src/components/screens/BuildLedgerScreen.tsx` |
 
 ## Claim 10: Agnes AI assists at the edge while deterministic records stay authoritative

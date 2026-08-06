@@ -23,6 +23,7 @@ const organizerSourceReceipts = [
   ['Workflow requirement', 'Spec-Driven Workflow plus Quest Mode / Expert Mode should be shown as the build method and proof surface, not hidden behind the finished UI.'],
   ['Post-event window', 'The public brief allows the onsite Jul 22 build day plus a two-week refinement window, so docs must distinguish Qoder-built core from Ralph/Hermes packaging polish.'],
   ['Submission deadline', 'Submit public social post and 2–3 minute demo link by Aug 5, 11:30 PM GMT+8; do not rely on private drafts.'],
+  ['Qoder CLI adoption signal', 'Qoder CLI docs position terminal workflows as automation-first, scriptable, reviewable, and extensible through SDK/MCP-style agent workflows; pitch Credence as a Qoder-built app plus reusable verification workflow, not a hidden chatbot wrapper.'],
 ];
 
 const marketFindings = [
@@ -219,15 +220,15 @@ const judgeLiveCheck = [
 ];
 
 const liveSmokeReceipt = [
-  ['Current live smoke check', 'Aug 6 01:13 GMT+8: live Worker home route returned HTTP 200 app HTML in 179ms and the Agnes bridge returned HTTP 200 JSON in 4.1s with a browser-like fixture request, plus no-secret/API-key-shape checks passed.'],
+  ['Current live smoke check', 'Aug 6 14:07 GMT+8: live Worker home route returned HTTP 200 app HTML in 363ms and the Agnes bridge returned HTTP 200 JSON in 11.4s with a browser-like fixture request, plus no-secret/API-key-shape checks passed.'],
   ['Home page', 'Open the deployed Worker first; the latest smoke confirms the staff-login app shell loads from the public URL, not only from local dev.'],
   ['Agnes API route', 'POST /api/ai-brief returned HTTP 200 JSON for a safe fixture company, proving the server-side AI bridge is reachable without exposing the key.'],
   ['Recording fallback', 'If the live network stalls, narrate the saved smoke receipt plus npm run build && npm run verify instead of improvising.'],
 ];
 
 const finalReadinessReceipt = [
-  ['Live URL works', 'Latest smoke passed at Aug 6 01:13 GMT+8: public Worker home route HTTP 200, staff-login app shell returned.'],
-  ['Agnes bridge works', 'Fixture-safe POST /api/ai-brief returned HTTP 200 JSON in 4.1s and passed secret-name/API-key-shape checks.'],
+  ['Live URL works', 'Latest smoke passed at Aug 6 14:07 GMT+8: public Worker home route HTTP 200, staff-login app shell returned in 363ms.'],
+  ['Agnes bridge works', 'Fixture-safe POST /api/ai-brief returned HTTP 200 JSON in 11.4s and passed secret-name/API-key-shape checks.'],
   ['Local proof command', 'Keep npm run build && npm run verify visible as the fallback receipt; the harness covers the deterministic middle and submission-proof surfaces.'],
   ['Manual boundaries', 'Social post, organizer form, email/WhatsApp, and legal-status changes remain manual; the app demonstrates fixture-safe receipts only.'],
 ];
@@ -488,7 +489,7 @@ export function SubmissionPackScreen() {
           <CardTitle className="flex items-center gap-2"><ClipboardList size={18} className="text-emerald-500" /> Official brief compliance receipt</CardTitle>
           <CardDescription>Source-backed guardrails from the Qoder SG public brief so the final recording stays rule-clean</CardDescription>
         </CardHeader>
-        <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+        <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
           {organizerSourceReceipts.map(([label, detail]) => (
             <div key={label} className="rounded-xl border border-brand-border bg-brand-surface/40 p-4">
               <div className="font-semibold text-brand-text">{label}</div>

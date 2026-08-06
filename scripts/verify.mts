@@ -197,7 +197,7 @@ for (const doc of docs) {
 }
 const submissionPack = readFileSync(resolve(root, 'src/components/screens/SubmissionPackScreen.tsx'), 'utf-8');
 assert(submissionPack.includes('Final readiness receipt'), 'Submission Pack includes final readiness receipt');
-assert(submissionPack.includes('Aug 6 01:13 GMT+8'), 'Submission Pack includes latest Aug 6 01:13 live smoke receipt');
+assert(submissionPack.includes('Aug 6 14:07 GMT+8'), 'Submission Pack includes latest Aug 6 14:07 live smoke receipt');
 assert(submissionPack.includes('Manual boundaries'), 'Submission Pack keeps manual boundary receipt visible');
 assert(submissionPack.includes('Reviewer approval ceremony'), 'Submission Pack includes reviewer approval ceremony');
 assert(submissionPack.includes('BLOCK / NEEDS_REVIEW / READY_FOR_SIGNOFF'), 'Submission Pack includes deterministic closure status states');
@@ -228,6 +228,8 @@ assert(submissionPack.includes('private canvas traces'), 'Submission Pack avoids
 assert(submissionPack.includes('Plan before execution'), 'Submission Pack states Qoder plan-before-execution workflow proof');
 assert(submissionPack.includes('Replayable proof'), 'Submission Pack ties Qoder workflow to durable rerunnable artifacts');
 assert(submissionPack.includes('Qoder mode-choice receipt'), 'Submission Pack includes Qoder mode-choice receipt');
+assert(submissionPack.includes('Qoder CLI adoption signal'), 'Submission Pack includes Qoder CLI adoption signal');
+assert(submissionPack.includes('automation-first, scriptable, reviewable'), 'Submission Pack captures Qoder CLI automation-first workflow proof');
 assert(submissionPack.includes('cannot be switched later'), 'Submission Pack captures Qoder mode-lock pitfall');
 assert(submissionPack.includes('Notification boundary'), 'Submission Pack maps Qoder intervention notifications to Credence safety boundaries');
 assert(submissionPack.includes('Qoder memory kit receipt'), 'Submission Pack includes Qoder memory kit receipt');
